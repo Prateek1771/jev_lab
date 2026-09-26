@@ -17,6 +17,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, Response, StreamingResponse
 from pydantic import BaseModel
 
+from api import presence
 from config import settings
 from core import report
 from core.limits import over_limit
@@ -125,6 +126,18 @@ def project(nn: str):
     description, diagrams = report.parse_about(path.read_text(encoding="utf-8")) if path.exists() else ("", [])
     return _json(_summary(m, nn) | {"description": description, "examples": m.EXAMPLES,
                                     "diagrams": [{"heading": h, "mermaid": body} for h, body in diagrams]})
+
+
+class BeatIn(BaseModel):
+    id: str
+
+
+@app.post("/api/presence")
+def heartbeat(body: BeatIn):
+    """The nav's live counter (api/presence.py): record this visitor, return who's here and who's ever been."""
+    if not presence.ID.match(body.id):
+        raise HTTPException(422, "bad visitor id")
+    return presence.beat(body.id)
 
 
 class RunIn(BaseModel):

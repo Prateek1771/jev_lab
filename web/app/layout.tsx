@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter_Tight, JetBrains_Mono, VT323 } from "next/font/google";
 import Link from "next/link";
+import { LiveCounter } from "@/components/LiveCounter";
 import { Glyph } from "@/components/ui";
 import { UiToggle } from "@/components/UiToggle";
 import { AUTHOR } from "@/lib/site";
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
 };
 
 function Nav() {
-  const cell = "flex items-center whitespace-nowrap px-2.5 text-[14px] sm:px-4 sm:text-[15px] font-medium tracking-[0.03em] text-ink transition-colors duration-500 ease-house hover:bg-ink hover:text-paper";
+  const cell = "flex items-center whitespace-nowrap px-2 text-[14px] sm:px-4 sm:text-[15px] font-medium tracking-[0.03em] text-ink transition-colors duration-500 ease-house hover:bg-ink hover:text-paper";
   return (
     <nav className="sticky top-0 z-40 flex h-12 border-b-[1.2px] border-ink bg-page/85 backdrop-blur-[10px]">
       <Link href="/" aria-label="Jev Lab home" className="flex items-center gap-2.5 bg-ink px-2.5 text-paper sm:px-3">
@@ -28,6 +29,7 @@ function Nav() {
       <Link href="/#projects" className={`${cell} rule-l`}>Projects</Link>
       <Link href="/#method" className={`${cell} rule-l hidden sm:flex`}>Method</Link>
       <div className="flex-1 rule-l" />
+      <LiveCounter />
       <UiToggle />
       <Link href="/p/24" className="hidden items-center bg-ink px-4 sm:flex rule-l text-[15px] font-medium tracking-[0.03em] text-paper transition-colors duration-500 ease-house hover:bg-magenta hover:text-ink">
         Open the harness

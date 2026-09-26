@@ -58,6 +58,7 @@ LANGFUSE_TRACING_ENABLED = _env("LANGFUSE_TRACING_ENABLED", "true").lower() == "
 # --- Deployment. Unset locally: no CORS (the browser goes through Next's /api rewrite), no limits. ---
 WEB_ORIGINS = [o.strip() for o in _env("WEB_ORIGINS").split(",") if o.strip()]   # the web UI's URL(s), for CORS
 WEB_ORIGIN_REGEX = _env("WEB_ORIGIN_REGEX").strip() or None   # also allow matching origins, e.g. Vercel per-deploy URLs
+REDIS_URL = _env("REDIS_URL")   # Render Key Value: keeps the nav's visitor count across API restarts (api/presence.py)
 # Caps on the paid POSTs so a public site can't be spammed into a big OpenRouter bill. 0 = no limit.
 # render.yaml sets the deployed values.
 RUN_LIMIT_PER_IP_HOUR = int(_env("RUN_LIMIT_PER_IP_HOUR", "0"))

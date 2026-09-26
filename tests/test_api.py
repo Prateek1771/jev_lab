@@ -183,3 +183,16 @@ def test_identical_calls_merge_into_one_prompt_row_with_a_count():
     q = {"kind": "jev", "model": "j", "questions": {"keep": {"type": "noul", "instructions": "relevant?"}}, "state": {}}
     rows = report.prompt_rows({"calls": [q, q, {"kind": "llm", "model": "f", "system": ["S"], "user": ["u"], "tools": [], "response_format": None}]})
     assert [(r["kind"], r["count"]) for r in rows] == [("Jev question", 2), ("LLM system prompt", 1)]
+
+
+def test_presence_counts_live_tabs_and_unique_visitors(client, monkeypatch):
+    presence = importlib.import_module("api.presence")
+    monkeypatch.setattr(presence, "_live", {})
+    monkeypatch.setattr(presence, "_seen", set())
+    beat = lambda vid: client.post("/api/presence", json={"id": vid}).json()
+    assert beat("visitor-aaaa") == {"live": 1, "visitors": 1}
+    assert beat("visitor-aaaa") == {"live": 1, "visitors": 1}   # a second tab or beat is still one person
+    assert beat("visitor-bbbb") == {"live": 2, "visitors": 2}
+    presence._live["visitor-aaaa"] -= presence.LIVE_S + 1        # a went quiet: no longer live, still visited
+    assert beat("visitor-bbbb") == {"live": 1, "visitors": 2}
+    assert client.post("/api/presence", json={"id": "x"}).status_code == 422

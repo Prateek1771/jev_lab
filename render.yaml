@@ -18,6 +18,11 @@ services:
         sync: false
       - key: WEB_UI_URL           # same Vercel URL; Streamlit's "open in the new UI" link
         sync: false
+      - key: REDIS_URL            # the nav's visitor counter (api/presence.py)
+        fromService:
+          type: keyvalue
+          name: jev-lab-counter
+          property: connectionString
       - key: LANGFUSE_TRACING_ENABLED   # Langfuse is a local docker container
         value: "false"
       # Spam caps on the paid calls (0 = off). Worst case at these values stays well under $2/day.
@@ -55,3 +60,11 @@ services:
         value: "3"
       - key: DATASET_LIMIT_PER_DAY
         value: "30"
+
+  # Free Redis for the nav's live/visitor counter. ponytail: free plan has no disk persistence, so the
+  # visitor total resets if Render restarts the instance (rare); starter plan + persistence if it matters.
+  - type: keyvalue
+    name: jev-lab-counter
+    plan: free
+    maxmemoryPolicy: noeviction
+    ipAllowList: []   # internal only: just the API talks to it
