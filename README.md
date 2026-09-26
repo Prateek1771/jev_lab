@@ -92,7 +92,7 @@ The API goes to **Render** and the web UI to **Vercel**. Secrets are typed into 
 1. **Push** this repo to GitHub.
 2. **Render (API):** New → Blueprint → pick the repo. It reads `render.yaml` and asks for three values:
    - `OPENROUTER_API_KEY`: your OpenRouter key. It's the only secret, and it pays for Jev and the baselines.
-   - `WEB_ORIGINS` and `WEB_UI_URL`: the Vercel URL, e.g. `https://jev-lab.vercel.app`. You don't have it yet, so put a
+   - `WEB_ORIGINS` and `WEB_UI_URL`: the Vercel URL, e.g. `https://jev-labs.vercel.app`. You don't have it yet, so put a
      placeholder and fix it in step 4.
 
    When it's live, `https://<api>.onrender.com/api/projects` lists 24 projects. The free plan sleeps when idle, so the

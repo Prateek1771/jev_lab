@@ -12,7 +12,7 @@ services:
         value: 3.12.7
       - key: OPENROUTER_API_KEY   # typed into the Render dashboard, never committed
         sync: false
-      - key: WEB_ORIGINS          # the Vercel URL, e.g. https://jev-lab.vercel.app (CORS for the paid POSTs)
+      - key: WEB_ORIGINS          # the Vercel URL, e.g. https://jev-labs.vercel.app (CORS for the paid POSTs)
         sync: false
       - key: WEB_ORIGIN_REGEX     # Vercel per-deploy URLs, e.g. https://jev(lab)?-[a-z0-9-]+-<team>\.vercel\.app
         sync: false
