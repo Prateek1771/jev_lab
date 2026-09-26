@@ -14,6 +14,8 @@ services:
         sync: false
       - key: WEB_ORIGINS          # the Vercel URL, e.g. https://jev-lab.vercel.app (CORS for the paid POSTs)
         sync: false
+      - key: WEB_ORIGIN_REGEX     # Vercel per-deploy URLs, e.g. https://jev(lab)?-[a-z0-9-]+-<team>\.vercel\.app
+        sync: false
       - key: WEB_UI_URL           # same Vercel URL; Streamlit's "open in the new UI" link
         sync: false
       - key: LANGFUSE_TRACING_ENABLED   # Langfuse is a local docker container

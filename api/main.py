@@ -28,8 +28,9 @@ RUNS = ROOT / "runs"   # saved dataset runs, one folder per project (committed: 
 _FILE = re.compile(r"^[\w.-]+\.json$")
 
 app = FastAPI(title="Jev Lab API")
-if settings.WEB_ORIGINS:   # deployed: the paid POSTs go browser → API directly (see _limit), so they need CORS
-    app.add_middleware(CORSMiddleware, allow_origins=settings.WEB_ORIGINS, allow_methods=["GET", "POST"],
+if settings.WEB_ORIGINS or settings.WEB_ORIGIN_REGEX:   # deployed: the paid POSTs go browser → API directly (see _limit)
+    app.add_middleware(CORSMiddleware, allow_origins=settings.WEB_ORIGINS, allow_origin_regex=settings.WEB_ORIGIN_REGEX,
+                       allow_methods=["GET", "POST"],
                        allow_headers=["content-type"])
 
 _hits: dict[str, deque[float]] = defaultdict(deque)   # "run:1.2.3.4" / "run:all" -> call times
