@@ -4,12 +4,13 @@ core/report. run_experiment is faked; no keys, no spend."""
 
 import importlib
 import json
+from collections import defaultdict, deque
 from pathlib import Path
 
 import pytest
 from fastapi.testclient import TestClient
 
-from core import report
+from core import limits, report
 from core.projects import discover
 from core.run import Result, Run
 
@@ -50,7 +51,7 @@ def test_paid_runs_are_capped_per_visitor_and_for_everyone(client, monkeypatch):
     monkeypatch.setattr(discover()["01"], "run_experiment", lambda text: fake_result())
     monkeypatch.setattr(api.settings, "RUN_LIMIT_PER_IP_HOUR", 2)
     monkeypatch.setattr(api.settings, "RUN_LIMIT_PER_DAY", 3)
-    monkeypatch.setattr(api, "_hits", api.defaultdict(api.deque))
+    monkeypatch.setattr(limits, "_hits", defaultdict(deque))
     post = lambda ip: client.post("/api/projects/01/run", json={"input": "x"}, headers={"x-forwarded-for": ip})
     assert [post("1.1.1.1").status_code for _ in range(3)] == [200, 200, 429]
     assert post("1.1.1.1").json()["detail"].startswith("Limit reached: 2 runs per hour")

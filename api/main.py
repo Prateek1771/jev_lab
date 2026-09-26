@@ -8,9 +8,7 @@ import dataclasses
 import io
 import json
 import re
-import time
 import zipfile
-from collections import defaultdict, deque
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -21,6 +19,7 @@ from pydantic import BaseModel
 
 from config import settings
 from core import report
+from core.limits import over_limit
 from core.projects import ROOT, about_path, discover, traced
 from core.run import Result
 
@@ -33,30 +32,13 @@ if settings.WEB_ORIGINS or settings.WEB_ORIGIN_REGEX:   # deployed: the paid POS
                        allow_methods=["GET", "POST"],
                        allow_headers=["content-type"])
 
-_hits: dict[str, deque[float]] = defaultdict(deque)   # "run:1.2.3.4" / "run:all" -> call times
-
-
 def _limit(kind: str):
-    """Caps on a paid POST: per visitor per hour, and for everyone per day (settings, 0 = off). The browser calls
-    the API directly for these, so X-Forwarded-For is the visitor, not Vercel's proxy.
-    ponytail: in memory, per process, reset on restart: fine for one Render instance, Redis if it ever scales out.
-    The header can be faked, so the per-day cap is the real spend guard."""
+    """The spam caps (core/limits.py) on a paid POST. The browser calls the API directly for these, so
+    X-Forwarded-For is the visitor, not Vercel's proxy."""
     def check(request: Request):
         ip = (request.headers.get("x-forwarded-for") or "").split(",")[0].strip() or getattr(request.client, "host", "?")
-        now, counted = time.time(), []
-        for key, cap, window, per in ((f"{kind}:{ip}", getattr(settings, f"{kind.upper()}_LIMIT_PER_IP_HOUR"), 3600, "per hour"),
-                                      (f"{kind}:all", getattr(settings, f"{kind.upper()}_LIMIT_PER_DAY"), 86400, "per day, for everyone")):
-            if not cap:
-                continue
-            hits = _hits[key]
-            while hits and hits[0] <= now - window:
-                hits.popleft()
-            if len(hits) >= cap:
-                wait = max(1, round((hits[0] + window - now) / 60))
-                raise HTTPException(429, f"Limit reached: {cap} {'runs' if kind == 'run' else 'dataset runs'} {per}. Try again in {wait} min.")
-            counted.append(hits)
-        for hits in counted:
-            hits.append(now)
+        if msg := over_limit(kind, ip):
+            raise HTTPException(429, msg)
     return check
 
 

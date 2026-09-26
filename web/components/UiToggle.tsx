@@ -3,7 +3,8 @@
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 
-const STREAMLIT_URL = process.env.NEXT_PUBLIC_STREAMLIT_URL ?? "http://localhost:8501";
+const STREAMLIT_URL = (process.env.NEXT_PUBLIC_STREAMLIT_URL ?? "http://localhost:8501").trim();
+const LOCAL = STREAMLIT_URL.includes("localhost");
 const START = "uv run python scripts/dev.py --ui streamlit";
 
 /** "New UI | Streamlit": the same experiment, in whichever UI you prefer. Streamlit's own health route
@@ -45,6 +46,9 @@ export function UiToggle() {
       </a>
       {hint && !up && (
         <div className="fade-in absolute top-full right-0 z-50 mt-[1px] w-[400px] max-w-[92vw] border-[1.2px] border-ink bg-paper p-3 text-[14px] text-ink-86">
+          {!LOCAL ? (
+            <p className="mb-2"><b className="text-ink">Streamlit is waking up.</b> It runs on a free server that sleeps when idle; give it about a minute, then check again.</p>
+          ) : (<>
           <p className="mb-2"><b className="text-ink">Streamlit isn&apos;t running.</b> Start it in another terminal, then click the toggle again:</p>
           <div className="flex items-stretch">
             <code className="flex-1 overflow-x-auto bg-ink px-2 py-1.5 font-mono text-[11.5px] whitespace-nowrap text-page">{START}</code>
@@ -53,6 +57,7 @@ export function UiToggle() {
               {copied ? "copied" : "copy"}
             </button>
           </div>
+          </>)}
           <button type="button" onClick={check} className="mt-2 font-mono text-[11px] text-gray hover:text-magenta">check again ↻</button>
         </div>
       )}

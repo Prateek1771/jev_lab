@@ -6,6 +6,7 @@ from pathlib import Path
 import streamlit as st
 
 from config import settings
+from core.limits import over_limit
 from core.projects import discover
 from core.ui import render_about, render_batch, render_result
 
@@ -14,6 +15,8 @@ PROJECTS = {m.TITLE: m for m in IDS.values()}
 NN = {m.TITLE: nn for nn, m in IDS.items()}
 
 st.set_page_config(page_title="Jev Lab", layout="wide")
+# The deployed app sits behind Render's proxy, so X-Forwarded-For is the visitor; locally no caps are set.
+IP = (st.context.headers.get("X-Forwarded-For") or "").split(",")[0].strip() or st.context.ip_address or "?"
 st.title("Jev Lab")
 
 # ?p=NN picks the project, so the web UI's toggle can open the same one here; the URL follows the radio back.
@@ -48,12 +51,15 @@ with single:
         except json.JSONDecodeError as e:
             st.error(f"Input is not valid JSON: {e}")   # show it; never send a half-edited input
         else:
-            with st.spinner("Calling Jev and the baselines..."):
-                try:
-                    st.session_state["result"] = (project.TITLE, project.run_experiment(inp))
-                except Exception as e:   # an upstream 5xx or a dropped connection: say so, don't crash the page
-                    st.error(f"The run failed ({type(e).__name__}): {str(e).splitlines()[0][:200]}. "
-                             "Nothing was saved; run it again.")
+            if msg := over_limit("run", IP):
+                st.error(msg)
+            else:
+                with st.spinner("Calling Jev and the baselines..."):
+                    try:
+                        st.session_state["result"] = (project.TITLE, project.run_experiment(inp))
+                    except Exception as e:   # an upstream 5xx or a dropped connection: say so, don't crash the page
+                        st.error(f"The run failed ({type(e).__name__}): {str(e).splitlines()[0][:200]}. "
+                                 "Nothing was saved; run it again.")
 
     # Streamlit reruns this whole file on every click. Results live in session_state
     # so touching a widget does not spend money calling the APIs again.
@@ -64,7 +70,10 @@ with single:
 with dataset:
     st.caption(f"Runs every row one at a time: {len(project.DATASET)} rows × every variant, all paid calls. "
                "Rows run sequentially so latency measures the model, not a traffic jam.")
-    if st.button("Run dataset", type="primary"):
+    clicked = st.button("Run dataset", type="primary")
+    if clicked and (msg := over_limit("dataset", IP)):
+        st.error(msg)
+    elif clicked:
         bar = st.progress(0.0, text="starting")
         rows = []
         for i, item in enumerate(project.DATASET):

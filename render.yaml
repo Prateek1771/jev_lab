@@ -29,3 +29,29 @@ services:
         value: "3"
       - key: DATASET_LIMIT_PER_DAY
         value: "30"
+
+  # The original Streamlit UI (the web UI's "Streamlit" toggle). Same caps as the API, counted separately (core/limits.py).
+  - type: web
+    name: jev-lab-streamlit
+    runtime: python
+    plan: free
+    buildCommand: pip install uv && uv sync --frozen --no-dev
+    startCommand: uv run --no-dev streamlit run app.py --server.port $PORT --server.address 0.0.0.0 --server.headless true
+    healthCheckPath: /_stcore/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.7
+      - key: OPENROUTER_API_KEY   # same key as the API, typed into the Render dashboard
+        sync: false
+      - key: WEB_UI_URL           # the Vercel URL; the sidebar's "Open in the new UI" link
+        sync: false
+      - key: LANGFUSE_TRACING_ENABLED
+        value: "false"
+      - key: RUN_LIMIT_PER_IP_HOUR
+        value: "20"
+      - key: RUN_LIMIT_PER_DAY
+        value: "300"
+      - key: DATASET_LIMIT_PER_IP_HOUR
+        value: "3"
+      - key: DATASET_LIMIT_PER_DAY
+        value: "30"
