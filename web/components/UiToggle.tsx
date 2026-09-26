@@ -31,8 +31,8 @@ export function UiToggle() {
   const cell = "flex items-center gap-1.5 whitespace-nowrap px-2.5 text-[13px] font-medium tracking-[0.03em] sm:px-3 sm:text-[14px]";
 
   return (
-    <div className="relative flex rule-l" role="group" aria-label="Choose the UI">
-      <span className={`${cell} bg-ink text-paper`} aria-current="true">New<span className="hidden sm:inline">&nbsp;UI</span></span>
+    <div className="relative flex shrink-0 rule-l" role="group" aria-label="Choose the UI">
+      <span className={`${cell} bg-ink text-paper max-sm:hidden`} aria-current="true">New<span className="hidden sm:inline">&nbsp;UI</span></span>
       <a
         href={up ? href : undefined}
         onClick={(e) => {

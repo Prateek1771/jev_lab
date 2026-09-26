@@ -38,7 +38,7 @@ export function LiveCounter() {
 
   if (!c) return null;   // nothing until the first answer: a free API waking up shouldn't flash "0 live"
   return (
-    <div className="fade-in flex items-center gap-1.5 whitespace-nowrap px-2 font-mono text-[12px] tracking-[0.04em] text-ink rule-l sm:gap-2 sm:px-3"
+    <div className="fade-in flex shrink-0 items-center gap-1.5 whitespace-nowrap px-2 font-mono text-[12px] tracking-[0.04em] text-ink rule-l sm:gap-2 sm:px-3"
       title={`${c.live} watching now · ${c.visitors} people have visited`}>
       <span className="relative flex h-2 w-2" aria-hidden>
         <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green opacity-60" />

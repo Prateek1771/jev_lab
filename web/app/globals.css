@@ -112,6 +112,14 @@ a.u:hover {
   text-underline-offset: 4px;
 }
 
+/* Sideways-scrolling strip (the mobile nav links) without a visible scrollbar */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 /* The dashed hairline: the signature divider between cells */
 .rule-l {
   border-left: var(--rule);
