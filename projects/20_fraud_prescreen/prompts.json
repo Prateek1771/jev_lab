@@ -1,0 +1,146 @@
+{
+ "example": "Card testing",
+ "captured": "2026-09-26",
+ "calls": [
+  {
+   "kind": "llm",
+   "model": "anthropic/claude-sonnet-5",
+   "system": [
+    "You are a senior fraud analyst. Decide what happens to this card transaction: allow (normal for the customer), review (unusual, needs a quick check), or investigate (matches a fraud pattern)."
+   ],
+   "user": [
+    "{\"transaction\": {\"amount\": 1.0, \"usual_amount\": 60, \"merchant\": \"online donation page\", \"country\": \"US\", \"home_country\": \"US\", \"device\": \"new\", \"tx_last_hour\": 7}, \"facts\": {\"amount_vs_usual\": 0.0, \"new_device\": true, \"foreign\": false, \"travel_notice\": false, \"tx_last_hour\": 7, \"shipping_changed_today\": false}}"
+   ],
+   "tools": [],
+   "response_format": {
+    "json_schema": {
+     "name": "decision",
+     "schema": {
+      "title": "decision",
+      "type": "object",
+      "properties": {
+       "decision": {
+        "type": "string",
+        "enum": [
+         "allow",
+         "review",
+         "investigate"
+        ]
+       }
+      },
+      "required": [
+       "decision"
+      ],
+      "additionalProperties": false
+     },
+     "strict": true
+    },
+    "type": "json_schema"
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "risk": {
+     "type": "score",
+     "instructions": "How likely is transaction to be fraud, given facts?",
+     "criteria": [
+      "Low: consistent with this customer's normal behaviour",
+      "Medium: unusual in one way, plausibly innocent",
+      "High: matches a fraud pattern (card testing, account takeover, cash-out)"
+     ]
+    }
+   },
+   "state": {
+    "transaction": {
+     "amount": 1.0,
+     "usual_amount": 60,
+     "merchant": "online donation page",
+     "country": "US",
+     "home_country": "US",
+     "device": "new",
+     "tx_last_hour": 7
+    },
+    "facts": {
+     "amount_vs_usual": 0.0,
+     "new_device": true,
+     "foreign": false,
+     "travel_notice": false,
+     "tx_last_hour": 7,
+     "shipping_changed_today": false
+    }
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "risk": {
+     "type": "score",
+     "instructions": "How likely is transaction to be fraud, given facts?",
+     "criteria": [
+      "Low: consistent with this customer's normal behaviour",
+      "Medium: unusual in one way, plausibly innocent",
+      "High: matches a fraud pattern (card testing, account takeover, cash-out)"
+     ]
+    }
+   },
+   "state": {
+    "transaction": {
+     "amount": 1.0,
+     "usual_amount": 60,
+     "merchant": "online donation page",
+     "country": "US",
+     "home_country": "US",
+     "device": "new",
+     "tx_last_hour": 7
+    },
+    "facts": {
+     "amount_vs_usual": 0.0,
+     "new_device": true,
+     "foreign": false,
+     "travel_notice": false,
+     "tx_last_hour": 7,
+     "shipping_changed_today": false
+    }
+   }
+  },
+  {
+   "kind": "llm",
+   "model": "anthropic/claude-sonnet-5",
+   "system": [
+    "You are a senior fraud analyst. Decide what happens to this card transaction: allow (normal for the customer), review (unusual, needs a quick check), or investigate (matches a fraud pattern)."
+   ],
+   "user": [
+    "{\"transaction\": {\"amount\": 1.0, \"usual_amount\": 60, \"merchant\": \"online donation page\", \"country\": \"US\", \"home_country\": \"US\", \"device\": \"new\", \"tx_last_hour\": 7}, \"facts\": {\"amount_vs_usual\": 0.0, \"new_device\": true, \"foreign\": false, \"travel_notice\": false, \"tx_last_hour\": 7, \"shipping_changed_today\": false}}"
+   ],
+   "tools": [],
+   "response_format": {
+    "json_schema": {
+     "name": "decision",
+     "schema": {
+      "title": "decision",
+      "type": "object",
+      "properties": {
+       "decision": {
+        "type": "string",
+        "enum": [
+         "allow",
+         "review",
+         "investigate"
+        ]
+       }
+      },
+      "required": [
+       "decision"
+      ],
+      "additionalProperties": false
+     },
+     "strict": true
+    },
+    "type": "json_schema"
+   }
+  }
+ ]
+}

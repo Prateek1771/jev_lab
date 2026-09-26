@@ -1,0 +1,96 @@
+{
+ "example": "Duplicate charge",
+ "captured": "2026-09-26",
+ "calls": [
+  {
+   "kind": "llm",
+   "model": "google/gemini-3.1-flash-lite",
+   "system": [
+    "You route customer support tickets. Choose exactly one action:\n- human: you cannot tell what the customer wants.\n- route_queue: they want something other than a refund (order status, a bug, how-to, anything else).\n- block: they want a refund that refund_policy does not support.\n- refund_auto: a refund the policy clearly supports, with an order on file, fewer than 2 refunds in the last 30 days, and no sign the customer is about to leave.\n- refund_confirm: any other refund request the policy supports.\nReply with exactly one action name and nothing else."
+   ],
+   "user": [
+    "{\"message\": \"I was charged twice for order A-104. Please refund the duplicate.\", \"order\": \"A-104: two captured charges of $49\", \"refund_policy\": \"Duplicate charges and orders that never arrived are eligible for a refund. Change-of-mind returns are eligible only within 30 days of delivery and only for unused items. Anything else is not eligible.\", \"within_return_window\": true, \"prior_refunds_30d\": 0}"
+   ],
+   "tools": [],
+   "response_format": null
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "intent": {
+     "type": "choice",
+     "instructions": "What is the customer's primary intent?",
+     "criteria": {
+      "refund": "Wants money back or a credit",
+      "status": "Asking where an order, ticket, or earlier refund is",
+      "bug": "Reporting something broken in the product",
+      "how_to": "Needs help using the product",
+      "other": "Anything else"
+     }
+    },
+    "policy_supports_refund": {
+     "type": "noul",
+     "instructions": "Given refund_policy, order and within_return_window, the stated refund policy supports the refund the customer asks for in message",
+     "criteria": {
+      "true": "The request matches a case the policy says is eligible",
+      "false": "The policy excludes it, or no refund is being asked for"
+     }
+    },
+    "churn_risk": {
+     "type": "score",
+     "instructions": "How likely is this customer to leave, from their message?",
+     "criteria": [
+      "Low",
+      "Moderate",
+      "High"
+     ]
+    }
+   },
+   "state": {
+    "message": "I was charged twice for order A-104. Please refund the duplicate.",
+    "order": "A-104: two captured charges of $49",
+    "refund_policy": "Duplicate charges and orders that never arrived are eligible for a refund. Change-of-mind returns are eligible only within 30 days of delivery and only for unused items. Anything else is not eligible.",
+    "within_return_window": true
+   }
+  },
+  {
+   "kind": "llm",
+   "model": "google/gemini-3.1-flash-lite",
+   "system": [
+    "You route customer support tickets. Choose exactly one action:\n- human: you cannot tell what the customer wants.\n- route_queue: they want something other than a refund (order status, a bug, how-to, anything else).\n- block: they want a refund that refund_policy does not support.\n- refund_auto: a refund the policy clearly supports, with an order on file, fewer than 2 refunds in the last 30 days, and no sign the customer is about to leave.\n- refund_confirm: any other refund request the policy supports.\nReply with exactly one action name and nothing else."
+   ],
+   "user": [
+    "{\"message\": \"I was charged twice for order A-104. Please refund the duplicate.\", \"order\": \"A-104: two captured charges of $49\", \"refund_policy\": \"Duplicate charges and orders that never arrived are eligible for a refund. Change-of-mind returns are eligible only within 30 days of delivery and only for unused items. Anything else is not eligible.\", \"within_return_window\": true, \"prior_refunds_30d\": 0}"
+   ],
+   "tools": [],
+   "response_format": {
+    "json_schema": {
+     "name": "answer",
+     "schema": {
+      "title": "answer",
+      "type": "object",
+      "properties": {
+       "label": {
+        "type": "string",
+        "enum": [
+         "refund_auto",
+         "refund_confirm",
+         "route_queue",
+         "human",
+         "block"
+        ]
+       }
+      },
+      "required": [
+       "label"
+      ],
+      "additionalProperties": false
+     },
+     "strict": true
+    },
+    "type": "json_schema"
+   }
+  }
+ ]
+}

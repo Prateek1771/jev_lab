@@ -1,0 +1,100 @@
+{
+ "example": "Clear refund",
+ "captured": "2026-09-26",
+ "calls": [
+  {
+   "kind": "llm",
+   "model": "google/gemini-3.1-flash-lite",
+   "system": [
+    "You review a support agent's proposed action against the policy before it runs. Policy: Refunds: unused items within 30 days of delivery, to the original payment method only. Return labels are free only for defective items; change-of-mind returns pay $5. Damaged items: refund or replace if reported within 7 days with a photo. Gift cards cannot be refunded. No discounts, credits or partial refunds as compensation. We do not price match other stores. Acme Plus: cancel any time, no partial refunds. Legal threats, safety issues and anything outside this policy go to a human. Never share another customer's details.\nApprove only if the action is exactly what the policy allows for this case. Also say how sure you are, from 0 to 1."
+   ],
+   "user": [
+    "{\"case\": \"Customer returns unused headphones, delivered 12 days ago, paid $89 by Visa.\", \"proposed\": \"Refund $89 to the original Visa card.\"}"
+   ],
+   "tools": [],
+   "response_format": {
+    "json_schema": {
+     "name": "verdict",
+     "schema": {
+      "title": "verdict",
+      "type": "object",
+      "properties": {
+       "verdict": {
+        "type": "string",
+        "enum": [
+         "approve",
+         "reject"
+        ]
+       },
+       "confidence": {
+        "type": "number",
+        "description": "0 to 1: how sure you are"
+       }
+      },
+      "required": [
+       "verdict",
+       "confidence"
+      ],
+      "additionalProperties": false
+     },
+     "strict": true
+    },
+    "type": "json_schema"
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "verdict": {
+     "type": "choice",
+     "instructions": "Should the proposed action run, under policy, for this case?",
+     "criteria": {
+      "approve": "proposed is exactly what policy allows for case",
+      "reject": "proposed breaks policy, goes beyond it, or case needs something else"
+     }
+    }
+   },
+   "state": {
+    "policy": "Refunds: unused items within 30 days of delivery, to the original payment method only. Return labels are free only for defective items; change-of-mind returns pay $5. Damaged items: refund or replace if reported within 7 days with a photo. Gift cards cannot be refunded. No discounts, credits or partial refunds as compensation. We do not price match other stores. Acme Plus: cancel any time, no partial refunds. Legal threats, safety issues and anything outside this policy go to a human. Never share another customer's details.",
+    "case": "Customer returns unused headphones, delivered 12 days ago, paid $89 by Visa.",
+    "proposed": "Refund $89 to the original Visa card."
+   }
+  },
+  {
+   "kind": "llm",
+   "model": "anthropic/claude-sonnet-5",
+   "system": [
+    "You review a support agent's proposed action against the policy before it runs. Policy: Refunds: unused items within 30 days of delivery, to the original payment method only. Return labels are free only for defective items; change-of-mind returns pay $5. Damaged items: refund or replace if reported within 7 days with a photo. Gift cards cannot be refunded. No discounts, credits or partial refunds as compensation. We do not price match other stores. Acme Plus: cancel any time, no partial refunds. Legal threats, safety issues and anything outside this policy go to a human. Never share another customer's details.\nApprove only if the action is exactly what the policy allows for this case."
+   ],
+   "user": [
+    "{\"case\": \"Customer returns unused headphones, delivered 12 days ago, paid $89 by Visa.\", \"proposed\": \"Refund $89 to the original Visa card.\"}"
+   ],
+   "tools": [],
+   "response_format": {
+    "json_schema": {
+     "name": "review",
+     "schema": {
+      "title": "review",
+      "type": "object",
+      "properties": {
+       "verdict": {
+        "type": "string",
+        "enum": [
+         "approve",
+         "reject"
+        ]
+       }
+      },
+      "required": [
+       "verdict"
+      ],
+      "additionalProperties": false
+     },
+     "strict": true
+    },
+    "type": "json_schema"
+   }
+  }
+ ]
+}

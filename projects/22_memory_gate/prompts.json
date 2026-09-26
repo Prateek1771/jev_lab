@@ -1,0 +1,86 @@
+{
+ "example": "A lasting preference",
+ "captured": "2026-09-26",
+ "calls": [
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "durable": {
+     "type": "noul",
+     "instructions": "message states something that will still be true and useful in a month",
+     "criteria": {
+      "true": "A lasting fact, preference, need or long-running plan",
+      "false": "A mood, a one-off request, today's situation, or small talk"
+     }
+    },
+    "about_user": {
+     "type": "noul",
+     "instructions": "message tells something about the user themself",
+     "criteria": {
+      "true": "The user's own life, work, preferences, health, family or plans",
+      "false": "General knowledge, a question, or facts about other people"
+     }
+    },
+    "already_known": {
+     "type": "noul",
+     "instructions": "memories already contain what message says",
+     "criteria": {
+      "true": "The same fact is already stored, in any wording",
+      "false": "It is new, or it changes a stored fact (then the store must update)"
+     }
+    },
+    "secret": {
+     "type": "noul",
+     "instructions": "message contains a password, key, token, PIN or other secret",
+     "criteria": {
+      "true": "A credential or code that must never be written down, in any wording",
+      "false": "No secret, even if it talks about passwords or security"
+     }
+    }
+   },
+   "state": {
+    "message": "I'm vegetarian, please keep that in mind for recipes.",
+    "memories": [
+     "Lives in Leeds",
+     "Has a cat called Miso"
+    ]
+   }
+  },
+  {
+   "kind": "llm",
+   "model": "google/gemini-3.1-flash-lite",
+   "system": [
+    "You manage a personal assistant's long-term memory. Should the user's message be stored? Store only lasting facts or preferences about the user themself that the memories don't already contain (a change to a stored fact counts as new). Never store passwords, keys or card numbers. Answer store or skip."
+   ],
+   "user": [
+    "{\"message\": \"I'm vegetarian, please keep that in mind for recipes.\", \"memories\": [\"Lives in Leeds\", \"Has a cat called Miso\"]}"
+   ],
+   "tools": [],
+   "response_format": {
+    "json_schema": {
+     "name": "answer",
+     "schema": {
+      "title": "answer",
+      "type": "object",
+      "properties": {
+       "label": {
+        "type": "string",
+        "enum": [
+         "store",
+         "skip"
+        ]
+       }
+      },
+      "required": [
+       "label"
+      ],
+      "additionalProperties": false
+     },
+     "strict": true
+    },
+    "type": "json_schema"
+   }
+  }
+ ]
+}

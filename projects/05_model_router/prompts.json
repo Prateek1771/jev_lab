@@ -1,0 +1,161 @@
+{
+ "example": "Easy",
+ "captured": "2026-09-26",
+ "calls": [
+  {
+   "kind": "llm",
+   "model": "google/gemini-3.1-flash-lite",
+   "system": [
+    "Pick the cheapest model tier that will answer this task well:\n- fast: lookups, rewrites, one-step answers.\n- balanced: several steps or some domain knowledge.\n- frontier: deep reasoning, expert knowledge, subtle trade-offs, or anything where a wrong answer could cost money, security, legal trouble, health, or data.\nReply with the tier only."
+   ],
+   "user": [
+    "Rewrite this sentence in the passive voice: 'The committee approved the budget.'"
+   ],
+   "tools": [],
+   "response_format": {
+    "json_schema": {
+     "name": "answer",
+     "schema": {
+      "title": "answer",
+      "type": "object",
+      "properties": {
+       "label": {
+        "type": "string",
+        "enum": [
+         "fast",
+         "balanced",
+         "frontier"
+        ]
+       }
+      },
+      "required": [
+       "label"
+      ],
+      "additionalProperties": false
+     },
+     "strict": true
+    },
+    "type": "json_schema"
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "difficulty": {
+     "type": "score",
+     "instructions": "How hard is this task for a language model to do well?",
+     "criteria": [
+      "Easy: lookup, rewrite, or one-step answer",
+      "Moderate: several steps or some domain knowledge",
+      "Hard: deep reasoning, expert knowledge, or subtle trade-offs"
+     ]
+    },
+    "high_risk": {
+     "type": "noul",
+     "instructions": "A wrong or incomplete answer to this task could cause real harm",
+     "criteria": {
+      "true": "Money, security, law, health, or data loss depends on getting it right",
+      "false": "A mistake would be cheap and easy to notice"
+     }
+    }
+   },
+   "state": {
+    "task": "Rewrite this sentence in the passive voice: 'The committee approved the budget.'"
+   }
+  },
+  {
+   "kind": "llm",
+   "model": "anthropic/claude-sonnet-5",
+   "system": [
+    "Answer the task directly and completely. Be concise: at most about 150 words."
+   ],
+   "user": [
+    "Rewrite this sentence in the passive voice: 'The committee approved the budget.'"
+   ],
+   "tools": [],
+   "response_format": null
+  },
+  {
+   "kind": "llm",
+   "model": "google/gemini-3.1-flash-lite",
+   "system": [
+    "Answer the task directly and completely. Be concise: at most about 150 words."
+   ],
+   "user": [
+    "Rewrite this sentence in the passive voice: 'The committee approved the budget.'"
+   ],
+   "tools": [],
+   "response_format": null
+  },
+  {
+   "kind": "llm",
+   "model": "google/gemini-3.1-flash-lite",
+   "system": [
+    "Answer the task directly and completely. Be concise: at most about 150 words."
+   ],
+   "user": [
+    "Rewrite this sentence in the passive voice: 'The committee approved the budget.'"
+   ],
+   "tools": [],
+   "response_format": null
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "correct": {
+     "type": "noul",
+     "instructions": "answer does task correctly: it meets every Required point in rubric and breaks no Must not point",
+     "criteria": {
+      "true": "Every Required point is met and no Must not point is broken; extra correct detail is fine",
+      "false": "A Required point is missing or wrong, a Must not point is broken, or the answer is cut off"
+     }
+    }
+   },
+   "state": {
+    "task": "Rewrite this sentence in the passive voice: 'The committee approved the budget.'",
+    "rubric": "Required: a passive-voice sentence with the same meaning, e.g. 'The budget was approved by the committee.'",
+    "answer": "The budget was approved by the committee."
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "correct": {
+     "type": "noul",
+     "instructions": "answer does task correctly: it meets every Required point in rubric and breaks no Must not point",
+     "criteria": {
+      "true": "Every Required point is met and no Must not point is broken; extra correct detail is fine",
+      "false": "A Required point is missing or wrong, a Must not point is broken, or the answer is cut off"
+     }
+    }
+   },
+   "state": {
+    "task": "Rewrite this sentence in the passive voice: 'The committee approved the budget.'",
+    "rubric": "Required: a passive-voice sentence with the same meaning, e.g. 'The budget was approved by the committee.'",
+    "answer": "The budget was approved by the committee."
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "correct": {
+     "type": "noul",
+     "instructions": "answer does task correctly: it meets every Required point in rubric and breaks no Must not point",
+     "criteria": {
+      "true": "Every Required point is met and no Must not point is broken; extra correct detail is fine",
+      "false": "A Required point is missing or wrong, a Must not point is broken, or the answer is cut off"
+     }
+    }
+   },
+   "state": {
+    "task": "Rewrite this sentence in the passive voice: 'The committee approved the budget.'",
+    "rubric": "Required: a passive-voice sentence with the same meaning, e.g. 'The budget was approved by the committee.'",
+    "answer": "The budget was approved by the committee."
+   }
+  }
+ ]
+}

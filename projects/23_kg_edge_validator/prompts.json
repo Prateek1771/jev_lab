@@ -1,0 +1,65 @@
+{
+ "example": "Current job",
+ "captured": "2026-09-26",
+ "calls": [
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "support": {
+     "type": "choice",
+     "instructions": "What does document say about edge?",
+     "criteria": {
+      "supports": "document states edge's meaning, or it follows necessarily from what document states, in the same direction and tense",
+      "contradicts": "document states the opposite: another direction, a past fact, a refusal, or a different relation",
+      "not_stated": "document doesn't say it (a rumour, a plan, or nothing about it)"
+     }
+    }
+   },
+   "state": {
+    "document": "Priya Nair joined Northwind Labs as CTO in 2023. Before that, she spent six years at Contoso, where she led the payments team. Northwind's CEO, Tom Becker, founded the company in 2019.",
+    "edge": {
+     "subject": "Priya Nair",
+     "relation": "works_at",
+     "object": "Northwind Labs",
+     "means": "Priya Nair currently works at Northwind Labs"
+    }
+   }
+  },
+  {
+   "kind": "llm",
+   "model": "google/gemini-3.1-flash-lite",
+   "system": [
+    "You extracted this relationship from the document. Check it: is it exactly what the document states, in the right direction and tense? Relation meanings: {\"works_at\": \"subject currently works at object\", \"founded\": \"subject founded object\", \"ceo_of\": \"subject is currently the CEO or leader of object\", \"coo_of\": \"subject is currently COO of object\", \"acquired\": \"subject bought object (completed, not planned)\", \"manages\": \"subject is object's manager\", \"headquartered_in\": \"subject's headquarters are currently in object\", \"owns\": \"subject currently owns object\"} Answer valid or invalid."
+   ],
+   "user": [
+    "{\"document\": \"Priya Nair joined Northwind Labs as CTO in 2023. Before that, she spent six years at Contoso, where she led the payments team. Northwind's CEO, Tom Becker, founded the company in 2019.\", \"subject\": \"Priya Nair\", \"relation\": \"works_at\", \"object\": \"Northwind Labs\"}"
+   ],
+   "tools": [],
+   "response_format": {
+    "json_schema": {
+     "name": "answer",
+     "schema": {
+      "title": "answer",
+      "type": "object",
+      "properties": {
+       "label": {
+        "type": "string",
+        "enum": [
+         "valid",
+         "invalid"
+        ]
+       }
+      },
+      "required": [
+       "label"
+      ],
+      "additionalProperties": false
+     },
+     "strict": true
+    },
+    "type": "json_schema"
+   }
+  }
+ ]
+}

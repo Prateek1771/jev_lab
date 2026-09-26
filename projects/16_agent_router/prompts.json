@@ -1,0 +1,150 @@
+{
+ "example": "'Refund' in a code question",
+ "captured": "2026-09-26",
+ "calls": [
+  {
+   "kind": "llm",
+   "model": "google/gemini-3.1-flash-lite",
+   "system": [
+    "You are a company assistant. Call the one tool the request needs."
+   ],
+   "user": [
+    "The refund endpoint returns a 500. Where is it implemented?"
+   ],
+   "tools": [
+    {
+     "name": "web_search",
+     "description": "Search the web for current, public information"
+    },
+    {
+     "name": "read_paper",
+     "description": "Fetch and read a specific research paper by title or id"
+    },
+    {
+     "name": "summarize_url",
+     "description": "Read one given web page and summarize it"
+    },
+    {
+     "name": "run_tests",
+     "description": "Run the test suite and report failures"
+    },
+    {
+     "name": "search_code",
+     "description": "Find where something is defined or used in the codebase"
+    },
+    {
+     "name": "open_pull_request",
+     "description": "Open a pull request from a branch"
+    },
+    {
+     "name": "get_invoice",
+     "description": "Fetch an invoice by its id"
+    },
+    {
+     "name": "issue_refund",
+     "description": "Refund a charge to a customer"
+    },
+    {
+     "name": "forecast_revenue",
+     "description": "Forecast future revenue from past figures"
+    },
+    {
+     "name": "lookup_order",
+     "description": "Look up an order's status and delivery"
+    },
+    {
+     "name": "reset_password",
+     "description": "Send the customer a password reset link"
+    },
+    {
+     "name": "create_ticket",
+     "description": "Hand the problem to a human: a self-service step already failed, or it needs judgment (damage, complaints, disputes)"
+    }
+   ],
+   "response_format": null
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "agent": {
+     "type": "choice",
+     "instructions": "Which agent should handle request?",
+     "criteria": {
+      "research": "Finds and reads outside information: the web, papers, articles",
+      "coding": "Works on the company's own codebase",
+      "finance": "Money inside the company: invoices, refunds, revenue",
+      "support": "Helps a customer with their account or an order's status"
+     }
+    }
+   },
+   "state": {
+    "request": "The refund endpoint returns a 500. Where is it implemented?"
+   }
+  },
+  {
+   "kind": "llm",
+   "model": "google/gemini-3.1-flash-lite",
+   "system": [
+    "Route the request to one agent and the tool the request needs:\n- research: Finds and reads outside information: the web, papers, articles\n    - web_search: Search the web for current, public information\n    - read_paper: Fetch and read a specific research paper by title or id\n    - summarize_url: Read one given web page and summarize it\n- coding: Works on the company's own codebase\n    - run_tests: Run the test suite and report failures\n    - search_code: Find where something is defined or used in the codebase\n    - open_pull_request: Open a pull request from a branch\n- finance: Money inside the company: invoices, refunds, revenue\n    - get_invoice: Fetch an invoice by its id\n    - issue_refund: Refund a charge to a customer\n    - forecast_revenue: Forecast future revenue from past figures\n- support: Helps a customer with their account or an order's status\n    - lookup_order: Look up an order's status and delivery\n    - reset_password: Send the customer a password reset link\n    - create_ticket: Hand the problem to a human: a self-service step already failed, or it needs judgment (damage, complaints, disputes)\nAnswer agent/tool."
+   ],
+   "user": [
+    "The refund endpoint returns a 500. Where is it implemented?"
+   ],
+   "tools": [],
+   "response_format": {
+    "json_schema": {
+     "name": "route",
+     "schema": {
+      "title": "route",
+      "type": "object",
+      "properties": {
+       "route": {
+        "type": "string",
+        "enum": [
+         "research/web_search",
+         "research/read_paper",
+         "research/summarize_url",
+         "coding/run_tests",
+         "coding/search_code",
+         "coding/open_pull_request",
+         "finance/get_invoice",
+         "finance/issue_refund",
+         "finance/forecast_revenue",
+         "support/lookup_order",
+         "support/reset_password",
+         "support/create_ticket"
+        ]
+       }
+      },
+      "required": [
+       "route"
+      ],
+      "additionalProperties": false
+     },
+     "strict": true
+    },
+    "type": "json_schema"
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "tool": {
+     "type": "choice",
+     "instructions": "Which of agent's tools does request need?",
+     "criteria": {
+      "run_tests": "Run the test suite and report failures",
+      "search_code": "Find where something is defined or used in the codebase",
+      "open_pull_request": "Open a pull request from a branch"
+     }
+    }
+   },
+   "state": {
+    "request": "The refund endpoint returns a 500. Where is it implemented?",
+    "agent": "coding"
+   }
+  }
+ ]
+}

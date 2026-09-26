@@ -1,0 +1,22 @@
+[
+  {"text": "I was charged twice for order A-104. Please refund the duplicate.", "label": "billing"},
+  {"text": "Where can I download last month's invoice as a PDF?", "label": "billing"},
+  {"text": "My card was declined but the money still left my account.", "label": "billing"},
+  {"text": "Please switch our payment method from card to bank transfer.", "label": "billing"},
+  {"text": "The API returns 502 for every request since this morning.", "label": "technical"},
+  {"text": "Webhook deliveries to our Slack integration stopped firing.", "label": "technical"},
+  {"text": "Exports to CSV come out with every column shifted by one.", "label": "technical"},
+  {"text": "Your billing page throws a 500 error when I try to download my invoice.", "label": "technical", "note": "hard: says billing and invoice, but the problem is an error"},
+  {"text": "I can't reset my password, the email never arrives.", "label": "account", "note": "hard: an email that never arrives could be read as a bug"},
+  {"text": "Please remove my ex-colleague's admin permissions.", "label": "account"},
+  {"text": "How do I turn on two-factor authentication?", "label": "account"},
+  {"text": "I need to change the email address on my profile.", "label": "account"},
+  {"text": "Do you offer a discount for non-profits on the Team plan?", "label": "sales"},
+  {"text": "Can we book a demo for our procurement team next week?", "label": "sales"},
+  {"text": "How much would it cost to move our 40-seat team to the Enterprise plan?", "label": "sales", "note": "hard: 'cost' sounds like billing, but it is an upgrade question"},
+  {"text": "We'd like to open a second workspace for our EU subsidiary.", "label": "sales"},
+  {"text": "Just wanted to say the new dashboard looks great!", "label": "other"},
+  {"text": "Are you hiring backend engineers?", "label": "other"},
+  {"text": "What's your office address for sending a thank-you card?", "label": "other"},
+  {"text": "Is this chat monitored by a human or a bot?", "label": "other"}
+]

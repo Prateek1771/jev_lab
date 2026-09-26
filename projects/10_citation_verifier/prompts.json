@@ -1,0 +1,65 @@
+{
+ "example": "Every claim checks out",
+ "captured": "2026-09-26",
+ "calls": [
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "support": {
+     "type": "choice",
+     "instructions": "What does source say about claim?",
+     "criteria": {
+      "supports": "source states claim, in the same or other words, including every number and condition",
+      "contradicts": "source states something that makes claim false: a different number, condition or rule",
+      "not_addressed": "source is about something else, or says too little to confirm or deny claim"
+     }
+    }
+   },
+   "state": {
+    "claim": "Unused items can go back within 30 days of delivery for a full refund.",
+    "source": "Unused items can be returned within 30 days of delivery for a full refund."
+   }
+  },
+  {
+   "kind": "llm",
+   "model": "google/gemini-3.1-flash-lite",
+   "system": [
+    "You check a support answer against the sources it cites in [brackets]. Reply with one label:\nsupported: every sentence is stated by a source it cites, including every number and condition;\ncontradicted: some sentence is made false by a source it cites;\ninsufficient: some sentence has no citation, cites an id that is not among the sources, or cites a source that does not say it."
+   ],
+   "user": [
+    "{\"question\": \"Can I return something I haven't used?\", \"answer\": \"Yes. Unused items can go back within 30 days of delivery for a full refund [returns-window].\", \"sources\": [{\"id\": \"returns-window\", \"text\": \"Unused items can be returned within 30 days of delivery for a full refund.\"}, {\"id\": \"returns-label\", \"text\": \"Return labels are free for defective items. For change-of-mind returns, $5 is taken off the refund to cover the label.\"}]}"
+   ],
+   "tools": [],
+   "response_format": {
+    "json_schema": {
+     "name": "verdict",
+     "schema": {
+      "title": "verdict",
+      "type": "object",
+      "properties": {
+       "reason": {
+        "type": "string"
+       },
+       "label": {
+        "type": "string",
+        "enum": [
+         "supported",
+         "contradicted",
+         "insufficient"
+        ]
+       }
+      },
+      "required": [
+       "reason",
+       "label"
+      ],
+      "additionalProperties": false
+     },
+     "strict": true
+    },
+    "type": "json_schema"
+   }
+  }
+ ]
+}

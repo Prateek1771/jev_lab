@@ -1,0 +1,38 @@
+[
+  {"text": "Is it raining in London right now?", "label": "get_weather", "input": {"request": "Is it raining in London right now?"}},
+  {"text": "Do I need sunglasses in Tokyo today?", "label": "get_weather", "note": "hard: weather, without the word 'weather'",
+   "input": {"request": "Do I need sunglasses in Tokyo today?"}},
+
+  {"text": "Who won the most recent Nobel Prize in Physics?", "label": "search_web", "input": {"request": "Who won the most recent Nobel Prize in Physics?"}},
+  {"text": "What's the population of Tokyo?", "label": "search_web", "note": "hard: a lookup, but not in OUR database",
+   "input": {"request": "What's the population of Tokyo?"}},
+
+  {"text": "What is 17.5% of 2,340?", "label": "calculator", "note": "hard: an LLM may do it in its head and skip the tool",
+   "input": {"request": "What is 17.5% of 2,340?"}},
+  {"text": "Split a $318.40 bill between 7 people, how much each?", "label": "calculator", "input": {"request": "Split a $318.40 bill between 7 people. How much does each person pay?"}},
+  {"text": "What's 2 to the power of 31, minus 1?", "label": "calculator", "input": {"request": "What's 2 to the power of 31, minus 1?"}},
+
+  {"text": "What's the status of order C-9?", "label": "database", "input": {"request": "What's the status of order C-9?"}},
+  {"text": "Where is my package B-220?", "label": "database", "note": "hard: 'package', not 'order'", "input": {"request": "Where is my package B-220?"}},
+  {"text": "How many items are in order A-104?", "label": "database", "note": "hard: 'how many' sounds like calculator, but it's a lookup",
+   "input": {"request": "How many items are in order A-104?"}},
+
+  {"text": "Our checkout page is down, log it as urgent.", "label": "create_ticket", "input": {"request": "Our checkout page is down for everyone. Log it as urgent for the team."}},
+  {"text": "Open a low-priority ticket: typo on the pricing page.", "label": "create_ticket", "input": {"request": "Open a low-priority ticket: there's a typo on the pricing page."}},
+
+  {"text": "Email finance@acme.test that the Q3 invoice is approved.", "label": "send_email", "input": {"request": "Email finance@acme.test to say the Q3 invoice is approved."}},
+  {"text": "Let sam@acme.test know the demo moved to 3pm, by email.", "label": "send_email", "input": {"request": "Let sam@acme.test know by email that the demo moved to 3pm."}},
+
+  {"text": "Order A-104 total with shipping, plus 20% VAT?", "label": "database > calculator", "note": "hard: two steps; the second needs the first's result",
+   "input": {"request": "What does order A-104 cost in total with shipping, plus 20% VAT on all of it?"}},
+  {"text": "If I cancel C-9 and get 85% of the subtotal back, how much is that?", "label": "database > calculator", "note": "hard: two steps",
+   "input": {"request": "If I cancel order C-9 and get 85% of its subtotal back, how much is that?"}},
+
+  {"text": "Thanks, that's everything for today!", "label": "none", "input": {"request": "Thanks, that's everything for today!"}},
+  {"text": "What does HTTP stand for?", "label": "none", "note": "hard: general knowledge; searching is a wasted call",
+   "input": {"request": "What does HTTP stand for?"}},
+
+  {"text": "Send it to him.", "label": "ask_user", "input": {"request": "Send it to him."}},
+  {"text": "Check my order.", "label": "ask_user", "note": "hard: the tool is obvious, but there's no order id to call it with",
+   "input": {"request": "Check my order."}}
+]

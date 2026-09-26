@@ -1,0 +1,70 @@
+{
+ "example": "Outage now",
+ "captured": "2026-09-26",
+ "calls": [
+  {
+   "kind": "llm",
+   "model": "google/gemini-3.1-flash-lite",
+   "system": [
+    "Decide whether this statement is true for the customer message:\nThe customer message is time-sensitive: something must happen soon or harm is happening now.\n- true: An outage in progress, an explicit deadline, or a request for immediate action (ASAP, now, today).\n- false: No time pressure. Being unhappy, rude, or using the word 'urgent' in a negated way does not count.\nReply with exactly one word: yes or no."
+   ],
+   "user": [
+    "Production is returning 500s for every customer right now."
+   ],
+   "tools": [],
+   "response_format": null
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "urgent": {
+     "type": "noul",
+     "instructions": "The customer message is time-sensitive: something must happen soon or harm is happening now.",
+     "criteria": {
+      "true": "An outage in progress, an explicit deadline, or a request for immediate action (ASAP, now, today).",
+      "false": "No time pressure. Being unhappy, rude, or using the word 'urgent' in a negated way does not count."
+     }
+    }
+   },
+   "state": {
+    "message": "Production is returning 500s for every customer right now."
+   }
+  },
+  {
+   "kind": "llm",
+   "model": "google/gemini-3.1-flash-lite",
+   "system": [
+    "Decide whether this statement is true for the customer message:\nThe customer message is time-sensitive: something must happen soon or harm is happening now.\n- true: An outage in progress, an explicit deadline, or a request for immediate action (ASAP, now, today).\n- false: No time pressure. Being unhappy, rude, or using the word 'urgent' in a negated way does not count.\nAnswer urgent if the statement is true, not_urgent if it is false."
+   ],
+   "user": [
+    "Production is returning 500s for every customer right now."
+   ],
+   "tools": [],
+   "response_format": {
+    "json_schema": {
+     "name": "answer",
+     "schema": {
+      "title": "answer",
+      "type": "object",
+      "properties": {
+       "label": {
+        "type": "string",
+        "enum": [
+         "urgent",
+         "not_urgent"
+        ]
+       }
+      },
+      "required": [
+       "label"
+      ],
+      "additionalProperties": false
+     },
+     "strict": true
+    },
+    "type": "json_schema"
+   }
+  }
+ ]
+}

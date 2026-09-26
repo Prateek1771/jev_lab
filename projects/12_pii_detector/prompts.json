@@ -1,0 +1,58 @@
+{
+ "example": "Email and phone",
+ "captured": "2026-09-26",
+ "calls": [
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "pii": {
+     "type": "noul",
+     "instructions": "text contains a real person's personal data, or a real secret such as a password, API key or token.",
+     "criteria": {
+      "true": "Something that identifies or exposes a real person: their email, phone, home address, ID or card number, date of birth, health or money details; or a working password, key or token, whoever owns it; in any wording or format.",
+      "false": "Company or support contact details, documentation placeholders and test values (example.com, test cards, EXAMPLE keys), order or ticket numbers, public figures' public roles, aggregate statistics, or a format being explained."
+     }
+    }
+   },
+   "state": {
+    "text": "Hi, it's Priya Nair, reach me at priya.nair@gmail.com or +44 7700 900123 about my refund."
+   }
+  },
+  {
+   "kind": "llm",
+   "model": "google/gemini-3.1-flash-lite",
+   "system": [
+    "Decide whether this statement is true for the text:\ntext contains a real person's personal data, or a real secret such as a password, API key or token.\n- true: Something that identifies or exposes a real person: their email, phone, home address, ID or card number, date of birth, health or money details; or a working password, key or token, whoever owns it; in any wording or format.\n- false: Company or support contact details, documentation placeholders and test values (example.com, test cards, EXAMPLE keys), order or ticket numbers, public figures' public roles, aggregate statistics, or a format being explained.\nAnswer pii if the statement is true, clean if it is false."
+   ],
+   "user": [
+    "Hi, it's Priya Nair, reach me at priya.nair@gmail.com or +44 7700 900123 about my refund."
+   ],
+   "tools": [],
+   "response_format": {
+    "json_schema": {
+     "name": "answer",
+     "schema": {
+      "title": "answer",
+      "type": "object",
+      "properties": {
+       "label": {
+        "type": "string",
+        "enum": [
+         "pii",
+         "clean"
+        ]
+       }
+      },
+      "required": [
+       "label"
+      ],
+      "additionalProperties": false
+     },
+     "strict": true
+    },
+    "type": "json_schema"
+   }
+  }
+ ]
+}

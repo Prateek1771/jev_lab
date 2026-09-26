@@ -1,0 +1,134 @@
+{
+ "example": "Angry, but routine",
+ "captured": "2026-09-26",
+ "calls": [
+  {
+   "kind": "llm",
+   "model": "google/gemini-3.1-flash-lite",
+   "system": [
+    "You are Acme's support agent. Pick the team (billing: charges, refunds, subscriptions, gift cards; orders: where an order is, delivery, address; tech: app or website problems, login, account settings, email delivery), or 'human' for legal threats, injuries or safety issues, threats to leave or go public, security incidents, or anything no standard tool can resolve. Unless it is 'human', answer in 2-4 sentences using only the policy and the looked-up facts. Policy: Refunds: unused items within 30 days, to the original payment method. Duplicate charges are always refunded. Change-of-mind returns pay a $5 label. Gift cards cannot be refunded. Acme Plus is $9/month. Express orders placed before 2pm arrive the next business day. Addresses can be changed until an order ships. Password reset links expire after 1 hour. Two-factor: Settings > Security, authenticator app."
+   ],
+   "user": [
+    "{\"message\": \"WHY did you charge me $9 AGAIN this month?! I never asked for this!!\", \"looked_up\": {\"subscription\": \"Acme Plus, monthly, $9, renewed 2026-09-01\"}}"
+   ],
+   "tools": [],
+   "response_format": {
+    "json_schema": {
+     "name": "reply",
+     "schema": {
+      "title": "reply",
+      "type": "object",
+      "properties": {
+       "route": {
+        "type": "string",
+        "enum": [
+         "billing",
+         "orders",
+         "tech",
+         "human"
+        ]
+       },
+       "answer": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "route",
+       "answer"
+      ],
+      "additionalProperties": false
+     },
+     "strict": true
+    },
+    "type": "json_schema"
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "intent": {
+     "type": "choice",
+     "instructions": "Which team's job is message?",
+     "criteria": {
+      "billing": "charges, refunds, subscriptions, gift cards",
+      "orders": "where an order is, delivery, address",
+      "tech": "app or website problems, login, account settings, email delivery"
+     }
+    },
+    "needs_human": {
+     "type": "noul",
+     "instructions": "message needs a human agent, not an automated reply",
+     "criteria": {
+      "true": "A legal threat, an injury or safety issue, a threat to leave or go public, a security incident, or a request no standard tool can resolve",
+      "false": "A routine request, however angrily or urgently it is written"
+     }
+    },
+    "urgency": {
+     "type": "noul",
+     "instructions": "message needs a reply today",
+     "criteria": {
+      "true": "A deadline, an outage, or money or access blocked right now",
+      "false": "Can wait for the normal queue"
+     }
+    }
+   },
+   "state": {
+    "message": "WHY did you charge me $9 AGAIN this month?! I never asked for this!!",
+    "facts": {
+     "subscription": "Acme Plus, monthly, $9, renewed 2026-09-01"
+    }
+   }
+  },
+  {
+   "kind": "llm",
+   "model": "google/gemini-3.1-flash-lite",
+   "system": [
+    "You are Acme's billing support agent (charges, refunds, subscriptions, gift cards). Answer the customer in 2-4 sentences using only the policy and the looked-up facts. Policy: Refunds: unused items within 30 days, to the original payment method. Duplicate charges are always refunded. Change-of-mind returns pay a $5 label. Gift cards cannot be refunded. Acme Plus is $9/month. Express orders placed before 2pm arrive the next business day. Addresses can be changed until an order ships. Password reset links expire after 1 hour. Two-factor: Settings > Security, authenticator app."
+   ],
+   "user": [
+    "{\"message\": \"WHY did you charge me $9 AGAIN this month?! I never asked for this!!\", \"looked_up\": {\"subscription\": \"Acme Plus, monthly, $9, renewed 2026-09-01\"}}"
+   ],
+   "tools": [],
+   "response_format": null
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "correct": {
+     "type": "noul",
+     "instructions": "answer does task correctly: it meets every Required point in rubric and breaks no Must not point",
+     "criteria": {
+      "true": "Every Required point is met and no Must not point is broken; extra correct detail is fine",
+      "false": "A Required point is missing or wrong, a Must not point is broken, or the answer is cut off"
+     }
+    }
+   },
+   "state": {
+    "task": "WHY did you charge me $9 AGAIN this month?! I never asked for this!!",
+    "rubric": "Required: explains the $9 is the Acme Plus monthly renewal.",
+    "answer": "Your Acme Plus subscription is a monthly service that costs $9 per month. This charge reflects the automatic renewal of your plan on September 1st."
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "correct": {
+     "type": "noul",
+     "instructions": "answer does task correctly: it meets every Required point in rubric and breaks no Must not point",
+     "criteria": {
+      "true": "Every Required point is met and no Must not point is broken; extra correct detail is fine",
+      "false": "A Required point is missing or wrong, a Must not point is broken, or the answer is cut off"
+     }
+    }
+   },
+   "state": {
+    "task": "WHY did you charge me $9 AGAIN this month?! I never asked for this!!",
+    "rubric": "Required: explains the $9 is the Acme Plus monthly renewal.",
+    "answer": "Your Acme Plus subscription is a monthly service that renews automatically at $9 per month. Since this was a recurring subscription charge rather than a duplicate, it does not qualify for a refund under our policy. You can manage or cancel your subscription settings at any time through your account dashboard."
+   }
+  }
+ ]
+}

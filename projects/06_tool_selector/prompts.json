@@ -1,0 +1,292 @@
+{
+ "example": "One tool",
+ "captured": "2026-09-26",
+ "calls": [
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "next": {
+     "type": "choice",
+     "instructions": "What should the assistant do next to handle request?",
+     "criteria": {
+      "get_weather": "Current weather for a city",
+      "search_web": "Search the web for facts, news, or anything not in our own systems",
+      "calculator": "Evaluate an arithmetic expression",
+      "database": "Look up one of OUR orders by order id: status, items, subtotal, shipping",
+      "send_email": "Send an email",
+      "create_ticket": "Open a support ticket for our team",
+      "finish": "The observations so far already answer the request, or no tool is needed",
+      "ask_user": "The request is unclear, or is missing something a tool would need"
+     }
+    }
+   },
+   "state": {
+    "request": "Is it raining in London right now?",
+    "observations": []
+   }
+  },
+  {
+   "kind": "llm",
+   "model": "google/gemini-3.1-flash-lite",
+   "system": [
+    "You are a helpful assistant. Use a tool when one is needed; answer directly when none is."
+   ],
+   "user": [
+    "Is it raining in London right now?"
+   ],
+   "tools": [
+    {
+     "name": "get_weather",
+     "description": "Current weather for a city"
+    },
+    {
+     "name": "search_web",
+     "description": "Search the web for facts, news, or anything not in our own systems"
+    },
+    {
+     "name": "calculator",
+     "description": "Evaluate an arithmetic expression"
+    },
+    {
+     "name": "database",
+     "description": "Look up one of OUR orders by order id: status, items, subtotal, shipping"
+    },
+    {
+     "name": "send_email",
+     "description": "Send an email"
+    },
+    {
+     "name": "create_ticket",
+     "description": "Open a support ticket for our team"
+    },
+    {
+     "name": "ask_user",
+     "description": "The request is unclear, or is missing something a tool would need"
+    }
+   ],
+   "response_format": null
+  },
+  {
+   "kind": "llm",
+   "model": "google/gemini-3.1-flash-lite",
+   "system": [
+    "You are an assistant's planner. Pick what to do next:\n- get_weather: Current weather for a city\n- search_web: Search the web for facts, news, or anything not in our own systems\n- calculator: Evaluate an arithmetic expression\n- database: Look up one of OUR orders by order id: status, items, subtotal, shipping\n- send_email: Send an email\n- create_ticket: Open a support ticket for our team\n- finish: The observations so far already answer the request, or no tool is needed\n- ask_user: The request is unclear, or is missing something a tool would need"
+   ],
+   "user": [
+    "{\"request\": \"Is it raining in London right now?\", \"observations\": []}"
+   ],
+   "tools": [],
+   "response_format": {
+    "json_schema": {
+     "name": "next",
+     "schema": {
+      "title": "next",
+      "type": "object",
+      "properties": {
+       "next": {
+        "type": "string",
+        "enum": [
+         "get_weather",
+         "search_web",
+         "calculator",
+         "database",
+         "send_email",
+         "create_ticket",
+         "finish",
+         "ask_user"
+        ]
+       }
+      },
+      "required": [
+       "next"
+      ],
+      "additionalProperties": false
+     },
+     "strict": true
+    },
+    "type": "json_schema"
+   }
+  },
+  {
+   "kind": "llm",
+   "model": "google/gemini-3.1-flash-lite",
+   "system": [
+    "Write the arguments for the tool get_weather (Current weather for a city) that serve the request. Use values from the request and the observations so far; do not invent ids."
+   ],
+   "user": [
+    "{\"request\": \"Is it raining in London right now?\", \"observations\": []}"
+   ],
+   "tools": [],
+   "response_format": {
+    "json_schema": {
+     "name": "get_weather",
+     "schema": {
+      "title": "get_weather",
+      "type": "object",
+      "properties": {
+       "city": {
+        "type": "string",
+        "description": "City name"
+       }
+      },
+      "required": [
+       "city"
+      ],
+      "additionalProperties": false
+     },
+     "strict": true
+    },
+    "type": "json_schema"
+   }
+  },
+  {
+   "kind": "llm",
+   "model": "google/gemini-3.1-flash-lite",
+   "system": [
+    "Write the arguments for the tool get_weather (Current weather for a city) that serve the request. Use values from the request and the observations so far; do not invent ids."
+   ],
+   "user": [
+    "{\"request\": \"Is it raining in London right now?\", \"observations\": []}"
+   ],
+   "tools": [],
+   "response_format": {
+    "json_schema": {
+     "name": "get_weather",
+     "schema": {
+      "title": "get_weather",
+      "type": "object",
+      "properties": {
+       "city": {
+        "type": "string",
+        "description": "City name"
+       }
+      },
+      "required": [
+       "city"
+      ],
+      "additionalProperties": false
+     },
+     "strict": true
+    },
+    "type": "json_schema"
+   }
+  },
+  {
+   "kind": "llm",
+   "model": "google/gemini-3.1-flash-lite",
+   "system": [
+    "You are a helpful assistant. Use a tool when one is needed; answer directly when none is."
+   ],
+   "user": [
+    "Is it raining in London right now?",
+    "",
+    "11°C, overcast"
+   ],
+   "tools": [
+    {
+     "name": "get_weather",
+     "description": "Current weather for a city"
+    },
+    {
+     "name": "search_web",
+     "description": "Search the web for facts, news, or anything not in our own systems"
+    },
+    {
+     "name": "calculator",
+     "description": "Evaluate an arithmetic expression"
+    },
+    {
+     "name": "database",
+     "description": "Look up one of OUR orders by order id: status, items, subtotal, shipping"
+    },
+    {
+     "name": "send_email",
+     "description": "Send an email"
+    },
+    {
+     "name": "create_ticket",
+     "description": "Open a support ticket for our team"
+    },
+    {
+     "name": "ask_user",
+     "description": "The request is unclear, or is missing something a tool would need"
+    }
+   ],
+   "response_format": null
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "next": {
+     "type": "choice",
+     "instructions": "What should the assistant do next to handle request?",
+     "criteria": {
+      "get_weather": "Current weather for a city",
+      "search_web": "Search the web for facts, news, or anything not in our own systems",
+      "calculator": "Evaluate an arithmetic expression",
+      "database": "Look up one of OUR orders by order id: status, items, subtotal, shipping",
+      "send_email": "Send an email",
+      "create_ticket": "Open a support ticket for our team",
+      "finish": "The observations so far already answer the request, or no tool is needed",
+      "ask_user": "The request is unclear, or is missing something a tool would need"
+     }
+    }
+   },
+   "state": {
+    "request": "Is it raining in London right now?",
+    "observations": [
+     {
+      "tool": "get_weather",
+      "args": {
+       "city": "London"
+      },
+      "result": "11°C, overcast"
+     }
+    ]
+   }
+  },
+  {
+   "kind": "llm",
+   "model": "google/gemini-3.1-flash-lite",
+   "system": [
+    "You are an assistant's planner. Pick what to do next:\n- get_weather: Current weather for a city\n- search_web: Search the web for facts, news, or anything not in our own systems\n- calculator: Evaluate an arithmetic expression\n- database: Look up one of OUR orders by order id: status, items, subtotal, shipping\n- send_email: Send an email\n- create_ticket: Open a support ticket for our team\n- finish: The observations so far already answer the request, or no tool is needed\n- ask_user: The request is unclear, or is missing something a tool would need"
+   ],
+   "user": [
+    "{\"request\": \"Is it raining in London right now?\", \"observations\": [{\"tool\": \"get_weather\", \"args\": {\"city\": \"London\"}, \"result\": \"11\\u00b0C, overcast\"}]}"
+   ],
+   "tools": [],
+   "response_format": {
+    "json_schema": {
+     "name": "next",
+     "schema": {
+      "title": "next",
+      "type": "object",
+      "properties": {
+       "next": {
+        "type": "string",
+        "enum": [
+         "get_weather",
+         "search_web",
+         "calculator",
+         "database",
+         "send_email",
+         "create_ticket",
+         "finish",
+         "ask_user"
+        ]
+       }
+      },
+      "required": [
+       "next"
+      ],
+      "additionalProperties": false
+     },
+     "strict": true
+    },
+    "type": "json_schema"
+   }
+  }
+ ]
+}

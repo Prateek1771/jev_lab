@@ -1,0 +1,985 @@
+{
+ "example": "Release blockers",
+ "captured": "2026-09-26",
+ "calls": [
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "needed": {
+     "type": "noul",
+     "instructions": "item is needed to answer question",
+     "criteria": {
+      "true": "item contains part of the answer, or a fact the answer must use or count",
+      "false": "item is about something else, or only shares words with question"
+     }
+    }
+   },
+   "state": {
+    "question": "Which open bugs are blocking the 2.4 release?",
+    "item": {
+     "id": "#398",
+     "title": "Checkout times out after 30s on slow networks",
+     "state": "closed",
+     "labels": [
+      "bug"
+     ],
+     "milestone": "2.3",
+     "assignee": "tom",
+     "body": "Fixed in PR #1204: raised the gateway timeout and added a retry."
+    }
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "needed": {
+     "type": "noul",
+     "instructions": "item is needed to answer question",
+     "criteria": {
+      "true": "item contains part of the answer, or a fact the answer must use or count",
+      "false": "item is about something else, or only shares words with question"
+     }
+    }
+   },
+   "state": {
+    "question": "Which open bugs are blocking the 2.4 release?",
+    "item": {
+     "id": "#399",
+     "title": "Add dark mode to settings",
+     "state": "open",
+     "labels": [
+      "feature"
+     ],
+     "milestone": "2.5",
+     "assignee": null,
+     "body": "Users ask for a dark theme in settings."
+    }
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "needed": {
+     "type": "noul",
+     "instructions": "item is needed to answer question",
+     "criteria": {
+      "true": "item contains part of the answer, or a fact the answer must use or count",
+      "false": "item is about something else, or only shares words with question"
+     }
+    }
+   },
+   "state": {
+    "question": "Which open bugs are blocking the 2.4 release?",
+    "item": {
+     "id": "#400",
+     "title": "Docs: update API authentication example",
+     "state": "open",
+     "labels": [
+      "docs"
+     ],
+     "milestone": null,
+     "assignee": "lena",
+     "body": "The curl example still uses the old header."
+    }
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "needed": {
+     "type": "noul",
+     "instructions": "item is needed to answer question",
+     "criteria": {
+      "true": "item contains part of the answer, or a fact the answer must use or count",
+      "false": "item is about something else, or only shares words with question"
+     }
+    }
+   },
+   "state": {
+    "question": "Which open bugs are blocking the 2.4 release?",
+    "item": {
+     "id": "#401",
+     "title": "Session cookie missing Secure flag",
+     "state": "open",
+     "labels": [
+      "security",
+      "bug"
+     ],
+     "milestone": "2.4",
+     "assignee": "sam",
+     "body": "Cookies are sent over plain HTTP on the staging domain."
+    }
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "needed": {
+     "type": "noul",
+     "instructions": "item is needed to answer question",
+     "criteria": {
+      "true": "item contains part of the answer, or a fact the answer must use or count",
+      "false": "item is about something else, or only shares words with question"
+     }
+    }
+   },
+   "state": {
+    "question": "Which open bugs are blocking the 2.4 release?",
+    "item": {
+     "id": "#402",
+     "title": "Upgrade React to 19",
+     "state": "open",
+     "labels": [
+      "chore"
+     ],
+     "milestone": "2.5",
+     "assignee": null,
+     "body": "Needed before the new router."
+    }
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "needed": {
+     "type": "noul",
+     "instructions": "item is needed to answer question",
+     "criteria": {
+      "true": "item contains part of the answer, or a fact the answer must use or count",
+      "false": "item is about something else, or only shares words with question"
+     }
+    }
+   },
+   "state": {
+    "question": "Which open bugs are blocking the 2.4 release?",
+    "item": {
+     "id": "#405",
+     "title": "Login button unresponsive in Safari 17",
+     "state": "open",
+     "labels": [
+      "bug"
+     ],
+     "milestone": "2.4",
+     "assignee": "priya",
+     "body": "Clicking Login does nothing in Safari 17 with content blockers on."
+    }
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "needed": {
+     "type": "noul",
+     "instructions": "item is needed to answer question",
+     "criteria": {
+      "true": "item contains part of the answer, or a fact the answer must use or count",
+      "false": "item is about something else, or only shares words with question"
+     }
+    }
+   },
+   "state": {
+    "question": "Which open bugs are blocking the 2.4 release?",
+    "item": {
+     "id": "#403",
+     "title": "Typo on pricing page",
+     "state": "closed",
+     "labels": [
+      "docs"
+     ],
+     "milestone": "2.3",
+     "assignee": "lena",
+     "body": "'Anual' instead of 'Annual'."
+    }
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "needed": {
+     "type": "noul",
+     "instructions": "item is needed to answer question",
+     "criteria": {
+      "true": "item contains part of the answer, or a fact the answer must use or count",
+      "false": "item is about something else, or only shares words with question"
+     }
+    }
+   },
+   "state": {
+    "question": "Which open bugs are blocking the 2.4 release?",
+    "item": {
+     "id": "#404",
+     "title": "Search results slow for long queries",
+     "state": "open",
+     "labels": [
+      "performance"
+     ],
+     "milestone": "2.5",
+     "assignee": "raj",
+     "body": "p95 over 3s for queries longer than 50 characters."
+    }
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "needed": {
+     "type": "noul",
+     "instructions": "item is needed to answer question",
+     "criteria": {
+      "true": "item contains part of the answer, or a fact the answer must use or count",
+      "false": "item is about something else, or only shares words with question"
+     }
+    }
+   },
+   "state": {
+    "question": "Which open bugs are blocking the 2.4 release?",
+    "item": {
+     "id": "#406",
+     "title": "Add CSV import for products",
+     "state": "open",
+     "labels": [
+      "feature"
+     ],
+     "milestone": null,
+     "assignee": null,
+     "body": "Merchants want bulk upload."
+    }
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "needed": {
+     "type": "noul",
+     "instructions": "item is needed to answer question",
+     "criteria": {
+      "true": "item contains part of the answer, or a fact the answer must use or count",
+      "false": "item is about something else, or only shares words with question"
+     }
+    }
+   },
+   "state": {
+    "question": "Which open bugs are blocking the 2.4 release?",
+    "item": {
+     "id": "#407",
+     "title": "Flaky test: test_refund_webhook",
+     "state": "open",
+     "labels": [
+      "test"
+     ],
+     "milestone": null,
+     "assignee": "tom",
+     "body": "Fails 1 in 20 runs on CI."
+    }
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "needed": {
+     "type": "noul",
+     "instructions": "item is needed to answer question",
+     "criteria": {
+      "true": "item contains part of the answer, or a fact the answer must use or count",
+      "false": "item is about something else, or only shares words with question"
+     }
+    }
+   },
+   "state": {
+    "question": "Which open bugs are blocking the 2.4 release?",
+    "item": {
+     "id": "#408",
+     "title": "Improve onboarding emails",
+     "state": "open",
+     "labels": [
+      "marketing"
+     ],
+     "milestone": null,
+     "assignee": null,
+     "body": "Copy refresh for the welcome series."
+    }
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "needed": {
+     "type": "noul",
+     "instructions": "item is needed to answer question",
+     "criteria": {
+      "true": "item contains part of the answer, or a fact the answer must use or count",
+      "false": "item is about something else, or only shares words with question"
+     }
+    }
+   },
+   "state": {
+    "question": "Which open bugs are blocking the 2.4 release?",
+    "item": {
+     "id": "#409",
+     "title": "Refactor cart service into modules",
+     "state": "open",
+     "labels": [
+      "chore"
+     ],
+     "milestone": "2.5",
+     "assignee": "priya",
+     "body": "Split cart.py into pricing, stock and totals."
+    }
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "needed": {
+     "type": "noul",
+     "instructions": "item is needed to answer question",
+     "criteria": {
+      "true": "item contains part of the answer, or a fact the answer must use or count",
+      "false": "item is about something else, or only shares words with question"
+     }
+    }
+   },
+   "state": {
+    "question": "Which open bugs are blocking the 2.4 release?",
+    "item": {
+     "id": "#410",
+     "title": "CSV export drops rows with commas in names",
+     "state": "open",
+     "labels": [
+      "bug"
+     ],
+     "milestone": "2.4",
+     "assignee": "raj",
+     "body": "Reported by Dana from Acme Retail: product names with commas break the export."
+    }
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "needed": {
+     "type": "noul",
+     "instructions": "item is needed to answer question",
+     "criteria": {
+      "true": "item contains part of the answer, or a fact the answer must use or count",
+      "false": "item is about something else, or only shares words with question"
+     }
+    }
+   },
+   "state": {
+    "question": "Which open bugs are blocking the 2.4 release?",
+    "item": {
+     "id": "#411",
+     "title": "Add Apple Pay to checkout",
+     "state": "open",
+     "labels": [
+      "feature"
+     ],
+     "milestone": "2.5",
+     "assignee": null,
+     "body": "Top requested payment method."
+    }
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "needed": {
+     "type": "noul",
+     "instructions": "item is needed to answer question",
+     "criteria": {
+      "true": "item contains part of the answer, or a fact the answer must use or count",
+      "false": "item is about something else, or only shares words with question"
+     }
+    }
+   },
+   "state": {
+    "question": "Which open bugs are blocking the 2.4 release?",
+    "item": {
+     "id": "#412",
+     "title": "Orders page crashes when an order has no items",
+     "state": "open",
+     "labels": [
+      "bug",
+      "blocker"
+     ],
+     "milestone": "2.4",
+     "assignee": "sam",
+     "body": "Null items array throws in OrderList; blocks the 2.4 release."
+    }
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "needed": {
+     "type": "noul",
+     "instructions": "item is needed to answer question",
+     "criteria": {
+      "true": "item contains part of the answer, or a fact the answer must use or count",
+      "false": "item is about something else, or only shares words with question"
+     }
+    }
+   },
+   "state": {
+    "question": "Which open bugs are blocking the 2.4 release?",
+    "item": {
+     "id": "#413",
+     "title": "Rename 'Shop' to 'Store' in the navigation",
+     "state": "closed",
+     "labels": [
+      "ux"
+     ],
+     "milestone": "2.3",
+     "assignee": "lena",
+     "body": "Done."
+    }
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "needed": {
+     "type": "noul",
+     "instructions": "item is needed to answer question",
+     "criteria": {
+      "true": "item contains part of the answer, or a fact the answer must use or count",
+      "false": "item is about something else, or only shares words with question"
+     }
+    }
+   },
+   "state": {
+    "question": "Which open bugs are blocking the 2.4 release?",
+    "item": {
+     "id": "#414",
+     "title": "Localise emails into German",
+     "state": "open",
+     "labels": [
+      "i18n"
+     ],
+     "milestone": null,
+     "assignee": null,
+     "body": "German translations for transactional emails."
+    }
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "needed": {
+     "type": "noul",
+     "instructions": "item is needed to answer question",
+     "criteria": {
+      "true": "item contains part of the answer, or a fact the answer must use or count",
+      "false": "item is about something else, or only shares words with question"
+     }
+    }
+   },
+   "state": {
+    "question": "Which open bugs are blocking the 2.4 release?",
+    "item": {
+     "id": "#415",
+     "title": "Payments API returns 429 under load",
+     "state": "open",
+     "labels": [
+      "bug"
+     ],
+     "milestone": "2.4",
+     "assignee": "tom",
+     "body": "Hitting the payments API rate limit at 50 requests/second during sales."
+    }
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "needed": {
+     "type": "noul",
+     "instructions": "item is needed to answer question",
+     "criteria": {
+      "true": "item contains part of the answer, or a fact the answer must use or count",
+      "false": "item is about something else, or only shares words with question"
+     }
+    }
+   },
+   "state": {
+    "question": "Which open bugs are blocking the 2.4 release?",
+    "item": {
+     "id": "#416",
+     "title": "Add unit tests for tax calculation",
+     "state": "open",
+     "labels": [
+      "test"
+     ],
+     "milestone": null,
+     "assignee": null,
+     "body": "Coverage is 40% in tax.py."
+    }
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "needed": {
+     "type": "noul",
+     "instructions": "item is needed to answer question",
+     "criteria": {
+      "true": "item contains part of the answer, or a fact the answer must use or count",
+      "false": "item is about something else, or only shares words with question"
+     }
+    }
+   },
+   "state": {
+    "question": "Which open bugs are blocking the 2.4 release?",
+    "item": {
+     "id": "#417",
+     "title": "Cache product images at the CDN",
+     "state": "open",
+     "labels": [
+      "performance"
+     ],
+     "milestone": "2.5",
+     "assignee": "raj",
+     "body": "Images are served from origin."
+    }
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "needed": {
+     "type": "noul",
+     "instructions": "item is needed to answer question",
+     "criteria": {
+      "true": "item contains part of the answer, or a fact the answer must use or count",
+      "false": "item is about something else, or only shares words with question"
+     }
+    }
+   },
+   "state": {
+    "question": "Which open bugs are blocking the 2.4 release?",
+    "item": {
+     "id": "#418",
+     "title": "Refunds not saved when the payment provider is slow",
+     "state": "open",
+     "labels": [
+      "bug",
+      "blocker"
+     ],
+     "milestone": "2.4",
+     "assignee": "tom",
+     "body": "Refund records are lost if the provider takes over 10s; blocks 2.4."
+    }
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "needed": {
+     "type": "noul",
+     "instructions": "item is needed to answer question",
+     "criteria": {
+      "true": "item contains part of the answer, or a fact the answer must use or count",
+      "false": "item is about something else, or only shares words with question"
+     }
+    }
+   },
+   "state": {
+    "question": "Which open bugs are blocking the 2.4 release?",
+    "item": {
+     "id": "#419",
+     "title": "App crashes when switching to dark mode on Android",
+     "state": "open",
+     "labels": [
+      "bug"
+     ],
+     "milestone": "2.5",
+     "assignee": null,
+     "body": "Crash on theme change, Android 14."
+    }
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "needed": {
+     "type": "noul",
+     "instructions": "item is needed to answer question",
+     "criteria": {
+      "true": "item contains part of the answer, or a fact the answer must use or count",
+      "false": "item is about something else, or only shares words with question"
+     }
+    }
+   },
+   "state": {
+    "question": "Which open bugs are blocking the 2.4 release?",
+    "item": {
+     "id": "#420",
+     "title": "Update privacy policy link in footer",
+     "state": "closed",
+     "labels": [
+      "docs"
+     ],
+     "milestone": "2.3",
+     "assignee": "lena",
+     "body": "Link fixed."
+    }
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "needed": {
+     "type": "noul",
+     "instructions": "item is needed to answer question",
+     "criteria": {
+      "true": "item contains part of the answer, or a fact the answer must use or count",
+      "false": "item is about something else, or only shares words with question"
+     }
+    }
+   },
+   "state": {
+    "question": "Which open bugs are blocking the 2.4 release?",
+    "item": {
+     "id": "#421",
+     "title": "Migrate cart totals to the new pricing engine",
+     "state": "open",
+     "labels": [
+      "feature"
+     ],
+     "milestone": "2.5",
+     "assignee": "priya",
+     "body": "Use pricing-engine v2 for totals."
+    }
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "needed": {
+     "type": "noul",
+     "instructions": "item is needed to answer question",
+     "criteria": {
+      "true": "item contains part of the answer, or a fact the answer must use or count",
+      "false": "item is about something else, or only shares words with question"
+     }
+    }
+   },
+   "state": {
+    "question": "Which open bugs are blocking the 2.4 release?",
+    "item": {
+     "id": "#423",
+     "title": "Admin can't upload a logo larger than 1MB",
+     "state": "open",
+     "labels": [
+      "bug"
+     ],
+     "milestone": null,
+     "assignee": null,
+     "body": "Upload fails silently."
+    }
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "needed": {
+     "type": "noul",
+     "instructions": "item is needed to answer question",
+     "criteria": {
+      "true": "item contains part of the answer, or a fact the answer must use or count",
+      "false": "item is about something else, or only shares words with question"
+     }
+    }
+   },
+   "state": {
+    "question": "Which open bugs are blocking the 2.4 release?",
+    "item": {
+     "id": "#422",
+     "title": "Retry with backoff on payments rate limit",
+     "state": "open",
+     "labels": [
+      "feature"
+     ],
+     "milestone": "2.5",
+     "assignee": "tom",
+     "body": "Follow-up to #415: back off when the payments API returns 429."
+    }
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "needed": {
+     "type": "noul",
+     "instructions": "item is needed to answer question",
+     "criteria": {
+      "true": "item contains part of the answer, or a fact the answer must use or count",
+      "false": "item is about something else, or only shares words with question"
+     }
+    }
+   },
+   "state": {
+    "question": "Which open bugs are blocking the 2.4 release?",
+    "item": {
+     "id": "#424",
+     "title": "Dark mode toggle crashes the Android app",
+     "state": "open",
+     "labels": [
+      "bug"
+     ],
+     "milestone": null,
+     "assignee": null,
+     "body": "Possibly the same as #419."
+    }
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "needed": {
+     "type": "noul",
+     "instructions": "item is needed to answer question",
+     "criteria": {
+      "true": "item contains part of the answer, or a fact the answer must use or count",
+      "false": "item is about something else, or only shares words with question"
+     }
+    }
+   },
+   "state": {
+    "question": "Which open bugs are blocking the 2.4 release?",
+    "item": {
+     "id": "#425",
+     "title": "Add keyboard shortcuts to the admin",
+     "state": "open",
+     "labels": [
+      "feature"
+     ],
+     "milestone": null,
+     "assignee": null,
+     "body": "Power users want shortcuts."
+    }
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "needed": {
+     "type": "noul",
+     "instructions": "item is needed to answer question",
+     "criteria": {
+      "true": "item contains part of the answer, or a fact the answer must use or count",
+      "false": "item is about something else, or only shares words with question"
+     }
+    }
+   },
+   "state": {
+    "question": "Which open bugs are blocking the 2.4 release?",
+    "item": {
+     "id": "#426",
+     "title": "Nightly backup job took 4h last week",
+     "state": "open",
+     "labels": [
+      "ops"
+     ],
+     "milestone": null,
+     "assignee": "sam",
+     "body": "Investigate slow backups."
+    }
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "needed": {
+     "type": "noul",
+     "instructions": "item is needed to answer question",
+     "criteria": {
+      "true": "item contains part of the answer, or a fact the answer must use or count",
+      "false": "item is about something else, or only shares words with question"
+     }
+    }
+   },
+   "state": {
+    "question": "Which open bugs are blocking the 2.4 release?",
+    "item": {
+     "id": "#427",
+     "title": "Password reset tokens never expire",
+     "state": "open",
+     "labels": [
+      "security"
+     ],
+     "milestone": "2.4",
+     "assignee": "sam",
+     "body": "Reset links keep working after use."
+    }
+   }
+  },
+  {
+   "kind": "llm",
+   "model": "google/gemini-3.1-flash-lite",
+   "system": [
+    "Answer the question using only the tool output below. Cite item ids. If it does not contain the answer, reply with exactly NO_ANSWER."
+   ],
+   "user": [
+    "{\"question\": \"Which open bugs are blocking the 2.4 release?\", \"tool_output\": [{\"id\": \"#398\", \"title\": \"Checkout times out after 30s on slow networks\", \"state\": \"closed\", \"labels\": [\"bug\"], \"milestone\": \"2.3\", \"assignee\": \"tom\", \"body\": \"Fixed in PR #1204: raised the gateway timeout and added a retry.\"}, {\"id\": \"#399\", \"title\": \"Add dark mode to settings\", \"state\": \"open\", \"labels\": [\"feature\"], \"milestone\": \"2.5\", \"assignee\": null, \"body\": \"Users ask for a dark theme in settings.\"}, {\"id\": \"#400\", \"title\": \"Docs: update API authentication example\", \"state\": \"open\", \"labels\": [\"docs\"], \"milestone\": null, \"assignee\": \"lena\", \"body\": \"The curl example still uses the old header.\"}, {\"id\": \"#401\", \"title\": \"Session cookie missing Secure flag\", \"state\": \"open\", \"labels\": [\"security\", \"bug\"], \"milestone\": \"2.4\", \"assignee\": \"sam\", \"body\": \"Cookies are sent over plain HTTP on the staging domain.\"}, {\"id\": \"#402\", \"title\": \"Upgrade React to 19\", \"state\": \"open\", \"labels\": [\"chore\"], \"milestone\": \"2.5\", \"assignee\": null, \"body\": \"Needed before the new router.\"}, {\"id\": \"#403\", \"title\": \"Typo on pricing page\", \"state\": \"closed\", \"labels\": [\"docs\"], \"milestone\": \"2.3\", \"assignee\": \"lena\", \"body\": \"'Anual' instead of 'Annual'.\"}, {\"id\": \"#404\", \"title\": \"Search results slow for long queries\", \"state\": \"open\", \"labels\": [\"performance\"], \"milestone\": \"2.5\", \"assignee\": \"raj\", \"body\": \"p95 over 3s for queries longer than 50 characters.\"}, {\"id\": \"#405\", \"title\": \"Login button unresponsive in Safari 17\", \"state\": \"open\", \"labels\": [\"bug\"], \"milestone\": \"2.4\", \"assignee\": \"priya\", \"body\": \"Clicking Login does nothing in Safari 17 with content blockers on.\"}, {\"id\": \"#406\", \"title\": \"Add CSV import for products\", \"state\": \"open\", \"labels\": [\"feature\"], \"milestone\": null, \"assignee\": null, \"body\": \"Merchants want bulk upload.\"}, {\"id\": \"#407\", \"title\": \"Flaky test: test_refund_webhook\", \"state\": \"open\", \"labels\": [\"test\"], \"milestone\": null, \"assignee\": \"tom\", \"body\": \"Fails 1 in 20 runs on CI.\"}, {\"id\": \"#408\", \"title\": \"Improve onboarding emails\", \"state\": \"open\", \"labels\": [\"marketing\"], \"milestone\": null, \"assignee\": null, \"body\": \"Copy refresh for the welcome series.\"}, {\"id\": \"#409\", \"title\": \"Refactor cart service into modules\", \"state\": \"open\", \"labels\": [\"chore\"], \"milestone\": \"2.5\", \"assignee\": \"priya\", \"body\": \"Split cart.py into pricing, stock and totals.\"}, {\"id\": \"#410\", \"title\": \"CSV export drops rows with commas in names\", \"state\": \"open\", \"labels\": [\"bug\"], \"milestone\": \"2.4\", \"assignee\": \"raj\", \"body\": \"Reported by Dana from Acme Retail: product names with commas break the export.\"}, {\"id\": \"#411\", \"title\": \"Add Apple Pay to checkout\", \"state\": \"open\", \"labels\": [\"feature\"], \"milestone\": \"2.5\", \"assignee\": null, \"body\": \"Top requested payment method.\"}, {\"id\": \"#412\", \"title\": \"Orders page crashes when an order has no items\", \"state\": \"open\", \"labels\": [\"bug\", \"blocker\"], \"milestone\": \"2.4\", \"assignee\": \"sam\", \"body\": \"Null items array throws in OrderList; blocks the 2.4 release.\"}, {\"id\": \"#413\", \"title\": \"Rename 'Shop' to 'Store' in the navigation\", \"state\": \"closed\", \"labels\": [\"ux\"], \"milestone\": \"2.3\", \"assignee\": \"lena\", \"body\": \"Done.\"}, {\"id\": \"#414\", \"title\": \"Localise emails into German\", \"state\": \"open\", \"labels\": [\"i18n\"], \"milestone\": null, \"assignee\": null, \"body\": \"German translations for transactional emails.\"}, {\"id\": \"#415\", \"title\": \"Payments API returns 429 under load\", \"state\": \"open\", \"labels\": [\"bug\"], \"milestone\": \"2.4\", \"assignee\": \"tom\", \"body\": \"Hitting the payments API rate limit at 50 requests/second during sales.\"}, {\"id\": \"#416\", \"title\": \"Add unit tests for tax calculation\", \"state\": \"open\", \"labels\": [\"test\"], \"milestone\": null, \"assignee\": null, \"body\": \"Coverage is 40% in tax.py.\"}, {\"id\": \"#417\", \"title\": \"Cache product images at the CDN\", \"state\": \"open\", \"labels\": [\"performance\"], \"milestone\": \"2.5\", \"assignee\": \"raj\", \"body\": \"Images are served from origin.\"}, {\"id\": \"#418\", \"title\": \"Refunds not saved when the payment provider is slow\", \"state\": \"open\", \"labels\": [\"bug\", \"blocker\"], \"milestone\": \"2.4\", \"assignee\": \"tom\", \"body\": \"Refund records are lost if the provider takes over 10s; blocks 2.4.\"}, {\"id\": \"#419\", \"title\": \"App crashes when switching to dark mode on Android\", \"state\": \"open\", \"labels\": [\"bug\"], \"milestone\": \"2.5\", \"assignee\": null, \"body\": \"Crash on theme change, Android 14.\"}, {\"id\": \"#420\", \"title\": \"Update privacy policy link in footer\", \"state\": \"closed\", \"labels\": [\"docs\"], \"milestone\": \"2.3\", \"assignee\": \"lena\", \"body\": \"Link fixed.\"}, {\"id\": \"#421\", \"title\": \"Migrate cart totals to the new pricing engine\", \"state\": \"open\", \"labels\": [\"feature\"], \"milestone\": \"2.5\", \"assignee\": \"priya\", \"body\": \"Use pricing-engine v2 for totals.\"}, {\"id\": \"#422\", \"title\": \"Retry with backoff on payments rate limit\", \"state\": \"open\", \"labels\": [\"feature\"], \"milestone\": \"2.5\", \"assignee\": \"tom\", \"body\": \"Follow-up to #415: back off when the payments API returns 429.\"}, {\"id\": \"#423\", \"title\": \"Admin can't upload a logo larger than 1MB\", \"state\": \"open\", \"labels\": [\"bug\"], \"milestone\": null, \"assignee\": null, \"body\": \"Upload fails silently.\"}, {\"id\": \"#424\", \"title\": \"Dark mode toggle crashes the Android app\", \"state\": \"open\", \"labels\": [\"bug\"], \"milestone\": null, \"assignee\": null, \"body\": \"Possibly the same as #419.\"}, {\"id\": \"#425\", \"title\": \"Add keyboard shortcuts to the admin\", \"state\": \"open\", \"labels\": [\"feature\"], \"milestone\": null, \"assignee\": null, \"body\": \"Power users want shortcuts.\"}, {\"id\": \"#426\", \"title\": \"Nightly backup job took 4h last week\", \"state\": \"open\", \"labels\": [\"ops\"], \"milestone\": null, \"assignee\": \"sam\", \"body\": \"Investigate slow backups.\"}, {\"id\": \"#427\", \"title\": \"Password reset tokens never expire\", \"state\": \"open\", \"labels\": [\"security\"], \"milestone\": \"2.4\", \"assignee\": \"sam\", \"body\": \"Reset links keep working after use.\"}]}"
+   ],
+   "tools": [],
+   "response_format": null
+  },
+  {
+   "kind": "llm",
+   "model": "google/gemini-3.1-flash-lite",
+   "system": [
+    "Summarize only the parts of this tool output that matter for the question. Keep item ids, numbers and names exactly."
+   ],
+   "user": [
+    "{\"question\": \"Which open bugs are blocking the 2.4 release?\", \"tool_output\": [{\"id\": \"#398\", \"title\": \"Checkout times out after 30s on slow networks\", \"state\": \"closed\", \"labels\": [\"bug\"], \"milestone\": \"2.3\", \"assignee\": \"tom\", \"body\": \"Fixed in PR #1204: raised the gateway timeout and added a retry.\"}, {\"id\": \"#399\", \"title\": \"Add dark mode to settings\", \"state\": \"open\", \"labels\": [\"feature\"], \"milestone\": \"2.5\", \"assignee\": null, \"body\": \"Users ask for a dark theme in settings.\"}, {\"id\": \"#400\", \"title\": \"Docs: update API authentication example\", \"state\": \"open\", \"labels\": [\"docs\"], \"milestone\": null, \"assignee\": \"lena\", \"body\": \"The curl example still uses the old header.\"}, {\"id\": \"#401\", \"title\": \"Session cookie missing Secure flag\", \"state\": \"open\", \"labels\": [\"security\", \"bug\"], \"milestone\": \"2.4\", \"assignee\": \"sam\", \"body\": \"Cookies are sent over plain HTTP on the staging domain.\"}, {\"id\": \"#402\", \"title\": \"Upgrade React to 19\", \"state\": \"open\", \"labels\": [\"chore\"], \"milestone\": \"2.5\", \"assignee\": null, \"body\": \"Needed before the new router.\"}, {\"id\": \"#403\", \"title\": \"Typo on pricing page\", \"state\": \"closed\", \"labels\": [\"docs\"], \"milestone\": \"2.3\", \"assignee\": \"lena\", \"body\": \"'Anual' instead of 'Annual'.\"}, {\"id\": \"#404\", \"title\": \"Search results slow for long queries\", \"state\": \"open\", \"labels\": [\"performance\"], \"milestone\": \"2.5\", \"assignee\": \"raj\", \"body\": \"p95 over 3s for queries longer than 50 characters.\"}, {\"id\": \"#405\", \"title\": \"Login button unresponsive in Safari 17\", \"state\": \"open\", \"labels\": [\"bug\"], \"milestone\": \"2.4\", \"assignee\": \"priya\", \"body\": \"Clicking Login does nothing in Safari 17 with content blockers on.\"}, {\"id\": \"#406\", \"title\": \"Add CSV import for products\", \"state\": \"open\", \"labels\": [\"feature\"], \"milestone\": null, \"assignee\": null, \"body\": \"Merchants want bulk upload.\"}, {\"id\": \"#407\", \"title\": \"Flaky test: test_refund_webhook\", \"state\": \"open\", \"labels\": [\"test\"], \"milestone\": null, \"assignee\": \"tom\", \"body\": \"Fails 1 in 20 runs on CI.\"}, {\"id\": \"#408\", \"title\": \"Improve onboarding emails\", \"state\": \"open\", \"labels\": [\"marketing\"], \"milestone\": null, \"assignee\": null, \"body\": \"Copy refresh for the welcome series.\"}, {\"id\": \"#409\", \"title\": \"Refactor cart service into modules\", \"state\": \"open\", \"labels\": [\"chore\"], \"milestone\": \"2.5\", \"assignee\": \"priya\", \"body\": \"Split cart.py into pricing, stock and totals.\"}, {\"id\": \"#410\", \"title\": \"CSV export drops rows with commas in names\", \"state\": \"open\", \"labels\": [\"bug\"], \"milestone\": \"2.4\", \"assignee\": \"raj\", \"body\": \"Reported by Dana from Acme Retail: product names with commas break the export.\"}, {\"id\": \"#411\", \"title\": \"Add Apple Pay to checkout\", \"state\": \"open\", \"labels\": [\"feature\"], \"milestone\": \"2.5\", \"assignee\": null, \"body\": \"Top requested payment method.\"}, {\"id\": \"#412\", \"title\": \"Orders page crashes when an order has no items\", \"state\": \"open\", \"labels\": [\"bug\", \"blocker\"], \"milestone\": \"2.4\", \"assignee\": \"sam\", \"body\": \"Null items array throws in OrderList; blocks the 2.4 release.\"}, {\"id\": \"#413\", \"title\": \"Rename 'Shop' to 'Store' in the navigation\", \"state\": \"closed\", \"labels\": [\"ux\"], \"milestone\": \"2.3\", \"assignee\": \"lena\", \"body\": \"Done.\"}, {\"id\": \"#414\", \"title\": \"Localise emails into German\", \"state\": \"open\", \"labels\": [\"i18n\"], \"milestone\": null, \"assignee\": null, \"body\": \"German translations for transactional emails.\"}, {\"id\": \"#415\", \"title\": \"Payments API returns 429 under load\", \"state\": \"open\", \"labels\": [\"bug\"], \"milestone\": \"2.4\", \"assignee\": \"tom\", \"body\": \"Hitting the payments API rate limit at 50 requests/second during sales.\"}, {\"id\": \"#416\", \"title\": \"Add unit tests for tax calculation\", \"state\": \"open\", \"labels\": [\"test\"], \"milestone\": null, \"assignee\": null, \"body\": \"Coverage is 40% in tax.py.\"}, {\"id\": \"#417\", \"title\": \"Cache product images at the CDN\", \"state\": \"open\", \"labels\": [\"performance\"], \"milestone\": \"2.5\", \"assignee\": \"raj\", \"body\": \"Images are served from origin.\"}, {\"id\": \"#418\", \"title\": \"Refunds not saved when the payment provider is slow\", \"state\": \"open\", \"labels\": [\"bug\", \"blocker\"], \"milestone\": \"2.4\", \"assignee\": \"tom\", \"body\": \"Refund records are lost if the provider takes over 10s; blocks 2.4.\"}, {\"id\": \"#419\", \"title\": \"App crashes when switching to dark mode on Android\", \"state\": \"open\", \"labels\": [\"bug\"], \"milestone\": \"2.5\", \"assignee\": null, \"body\": \"Crash on theme change, Android 14.\"}, {\"id\": \"#420\", \"title\": \"Update privacy policy link in footer\", \"state\": \"closed\", \"labels\": [\"docs\"], \"milestone\": \"2.3\", \"assignee\": \"lena\", \"body\": \"Link fixed.\"}, {\"id\": \"#421\", \"title\": \"Migrate cart totals to the new pricing engine\", \"state\": \"open\", \"labels\": [\"feature\"], \"milestone\": \"2.5\", \"assignee\": \"priya\", \"body\": \"Use pricing-engine v2 for totals.\"}, {\"id\": \"#422\", \"title\": \"Retry with backoff on payments rate limit\", \"state\": \"open\", \"labels\": [\"feature\"], \"milestone\": \"2.5\", \"assignee\": \"tom\", \"body\": \"Follow-up to #415: back off when the payments API returns 429.\"}, {\"id\": \"#423\", \"title\": \"Admin can't upload a logo larger than 1MB\", \"state\": \"open\", \"labels\": [\"bug\"], \"milestone\": null, \"assignee\": null, \"body\": \"Upload fails silently.\"}, {\"id\": \"#424\", \"title\": \"Dark mode toggle crashes the Android app\", \"state\": \"open\", \"labels\": [\"bug\"], \"milestone\": null, \"assignee\": null, \"body\": \"Possibly the same as #419.\"}, {\"id\": \"#425\", \"title\": \"Add keyboard shortcuts to the admin\", \"state\": \"open\", \"labels\": [\"feature\"], \"milestone\": null, \"assignee\": null, \"body\": \"Power users want shortcuts.\"}, {\"id\": \"#426\", \"title\": \"Nightly backup job took 4h last week\", \"state\": \"open\", \"labels\": [\"ops\"], \"milestone\": null, \"assignee\": \"sam\", \"body\": \"Investigate slow backups.\"}, {\"id\": \"#427\", \"title\": \"Password reset tokens never expire\", \"state\": \"open\", \"labels\": [\"security\"], \"milestone\": \"2.4\", \"assignee\": \"sam\", \"body\": \"Reset links keep working after use.\"}]}"
+   ],
+   "tools": [],
+   "response_format": null
+  },
+  {
+   "kind": "llm",
+   "model": "google/gemini-3.1-flash-lite",
+   "system": [
+    "Answer the question using only the tool output below. Cite item ids. If it does not contain the answer, reply with exactly NO_ANSWER."
+   ],
+   "user": [
+    "{\"question\": \"Which open bugs are blocking the 2.4 release?\", \"tool_output\": [{\"id\": \"#399\", \"title\": \"Add dark mode to settings\", \"state\": \"open\", \"labels\": [\"feature\"], \"milestone\": \"2.5\", \"assignee\": null, \"body\": \"Users ask for a dark theme in settings.\"}, {\"id\": \"#400\", \"title\": \"Docs: update API authentication example\", \"state\": \"open\", \"labels\": [\"docs\"], \"milestone\": null, \"assignee\": \"lena\", \"body\": \"The curl example still uses the old header.\"}, {\"id\": \"#401\", \"title\": \"Session cookie missing Secure flag\", \"state\": \"open\", \"labels\": [\"security\", \"bug\"], \"milestone\": \"2.4\", \"assignee\": \"sam\", \"body\": \"Cookies are sent over plain HTTP on the staging domain.\"}, {\"id\": \"#402\", \"title\": \"Upgrade React to 19\", \"state\": \"open\", \"labels\": [\"chore\"], \"milestone\": \"2.5\", \"assignee\": null, \"body\": \"Needed before the new router.\"}, {\"id\": \"#404\", \"title\": \"Search results slow for long queries\", \"state\": \"open\", \"labels\": [\"performance\"], \"milestone\": \"2.5\", \"assignee\": \"raj\", \"body\": \"p95 over 3s for queries longer than 50 characters.\"}, {\"id\": \"#405\", \"title\": \"Login button unresponsive in Safari 17\", \"state\": \"open\", \"labels\": [\"bug\"], \"milestone\": \"2.4\", \"assignee\": \"priya\", \"body\": \"Clicking Login does nothing in Safari 17 with content blockers on.\"}, {\"id\": \"#406\", \"title\": \"Add CSV import for products\", \"state\": \"open\", \"labels\": [\"feature\"], \"milestone\": null, \"assignee\": null, \"body\": \"Merchants want bulk upload.\"}, {\"id\": \"#407\", \"title\": \"Flaky test: test_refund_webhook\", \"state\": \"open\", \"labels\": [\"test\"], \"milestone\": null, \"assignee\": \"tom\", \"body\": \"Fails 1 in 20 runs on CI.\"}, {\"id\": \"#408\", \"title\": \"Improve onboarding emails\", \"state\": \"open\", \"labels\": [\"marketing\"], \"milestone\": null, \"assignee\": null, \"body\": \"Copy refresh for the welcome series.\"}, {\"id\": \"#409\", \"title\": \"Refactor cart service into modules\", \"state\": \"open\", \"labels\": [\"chore\"], \"milestone\": \"2.5\", \"assignee\": \"priya\", \"body\": \"Split cart.py into pricing, stock and totals.\"}, {\"id\": \"#410\", \"title\": \"CSV export drops rows with commas in names\", \"state\": \"open\", \"labels\": [\"bug\"], \"milestone\": \"2.4\", \"assignee\": \"raj\", \"body\": \"Reported by Dana from Acme Retail: product names with commas break the export.\"}, {\"id\": \"#411\", \"title\": \"Add Apple Pay to checkout\", \"state\": \"open\", \"labels\": [\"feature\"], \"milestone\": \"2.5\", \"assignee\": null, \"body\": \"Top requested payment method.\"}, {\"id\": \"#412\", \"title\": \"Orders page crashes when an order has no items\", \"state\": \"open\", \"labels\": [\"bug\", \"blocker\"], \"milestone\": \"2.4\", \"assignee\": \"sam\", \"body\": \"Null items array throws in OrderList; blocks the 2.4 release.\"}, {\"id\": \"#414\", \"title\": \"Localise emails into German\", \"state\": \"open\", \"labels\": [\"i18n\"], \"milestone\": null, \"assignee\": null, \"body\": \"German translations for transactional emails.\"}, {\"id\": \"#415\", \"title\": \"Payments API returns 429 under load\", \"state\": \"open\", \"labels\": [\"bug\"], \"milestone\": \"2.4\", \"assignee\": \"tom\", \"body\": \"Hitting the payments API rate limit at 50 requests/second during sales.\"}, {\"id\": \"#416\", \"title\": \"Add unit tests for tax calculation\", \"state\": \"open\", \"labels\": [\"test\"], \"milestone\": null, \"assignee\": null, \"body\": \"Coverage is 40% in tax.py.\"}, {\"id\": \"#417\", \"title\": \"Cache product images at the CDN\", \"state\": \"open\", \"labels\": [\"performance\"], \"milestone\": \"2.5\", \"assignee\": \"raj\", \"body\": \"Images are served from origin.\"}, {\"id\": \"#418\", \"title\": \"Refunds not saved when the payment provider is slow\", \"state\": \"open\", \"labels\": [\"bug\", \"blocker\"], \"milestone\": \"2.4\", \"assignee\": \"tom\", \"body\": \"Refund records are lost if the provider takes over 10s; blocks 2.4.\"}, {\"id\": \"#419\", \"title\": \"App crashes when switching to dark mode on Android\", \"state\": \"open\", \"labels\": [\"bug\"], \"milestone\": \"2.5\", \"assignee\": null, \"body\": \"Crash on theme change, Android 14.\"}, {\"id\": \"#421\", \"title\": \"Migrate cart totals to the new pricing engine\", \"state\": \"open\", \"labels\": [\"feature\"], \"milestone\": \"2.5\", \"assignee\": \"priya\", \"body\": \"Use pricing-engine v2 for totals.\"}, {\"id\": \"#422\", \"title\": \"Retry with backoff on payments rate limit\", \"state\": \"open\", \"labels\": [\"feature\"], \"milestone\": \"2.5\", \"assignee\": \"tom\", \"body\": \"Follow-up to #415: back off when the payments API returns 429.\"}, {\"id\": \"#423\", \"title\": \"Admin can't upload a logo larger than 1MB\", \"state\": \"open\", \"labels\": [\"bug\"], \"milestone\": null, \"assignee\": null, \"body\": \"Upload fails silently.\"}, {\"id\": \"#424\", \"title\": \"Dark mode toggle crashes the Android app\", \"state\": \"open\", \"labels\": [\"bug\"], \"milestone\": null, \"assignee\": null, \"body\": \"Possibly the same as #419.\"}, {\"id\": \"#425\", \"title\": \"Add keyboard shortcuts to the admin\", \"state\": \"open\", \"labels\": [\"feature\"], \"milestone\": null, \"assignee\": null, \"body\": \"Power users want shortcuts.\"}, {\"id\": \"#426\", \"title\": \"Nightly backup job took 4h last week\", \"state\": \"open\", \"labels\": [\"ops\"], \"milestone\": null, \"assignee\": \"sam\", \"body\": \"Investigate slow backups.\"}, {\"id\": \"#427\", \"title\": \"Password reset tokens never expire\", \"state\": \"open\", \"labels\": [\"security\"], \"milestone\": \"2.4\", \"assignee\": \"sam\", \"body\": \"Reset links keep working after use.\"}]}"
+   ],
+   "tools": [],
+   "response_format": null
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "correct": {
+     "type": "noul",
+     "instructions": "answer does task correctly: it meets every Required point in rubric and breaks no Must not point",
+     "criteria": {
+      "true": "Every Required point is met and no Must not point is broken; extra correct detail is fine",
+      "false": "A Required point is missing or wrong, a Must not point is broken, or the answer is cut off"
+     }
+    }
+   },
+   "state": {
+    "task": "Which open bugs are blocking the 2.4 release?",
+    "rubric": "Required: #412 (orders page crash) and #418 (refunds not saved).",
+    "answer": "The open bugs blocking the 2.4 release are:\n\n*   #412: Orders page crashes when an order has no items\n*   #418: Refunds not saved when the payment provider is slow"
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "correct": {
+     "type": "noul",
+     "instructions": "answer does task correctly: it meets every Required point in rubric and breaks no Must not point",
+     "criteria": {
+      "true": "Every Required point is met and no Must not point is broken; extra correct detail is fine",
+      "false": "A Required point is missing or wrong, a Must not point is broken, or the answer is cut off"
+     }
+    }
+   },
+   "state": {
+    "task": "Which open bugs are blocking the 2.4 release?",
+    "rubric": "Required: #412 (orders page crash) and #418 (refunds not saved).",
+    "answer": "The open bugs blocking the 2.4 release are:\n\n*   #412: Orders page crashes when an order has no items\n*   #418: Refunds not saved when the payment provider is slow"
+   }
+  },
+  {
+   "kind": "llm",
+   "model": "google/gemini-3.1-flash-lite",
+   "system": [
+    "Answer the question using only the tool output below. Cite item ids. If it does not contain the answer, reply with exactly NO_ANSWER."
+   ],
+   "user": [
+    "{\"question\": \"Which open bugs are blocking the 2.4 release?\", \"tool_output\": \"The following open bugs are assigned to the 2.4 milestone:\\n\\n*   **#401**: Session cookie missing Secure flag\\n*   **#405**: Login button unresponsive in Safari 17\\n*   **#410**: CSV export drops rows with commas in names\\n*   **#412**: Orders page crashes when an order has no items (Blocker)\\n*   **#415**: Payments API returns 429 under load\\n*   **#418**: Refunds not saved when the payment provider is slow (Blocker)\\n*   **#427**: Password reset tokens never expire\"}"
+   ],
+   "tools": [],
+   "response_format": null
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "correct": {
+     "type": "noul",
+     "instructions": "answer does task correctly: it meets every Required point in rubric and breaks no Must not point",
+     "criteria": {
+      "true": "Every Required point is met and no Must not point is broken; extra correct detail is fine",
+      "false": "A Required point is missing or wrong, a Must not point is broken, or the answer is cut off"
+     }
+    }
+   },
+   "state": {
+    "task": "Which open bugs are blocking the 2.4 release?",
+    "rubric": "Required: #412 (orders page crash) and #418 (refunds not saved).",
+    "answer": "The open bugs blocking the 2.4 release are:\n\n*   **#412**: Orders page crashes when an order has no items (Blocker)\n*   **#418**: Refunds not saved when the payment provider is slow (Blocker)"
+   }
+  },
+  {
+   "kind": "llm",
+   "model": "google/gemini-3.1-flash-lite",
+   "system": [
+    "Answer the question using only the tool output below. Cite item ids. If it does not contain the answer, reply with exactly NO_ANSWER."
+   ],
+   "user": [
+    "{\"question\": \"Which open bugs are blocking the 2.4 release?\", \"tool_output\": [{\"id\": \"#398\", \"title\": \"Checkout times out after 30s on slow networks\", \"state\": \"closed\", \"labels\": [\"bug\"], \"milestone\": \"2.3\", \"assignee\": \"tom\", \"body\": \"Fixed in PR #1204: raised the gateway timeout and added a retry.\"}, {\"id\": \"#399\", \"title\": \"Add dark mode to settings\", \"state\": \"open\", \"labels\": [\"feature\"], \"milestone\": \"2.5\", \"assignee\": null, \"body\": \"Users ask for a dark theme in settings.\"}, {\"id\": \"#401\", \"title\": \"Session cookie missing Secure flag\", \"state\": \"open\", \"labels\": [\"security\", \"bug\"], \"milestone\": \"2.4\", \"assignee\": \"sam\", \"body\": \"Cookies are sent over plain HTTP on the staging domain.\"}, {\"id\": \"#402\", \"title\": \"Upgrade React to 19\", \"state\": \"open\", \"labels\": [\"chore\"], \"milestone\": \"2.5\", \"assignee\": null, \"body\": \"Needed before the new router.\"}, {\"id\": \"#404\", \"title\": \"Search results slow for long queries\", \"state\": \"open\", \"labels\": [\"performance\"], \"milestone\": \"2.5\", \"assignee\": \"raj\", \"body\": \"p95 over 3s for queries longer than 50 characters.\"}, {\"id\": \"#405\", \"title\": \"Login button unresponsive in Safari 17\", \"state\": \"open\", \"labels\": [\"bug\"], \"milestone\": \"2.4\", \"assignee\": \"priya\", \"body\": \"Clicking Login does nothing in Safari 17 with content blockers on.\"}, {\"id\": \"#406\", \"title\": \"Add CSV import for products\", \"state\": \"open\", \"labels\": [\"feature\"], \"milestone\": null, \"assignee\": null, \"body\": \"Merchants want bulk upload.\"}, {\"id\": \"#407\", \"title\": \"Flaky test: test_refund_webhook\", \"state\": \"open\", \"labels\": [\"test\"], \"milestone\": null, \"assignee\": \"tom\", \"body\": \"Fails 1 in 20 runs on CI.\"}, {\"id\": \"#410\", \"title\": \"CSV export drops rows with commas in names\", \"state\": \"open\", \"labels\": [\"bug\"], \"milestone\": \"2.4\", \"assignee\": \"raj\", \"body\": \"Reported by Dana from Acme Retail: product names with commas break the export.\"}, {\"id\": \"#412\", \"title\": \"Orders page crashes when an order has no items\", \"state\": \"open\", \"labels\": [\"bug\", \"blocker\"], \"milestone\": \"2.4\", \"assignee\": \"sam\", \"body\": \"Null items array throws in OrderList; blocks the 2.4 release.\"}, {\"id\": \"#414\", \"title\": \"Localise emails into German\", \"state\": \"open\", \"labels\": [\"i18n\"], \"milestone\": null, \"assignee\": null, \"body\": \"German translations for transactional emails.\"}, {\"id\": \"#415\", \"title\": \"Payments API returns 429 under load\", \"state\": \"open\", \"labels\": [\"bug\"], \"milestone\": \"2.4\", \"assignee\": \"tom\", \"body\": \"Hitting the payments API rate limit at 50 requests/second during sales.\"}, {\"id\": \"#416\", \"title\": \"Add unit tests for tax calculation\", \"state\": \"open\", \"labels\": [\"test\"], \"milestone\": null, \"assignee\": null, \"body\": \"Coverage is 40% in tax.py.\"}, {\"id\": \"#418\", \"title\": \"Refunds not saved when the payment provider is slow\", \"state\": \"open\", \"labels\": [\"bug\", \"blocker\"], \"milestone\": \"2.4\", \"assignee\": \"tom\", \"body\": \"Refund records are lost if the provider takes over 10s; blocks 2.4.\"}, {\"id\": \"#419\", \"title\": \"App crashes when switching to dark mode on Android\", \"state\": \"open\", \"labels\": [\"bug\"], \"milestone\": \"2.5\", \"assignee\": null, \"body\": \"Crash on theme change, Android 14.\"}, {\"id\": \"#422\", \"title\": \"Retry with backoff on payments rate limit\", \"state\": \"open\", \"labels\": [\"feature\"], \"milestone\": \"2.5\", \"assignee\": \"tom\", \"body\": \"Follow-up to #415: back off when the payments API returns 429.\"}, {\"id\": \"#423\", \"title\": \"Admin can't upload a logo larger than 1MB\", \"state\": \"open\", \"labels\": [\"bug\"], \"milestone\": null, \"assignee\": null, \"body\": \"Upload fails silently.\"}, {\"id\": \"#424\", \"title\": \"Dark mode toggle crashes the Android app\", \"state\": \"open\", \"labels\": [\"bug\"], \"milestone\": null, \"assignee\": null, \"body\": \"Possibly the same as #419.\"}, {\"id\": \"#425\", \"title\": \"Add keyboard shortcuts to the admin\", \"state\": \"open\", \"labels\": [\"feature\"], \"milestone\": null, \"assignee\": null, \"body\": \"Power users want shortcuts.\"}, {\"id\": \"#427\", \"title\": \"Password reset tokens never expire\", \"state\": \"open\", \"labels\": [\"security\"], \"milestone\": \"2.4\", \"assignee\": \"sam\", \"body\": \"Reset links keep working after use.\"}]}"
+   ],
+   "tools": [],
+   "response_format": null
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "correct": {
+     "type": "noul",
+     "instructions": "answer does task correctly: it meets every Required point in rubric and breaks no Must not point",
+     "criteria": {
+      "true": "Every Required point is met and no Must not point is broken; extra correct detail is fine",
+      "false": "A Required point is missing or wrong, a Must not point is broken, or the answer is cut off"
+     }
+    }
+   },
+   "state": {
+    "task": "Which open bugs are blocking the 2.4 release?",
+    "rubric": "Required: #412 (orders page crash) and #418 (refunds not saved).",
+    "answer": "The open bugs blocking the 2.4 release are:\n\n* #412: Orders page crashes when an order has no items\n* #418: Refunds not saved when the payment provider is slow"
+   }
+  }
+ ]
+}

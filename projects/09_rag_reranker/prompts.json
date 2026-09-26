@@ -1,0 +1,345 @@
+{
+ "example": "Buried answer",
+ "captured": "2026-09-26",
+ "calls": [
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "relevance": {
+     "type": "score",
+     "instructions": "How relevant is chunk to answering question?",
+     "criteria": [
+      "Irrelevant: off-topic, or only shares words with the question",
+      "Related background: on the topic, but does not answer the question",
+      "Directly answers: states what the question asks"
+     ]
+    }
+   },
+   "state": {
+    "question": "How long do I have to return an item?",
+    "chunk": "Account help: how to change your account email, change your password, account settings and account login problems.",
+    "source": "help/account-overview.md"
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "relevance": {
+     "type": "score",
+     "instructions": "How relevant is chunk to answering question?",
+     "criteria": [
+      "Irrelevant: off-topic, or only shares words with the question",
+      "Related background: on the topic, but does not answer the question",
+      "Directly answers: states what the question asks"
+     ]
+    }
+   },
+   "state": {
+    "question": "How long do I have to return an item?",
+    "chunk": "Electronics have a 1-year warranty against manufacturing defects. Accidental damage, like drops or spills, is not covered.",
+    "source": "help/warranty.md"
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "relevance": {
+     "type": "score",
+     "instructions": "How relevant is chunk to answering question?",
+     "criteria": [
+      "Irrelevant: off-topic, or only shares words with the question",
+      "Related background: on the topic, but does not answer the question",
+      "Directly answers: states what the question asks"
+     ]
+    }
+   },
+   "state": {
+    "question": "How long do I have to return an item?",
+    "chunk": "Prefer store credit? Choose it when you send an item back and the credit is issued instantly, instead of waiting for the bank.",
+    "source": "help/refunds.md"
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "relevance": {
+     "type": "score",
+     "instructions": "How relevant is chunk to answering question?",
+     "criteria": [
+      "Irrelevant: off-topic, or only shares words with the question",
+      "Related background: on the topic, but does not answer the question",
+      "Directly answers: states what the question asks"
+     ]
+    }
+   },
+   "state": {
+    "question": "How long do I have to return an item?",
+    "chunk": "Return labels are free for defective items. For change-of-mind returns, $5 is taken off the refund to cover the label.",
+    "source": "help/returns.md"
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "relevance": {
+     "type": "score",
+     "instructions": "How relevant is chunk to answering question?",
+     "criteria": [
+      "Irrelevant: off-topic, or only shares words with the question",
+      "Related background: on the topic, but does not answer the question",
+      "Directly answers: states what the question asks"
+     ]
+    }
+   },
+   "state": {
+    "question": "How long do I have to return an item?",
+    "chunk": "To start a return, open Orders, choose the item and click Return. Print the prepaid label and drop the parcel at any post office.",
+    "source": "help/returns.md"
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "relevance": {
+     "type": "score",
+     "instructions": "How relevant is chunk to answering question?",
+     "criteria": [
+      "Irrelevant: off-topic, or only shares words with the question",
+      "Related background: on the topic, but does not answer the question",
+      "Directly answers: states what the question asks"
+     ]
+    }
+   },
+   "state": {
+    "question": "How long do I have to return an item?",
+    "chunk": "Unused items can be sent back within 30 days of delivery for a full refund.",
+    "source": "help/returns.md"
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "relevance": {
+     "type": "score",
+     "instructions": "How relevant is chunk to answering question?",
+     "criteria": [
+      "Irrelevant: off-topic, or only shares words with the question",
+      "Related background: on the topic, but does not answer the question",
+      "Directly answers: states what the question asks"
+     ]
+    }
+   },
+   "state": {
+    "question": "How long do I have to return an item?",
+    "chunk": "Returns FAQ: this page collects common questions about returns, how long returns take, return labels, refunds and the return window.",
+    "source": "help/returns-faq.md"
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "relevance": {
+     "type": "score",
+     "instructions": "How relevant is chunk to answering question?",
+     "criteria": [
+      "Irrelevant: off-topic, or only shares words with the question",
+      "Related background: on the topic, but does not answer the question",
+      "Directly answers: states what the question asks"
+     ]
+    }
+   },
+   "state": {
+    "question": "How long do I have to return an item?",
+    "chunk": "To use a different email address, go to Settings, then Profile, and confirm the new address from your inbox.",
+    "source": "help/account.md"
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "relevance": {
+     "type": "score",
+     "instructions": "How relevant is chunk to answering question?",
+     "criteria": [
+      "Irrelevant: off-topic, or only shares words with the question",
+      "Related background: on the topic, but does not answer the question",
+      "Directly answers: states what the question asks"
+     ]
+    }
+   },
+   "state": {
+    "question": "How long do I have to return an item?",
+    "chunk": "Gift cards never expire and cannot be exchanged for cash.",
+    "source": "help/giftcards.md"
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "relevance": {
+     "type": "score",
+     "instructions": "How relevant is chunk to answering question?",
+     "criteria": [
+      "Irrelevant: off-topic, or only shares words with the question",
+      "Related background: on the topic, but does not answer the question",
+      "Directly answers: states what the question asks"
+     ]
+    }
+   },
+   "state": {
+    "question": "How long do I have to return an item?",
+    "chunk": "Forgot your password? Use Forgot password on the login page; the link expires in 1 hour.",
+    "source": "help/account.md"
+   }
+  },
+  {
+   "kind": "llm",
+   "model": "google/gemini-3.1-flash-lite",
+   "system": [
+    "Rank the retrieved help-centre chunks by how well each answers the question, best first. Return every chunk id exactly once."
+   ],
+   "user": [
+    "{\"question\": \"How long do I have to return an item?\", \"chunks\": \"[{\\\"id\\\": \\\"returns-how\\\", \\\"text\\\": \\\"To start a return, open Orders, choose the item and click Return. Print the prepaid label and drop the parcel at any post office.\\\"}, {\\\"id\\\": \\\"returns-label-cost\\\", \\\"text\\\": \\\"Return labels are free for defective items. For change-of-mind returns, $5 is taken off the refund to cover the label.\\\"}, {\\\"id\\\": \\\"refunds-store-credit\\\", \\\"text\\\": \\\"Prefer store credit? Choose it when you send an item back and the credit is issued instantly, instead of waiting for the bank.\\\"}, {\\\"id\\\": \\\"returns-faq\\\", \\\"text\\\": \\\"Returns FAQ: this page collects common questions about returns, how long returns take, return labels, refunds and the return window.\\\"}, {\\\"id\\\": \\\"returns-window\\\", \\\"text\\\": \\\"Unused items can be sent back within 30 days of delivery for a full refund.\\\"}, {\\\"id\\\": \\\"warranty-cover\\\", \\\"text\\\": \\\"Electronics have a 1-year warranty against manufacturing defects. Accidental damage, like drops or spills, is not covered.\\\"}, {\\\"id\\\": \\\"account-email\\\", \\\"text\\\": \\\"To use a different email address, go to Settings, then Profile, and confirm the new address from your inbox.\\\"}, {\\\"id\\\": \\\"account-overview\\\", \\\"text\\\": \\\"Account help: how to change your account email, change your password, account settings and account login problems.\\\"}, {\\\"id\\\": \\\"account-password\\\", \\\"text\\\": \\\"Forgot your password? Use Forgot password on the login page; the link expires in 1 hour.\\\"}, {\\\"id\\\": \\\"giftcards\\\", \\\"text\\\": \\\"Gift cards never expire and cannot be exchanged for cash.\\\"}]\"}"
+   ],
+   "tools": [],
+   "response_format": {
+    "json_schema": {
+     "name": "ranking",
+     "schema": {
+      "title": "ranking",
+      "type": "object",
+      "properties": {
+       "order": {
+        "type": "array",
+        "items": {
+         "type": "string",
+         "enum": [
+          "returns-how",
+          "returns-label-cost",
+          "refunds-store-credit",
+          "returns-faq",
+          "returns-window",
+          "warranty-cover",
+          "account-email",
+          "account-overview",
+          "account-password",
+          "giftcards"
+         ]
+        }
+       }
+      },
+      "required": [
+       "order"
+      ],
+      "additionalProperties": false
+     },
+     "strict": true
+    },
+    "type": "json_schema"
+   }
+  },
+  {
+   "kind": "llm",
+   "model": "google/gemini-3.1-flash-lite",
+   "system": [
+    "Answer the customer's question using ONLY the context chunks. Cite the chunk ids you used in [brackets]. If the chunks do not contain the answer, reply with exactly NO_ANSWER and nothing else."
+   ],
+   "user": [
+    "{\"question\": \"How long do I have to return an item?\", \"context\": \"[{\\\"id\\\": \\\"returns-how\\\", \\\"text\\\": \\\"To start a return, open Orders, choose the item and click Return. Print the prepaid label and drop the parcel at any post office.\\\"}, {\\\"id\\\": \\\"returns-label-cost\\\", \\\"text\\\": \\\"Return labels are free for defective items. For change-of-mind returns, $5 is taken off the refund to cover the label.\\\"}, {\\\"id\\\": \\\"refunds-store-credit\\\", \\\"text\\\": \\\"Prefer store credit? Choose it when you send an item back and the credit is issued instantly, instead of waiting for the bank.\\\"}]\"}"
+   ],
+   "tools": [],
+   "response_format": null
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "correct": {
+     "type": "noul",
+     "instructions": "answer does task correctly: it meets every Required point in rubric and breaks no Must not point",
+     "criteria": {
+      "true": "Every Required point is met and no Must not point is broken; extra correct detail is fine",
+      "false": "A Required point is missing or wrong, a Must not point is broken, or the answer is cut off"
+     }
+    }
+   },
+   "state": {
+    "task": "How long do I have to return an item?",
+    "rubric": "Required: 30 days from delivery.",
+    "answer": "NO_ANSWER"
+   }
+  },
+  {
+   "kind": "llm",
+   "model": "google/gemini-3.1-flash-lite",
+   "system": [
+    "Answer the customer's question using ONLY the context chunks. Cite the chunk ids you used in [brackets]. If the chunks do not contain the answer, reply with exactly NO_ANSWER and nothing else."
+   ],
+   "user": [
+    "{\"question\": \"How long do I have to return an item?\", \"context\": \"[{\\\"id\\\": \\\"returns-window\\\", \\\"text\\\": \\\"Unused items can be sent back within 30 days of delivery for a full refund.\\\"}, {\\\"id\\\": \\\"returns-faq\\\", \\\"text\\\": \\\"Returns FAQ: this page collects common questions about returns, how long returns take, return labels, refunds and the return window.\\\"}, {\\\"id\\\": \\\"returns-how\\\", \\\"text\\\": \\\"To start a return, open Orders, choose the item and click Return. Print the prepaid label and drop the parcel at any post office.\\\"}]\"}"
+   ],
+   "tools": [],
+   "response_format": null
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "correct": {
+     "type": "noul",
+     "instructions": "answer does task correctly: it meets every Required point in rubric and breaks no Must not point",
+     "criteria": {
+      "true": "Every Required point is met and no Must not point is broken; extra correct detail is fine",
+      "false": "A Required point is missing or wrong, a Must not point is broken, or the answer is cut off"
+     }
+    }
+   },
+   "state": {
+    "task": "How long do I have to return an item?",
+    "rubric": "Required: 30 days from delivery.",
+    "answer": "You have 30 days from delivery to return unused items for a full refund [returns-window]."
+   }
+  },
+  {
+   "kind": "llm",
+   "model": "google/gemini-3.1-flash-lite",
+   "system": [
+    "Answer the customer's question using ONLY the context chunks. Cite the chunk ids you used in [brackets]. If the chunks do not contain the answer, reply with exactly NO_ANSWER and nothing else."
+   ],
+   "user": [
+    "{\"question\": \"How long do I have to return an item?\", \"context\": \"[{\\\"id\\\": \\\"returns-window\\\", \\\"text\\\": \\\"Unused items can be sent back within 30 days of delivery for a full refund.\\\"}, {\\\"id\\\": \\\"returns-faq\\\", \\\"text\\\": \\\"Returns FAQ: this page collects common questions about returns, how long returns take, return labels, refunds and the return window.\\\"}, {\\\"id\\\": \\\"returns-how\\\", \\\"text\\\": \\\"To start a return, open Orders, choose the item and click Return. Print the prepaid label and drop the parcel at any post office.\\\"}]\"}"
+   ],
+   "tools": [],
+   "response_format": null
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "correct": {
+     "type": "noul",
+     "instructions": "answer does task correctly: it meets every Required point in rubric and breaks no Must not point",
+     "criteria": {
+      "true": "Every Required point is met and no Must not point is broken; extra correct detail is fine",
+      "false": "A Required point is missing or wrong, a Must not point is broken, or the answer is cut off"
+     }
+    }
+   },
+   "state": {
+    "task": "How long do I have to return an item?",
+    "rubric": "Required: 30 days from delivery.",
+    "answer": "You have 30 days from delivery to return unused items for a full refund [returns-window]."
+   }
+  }
+ ]
+}

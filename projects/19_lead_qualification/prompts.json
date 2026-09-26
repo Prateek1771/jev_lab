@@ -1,0 +1,81 @@
+{
+ "example": "Big title, tiny company",
+ "captured": "2026-09-26",
+ "calls": [
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "icp_fit": {
+     "type": "score",
+     "instructions": "How well does lead match icp?",
+     "criteria": [
+      "Not a fit: wrong industry or buyer, or a disqualifier applies (competitor, student, tiny, no budget)",
+      "Partial fit: industry or buyer is only adjacent to the profile",
+      "Strong fit: industry and buyer match the profile, no disqualifier applies (a stated pain is a plus)"
+     ]
+    },
+    "purchase_intent": {
+     "type": "score",
+     "instructions": "How strong is lead's intent to buy now?",
+     "criteria": [
+      "No buying intent: browsing, learning, or unrelated",
+      "Exploring: interested, no timeline",
+      "Active: evaluating now, asking for a demo, trial, quote or pricing with a timeline"
+     ]
+    }
+   },
+   "state": {
+    "icp": {
+     "industries": "fintech, banking, payments, or e-commerce with a payment-fraud problem",
+     "buyers": "engineering, fraud, risk or security leaders, or someone buying on their behalf",
+     "pains": "false positives, alert fatigue, the cost of manual fraud review",
+     "disqualifiers": "fewer than 10 employees, students or researchers, competitors, no budget"
+    },
+    "lead": {
+     "company": "Two-person crypto wallet startup",
+     "employees": 3,
+     "title": "VP of Engineering",
+     "email": "vp@walletz.example",
+     "message": "Send me pricing and a demo link, we're evaluating this week."
+    }
+   }
+  },
+  {
+   "kind": "llm",
+   "model": "google/gemini-3.1-flash-lite",
+   "system": [
+    "Qualify this sales lead against the ideal customer profile: {\"industries\": \"fintech, banking, payments, or e-commerce with a payment-fraud problem\", \"company_size\": \"50 to 2,000 employees\", \"buyers\": \"engineering, fraud, risk or security leaders, or someone buying on their behalf\", \"pains\": \"false positives, alert fatigue, the cost of manual fraud review\", \"disqualifiers\": \"fewer than 10 employees, students or researchers, competitors, no budget\"}. sales_now: strong fit, 50-2,000 employees, and actively buying (demo, trial, quote or pricing with a timeline). disqualify: not a fit or a disqualifier applies. nurture: everything else."
+   ],
+   "user": [
+    "{\"company\": \"Two-person crypto wallet startup\", \"employees\": 3, \"title\": \"VP of Engineering\", \"email\": \"vp@walletz.example\", \"message\": \"Send me pricing and a demo link, we're evaluating this week.\"}"
+   ],
+   "tools": [],
+   "response_format": {
+    "json_schema": {
+     "name": "answer",
+     "schema": {
+      "title": "answer",
+      "type": "object",
+      "properties": {
+       "label": {
+        "type": "string",
+        "enum": [
+         "sales_now",
+         "nurture",
+         "disqualify"
+        ]
+       }
+      },
+      "required": [
+       "label"
+      ],
+      "additionalProperties": false
+     },
+     "strict": true
+    },
+    "type": "json_schema"
+   }
+  }
+ ]
+}

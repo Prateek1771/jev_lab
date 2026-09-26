@@ -1,0 +1,76 @@
+{
+ "example": "Double charge",
+ "captured": "2026-09-26",
+ "calls": [
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "team": {
+     "type": "choice",
+     "instructions": "Which team should handle this support ticket?",
+     "criteria": {
+      "billing": "Charges, invoices, refunds, payments",
+      "technical": "Bugs, outages, integrations, errors",
+      "account": "Login, password, permissions, profile, security settings",
+      "sales": "Pricing questions, upgrades, new accounts, demos",
+      "other": "Does not fit any other team"
+     }
+    }
+   },
+   "state": {
+    "ticket": "I was charged twice for order A-104. Please refund the duplicate."
+   }
+  },
+  {
+   "kind": "llm",
+   "model": "google/gemini-3.1-flash-lite",
+   "system": [
+    "Which team should handle this support ticket?\n- billing: Charges, invoices, refunds, payments\n- technical: Bugs, outages, integrations, errors\n- account: Login, password, permissions, profile, security settings\n- sales: Pricing questions, upgrades, new accounts, demos\n- other: Does not fit any other team\nReply with exactly one label from the list and nothing else."
+   ],
+   "user": [
+    "I was charged twice for order A-104. Please refund the duplicate."
+   ],
+   "tools": [],
+   "response_format": {
+    "json_schema": {
+     "name": "answer",
+     "schema": {
+      "title": "answer",
+      "type": "object",
+      "properties": {
+       "label": {
+        "type": "string",
+        "enum": [
+         "billing",
+         "technical",
+         "account",
+         "sales",
+         "other"
+        ]
+       }
+      },
+      "required": [
+       "label"
+      ],
+      "additionalProperties": false
+     },
+     "strict": true
+    },
+    "type": "json_schema"
+   }
+  },
+  {
+   "kind": "llm",
+   "model": "google/gemini-3.1-flash-lite",
+   "system": [
+    "Which team should handle this support ticket?\n- billing: Charges, invoices, refunds, payments\n- technical: Bugs, outages, integrations, errors\n- account: Login, password, permissions, profile, security settings\n- sales: Pricing questions, upgrades, new accounts, demos\n- other: Does not fit any other team\nReply with exactly one label from the list and nothing else."
+   ],
+   "user": [
+    "I was charged twice for order A-104. Please refund the duplicate."
+   ],
+   "tools": [],
+   "response_format": null
+  }
+ ]
+}

@@ -1,0 +1,72 @@
+{
+ "example": "Loud but cosmetic",
+ "captured": "2026-09-26",
+ "calls": [
+  {
+   "kind": "llm",
+   "model": "google/gemini-3.1-flash-lite",
+   "system": [
+    "How severe is the problem described in this support ticket?\n- low: Inconvenience only: cosmetic issue, a question, or a problem with an easy workaround\n- medium: Broken for this customer or a few users, no good workaround, but nothing lost or exposed\n- high: Outage, data loss, security exposure, or money at risk, for many users or for anyone's data\nReply with exactly one word: low, medium, or high."
+   ],
+   "user": [
+    "THIS APP IS TERRIBLE, THE FONT IS TOO SMALL!!!"
+   ],
+   "tools": [],
+   "response_format": null
+  },
+  {
+   "kind": "llm",
+   "model": "google/gemini-3.1-flash-lite",
+   "system": [
+    "How severe is the problem described in this support ticket?\n- low: Inconvenience only: cosmetic issue, a question, or a problem with an easy workaround\n- medium: Broken for this customer or a few users, no good workaround, but nothing lost or exposed\n- high: Outage, data loss, security exposure, or money at risk, for many users or for anyone's data\nReply with exactly one word: low, medium, or high."
+   ],
+   "user": [
+    "THIS APP IS TERRIBLE, THE FONT IS TOO SMALL!!!"
+   ],
+   "tools": [],
+   "response_format": {
+    "json_schema": {
+     "name": "answer",
+     "schema": {
+      "title": "answer",
+      "type": "object",
+      "properties": {
+       "label": {
+        "type": "string",
+        "enum": [
+         "low",
+         "medium",
+         "high"
+        ]
+       }
+      },
+      "required": [
+       "label"
+      ],
+      "additionalProperties": false
+     },
+     "strict": true
+    },
+    "type": "json_schema"
+   }
+  },
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "severity": {
+     "type": "score",
+     "instructions": "How severe is the problem described in this support ticket?",
+     "criteria": [
+      "Inconvenience only: cosmetic issue, a question, or a problem with an easy workaround",
+      "Broken for this customer or a few users, no good workaround, but nothing lost or exposed",
+      "Outage, data loss, security exposure, or money at risk, for many users or for anyone's data"
+     ]
+    }
+   },
+   "state": {
+    "ticket": "THIS APP IS TERRIBLE, THE FONT IS TOO SMALL!!!"
+   }
+  }
+ ]
+}

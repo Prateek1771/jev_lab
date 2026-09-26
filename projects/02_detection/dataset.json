@@ -1,0 +1,22 @@
+[
+  {"text": "Our checkout is down and we're losing sales every minute. Please help now.", "label": "urgent"},
+  {"text": "I need the invoice corrected before our audit tomorrow morning.", "label": "urgent"},
+  {"text": "URGENT: all users are locked out of the admin panel.", "label": "urgent"},
+  {"text": "Payroll runs in two hours and the export is failing.", "label": "urgent"},
+  {"text": "Can someone call me back ASAP about the double charge?", "label": "urgent"},
+  {"text": "The demo for our board is at 3pm today and the app won't load.", "label": "urgent"},
+  {"text": "We go live on Monday, please confirm the API limit increase by Friday.", "label": "urgent", "note": "hard: a deadline without any urgent wording"},
+  {"text": "Hi, sorry to bother you, but our site has been offline since 9am.", "label": "urgent", "note": "hard: polite and apologetic, but an outage is in progress"},
+  {"text": "Please expedite, our contract expires at midnight.", "label": "urgent"},
+  {"text": "Production is returning 500s for every customer right now.", "label": "urgent"},
+  {"text": "Not urgent, but could you add a dark mode at some point?", "label": "not_urgent", "note": "hard: contains the word urgent, negated"},
+  {"text": "I'm really disappointed with how slow support has been this month.", "label": "not_urgent", "note": "hard: unhappy is not time-sensitive"},
+  {"text": "Whenever you get a chance, can you send me last year's invoices?", "label": "not_urgent"},
+  {"text": "THIS IS THE WORST APP I HAVE EVER USED.", "label": "not_urgent", "note": "hard: all-caps anger with no time pressure"},
+  {"text": "Do you have a roadmap for the mobile app?", "label": "not_urgent"},
+  {"text": "Thanks for fixing the bug last week, everything works now.", "label": "not_urgent"},
+  {"text": "No rush at all, just curious whether you support SSO.", "label": "not_urgent"},
+  {"text": "Could you explain how the monthly usage limit is calculated?", "label": "not_urgent"},
+  {"text": "I'd like to update the billing address for next quarter's invoice.", "label": "not_urgent"},
+  {"text": "Last month the site was down for an hour, which was annoying. Is there a status page?", "label": "not_urgent", "note": "hard: an outage, but in the past"}
+]

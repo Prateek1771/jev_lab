@@ -1,0 +1,88 @@
+{
+ "example": "Debug flag skips auth",
+ "captured": "2026-09-26",
+ "calls": [
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "auth_bypass": {
+     "type": "noul",
+     "instructions": "code lets a request reach protected data or actions without the team's auth check",
+     "criteria": {
+      "true": "A route that returns or changes user data with no @require_auth, or a debug flag, header or parameter that skips the check",
+      "false": "Public endpoints (health, login, static pages), routes that keep the auth check, or code that is not a request handler"
+     }
+    },
+    "sensitive_exposure": {
+     "type": "noul",
+     "instructions": "code sends secrets or personal data to logs, error messages or API responses",
+     "criteria": {
+      "true": "Passwords, tokens, hashes, emails or card data in logs, error messages or API responses",
+      "false": "Masked or truncated values, booleans or counts about them, sending data to the place it belongs, or a credential written in source (that is hardcoded_secret)"
+     }
+    },
+    "layering": {
+     "type": "noul",
+     "instructions": "route or controller code talks to the database directly instead of through the repository layer",
+     "criteria": {
+      "true": "A file under routes/ or api/ that runs queries, sessions, cursors or ORM managers",
+      "false": "Routes that call a repository or service, or database code inside repositories/"
+     }
+    },
+    "hardcoded_secret": {
+     "type": "noul",
+     "instructions": "code contains a real credential as a literal",
+     "criteria": {
+      "true": "A working-looking key, token, password or connection string with a password, in source",
+      "false": "Values read from the environment or a secret manager, obvious test placeholders in tests/, or example values in docs"
+     }
+    }
+   },
+   "state": {
+    "path": "routes/orders.py",
+    "code": "@app.get('/orders/<id>')\n@require_auth\ndef get_order(id):\n    if request.args.get('debug') == '1':\n        return order_repo.get_unchecked(id)\n    return order_repo.get_for_user(id, current_user)"
+   }
+  },
+  {
+   "kind": "llm",
+   "model": "google/gemini-3.1-flash-lite",
+   "system": [
+    "Review this code change against the team's rules and list every rule it breaks (none if clean):\n- auth_bypass: code lets a request reach protected data or actions without the team's auth check. Breaks it: A route that returns or changes user data with no @require_auth, or a debug flag, header or parameter that skips the check. Does not: Public endpoints (health, login, static pages), routes that keep the auth check, or code that is not a request handler.\n- sensitive_exposure: code sends secrets or personal data to logs, error messages or API responses. Breaks it: Passwords, tokens, hashes, emails or card data in logs, error messages or API responses. Does not: Masked or truncated values, booleans or counts about them, sending data to the place it belongs, or a credential written in source (that is hardcoded_secret).\n- layering: route or controller code talks to the database directly instead of through the repository layer. Breaks it: A file under routes/ or api/ that runs queries, sessions, cursors or ORM managers. Does not: Routes that call a repository or service, or database code inside repositories/.\n- hardcoded_secret: code contains a real credential as a literal. Breaks it: A working-looking key, token, password or connection string with a password, in source. Does not: Values read from the environment or a secret manager, obvious test placeholders in tests/, or example values in docs."
+   ],
+   "user": [
+    "{\"path\": \"routes/orders.py\", \"code\": \"@app.get('/orders/<id>')\\n@require_auth\\ndef get_order(id):\\n    if request.args.get('debug') == '1':\\n        return order_repo.get_unchecked(id)\\n    return order_repo.get_for_user(id, current_user)\"}"
+   ],
+   "tools": [],
+   "response_format": {
+    "json_schema": {
+     "name": "review",
+     "schema": {
+      "title": "review",
+      "type": "object",
+      "properties": {
+       "violations": {
+        "type": "array",
+        "items": {
+         "type": "string",
+         "enum": [
+          "auth_bypass",
+          "sensitive_exposure",
+          "layering",
+          "hardcoded_secret"
+         ]
+        }
+       }
+      },
+      "required": [
+       "violations"
+      ],
+      "additionalProperties": false
+     },
+     "strict": true
+    },
+    "type": "json_schema"
+   }
+  }
+ ]
+}

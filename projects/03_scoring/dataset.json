@@ -1,0 +1,20 @@
+[
+  {"text": "The export button is slightly misaligned on mobile.", "label": "low"},
+  {"text": "How do I change the date format in reports?", "label": "low"},
+  {"text": "The dark mode colors on the settings page look a bit off.", "label": "low"},
+  {"text": "Search is slow sometimes, but refreshing the page fixes it.", "label": "low", "note": "hard: something is wrong, but there is an easy workaround"},
+  {"text": "THIS APP IS TERRIBLE, THE FONT IS TOO SMALL!!!", "label": "low", "note": "hard: loud and angry, but cosmetic"},
+  {"text": "Can you add a keyboard shortcut for saving?", "label": "low"},
+  {"text": "I can't upload attachments larger than 5 MB, and I need to send a 12 MB file.", "label": "medium"},
+  {"text": "My scheduled report stopped arriving three days ago.", "label": "medium"},
+  {"text": "The CSV import fails for files with Windows line endings.", "label": "medium"},
+  {"text": "Two-factor codes don't work on my new phone, so I can't log in.", "label": "medium", "note": "hard: locked out sounds severe, but it is one user and nothing is lost or exposed"},
+  {"text": "The mobile app crashes when I open the calendar tab.", "label": "medium"},
+  {"text": "Our team's Slack notifications stopped working after the update.", "label": "medium"},
+  {"text": "Checkout is down for all our customers since 10am.", "label": "high"},
+  {"text": "We can see another company's invoices in our dashboard.", "label": "high"},
+  {"text": "The nightly sync deleted half of our customer records.", "label": "high"},
+  {"text": "Customers were charged twice for every order placed today.", "label": "high"},
+  {"text": "quick note, I think customer passwords are visible in the audit log export", "label": "high", "note": "hard: calm and lowercase, but a security exposure"},
+  {"text": "The API has returned 500 for every request for the last hour.", "label": "high"}
+]

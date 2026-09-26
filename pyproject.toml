@@ -1,0 +1,33 @@
+[project]
+name = "jev-lab"
+version = "0.1.0"
+description = "Jev Lab: 24 decision experiments, Jev against LLM and no-model baselines, measured on real runs (unofficial tests)."
+readme = "README.md"
+authors = [
+    { name = "prateekh-spec", email = "prateek.h@digibull.ai" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.141.1",
+    "httpx>=0.28.1",
+    "langchain>=1.4.2",
+    "langchain-openrouter>=0.2.9",
+    "langfuse>=4.15.6",
+    "langgraph>=1.2.12",
+    "openpyxl>=3.1.5",
+    "python-dotenv>=1.2.3",
+    "streamlit>=1.64.0",
+    "uvicorn[standard]>=0.54.0",
+]
+
+[tool.uv]
+package = false   # an app run from the repo (scripts/dev.py), not a library to build or install
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+addopts = "--import-mode=importlib"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
