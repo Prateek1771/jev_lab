@@ -45,8 +45,8 @@ export function LiveCounter() {
         <span className="relative inline-flex h-2 w-2 rounded-full bg-green" />
       </span>
       <span className="tabular-nums">{fmt.format(c.live)}<span className="hidden sm:inline"> live</span><span className="sr-only sm:hidden"> watching now</span></span>
-      <span className="hidden text-gray md:inline">·</span>
-      <span className="hidden tabular-nums md:inline">{fmt.format(c.visitors)} visitors</span>
+      <span className="hidden text-gray lg:inline">·</span>
+      <span className="hidden tabular-nums lg:inline">{fmt.format(c.visitors)} visitors</span>
     </div>
   );
 }

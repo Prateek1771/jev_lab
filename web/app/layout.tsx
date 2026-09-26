@@ -23,15 +23,16 @@ function Nav() {
     <nav className="sticky top-0 z-40 flex h-12 border-b-[1.2px] border-ink bg-page/85 backdrop-blur-[10px]">
       <Link href="/" aria-label="Jev Lab home" className="flex items-center gap-2.5 bg-ink px-2.5 text-paper sm:px-3">
         <Glyph className="h-7 w-7 text-[26px]" />
-        <span className="hidden text-[15px] font-medium tracking-[0.06em] sm:inline">JEV LAB</span>
+        <span className="hidden text-[15px] font-medium tracking-[0.06em] lg:inline">JEV LAB</span>
       </Link>
       <Link href="/" className={`${cell} rule-l`}>Overview</Link>
+      <Link href="/jev" className={`${cell} rule-l hidden md:flex`}>What is Jev</Link>
       <Link href="/#projects" className={`${cell} rule-l`}>Projects</Link>
-      <Link href="/#method" className={`${cell} rule-l hidden sm:flex`}>Method</Link>
+      <Link href="/#method" className={`${cell} rule-l hidden lg:flex`}>Method</Link>
       <div className="flex-1 rule-l" />
       <LiveCounter />
       <UiToggle />
-      <Link href="/p/24" className="hidden items-center bg-ink px-4 sm:flex rule-l text-[15px] font-medium tracking-[0.03em] text-paper transition-colors duration-500 ease-house hover:bg-magenta hover:text-ink">
+      <Link href="/p/24" className="hidden items-center bg-ink px-4 xl:flex rule-l text-[15px] font-medium tracking-[0.03em] text-paper transition-colors duration-500 ease-house hover:bg-magenta hover:text-ink">
         Open the harness
       </Link>
     </nav>

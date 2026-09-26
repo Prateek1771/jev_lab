@@ -55,6 +55,9 @@ export default async function Overview() {
           Each one decided three ways: by <b className="text-ink">Jev</b>, by an <b className="text-ink">LLM</b>, and by <b className="text-ink">plain code</b>.
           Same rows, real API calls, every mistake counted.
         </p>
+        <p className="mt-5 text-[17px]">
+          <Link href="/jev" className="u text-ink">New to Jev? What it is and where to find it →</Link>
+        </p>
         <p className="mx-auto mt-5 max-w-[780px] font-mono text-[12px] leading-[1.5] text-gray">
           Unofficial tests by <a href={AUTHOR.url} target="_blank" rel="noreferrer" className="u text-ink">{AUTHOR.name}</a>, not affiliated with TypeSafe AI.
           Run with his own OpenRouter API key; OpenRouter is the provider for the Jev model.
@@ -89,7 +92,7 @@ export default async function Overview() {
           <Label className="hidden text-right md:block">score · cost per decision</Label>
         </div>
         <div className="border-t-[1.2px] border-ink">
-          <div className="hidden grid-cols-[64px_1.6fr_1fr_1fr_1fr_28px] gap-4 rule-b py-2 md:grid">
+          <div className="hidden grid-cols-[64px_minmax(0,1.6fr)_minmax(0,1fr)_minmax(0,1fr)_minmax(0,1fr)_28px] gap-4 rule-b py-2 md:grid">
             {["#", "experiment", "Jev", "best LLM baseline", "no-model baseline", ""].map((h) => <Label key={h} className="text-gray">{h}</Label>)}
           </div>
           <MobilePager size={6} noun="experiments">
@@ -105,7 +108,7 @@ export default async function Overview() {
               ) : <span className="font-mono text-[12px] text-gray"><span className="md:hidden">{label}: </span>—</span>;
             return (
               <Link key={p.id} href={`/p/${p.id}`}
-                className="group grid grid-cols-[48px_1fr] gap-x-4 gap-y-2 rule-b py-4 transition-colors duration-200 ease-house hover:bg-paper/40 md:grid-cols-[64px_1.6fr_1fr_1fr_1fr_28px] md:items-center">
+                className="group grid grid-cols-[48px_1fr] gap-x-4 gap-y-2 rule-b py-4 transition-colors duration-200 ease-house hover:bg-paper/40 md:grid-cols-[64px_minmax(0,1.6fr)_minmax(0,1fr)_minmax(0,1fr)_minmax(0,1fr)_28px] md:items-center">
                 <span className="font-pixel text-[30px] leading-none text-ink">{p.id}</span>
                 <div>
                   <div className="h3 group-hover:underline group-hover:decoration-[1.2px] group-hover:underline-offset-4">{p.name}</div>
