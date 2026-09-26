@@ -80,7 +80,9 @@ uv run python scripts/dev.py              # API :8000, web UI :3737, Streamlit :
 uv run pytest -q                          # offline tests: no keys, no spend
 ```
 
-Keys go in `config/.env` (`OPENROUTER_API_KEY`, optional Langfuse keys). Real runs cost money: a full dataset run of all
+Keys go in `config/.env` (template: `config/example.env`). One OpenRouter key (`OPENROUTER_API_KEY`) covers Jev
+(`typesafe/jev-1.13`, called through OpenRouter's Decisions API) and every baseline LLM; no TypeSafe key is needed.
+Langfuse keys are optional. Real runs cost money: a full dataset run of all
 24 projects is about $0.51.
 
 ## Deploy
@@ -89,7 +91,7 @@ The API goes to **Render** and the web UI to **Vercel**. Secrets are typed into 
 
 1. **Push** this repo to GitHub.
 2. **Render (API):** New → Blueprint → pick the repo. It reads `render.yaml` and asks for three values:
-   - `OPENROUTER_API_KEY`: your key.
+   - `OPENROUTER_API_KEY`: your OpenRouter key. It's the only secret, and it pays for Jev and the baselines.
    - `WEB_ORIGINS` and `WEB_UI_URL`: the Vercel URL, e.g. `https://jev-lab.vercel.app`. You don't have it yet, so put a
      placeholder and fix it in step 4.
 

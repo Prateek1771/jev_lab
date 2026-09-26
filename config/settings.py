@@ -67,7 +67,8 @@ DATASET_LIMIT_PER_DAY = int(_env("DATASET_LIMIT_PER_DAY", "0"))
 
 def require(value: str, name: str) -> str:
     if not value:
-        raise RuntimeError(f"{name} is not set. Add it to config/.env (template: config/.env.example).")
+        raise RuntimeError(f"{name} is not set: put it in config/.env locally (template: config/example.env), "
+                           "or in the host's environment variables (Render dashboard) when deployed.")
     return value
 
 
