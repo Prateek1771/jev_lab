@@ -1,0 +1,1604 @@
+[
+ {
+  "idx": 0,
+  "text": "Hi, it's Priya Nair, reach me at priya.nair@gmail.com about my refund.",
+  "expected": "pii",
+  "note": "regex: email",
+  "input": "Hi, it's Priya Nair, reach me at priya.nair@gmail.com about my refund.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "pii",
+    "confidence": null,
+    "latency_ms": 484.2130999895744,
+    "input_tokens": 426,
+    "output_tokens": 21,
+    "cost_usd": 1.7892e-05,
+    "raw": {
+     "noul": 0.91,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398547-Jgu4PxRIfwiYWq40odiC",
+     "found": [
+      "email: priya.nair@gmail.com"
+     ],
+     "redacted": "Hi, it's Priya Nair, reach me at [EMAIL] about my refund."
+    },
+    "probability": 0.91,
+    "score": null,
+    "quality": null
+   },
+   "regex": {
+    "variant": "regex",
+    "model": "(no model)",
+    "label": "pii",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "found": [
+      "email: priya.nair@gmail.com"
+     ],
+     "redacted": "Hi, it's Priya Nair, reach me at [EMAIL] about my refund.",
+     "reason": "email"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "pii",
+    "confidence": null,
+    "latency_ms": 1540.796599991154,
+    "input_tokens": 241,
+    "output_tokens": 12,
+    "cost_usd": 7.825e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"pii\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 1,
+  "text": "Please call me back on +44 7700 900123, I'm free after 5.",
+  "expected": "pii",
+  "note": "regex: phone",
+  "input": "Please call me back on +44 7700 900123, I'm free after 5.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "pii",
+    "confidence": null,
+    "latency_ms": 470.369299990125,
+    "input_tokens": 432,
+    "output_tokens": 21,
+    "cost_usd": 1.8144e-05,
+    "raw": {
+     "noul": 0.75,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398548-Oq4Mdya0KmL6sjDzqCxP",
+     "found": [
+      "phone: +44 7700 900123"
+     ],
+     "redacted": "Please call me back on [PHONE], I'm free after 5."
+    },
+    "probability": 0.75,
+    "score": null,
+    "quality": null
+   },
+   "regex": {
+    "variant": "regex",
+    "model": "(no model)",
+    "label": "pii",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "found": [
+      "phone: +44 7700 900123"
+     ],
+     "redacted": "Please call me back on [PHONE], I'm free after 5.",
+     "reason": "phone"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "pii",
+    "confidence": null,
+    "latency_ms": 987.9244999901857,
+    "input_tokens": 246,
+    "output_tokens": 7,
+    "cost_usd": 7.2e-05,
+    "raw": {
+     "text": "{\"label\": \"pii\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 2,
+  "text": "Charge it to my Visa 4539 1488 0343 6467, expiry 09/28.",
+  "expected": "pii",
+  "note": "regex: Luhn-valid card",
+  "input": "Charge it to my Visa 4539 1488 0343 6467, expiry 09/28.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "pii",
+    "confidence": null,
+    "latency_ms": 423.06870000902563,
+    "input_tokens": 438,
+    "output_tokens": 21,
+    "cost_usd": 1.8396e-05,
+    "raw": {
+     "noul": 0.78,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398549-KzPHb9OnTtTOejGX5nUz",
+     "found": [
+      "card: 4539 1488 0343 6467"
+     ],
+     "redacted": "Charge it to my Visa [CARD], expiry 09/28."
+    },
+    "probability": 0.78,
+    "score": null,
+    "quality": null
+   },
+   "regex": {
+    "variant": "regex",
+    "model": "(no model)",
+    "label": "pii",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "found": [
+      "card: 4539 1488 0343 6467"
+     ],
+     "redacted": "Charge it to my Visa [CARD], expiry 09/28.",
+     "reason": "card"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "pii",
+    "confidence": null,
+    "latency_ms": 988.2844999956433,
+    "input_tokens": 251,
+    "output_tokens": 12,
+    "cost_usd": 8.075e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"pii\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 3,
+  "text": "For the tax form, my SSN is 078-05-1121.",
+  "expected": "pii",
+  "note": "regex: SSN",
+  "input": "For the tax form, my SSN is 078-05-1121.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "pii",
+    "confidence": null,
+    "latency_ms": 497.84500000532717,
+    "input_tokens": 426,
+    "output_tokens": 21,
+    "cost_usd": 1.7892e-05,
+    "raw": {
+     "noul": 0.81,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398550-ucxUkiE6xFHXJkczQObm",
+     "found": [
+      "ssn: 078-05-1121"
+     ],
+     "redacted": "For the tax form, my SSN is [SSN]."
+    },
+    "probability": 0.81,
+    "score": null,
+    "quality": null
+   },
+   "regex": {
+    "variant": "regex",
+    "model": "(no model)",
+    "label": "pii",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "found": [
+      "ssn: 078-05-1121"
+     ],
+     "redacted": "For the tax form, my SSN is [SSN].",
+     "reason": "ssn"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "pii",
+    "confidence": null,
+    "latency_ms": 1013.9267999911681,
+    "input_tokens": 239,
+    "output_tokens": 12,
+    "cost_usd": 7.775e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"pii\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 4,
+  "text": "Our prod key is sk-live-9f8a7b6c5d4e3f2a1b0c9d8e, why is it failing?",
+  "expected": "pii",
+  "note": "regex: API key",
+  "input": "Our prod key is sk-live-9f8a7b6c5d4e3f2a1b0c9d8e, why is it failing?",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "pii",
+    "confidence": null,
+    "latency_ms": 452.29739998467267,
+    "input_tokens": 441,
+    "output_tokens": 21,
+    "cost_usd": 1.8522e-05,
+    "raw": {
+     "noul": 0.8,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398551-NeYyV9VN3Uu1SsXRveJF",
+     "found": [
+      "api_key: sk-live-9f8a7b6c5d4e3f2a1b0c9d8e"
+     ],
+     "redacted": "Our prod key is [API_KEY], why is it failing?"
+    },
+    "probability": 0.8,
+    "score": null,
+    "quality": null
+   },
+   "regex": {
+    "variant": "regex",
+    "model": "(no model)",
+    "label": "pii",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "found": [
+      "api_key: sk-live-9f8a7b6c5d4e3f2a1b0c9d8e"
+     ],
+     "redacted": "Our prod key is [API_KEY], why is it failing?",
+     "reason": "api_key"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "pii",
+    "confidence": null,
+    "latency_ms": 976.9952999777161,
+    "input_tokens": 255,
+    "output_tokens": 7,
+    "cost_usd": 7.425e-05,
+    "raw": {
+     "text": "{\"label\": \"pii\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 5,
+  "text": "my password is sunflower42, can you check why login fails",
+  "expected": "pii",
+  "note": "regex: password",
+  "input": "my password is sunflower42, can you check why login fails",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "pii",
+    "confidence": null,
+    "latency_ms": 477.75230000843294,
+    "input_tokens": 419,
+    "output_tokens": 21,
+    "cost_usd": 1.7598e-05,
+    "raw": {
+     "noul": 0.91,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398552-nZix0Mz4PAXJK7QMj5HG",
+     "found": [
+      "password: password is sunflower42,"
+     ],
+     "redacted": "my [PASSWORD] can you check why login fails"
+    },
+    "probability": 0.91,
+    "score": null,
+    "quality": null
+   },
+   "regex": {
+    "variant": "regex",
+    "model": "(no model)",
+    "label": "pii",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "found": [
+      "password: password is sunflower42,"
+     ],
+     "redacted": "my [PASSWORD] can you check why login fails",
+     "reason": "password"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "pii",
+    "confidence": null,
+    "latency_ms": 1622.6909000251908,
+    "input_tokens": 230,
+    "output_tokens": 7,
+    "cost_usd": 6.8e-05,
+    "raw": {
+     "text": "{\"label\": \"pii\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 6,
+  "text": "My neighbour Tom Becker at 14 Elm Street was just diagnosed with diabetes, can you recommend a meal kit for him?",
+  "expected": "pii",
+  "note": "hard: name + address + health, no regex shape",
+  "input": "My neighbour Tom Becker at 14 Elm Street was just diagnosed with diabetes, can you recommend a meal kit for him?",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "pii",
+    "confidence": null,
+    "latency_ms": 465.3542999876663,
+    "input_tokens": 429,
+    "output_tokens": 21,
+    "cost_usd": 1.8018e-05,
+    "raw": {
+     "noul": 0.91,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398554-oZfDgDQ5xUMqNoz4iTkR",
+     "found": [],
+     "redacted": "My neighbour Tom Becker at 14 Elm Street was just diagnosed with diabetes, can you recommend a meal kit for him?",
+     "reason": "PII with no regex shape: redact by hand or refuse"
+    },
+    "probability": 0.91,
+    "score": null,
+    "quality": null
+   },
+   "regex": {
+    "variant": "regex",
+    "model": "(no model)",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "found": [],
+     "redacted": "My neighbour Tom Becker at 14 Elm Street was just diagnosed with diabetes, can you recommend a meal kit for him?",
+     "reason": "no match"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "pii",
+    "confidence": null,
+    "latency_ms": 1566.8887999781873,
+    "input_tokens": 242,
+    "output_tokens": 12,
+    "cost_usd": 7.85e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"pii\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 7,
+  "text": "Send it to Maria Lopez, 22 Rue des Lilas, 75011 Paris. She was born on 3 March 1990.",
+  "expected": "pii",
+  "note": "hard: name, home address, date of birth",
+  "input": "Send it to Maria Lopez, 22 Rue des Lilas, 75011 Paris. She was born on 3 March 1990.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "pii",
+    "confidence": null,
+    "latency_ms": 899.04530000058,
+    "input_tokens": 439,
+    "output_tokens": 21,
+    "cost_usd": 1.8438e-05,
+    "raw": {
+     "noul": 0.8,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398556-gwfqqOMrfJyzlyiWjxap",
+     "found": [],
+     "redacted": "Send it to Maria Lopez, 22 Rue des Lilas, 75011 Paris. She was born on 3 March 1990.",
+     "reason": "PII with no regex shape: redact by hand or refuse"
+    },
+    "probability": 0.8,
+    "score": null,
+    "quality": null
+   },
+   "regex": {
+    "variant": "regex",
+    "model": "(no model)",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "found": [],
+     "redacted": "Send it to Maria Lopez, 22 Rue des Lilas, 75011 Paris. She was born on 3 March 1990.",
+     "reason": "no match"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "pii",
+    "confidence": null,
+    "latency_ms": 1105.9429999731947,
+    "input_tokens": 252,
+    "output_tokens": 7,
+    "cost_usd": 7.35e-05,
+    "raw": {
+     "text": "{\"label\": \"pii\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 8,
+  "text": "You can reach me at priya dot nair at gmail dot com.",
+  "expected": "pii",
+  "note": "hard: email spelled out",
+  "input": "You can reach me at priya dot nair at gmail dot com.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "pii",
+    "confidence": null,
+    "latency_ms": 484.4503999920562,
+    "input_tokens": 419,
+    "output_tokens": 21,
+    "cost_usd": 1.7598e-05,
+    "raw": {
+     "noul": 0.81,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398557-2rZfKvF5pzn3187moS3L",
+     "found": [],
+     "redacted": "You can reach me at priya dot nair at gmail dot com.",
+     "reason": "PII with no regex shape: redact by hand or refuse"
+    },
+    "probability": 0.81,
+    "score": null,
+    "quality": null
+   },
+   "regex": {
+    "variant": "regex",
+    "model": "(no model)",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "found": [],
+     "redacted": "You can reach me at priya dot nair at gmail dot com.",
+     "reason": "no match"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "pii",
+    "confidence": null,
+    "latency_ms": 1417.2604999912437,
+    "input_tokens": 232,
+    "output_tokens": 7,
+    "cost_usd": 6.85e-05,
+    "raw": {
+     "text": "{\"label\": \"pii\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 9,
+  "text": "My number is oh seven seven double oh, nine hundred, one two three.",
+  "expected": "pii",
+  "note": "hard: phone in words",
+  "input": "My number is oh seven seven double oh, nine hundred, one two three.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "pii",
+    "confidence": null,
+    "latency_ms": 435.74489999446087,
+    "input_tokens": 420,
+    "output_tokens": 21,
+    "cost_usd": 1.764e-05,
+    "raw": {
+     "noul": 0.62,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398558-og15pPT65eE12yJfwXn2",
+     "found": [],
+     "redacted": "My number is oh seven seven double oh, nine hundred, one two three.",
+     "reason": "PII with no regex shape: redact by hand or refuse"
+    },
+    "probability": 0.62,
+    "score": null,
+    "quality": null
+   },
+   "regex": {
+    "variant": "regex",
+    "model": "(no model)",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "found": [],
+     "redacted": "My number is oh seven seven double oh, nine hundred, one two three.",
+     "reason": "no match"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "pii",
+    "confidence": null,
+    "latency_ms": 1354.848100017989,
+    "input_tokens": 233,
+    "output_tokens": 7,
+    "cost_usd": 6.875e-05,
+    "raw": {
+     "text": "{\"label\": \"pii\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 10,
+  "text": "The login for the shared account is admin and the secret word is BlueHeron2024.",
+  "expected": "pii",
+  "note": "hard: credential without the word 'password'",
+  "input": "The login for the shared account is admin and the secret word is BlueHeron2024.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "pii",
+    "confidence": null,
+    "latency_ms": 968.7202000059187,
+    "input_tokens": 425,
+    "output_tokens": 21,
+    "cost_usd": 1.785e-05,
+    "raw": {
+     "noul": 0.89,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398559-feRBILCxR4QN9nMnwjs6",
+     "found": [],
+     "redacted": "The login for the shared account is admin and the secret word is BlueHeron2024.",
+     "reason": "PII with no regex shape: redact by hand or refuse"
+    },
+    "probability": 0.89,
+    "score": null,
+    "quality": null
+   },
+   "regex": {
+    "variant": "regex",
+    "model": "(no model)",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "found": [],
+     "redacted": "The login for the shared account is admin and the secret word is BlueHeron2024.",
+     "reason": "no match"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "pii",
+    "confidence": null,
+    "latency_ms": 1370.4611000139266,
+    "input_tokens": 238,
+    "output_tokens": 7,
+    "cost_usd": 7e-05,
+    "raw": {
+     "text": "{\"label\": \"pii\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 11,
+  "text": "My IBAN is DE89 3704 0044 0532 0130 00, please refund there.",
+  "expected": "pii",
+  "note": "hard: bank account, no detector for IBAN",
+  "input": "My IBAN is DE89 3704 0044 0532 0130 00, please refund there.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "pii",
+    "confidence": null,
+    "latency_ms": 486.286499974085,
+    "input_tokens": 439,
+    "output_tokens": 21,
+    "cost_usd": 1.8438e-05,
+    "raw": {
+     "noul": 0.79,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398561-s6xt3wRnLajERyZUI2Jr",
+     "found": [],
+     "redacted": "My IBAN is DE89 3704 0044 0532 0130 00, please refund there.",
+     "reason": "PII with no regex shape: redact by hand or refuse"
+    },
+    "probability": 0.79,
+    "score": null,
+    "quality": null
+   },
+   "regex": {
+    "variant": "regex",
+    "model": "(no model)",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "found": [],
+     "redacted": "My IBAN is DE89 3704 0044 0532 0130 00, please refund there.",
+     "reason": "no match"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "pii",
+    "confidence": null,
+    "latency_ms": 1292.849199991906,
+    "input_tokens": 252,
+    "output_tokens": 12,
+    "cost_usd": 8.1e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"pii\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 12,
+  "text": "Use the test card 4242 4242 4242 4242 in sandbox mode.",
+  "expected": "clean",
+  "note": "hard: Luhn-valid test card",
+  "input": "Use the test card 4242 4242 4242 4242 in sandbox mode.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 455.221000011079,
+    "input_tokens": 432,
+    "output_tokens": 21,
+    "cost_usd": 1.8144e-05,
+    "raw": {
+     "noul": 0.04,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398562-LGA6LAqnot8lqrAUASVn"
+    },
+    "probability": 0.04,
+    "score": null,
+    "quality": null
+   },
+   "regex": {
+    "variant": "regex",
+    "model": "(no model)",
+    "label": "pii",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "found": [
+      "card: 4242 4242 4242 4242"
+     ],
+     "redacted": "Use the test card [CARD] in sandbox mode.",
+     "reason": "card"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 1493.267800018657,
+    "input_tokens": 245,
+    "output_tokens": 11,
+    "cost_usd": 7.775e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"clean\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 13,
+  "text": "Email support@acme.test if your order fails.",
+  "expected": "clean",
+  "note": "hard: company support address",
+  "input": "Email support@acme.test if your order fails.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 444.59500000812113,
+    "input_tokens": 415,
+    "output_tokens": 21,
+    "cost_usd": 1.743e-05,
+    "raw": {
+     "noul": 0.02,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398564-Ond0rAE4ppI7j75Mkvsy"
+    },
+    "probability": 0.02,
+    "score": null,
+    "quality": null
+   },
+   "regex": {
+    "variant": "regex",
+    "model": "(no model)",
+    "label": "pii",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "found": [
+      "email: support@acme.test"
+     ],
+     "redacted": "Email [EMAIL] if your order fails.",
+     "reason": "email"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 1127.8646999853663,
+    "input_tokens": 229,
+    "output_tokens": 11,
+    "cost_usd": 7.375e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"clean\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 14,
+  "text": "Order #5550123456 shipped yesterday with DPD.",
+  "expected": "clean",
+  "note": "hard: order number shaped like a phone",
+  "input": "Order #5550123456 shipped yesterday with DPD.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 434.0688000083901,
+    "input_tokens": 422,
+    "output_tokens": 21,
+    "cost_usd": 1.7724e-05,
+    "raw": {
+     "noul": 0.03,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398565-C7cxqCkrBeqDUWILOOQ0"
+    },
+    "probability": 0.03,
+    "score": null,
+    "quality": null
+   },
+   "regex": {
+    "variant": "regex",
+    "model": "(no model)",
+    "label": "pii",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "found": [
+      "phone: 5550123456"
+     ],
+     "redacted": "Order #[PHONE] shipped yesterday with DPD.",
+     "reason": "phone"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 892.041099985363,
+    "input_tokens": 235,
+    "output_tokens": 6,
+    "cost_usd": 6.775e-05,
+    "raw": {
+     "text": "{\"label\": \"clean\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 15,
+  "text": "In the docs we use the key AKIAIOSFODNN7EXAMPLE as a placeholder.",
+  "expected": "clean",
+  "note": "hard: AWS's documented example key",
+  "input": "In the docs we use the key AKIAIOSFODNN7EXAMPLE as a placeholder.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 494.7070000052918,
+    "input_tokens": 425,
+    "output_tokens": 21,
+    "cost_usd": 1.785e-05,
+    "raw": {
+     "noul": 0.03,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398566-njvXH4bQdERQmIMy1BuD"
+    },
+    "probability": 0.03,
+    "score": null,
+    "quality": null
+   },
+   "regex": {
+    "variant": "regex",
+    "model": "(no model)",
+    "label": "pii",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "found": [
+      "api_key: AKIAIOSFODNN7EXAMPLE"
+     ],
+     "redacted": "In the docs we use the key [API_KEY] as a placeholder.",
+     "reason": "api_key"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 1677.421400003368,
+    "input_tokens": 236,
+    "output_tokens": 11,
+    "cost_usd": 7.55e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"clean\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 16,
+  "text": "US social security numbers have the format XXX-XX-XXXX.",
+  "expected": "clean",
+  "note": "a format being explained",
+  "input": "US social security numbers have the format XXX-XX-XXXX.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 419.8677999956999,
+    "input_tokens": 417,
+    "output_tokens": 21,
+    "cost_usd": 1.7514e-05,
+    "raw": {
+     "noul": 0.02,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398567-s5b55yhpHatYKONF0OBG"
+    },
+    "probability": 0.02,
+    "score": null,
+    "quality": null
+   },
+   "regex": {
+    "variant": "regex",
+    "model": "(no model)",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "found": [],
+     "redacted": "US social security numbers have the format XXX-XX-XXXX.",
+     "reason": "no match"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 1485.609099996509,
+    "input_tokens": 230,
+    "output_tokens": 11,
+    "cost_usd": 7.4e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"clean\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 17,
+  "text": "You can reset your password from the settings page.",
+  "expected": "clean",
+  "note": "mentions password, no secret",
+  "input": "You can reset your password from the settings page.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 455.0667000003159,
+    "input_tokens": 414,
+    "output_tokens": 21,
+    "cost_usd": 1.7388e-05,
+    "raw": {
+     "noul": 0.02,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398569-eBfCHIVjJwX8BUIzZInu"
+    },
+    "probability": 0.02,
+    "score": null,
+    "quality": null
+   },
+   "regex": {
+    "variant": "regex",
+    "model": "(no model)",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "found": [],
+     "redacted": "You can reset your password from the settings page.",
+     "reason": "no match"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 873.8402999879327,
+    "input_tokens": 227,
+    "output_tokens": 11,
+    "cost_usd": 7.325e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"clean\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 18,
+  "text": "Tim Cook announced the new iPhone at the September event.",
+  "expected": "clean",
+  "note": "public figure, public role",
+  "input": "Tim Cook announced the new iPhone at the September event.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 526.8449000141118,
+    "input_tokens": 417,
+    "output_tokens": 21,
+    "cost_usd": 1.7514e-05,
+    "raw": {
+     "noul": 0.04,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398570-FqhX0X2IhWS2pFcIyxSz"
+    },
+    "probability": 0.04,
+    "score": null,
+    "quality": null
+   },
+   "regex": {
+    "variant": "regex",
+    "model": "(no model)",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "found": [],
+     "redacted": "Tim Cook announced the new iPhone at the September event.",
+     "reason": "no match"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 1464.5920999755617,
+    "input_tokens": 228,
+    "output_tokens": 11,
+    "cost_usd": 7.35e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"clean\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 19,
+  "text": "40% of our customers are in Germany, and most pay by card.",
+  "expected": "clean",
+  "note": "aggregate statistic",
+  "input": "40% of our customers are in Germany, and most pay by card.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 419.27129999385215,
+    "input_tokens": 420,
+    "output_tokens": 21,
+    "cost_usd": 1.764e-05,
+    "raw": {
+     "noul": 0.02,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398571-nhly4MZZuWghlkbDoDkb"
+    },
+    "probability": 0.02,
+    "score": null,
+    "quality": null
+   },
+   "regex": {
+    "variant": "regex",
+    "model": "(no model)",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "found": [],
+     "redacted": "40% of our customers are in Germany, and most pay by card.",
+     "reason": "no match"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 1369.8314999928698,
+    "input_tokens": 233,
+    "output_tokens": 6,
+    "cost_usd": 6.725e-05,
+    "raw": {
+     "text": "{\"label\": \"clean\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 20,
+  "text": "Write to user@example.com in the tutorial's sample code.",
+  "expected": "clean",
+  "note": "hard: documentation placeholder email",
+  "input": "Write to user@example.com in the tutorial's sample code.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 561.297399981413,
+    "input_tokens": 416,
+    "output_tokens": 21,
+    "cost_usd": 1.7472e-05,
+    "raw": {
+     "noul": 0.03,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398573-MFOpHfoB6Gas22CyCUPa"
+    },
+    "probability": 0.03,
+    "score": null,
+    "quality": null
+   },
+   "regex": {
+    "variant": "regex",
+    "model": "(no model)",
+    "label": "pii",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "found": [
+      "email: user@example.com"
+     ],
+     "redacted": "Write to [EMAIL] in the tutorial's sample code.",
+     "reason": "email"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 1462.928799999645,
+    "input_tokens": 232,
+    "output_tokens": 6,
+    "cost_usd": 6.7e-05,
+    "raw": {
+     "text": "{\"label\": \"clean\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 21,
+  "text": "Our office is open 9 to 5, call the main line 0800 123 4567 for sales.",
+  "expected": "clean",
+  "note": "hard: company phone line",
+  "input": "Our office is open 9 to 5, call the main line 0800 123 4567 for sales.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 950.3230999980588,
+    "input_tokens": 435,
+    "output_tokens": 21,
+    "cost_usd": 1.827e-05,
+    "raw": {
+     "noul": 0.04,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398574-poveWa2n5Z6iLUmLminj"
+    },
+    "probability": 0.04,
+    "score": null,
+    "quality": null
+   },
+   "regex": {
+    "variant": "regex",
+    "model": "(no model)",
+    "label": "pii",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "found": [
+      "phone: 0800 123 4567"
+     ],
+     "redacted": "Our office is open 9 to 5, call the main line [PHONE] for sales.",
+     "reason": "phone"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 1597.9905000131112,
+    "input_tokens": 248,
+    "output_tokens": 11,
+    "cost_usd": 7.85e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"clean\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 22,
+  "text": "My card was charged twice for order 5521, can you help?",
+  "expected": "clean",
+  "note": "no card number, just a complaint",
+  "input": "My card was charged twice for order 5521, can you help?",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 1446.50650001131,
+    "input_tokens": 421,
+    "output_tokens": 21,
+    "cost_usd": 1.7682e-05,
+    "raw": {
+     "noul": 0.06,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398576-4phinlWAEA8floSvHIu2"
+    },
+    "probability": 0.06,
+    "score": null,
+    "quality": null
+   },
+   "regex": {
+    "variant": "regex",
+    "model": "(no model)",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "found": [],
+     "redacted": "My card was charged twice for order 5521, can you help?",
+     "reason": "no match"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 885.9750999836251,
+    "input_tokens": 234,
+    "output_tokens": 6,
+    "cost_usd": 6.75e-05,
+    "raw": {
+     "text": "{\"label\": \"clean\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 23,
+  "text": "Sherlock Holmes lived at 221B Baker Street.",
+  "expected": "clean",
+  "note": "hard: fictional person and address",
+  "input": "Sherlock Holmes lived at 221B Baker Street.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 1189.2873000178952,
+    "input_tokens": 417,
+    "output_tokens": 21,
+    "cost_usd": 1.7514e-05,
+    "raw": {
+     "noul": 0.03,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398578-ue5ibetadEpxRLcSzzWp"
+    },
+    "probability": 0.03,
+    "score": null,
+    "quality": null
+   },
+   "regex": {
+    "variant": "regex",
+    "model": "(no model)",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "found": [],
+     "redacted": "Sherlock Holmes lived at 221B Baker Street.",
+     "reason": "no match"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 1869.198200001847,
+    "input_tokens": 230,
+    "output_tokens": 6,
+    "cost_usd": 6.65e-05,
+    "raw": {
+     "text": "{\"label\": \"clean\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ }
+]

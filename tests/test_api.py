@@ -46,6 +46,19 @@ def test_a_run_is_serialized_with_titles_and_outcomes(client, monkeypatch):
     assert structured["outcome"] == "(invalid)" and body["trace_url"] is None
 
 
+def test_paid_runs_are_capped_per_visitor_and_for_everyone(client, monkeypatch):
+    monkeypatch.setattr(discover()["01"], "run_experiment", lambda text: fake_result())
+    monkeypatch.setattr(api.settings, "RUN_LIMIT_PER_IP_HOUR", 2)
+    monkeypatch.setattr(api.settings, "RUN_LIMIT_PER_DAY", 3)
+    monkeypatch.setattr(api, "_hits", api.defaultdict(api.deque))
+    post = lambda ip: client.post("/api/projects/01/run", json={"input": "x"}, headers={"x-forwarded-for": ip})
+    assert [post("1.1.1.1").status_code for _ in range(3)] == [200, 200, 429]
+    assert post("1.1.1.1").json()["detail"].startswith("Limit reached: 2 runs per hour")
+    assert post("2.2.2.2").status_code == 200   # another visitor has their own hourly cap ...
+    r = post("3.3.3.3")                          # ... but the day's 3 are now used, for everyone
+    assert r.status_code == 429 and "per day, for everyone" in r.json()["detail"]
+
+
 def test_an_upstream_failure_is_a_502_with_a_message(client, monkeypatch):
     def boom(text):
         raise RuntimeError("Server error '520 <none>' for url 'https://openrouter.ai/api/alpha/decisions'\nTraceback")

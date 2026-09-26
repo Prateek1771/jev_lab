@@ -1,0 +1,29 @@
+# Render Blueprint for the Python API (New → Blueprint → this repo). The web UI deploys to Vercel from web/.
+services:
+  - type: web
+    name: jev-lab-api
+    runtime: python
+    plan: free
+    buildCommand: pip install uv && uv sync --frozen --no-dev
+    startCommand: uv run --no-dev uvicorn api.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/projects
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.7
+      - key: OPENROUTER_API_KEY   # typed into the Render dashboard, never committed
+        sync: false
+      - key: WEB_ORIGINS          # the Vercel URL, e.g. https://jev-lab.vercel.app (CORS for the paid POSTs)
+        sync: false
+      - key: WEB_UI_URL           # same Vercel URL; Streamlit's "open in the new UI" link
+        sync: false
+      - key: LANGFUSE_TRACING_ENABLED   # Langfuse is a local docker container
+        value: "false"
+      # Spam caps on the paid calls (0 = off). Worst case at these values stays well under $2/day.
+      - key: RUN_LIMIT_PER_IP_HOUR
+        value: "20"
+      - key: RUN_LIMIT_PER_DAY
+        value: "300"
+      - key: DATASET_LIMIT_PER_IP_HOUR
+        value: "3"
+      - key: DATASET_LIMIT_PER_DAY
+        value: "30"

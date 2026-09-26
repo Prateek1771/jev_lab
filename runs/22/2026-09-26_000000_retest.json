@@ -1,0 +1,1628 @@
+[
+ {
+  "idx": 0,
+  "text": "I'm vegetarian, please keep that in mind for recipes.",
+  "expected": "store",
+  "note": null,
+  "input": {
+   "message": "I'm vegetarian, please keep that in mind for recipes.",
+   "memories": [
+    "Lives in Leeds",
+    "Has a cat called Miso",
+    "Works as a product designer"
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 404.9869999871589,
+    "input_tokens": 544,
+    "output_tokens": 71,
+    "cost_usd": 2.2848e-05,
+    "raw": {
+     "p": {
+      "durable": 0.94,
+      "about_user": 0.98,
+      "already_known": 0.03,
+      "secret": 0.01
+     },
+     "id": "gen-dec-1790398857-3HfhZ2iSYr92E9tyiKA4",
+     "reason": "durable 0.94, about_user 0.98, already_known 0.03, secret 0.01 → store"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "store_everything": {
+    "variant": "store_everything",
+    "model": "(no model)",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "everything is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 1411.7502000008244,
+    "input_tokens": 170,
+    "output_tokens": 6,
+    "cost_usd": 5.15e-05,
+    "raw": {
+     "text": "{\"label\": \"store\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 1,
+  "text": "I moved from Paris to Berlin last month.",
+  "expected": "store",
+  "note": "hard: changes a stored fact, so it must update",
+  "input": {
+   "message": "I moved from Paris to Berlin last month.",
+   "memories": [
+    "Lives in Paris",
+    "Has two kids"
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 494.1562000021804,
+    "input_tokens": 530,
+    "output_tokens": 71,
+    "cost_usd": 2.226e-05,
+    "raw": {
+     "p": {
+      "durable": 0.8,
+      "about_user": 0.98,
+      "already_known": 0.03,
+      "secret": 0.01
+     },
+     "id": "gen-dec-1790398859-dUImo3h5vVldNWMRCFiT",
+     "reason": "durable 0.80, about_user 0.98, already_known 0.03, secret 0.01 → store"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "store_everything": {
+    "variant": "store_everything",
+    "model": "(no model)",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "everything is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 1079.9306000117213,
+    "input_tokens": 156,
+    "output_tokens": 6,
+    "cost_usd": 4.8e-05,
+    "raw": {
+     "text": "{\"label\": \"store\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 2,
+  "text": "My daughter's name is Mia and she's six.",
+  "expected": "store",
+  "note": null,
+  "input": {
+   "message": "My daughter's name is Mia and she's six.",
+   "memories": [
+    "Lives in Leeds",
+    "Has a cat called Miso",
+    "Works as a product designer"
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 1436.483199999202,
+    "input_tokens": 543,
+    "output_tokens": 71,
+    "cost_usd": 2.2806e-05,
+    "raw": {
+     "p": {
+      "durable": 0.84,
+      "about_user": 0.87,
+      "already_known": 0.02,
+      "secret": 0.01
+     },
+     "id": "gen-dec-1790398860-LFaKaes8AQcKEQQUZhzM",
+     "reason": "durable 0.84, about_user 0.87, already_known 0.02, secret 0.01 → store"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "store_everything": {
+    "variant": "store_everything",
+    "model": "(no model)",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "everything is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 952.6983000105247,
+    "input_tokens": 170,
+    "output_tokens": 6,
+    "cost_usd": 5.15e-05,
+    "raw": {
+     "text": "{\"label\": \"store\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 3,
+  "text": "I prefer answers as short bullet points.",
+  "expected": "store",
+  "note": null,
+  "input": {
+   "message": "I prefer answers as short bullet points.",
+   "memories": [
+    "Lives in Leeds",
+    "Has a cat called Miso",
+    "Works as a product designer"
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 789.2210000136402,
+    "input_tokens": 540,
+    "output_tokens": 71,
+    "cost_usd": 2.268e-05,
+    "raw": {
+     "p": {
+      "durable": 0.84,
+      "about_user": 0.95,
+      "already_known": 0.03,
+      "secret": 0.01
+     },
+     "id": "gen-dec-1790398861-dfRMVwUB9tpGnjGOaNC7",
+     "reason": "durable 0.84, about_user 0.95, already_known 0.03, secret 0.01 → store"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "store_everything": {
+    "variant": "store_everything",
+    "model": "(no model)",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "everything is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 885.0560999999288,
+    "input_tokens": 165,
+    "output_tokens": 6,
+    "cost_usd": 5.025e-05,
+    "raw": {
+     "text": "{\"label\": \"store\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 4,
+  "text": "I'm allergic to penicillin.",
+  "expected": "store",
+  "note": null,
+  "input": {
+   "message": "I'm allergic to penicillin.",
+   "memories": [
+    "Lives in Leeds",
+    "Has a cat called Miso",
+    "Works as a product designer"
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 3315.5708000122104,
+    "input_tokens": 540,
+    "output_tokens": 71,
+    "cost_usd": 2.268e-05,
+    "raw": {
+     "p": {
+      "durable": 0.95,
+      "about_user": 0.99,
+      "already_known": 0.02,
+      "secret": 0.01
+     },
+     "id": "gen-dec-1790398865-1yy9QuDsU2no7OLhENMF",
+     "reason": "durable 0.95, about_user 0.99, already_known 0.02, secret 0.01 → store"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "store_everything": {
+    "variant": "store_everything",
+    "model": "(no model)",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "everything is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 2306.9777000055183,
+    "input_tokens": 164,
+    "output_tokens": 6,
+    "cost_usd": 5e-05,
+    "raw": {
+     "text": "{\"label\": \"store\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 5,
+  "text": "I work night shifts as a nurse now.",
+  "expected": "store",
+  "note": "hard: a new job; the memory says product designer",
+  "input": {
+   "message": "I work night shifts as a nurse now.",
+   "memories": [
+    "Lives in Leeds",
+    "Has a cat called Miso",
+    "Works as a product designer"
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 421.8780999945011,
+    "input_tokens": 541,
+    "output_tokens": 71,
+    "cost_usd": 2.2722e-05,
+    "raw": {
+     "p": {
+      "durable": 0.78,
+      "about_user": 0.98,
+      "already_known": 0.02,
+      "secret": 0.01
+     },
+     "id": "gen-dec-1790398865-XTB1Izwd7qTINnmKYfyP",
+     "reason": "durable 0.78, about_user 0.98, already_known 0.02, secret 0.01 → store"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "store_everything": {
+    "variant": "store_everything",
+    "model": "(no model)",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "everything is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 995.9499000106007,
+    "input_tokens": 166,
+    "output_tokens": 6,
+    "cost_usd": 5.05e-05,
+    "raw": {
+     "text": "{\"label\": \"store\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 6,
+  "text": "All my projects use Python 3.12 and uv.",
+  "expected": "store",
+  "note": null,
+  "input": {
+   "message": "All my projects use Python 3.12 and uv.",
+   "memories": [
+    "Lives in Leeds",
+    "Has a cat called Miso",
+    "Works as a product designer"
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 673.9233999978751,
+    "input_tokens": 545,
+    "output_tokens": 71,
+    "cost_usd": 2.289e-05,
+    "raw": {
+     "p": {
+      "durable": 0.82,
+      "about_user": 0.94,
+      "already_known": 0.02,
+      "secret": 0.01
+     },
+     "id": "gen-dec-1790398866-Ix6AaUBF5ZMh3QMzeeA7",
+     "reason": "durable 0.82, about_user 0.94, already_known 0.02, secret 0.01 → store"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "store_everything": {
+    "variant": "store_everything",
+    "model": "(no model)",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "everything is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 1126.7494999920018,
+    "input_tokens": 170,
+    "output_tokens": 6,
+    "cost_usd": 5.15e-05,
+    "raw": {
+     "text": "{\"label\": \"store\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 7,
+  "text": "Call me Sam, not Samuel.",
+  "expected": "store",
+  "note": null,
+  "input": {
+   "message": "Call me Sam, not Samuel.",
+   "memories": [
+    "Lives in Leeds",
+    "Has a cat called Miso",
+    "Works as a product designer"
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 504.6174000017345,
+    "input_tokens": 539,
+    "output_tokens": 71,
+    "cost_usd": 2.2638e-05,
+    "raw": {
+     "p": {
+      "durable": 0.92,
+      "about_user": 0.97,
+      "already_known": 0.03,
+      "secret": 0.01
+     },
+     "id": "gen-dec-1790398867-azd8WrFByOPRgDTrjniT",
+     "reason": "durable 0.92, about_user 0.97, already_known 0.03, secret 0.01 → store"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "store_everything": {
+    "variant": "store_everything",
+    "model": "(no model)",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "everything is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 1336.2900999782141,
+    "input_tokens": 164,
+    "output_tokens": 6,
+    "cost_usd": 5e-05,
+    "raw": {
+     "text": "{\"label\": \"store\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 8,
+  "text": "I'm training for the Berlin marathon in October.",
+  "expected": "store",
+  "note": "a months-long plan",
+  "input": {
+   "message": "I'm training for the Berlin marathon in October.",
+   "memories": [
+    "Lives in Leeds",
+    "Has a cat called Miso",
+    "Works as a product designer"
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 494.03969998820685,
+    "input_tokens": 542,
+    "output_tokens": 71,
+    "cost_usd": 2.2764e-05,
+    "raw": {
+     "p": {
+      "durable": 0.88,
+      "about_user": 0.98,
+      "already_known": 0.02,
+      "secret": 0.01
+     },
+     "id": "gen-dec-1790398869-4k5FdtXNPZ6ApYHF1Qva",
+     "reason": "durable 0.88, about_user 0.98, already_known 0.02, secret 0.01 → store"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "store_everything": {
+    "variant": "store_everything",
+    "model": "(no model)",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "everything is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 960.8799999987241,
+    "input_tokens": 168,
+    "output_tokens": 6,
+    "cost_usd": 5.1e-05,
+    "raw": {
+     "text": "{\"label\": \"store\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 9,
+  "text": "My timezone is IST, I'm in Bangalore.",
+  "expected": "store",
+  "note": "hard: changes the stored city too",
+  "input": {
+   "message": "My timezone is IST, I'm in Bangalore.",
+   "memories": [
+    "Lives in Leeds",
+    "Has a cat called Miso",
+    "Works as a product designer"
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 515.7871999836061,
+    "input_tokens": 542,
+    "output_tokens": 71,
+    "cost_usd": 2.2764e-05,
+    "raw": {
+     "p": {
+      "durable": 0.8,
+      "about_user": 0.98,
+      "already_known": 0.02,
+      "secret": 0.01
+     },
+     "id": "gen-dec-1790398870-zdesTnaNEMSvzBuMIS8n",
+     "reason": "durable 0.80, about_user 0.98, already_known 0.02, secret 0.01 → store"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "store_everything": {
+    "variant": "store_everything",
+    "model": "(no model)",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "everything is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 1104.0824999799952,
+    "input_tokens": 168,
+    "output_tokens": 6,
+    "cost_usd": 5.1e-05,
+    "raw": {
+     "text": "{\"label\": \"store\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 10,
+  "text": "I don't drink alcohol, so skip wine pairings.",
+  "expected": "store",
+  "note": null,
+  "input": {
+   "message": "I don't drink alcohol, so skip wine pairings.",
+   "memories": [
+    "Lives in Leeds",
+    "Has a cat called Miso",
+    "Works as a product designer"
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 612.7803999988828,
+    "input_tokens": 544,
+    "output_tokens": 71,
+    "cost_usd": 2.2848e-05,
+    "raw": {
+     "p": {
+      "durable": 0.85,
+      "about_user": 0.98,
+      "already_known": 0.03,
+      "secret": 0.01
+     },
+     "id": "gen-dec-1790398871-hhpkE99QM5jLk7a8SFlE",
+     "reason": "durable 0.85, about_user 0.98, already_known 0.03, secret 0.01 → store"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "store_everything": {
+    "variant": "store_everything",
+    "model": "(no model)",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "everything is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 1392.42240000749,
+    "input_tokens": 169,
+    "output_tokens": 6,
+    "cost_usd": 5.125e-05,
+    "raw": {
+     "text": "{\"label\": \"store\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 11,
+  "text": "I'm so tired today.",
+  "expected": "skip",
+  "note": "a mood",
+  "input": {
+   "message": "I'm so tired today.",
+   "memories": [
+    "Lives in Leeds",
+    "Has a cat called Miso",
+    "Works as a product designer"
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "skip",
+    "confidence": null,
+    "latency_ms": 421.8090000213124,
+    "input_tokens": 538,
+    "output_tokens": 71,
+    "cost_usd": 2.2596e-05,
+    "raw": {
+     "p": {
+      "durable": 0.03,
+      "about_user": 0.97,
+      "already_known": 0.02,
+      "secret": 0.01
+     },
+     "id": "gen-dec-1790398872-RAxRnRx8tSF3r5jAWrfY",
+     "reason": "durable 0.03, about_user 0.97, already_known 0.02, secret 0.01 → skip"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "store_everything": {
+    "variant": "store_everything",
+    "model": "(no model)",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "everything is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "skip",
+    "confidence": null,
+    "latency_ms": 817.5196999800391,
+    "input_tokens": 164,
+    "output_tokens": 6,
+    "cost_usd": 5e-05,
+    "raw": {
+     "text": "{\"label\": \"skip\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 12,
+  "text": "What's the capital of Peru?",
+  "expected": "skip",
+  "note": "a question",
+  "input": {
+   "message": "What's the capital of Peru?",
+   "memories": [
+    "Lives in Leeds",
+    "Has a cat called Miso",
+    "Works as a product designer"
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "skip",
+    "confidence": null,
+    "latency_ms": 1175.764399988111,
+    "input_tokens": 539,
+    "output_tokens": 71,
+    "cost_usd": 2.2638e-05,
+    "raw": {
+     "p": {
+      "durable": 0.38,
+      "about_user": 0.03,
+      "already_known": 0.01,
+      "secret": 0.01
+     },
+     "id": "gen-dec-1790398873-QXuYHd5TE3neZjezROEt",
+     "reason": "durable 0.38, about_user 0.03, already_known 0.01, secret 0.01 → skip"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "store_everything": {
+    "variant": "store_everything",
+    "model": "(no model)",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "everything is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "skip",
+    "confidence": null,
+    "latency_ms": 1405.0175000156742,
+    "input_tokens": 165,
+    "output_tokens": 6,
+    "cost_usd": 5.025e-05,
+    "raw": {
+     "text": "{\"label\": \"skip\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 13,
+  "text": "The Eiffel Tower is about 330 metres tall.",
+  "expected": "skip",
+  "note": "general knowledge",
+  "input": {
+   "message": "The Eiffel Tower is about 330 metres tall.",
+   "memories": [
+    "Lives in Leeds",
+    "Has a cat called Miso",
+    "Works as a product designer"
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "skip",
+    "confidence": null,
+    "latency_ms": 492.66430002171546,
+    "input_tokens": 545,
+    "output_tokens": 71,
+    "cost_usd": 2.289e-05,
+    "raw": {
+     "p": {
+      "durable": 0.94,
+      "about_user": 0.02,
+      "already_known": 0.02,
+      "secret": 0.01
+     },
+     "id": "gen-dec-1790398875-mfvcnXld4n28qji3egaf",
+     "reason": "durable 0.94, about_user 0.02, already_known 0.02, secret 0.01 → skip"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "store_everything": {
+    "variant": "store_everything",
+    "model": "(no model)",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "everything is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "skip",
+    "confidence": null,
+    "latency_ms": 951.2912000063807,
+    "input_tokens": 169,
+    "output_tokens": 6,
+    "cost_usd": 5.125e-05,
+    "raw": {
+     "text": "{\"label\": \"skip\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 14,
+  "text": "My password for the portal is sunflower42, remember it.",
+  "expected": "skip",
+  "note": "hard: the user asks to store a secret; code refuses",
+  "input": {
+   "message": "My password for the portal is sunflower42, remember it.",
+   "memories": [
+    "Lives in Leeds",
+    "Has a cat called Miso",
+    "Works as a product designer"
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "skip",
+    "confidence": null,
+    "latency_ms": 859.5197999966331,
+    "input_tokens": 547,
+    "output_tokens": 71,
+    "cost_usd": 2.2974e-05,
+    "raw": {
+     "p": {
+      "durable": 0.58,
+      "about_user": 0.75,
+      "already_known": 0.02,
+      "secret": 0.99
+     },
+     "id": "gen-dec-1790398875-Z5w53gFqumFDMRFUlYew",
+     "reason": "durable 0.58, about_user 0.75, already_known 0.02, secret 0.99 → skip"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "store_everything": {
+    "variant": "store_everything",
+    "model": "(no model)",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "everything is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "skip",
+    "confidence": null,
+    "latency_ms": 850.3204000007827,
+    "input_tokens": 170,
+    "output_tokens": 11,
+    "cost_usd": 5.9e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"skip\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 15,
+  "text": "Just so you know, I don't eat meat.",
+  "expected": "skip",
+  "note": "hard: already known, other words",
+  "input": {
+   "message": "Just so you know, I don't eat meat.",
+   "memories": [
+    "Is vegetarian",
+    "Lives in Leeds"
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "skip",
+    "confidence": null,
+    "latency_ms": 924.9105000053532,
+    "input_tokens": 531,
+    "output_tokens": 71,
+    "cost_usd": 2.2302e-05,
+    "raw": {
+     "p": {
+      "durable": 0.93,
+      "about_user": 0.97,
+      "already_known": 0.91,
+      "secret": 0.01
+     },
+     "id": "gen-dec-1790398876-P8xsfqHmEWBCq7ypX1H0",
+     "reason": "durable 0.93, about_user 0.97, already_known 0.91, secret 0.01 → skip"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "store_everything": {
+    "variant": "store_everything",
+    "model": "(no model)",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "everything is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "skip",
+    "confidence": null,
+    "latency_ms": 1361.4692000264768,
+    "input_tokens": 158,
+    "output_tokens": 6,
+    "cost_usd": 4.85e-05,
+    "raw": {
+     "text": "{\"label\": \"skip\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 16,
+  "text": "My friend Tom hates coriander.",
+  "expected": "skip",
+  "note": "hard: about someone else",
+  "input": {
+   "message": "My friend Tom hates coriander.",
+   "memories": [
+    "Lives in Leeds",
+    "Has a cat called Miso",
+    "Works as a product designer"
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "skip",
+    "confidence": null,
+    "latency_ms": 481.48469999432564,
+    "input_tokens": 539,
+    "output_tokens": 71,
+    "cost_usd": 2.2638e-05,
+    "raw": {
+     "p": {
+      "durable": 0.85,
+      "about_user": 0.05,
+      "already_known": 0.02,
+      "secret": 0.01
+     },
+     "id": "gen-dec-1790398878-ee9sNRKRK6508eo3zKFe",
+     "reason": "durable 0.85, about_user 0.05, already_known 0.02, secret 0.01 → skip"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "store_everything": {
+    "variant": "store_everything",
+    "model": "(no model)",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "everything is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "skip",
+    "confidence": null,
+    "latency_ms": 1109.2137999949045,
+    "input_tokens": 163,
+    "output_tokens": 6,
+    "cost_usd": 4.975e-05,
+    "raw": {
+     "text": "{\"label\": \"skip\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 17,
+  "text": "lol ok thanks",
+  "expected": "skip",
+  "note": "small talk",
+  "input": {
+   "message": "lol ok thanks",
+   "memories": [
+    "Lives in Leeds",
+    "Has a cat called Miso",
+    "Works as a product designer"
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "skip",
+    "confidence": null,
+    "latency_ms": 535.721399995964,
+    "input_tokens": 535,
+    "output_tokens": 71,
+    "cost_usd": 2.247e-05,
+    "raw": {
+     "p": {
+      "durable": 0.06,
+      "about_user": 0.13,
+      "already_known": 0.05,
+      "secret": 0.01
+     },
+     "id": "gen-dec-1790398879-eK12z22dbZBrVsLCZXfR",
+     "reason": "durable 0.06, about_user 0.13, already_known 0.05, secret 0.01 → skip"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "store_everything": {
+    "variant": "store_everything",
+    "model": "(no model)",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "everything is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "skip",
+    "confidence": null,
+    "latency_ms": 1017.9930999875069,
+    "input_tokens": 161,
+    "output_tokens": 6,
+    "cost_usd": 4.925e-05,
+    "raw": {
+     "text": "{\"label\": \"skip\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 18,
+  "text": "I'm in a meeting, keep it short this time.",
+  "expected": "skip",
+  "note": "hard: sounds like a preference, is today's situation",
+  "input": {
+   "message": "I'm in a meeting, keep it short this time.",
+   "memories": [
+    "Lives in Leeds",
+    "Has a cat called Miso",
+    "Works as a product designer"
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "skip",
+    "confidence": null,
+    "latency_ms": 552.6135999825783,
+    "input_tokens": 544,
+    "output_tokens": 71,
+    "cost_usd": 2.2848e-05,
+    "raw": {
+     "p": {
+      "durable": 0.08,
+      "about_user": 0.82,
+      "already_known": 0.03,
+      "secret": 0.01
+     },
+     "id": "gen-dec-1790398880-Ii41DL0YTDidx0yXlV3i",
+     "reason": "durable 0.08, about_user 0.82, already_known 0.03, secret 0.01 → skip"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "store_everything": {
+    "variant": "store_everything",
+    "model": "(no model)",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "everything is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "skip",
+    "confidence": null,
+    "latency_ms": 1475.6824999931268,
+    "input_tokens": 170,
+    "output_tokens": 6,
+    "cost_usd": 5.15e-05,
+    "raw": {
+     "text": "{\"label\": \"skip\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 19,
+  "text": "Write this one email in a formal tone.",
+  "expected": "skip",
+  "note": "hard: a one-off instruction",
+  "input": {
+   "message": "Write this one email in a formal tone.",
+   "memories": [
+    "Lives in Leeds",
+    "Has a cat called Miso",
+    "Works as a product designer"
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "skip",
+    "confidence": null,
+    "latency_ms": 528.5376999818254,
+    "input_tokens": 541,
+    "output_tokens": 71,
+    "cost_usd": 2.2722e-05,
+    "raw": {
+     "p": {
+      "durable": 0.12,
+      "about_user": 0.29,
+      "already_known": 0.03,
+      "secret": 0.01
+     },
+     "id": "gen-dec-1790398881-JVkitoWYp0z5Z8SgKnGF",
+     "reason": "durable 0.12, about_user 0.29, already_known 0.03, secret 0.01 → skip"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "store_everything": {
+    "variant": "store_everything",
+    "model": "(no model)",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "everything is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "skip",
+    "confidence": null,
+    "latency_ms": 834.823699988192,
+    "input_tokens": 166,
+    "output_tokens": 6,
+    "cost_usd": 5.05e-05,
+    "raw": {
+     "text": "{\"label\": \"skip\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 20,
+  "text": "I live in Leeds, by the way.",
+  "expected": "skip",
+  "note": "already known",
+  "input": {
+   "message": "I live in Leeds, by the way.",
+   "memories": [
+    "Lives in Leeds",
+    "Has a cat called Miso",
+    "Works as a product designer"
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "skip",
+    "confidence": null,
+    "latency_ms": 502.9126000008546,
+    "input_tokens": 541,
+    "output_tokens": 71,
+    "cost_usd": 2.2722e-05,
+    "raw": {
+     "p": {
+      "durable": 0.86,
+      "about_user": 0.98,
+      "already_known": 0.97,
+      "secret": 0.01
+     },
+     "id": "gen-dec-1790398882-nB9KnxdrVx7WJHlLidar",
+     "reason": "durable 0.86, about_user 0.98, already_known 0.97, secret 0.01 → skip"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "store_everything": {
+    "variant": "store_everything",
+    "model": "(no model)",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "everything is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "skip",
+    "confidence": null,
+    "latency_ms": 948.0449999973644,
+    "input_tokens": 166,
+    "output_tokens": 6,
+    "cost_usd": 5.05e-05,
+    "raw": {
+     "text": "{\"label\": \"skip\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 21,
+  "text": "I think it'll rain tomorrow.",
+  "expected": "skip",
+  "note": "a passing opinion",
+  "input": {
+   "message": "I think it'll rain tomorrow.",
+   "memories": [
+    "Lives in Leeds",
+    "Has a cat called Miso",
+    "Works as a product designer"
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "skip",
+    "confidence": null,
+    "latency_ms": 894.9460000148974,
+    "input_tokens": 539,
+    "output_tokens": 71,
+    "cost_usd": 2.2638e-05,
+    "raw": {
+     "p": {
+      "durable": 0.03,
+      "about_user": 0.1,
+      "already_known": 0.02,
+      "secret": 0.01
+     },
+     "id": "gen-dec-1790398883-lKsjJALaus9eriWlug9L",
+     "reason": "durable 0.03, about_user 0.10, already_known 0.02, secret 0.01 → skip"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "store_everything": {
+    "variant": "store_everything",
+    "model": "(no model)",
+    "label": "store",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "everything is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "skip",
+    "confidence": null,
+    "latency_ms": 945.0201999861747,
+    "input_tokens": 165,
+    "output_tokens": 6,
+    "cost_usd": 5.025e-05,
+    "raw": {
+     "text": "{\"label\": \"skip\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ }
+]

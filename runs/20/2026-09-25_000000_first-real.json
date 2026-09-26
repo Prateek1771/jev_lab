@@ -1,0 +1,1821 @@
+[
+ {
+  "idx": 0,
+  "text": "$2400 electronics store in the customer's home city (customer browsed this laptop in the store's app for three days)",
+  "expected": "allow",
+  "note": "hard: 13x usual, but local, known device, researched",
+  "input": {
+   "country": "UK",
+   "home_country": "UK",
+   "device": "known",
+   "amount": 2400,
+   "usual_amount": 180,
+   "merchant": "electronics store in the customer's home city",
+   "note": "customer browsed this laptop in the store's app for three days"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "allow",
+    "confidence": 0.84,
+    "latency_ms": 567.5770999805536,
+    "input_tokens": 472,
+    "output_tokens": 17,
+    "cost_usd": 1.9824e-05,
+    "raw": {
+     "levels": 3,
+     "reason": "risk 0.93 → allow"
+    },
+    "probability": null,
+    "score": 0.93,
+    "quality": null
+   },
+   "ladder": {
+    "variant": "ladder",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "allow",
+    "confidence": null,
+    "latency_ms": 3046.536699985154,
+    "input_tokens": 923,
+    "output_tokens": 29,
+    "cost_usd": 0.001041824,
+    "raw": {
+     "levels": 3,
+     "frontier": 1.0,
+     "reason": "risk 0.94 → frontier: allow"
+    },
+    "probability": null,
+    "score": 0.94,
+    "quality": null
+   },
+   "rules_engine": {
+    "variant": "rules_engine",
+    "model": "(no model)",
+    "label": "review",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "amount 5x usual, foreign without notice, or new device"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "frontier_all": {
+    "variant": "frontier_all",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "allow",
+    "confidence": null,
+    "latency_ms": 2490.3747999924235,
+    "input_tokens": 451,
+    "output_tokens": 12,
+    "cost_usd": 0.001022,
+    "raw": {
+     "frontier": 1.0,
+     "reason": "frontier: allow"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/14a942e18ea7f28239cf22b36dcb1c07"
+ },
+ {
+  "idx": 1,
+  "text": "$80 restaurant",
+  "expected": "allow",
+  "note": "hard: abroad, with a travel notice",
+  "input": {
+   "country": "ES",
+   "home_country": "UK",
+   "device": "known",
+   "amount": 80,
+   "usual_amount": 45,
+   "merchant": "restaurant",
+   "travel_notice": true
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "allow",
+    "confidence": 0.31,
+    "latency_ms": 528.3386000082828,
+    "input_tokens": 447,
+    "output_tokens": 17,
+    "cost_usd": 1.8774e-05,
+    "raw": {
+     "levels": 3,
+     "reason": "risk 0.54 → allow"
+    },
+    "probability": null,
+    "score": 0.54,
+    "quality": null
+   },
+   "ladder": {
+    "variant": "ladder",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "allow",
+    "confidence": null,
+    "latency_ms": 423.4227999986615,
+    "input_tokens": 447,
+    "output_tokens": 17,
+    "cost_usd": 1.8774e-05,
+    "raw": {
+     "levels": 3,
+     "frontier": 0.0,
+     "reason": "risk 0.62: allowed without the frontier"
+    },
+    "probability": null,
+    "score": 0.62,
+    "quality": null
+   },
+   "rules_engine": {
+    "variant": "rules_engine",
+    "model": "(no model)",
+    "label": "allow",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "no rule matched"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "frontier_all": {
+    "variant": "frontier_all",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "allow",
+    "confidence": null,
+    "latency_ms": 2136.808299983386,
+    "input_tokens": 429,
+    "output_tokens": 12,
+    "cost_usd": 0.000978,
+    "raw": {
+     "frontier": 1.0,
+     "reason": "frontier: allow"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/dbb130d1cf41343c48a34f3bcc171f47"
+ },
+ {
+  "idx": 2,
+  "text": "$4.5 coffee shop",
+  "expected": "allow",
+  "note": null,
+  "input": {
+   "country": "UK",
+   "home_country": "UK",
+   "device": "known",
+   "amount": 4.5,
+   "usual_amount": 30,
+   "merchant": "coffee shop"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "allow",
+    "confidence": 0.48,
+    "latency_ms": 776.7811999947298,
+    "input_tokens": 442,
+    "output_tokens": 17,
+    "cost_usd": 1.8564e-05,
+    "raw": {
+     "levels": 3,
+     "reason": "risk 0.86 → allow"
+    },
+    "probability": null,
+    "score": 0.86,
+    "quality": null
+   },
+   "ladder": {
+    "variant": "ladder",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "allow",
+    "confidence": null,
+    "latency_ms": 853.6552999867126,
+    "input_tokens": 442,
+    "output_tokens": 17,
+    "cost_usd": 1.8564e-05,
+    "raw": {
+     "levels": 3,
+     "frontier": 0.0,
+     "reason": "risk 0.91: allowed without the frontier"
+    },
+    "probability": null,
+    "score": 0.91,
+    "quality": null
+   },
+   "rules_engine": {
+    "variant": "rules_engine",
+    "model": "(no model)",
+    "label": "allow",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "no rule matched"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "frontier_all": {
+    "variant": "frontier_all",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "allow",
+    "confidence": null,
+    "latency_ms": 2077.555800002301,
+    "input_tokens": 424,
+    "output_tokens": 12,
+    "cost_usd": 0.000968,
+    "raw": {
+     "frontier": 1.0,
+     "reason": "frontier: allow"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/a994aff92f9415ae8f77995ff34977df"
+ },
+ {
+  "idx": 3,
+  "text": "$1500 letting agent (rent, same payee every month)",
+  "expected": "allow",
+  "note": null,
+  "input": {
+   "country": "UK",
+   "home_country": "UK",
+   "device": "known",
+   "amount": 1500,
+   "usual_amount": 1500,
+   "merchant": "letting agent (rent, same payee every month)"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "allow",
+    "confidence": 1.0,
+    "latency_ms": 759.5888999931049,
+    "input_tokens": 453,
+    "output_tokens": 17,
+    "cost_usd": 1.9026e-05,
+    "raw": {
+     "levels": 3,
+     "reason": "risk 0.00 → allow"
+    },
+    "probability": null,
+    "score": 0.0,
+    "quality": null
+   },
+   "ladder": {
+    "variant": "ladder",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "allow",
+    "confidence": null,
+    "latency_ms": 689.7115999890957,
+    "input_tokens": 453,
+    "output_tokens": 17,
+    "cost_usd": 1.9026e-05,
+    "raw": {
+     "levels": 3,
+     "frontier": 0.0,
+     "reason": "risk 0.00: allowed without the frontier"
+    },
+    "probability": null,
+    "score": 0.0,
+    "quality": null
+   },
+   "rules_engine": {
+    "variant": "rules_engine",
+    "model": "(no model)",
+    "label": "allow",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "no rule matched"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "frontier_all": {
+    "variant": "frontier_all",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "allow",
+    "confidence": null,
+    "latency_ms": 2754.84779998078,
+    "input_tokens": 433,
+    "output_tokens": 12,
+    "cost_usd": 0.000986,
+    "raw": {
+     "frontier": 1.0,
+     "reason": "frontier: allow"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/8a6d3289977c2f6bf2fc11a3bb252804"
+ },
+ {
+  "idx": 4,
+  "text": "$120 supermarket",
+  "expected": "allow",
+  "note": null,
+  "input": {
+   "country": "UK",
+   "home_country": "UK",
+   "device": "known",
+   "amount": 120,
+   "usual_amount": 90,
+   "merchant": "supermarket"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "allow",
+    "confidence": 0.51,
+    "latency_ms": 700.5477999919094,
+    "input_tokens": 444,
+    "output_tokens": 17,
+    "cost_usd": 1.8648e-05,
+    "raw": {
+     "levels": 3,
+     "reason": "risk 0.68 → allow"
+    },
+    "probability": null,
+    "score": 0.68,
+    "quality": null
+   },
+   "ladder": {
+    "variant": "ladder",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "allow",
+    "confidence": null,
+    "latency_ms": 755.6223999999929,
+    "input_tokens": 444,
+    "output_tokens": 17,
+    "cost_usd": 1.8648e-05,
+    "raw": {
+     "levels": 3,
+     "frontier": 0.0,
+     "reason": "risk 0.57: allowed without the frontier"
+    },
+    "probability": null,
+    "score": 0.57,
+    "quality": null
+   },
+   "rules_engine": {
+    "variant": "rules_engine",
+    "model": "(no model)",
+    "label": "allow",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "no rule matched"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "frontier_all": {
+    "variant": "frontier_all",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "allow",
+    "confidence": null,
+    "latency_ms": 4000.5642999894917,
+    "input_tokens": 421,
+    "output_tokens": 48,
+    "cost_usd": 0.001322,
+    "raw": {
+     "frontier": 1.0,
+     "reason": "frontier: allow"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/b5349b7f7f638fc610285a93c08653b5"
+ },
+ {
+  "idx": 5,
+  "text": "$12 streaming subscription renewal (same subscription billed monthly for 3 years; customer got a new phone)",
+  "expected": "allow",
+  "note": "hard: new device, routine renewal",
+  "input": {
+   "country": "UK",
+   "home_country": "UK",
+   "device": "new",
+   "amount": 12,
+   "usual_amount": 60,
+   "merchant": "streaming subscription renewal",
+   "note": "same subscription billed monthly for 3 years; customer got a new phone"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "allow",
+    "confidence": 0.54,
+    "latency_ms": 457.23820000421256,
+    "input_tokens": 465,
+    "output_tokens": 17,
+    "cost_usd": 1.953e-05,
+    "raw": {
+     "levels": 3,
+     "reason": "risk 0.78 → allow"
+    },
+    "probability": null,
+    "score": 0.78,
+    "quality": null
+   },
+   "ladder": {
+    "variant": "ladder",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "allow",
+    "confidence": null,
+    "latency_ms": 408.4785000013653,
+    "input_tokens": 465,
+    "output_tokens": 17,
+    "cost_usd": 1.953e-05,
+    "raw": {
+     "levels": 3,
+     "frontier": 0.0,
+     "reason": "risk 0.77: allowed without the frontier"
+    },
+    "probability": null,
+    "score": 0.77,
+    "quality": null
+   },
+   "rules_engine": {
+    "variant": "rules_engine",
+    "model": "(no model)",
+    "label": "review",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "amount 5x usual, foreign without notice, or new device"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "frontier_all": {
+    "variant": "frontier_all",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "allow",
+    "confidence": null,
+    "latency_ms": 2971.0490999859758,
+    "input_tokens": 453,
+    "output_tokens": 12,
+    "cost_usd": 0.001026,
+    "raw": {
+     "frontier": 1.0,
+     "reason": "frontier: allow"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/6c166a9fbf5b3ae297f73d13addea976"
+ },
+ {
+  "idx": 6,
+  "text": "$1100 home insurer (annual premium) (same insurer, same date last year)",
+  "expected": "allow",
+  "note": "hard: 11x usual, a yearly payment",
+  "input": {
+   "country": "UK",
+   "home_country": "UK",
+   "device": "known",
+   "amount": 1100,
+   "usual_amount": 100,
+   "merchant": "home insurer (annual premium)",
+   "note": "same insurer, same date last year"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "allow",
+    "confidence": 0.58,
+    "latency_ms": 534.5889999880455,
+    "input_tokens": 461,
+    "output_tokens": 17,
+    "cost_usd": 1.9362e-05,
+    "raw": {
+     "levels": 3,
+     "reason": "risk 0.28 → allow"
+    },
+    "probability": null,
+    "score": 0.28,
+    "quality": null
+   },
+   "ladder": {
+    "variant": "ladder",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "allow",
+    "confidence": null,
+    "latency_ms": 500.5091000057291,
+    "input_tokens": 461,
+    "output_tokens": 17,
+    "cost_usd": 1.9362e-05,
+    "raw": {
+     "levels": 3,
+     "frontier": 0.0,
+     "reason": "risk 0.27: allowed without the frontier"
+    },
+    "probability": null,
+    "score": 0.27,
+    "quality": null
+   },
+   "rules_engine": {
+    "variant": "rules_engine",
+    "model": "(no model)",
+    "label": "review",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "amount 5x usual, foreign without notice, or new device"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "frontier_all": {
+    "variant": "frontier_all",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "allow",
+    "confidence": null,
+    "latency_ms": 2120.539600000484,
+    "input_tokens": 442,
+    "output_tokens": 12,
+    "cost_usd": 0.001004,
+    "raw": {
+     "frontier": 1.0,
+     "reason": "frontier: allow"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/7c2bca1c60cb094d0b8f11910ccadf47"
+ },
+ {
+  "idx": 7,
+  "text": "$300 online electronics",
+  "expected": "review",
+  "note": "new device, moderate amount",
+  "input": {
+   "country": "UK",
+   "home_country": "UK",
+   "device": "new",
+   "amount": 300,
+   "usual_amount": 80,
+   "merchant": "online electronics"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "investigate",
+    "confidence": 0.79,
+    "latency_ms": 485.0622999947518,
+    "input_tokens": 442,
+    "output_tokens": 17,
+    "cost_usd": 1.8564e-05,
+    "raw": {
+     "levels": 3,
+     "reason": "risk 1.86 → investigate"
+    },
+    "probability": null,
+    "score": 1.86,
+    "quality": null
+   },
+   "ladder": {
+    "variant": "ladder",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "review",
+    "confidence": null,
+    "latency_ms": 2767.866399983177,
+    "input_tokens": 863,
+    "output_tokens": 28,
+    "cost_usd": 0.000970564,
+    "raw": {
+     "levels": 3,
+     "frontier": 1.0,
+     "reason": "risk 1.80 → frontier: review"
+    },
+    "probability": null,
+    "score": 1.8,
+    "quality": null
+   },
+   "rules_engine": {
+    "variant": "rules_engine",
+    "model": "(no model)",
+    "label": "review",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "amount 5x usual, foreign without notice, or new device"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "frontier_all": {
+    "variant": "frontier_all",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "review",
+    "confidence": null,
+    "latency_ms": 6939.378899987787,
+    "input_tokens": 421,
+    "output_tokens": 183,
+    "cost_usd": 0.002672,
+    "raw": {
+     "frontier": 1.0,
+     "reason": "frontier: review"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/052a3e3137a10864da1a3810dbdccf83"
+ },
+ {
+  "idx": 8,
+  "text": "$60 restaurant",
+  "expected": "review",
+  "note": "abroad, no travel notice",
+  "input": {
+   "country": "FR",
+   "home_country": "UK",
+   "device": "known",
+   "amount": 60,
+   "usual_amount": 45,
+   "merchant": "restaurant"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "review",
+    "confidence": 0.89,
+    "latency_ms": 547.9477999906521,
+    "input_tokens": 440,
+    "output_tokens": 17,
+    "cost_usd": 1.848e-05,
+    "raw": {
+     "levels": 3,
+     "reason": "risk 0.94 → review"
+    },
+    "probability": null,
+    "score": 0.94,
+    "quality": null
+   },
+   "ladder": {
+    "variant": "ladder",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "allow",
+    "confidence": null,
+    "latency_ms": 3067.1157999895513,
+    "input_tokens": 861,
+    "output_tokens": 29,
+    "cost_usd": 0.00098048,
+    "raw": {
+     "levels": 3,
+     "frontier": 1.0,
+     "reason": "risk 0.94 → frontier: allow"
+    },
+    "probability": null,
+    "score": 0.94,
+    "quality": null
+   },
+   "rules_engine": {
+    "variant": "rules_engine",
+    "model": "(no model)",
+    "label": "review",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "amount 5x usual, foreign without notice, or new device"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "frontier_all": {
+    "variant": "frontier_all",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "allow",
+    "confidence": null,
+    "latency_ms": 2127.776100009214,
+    "input_tokens": 421,
+    "output_tokens": 12,
+    "cost_usd": 0.000962,
+    "raw": {
+     "frontier": 1.0,
+     "reason": "frontier: allow"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/c6b5e67c367601a531c06f15f5aa5424"
+ },
+ {
+  "idx": 9,
+  "text": "$700 jewellery store in the home city",
+  "expected": "review",
+  "note": "a big one-off",
+  "input": {
+   "country": "UK",
+   "home_country": "UK",
+   "device": "known",
+   "amount": 700,
+   "usual_amount": 60,
+   "merchant": "jewellery store in the home city"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "review",
+    "confidence": 0.83,
+    "latency_ms": 1774.2476999992505,
+    "input_tokens": 449,
+    "output_tokens": 17,
+    "cost_usd": 1.8858e-05,
+    "raw": {
+     "levels": 3,
+     "reason": "risk 1.10 → review"
+    },
+    "probability": null,
+    "score": 1.1,
+    "quality": null
+   },
+   "ladder": {
+    "variant": "ladder",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "review",
+    "confidence": null,
+    "latency_ms": 3263.147299992852,
+    "input_tokens": 875,
+    "output_tokens": 28,
+    "cost_usd": 0.000980858,
+    "raw": {
+     "levels": 3,
+     "frontier": 1.0,
+     "reason": "risk 1.13 → frontier: review"
+    },
+    "probability": null,
+    "score": 1.13,
+    "quality": null
+   },
+   "rules_engine": {
+    "variant": "rules_engine",
+    "model": "(no model)",
+    "label": "review",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "amount 5x usual, foreign without notice, or new device"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "frontier_all": {
+    "variant": "frontier_all",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "review",
+    "confidence": null,
+    "latency_ms": 1981.4560000086203,
+    "input_tokens": 426,
+    "output_tokens": 11,
+    "cost_usd": 0.000962,
+    "raw": {
+     "frontier": 1.0,
+     "reason": "frontier: review"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/96988374ea23b0b6a40a36109a973f73"
+ },
+ {
+  "idx": 10,
+  "text": "$200 crypto exchange (first ever purchase there)",
+  "expected": "review",
+  "note": null,
+  "input": {
+   "country": "UK",
+   "home_country": "UK",
+   "device": "known",
+   "amount": 200,
+   "usual_amount": 50,
+   "merchant": "crypto exchange (first ever purchase there)"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "review",
+    "confidence": 0.49,
+    "latency_ms": 832.574800006114,
+    "input_tokens": 446,
+    "output_tokens": 17,
+    "cost_usd": 1.8732e-05,
+    "raw": {
+     "levels": 3,
+     "reason": "risk 1.34 → review"
+    },
+    "probability": null,
+    "score": 1.34,
+    "quality": null
+   },
+   "ladder": {
+    "variant": "ladder",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "review",
+    "confidence": null,
+    "latency_ms": 6859.281599987298,
+    "input_tokens": 878,
+    "output_tokens": 142,
+    "cost_usd": 0.002132732,
+    "raw": {
+     "levels": 3,
+     "frontier": 1.0,
+     "reason": "risk 1.36 → frontier: review"
+    },
+    "probability": null,
+    "score": 1.36,
+    "quality": null
+   },
+   "rules_engine": {
+    "variant": "rules_engine",
+    "model": "(no model)",
+    "label": "allow",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "no rule matched"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "frontier_all": {
+    "variant": "frontier_all",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "review",
+    "confidence": null,
+    "latency_ms": 2210.3261000011116,
+    "input_tokens": 432,
+    "output_tokens": 11,
+    "cost_usd": 0.000974,
+    "raw": {
+     "frontier": 1.0,
+     "reason": "frontier: review"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/67aaebe7277e8d6c9ce536b451826763"
+ },
+ {
+  "idx": 11,
+  "text": "$90 clothing, online",
+  "expected": "review",
+  "note": "address changed, small amount",
+  "input": {
+   "country": "UK",
+   "home_country": "UK",
+   "device": "known",
+   "amount": 90,
+   "usual_amount": 60,
+   "merchant": "clothing, online",
+   "shipping_changed_today": true
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "review",
+    "confidence": 0.89,
+    "latency_ms": 1599.646999995457,
+    "input_tokens": 452,
+    "output_tokens": 17,
+    "cost_usd": 1.8984e-05,
+    "raw": {
+     "levels": 3,
+     "reason": "risk 1.03 → review"
+    },
+    "probability": null,
+    "score": 1.03,
+    "quality": null
+   },
+   "ladder": {
+    "variant": "ladder",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "allow",
+    "confidence": null,
+    "latency_ms": 3646.2369000073522,
+    "input_tokens": 885,
+    "output_tokens": 29,
+    "cost_usd": 0.001004984,
+    "raw": {
+     "levels": 3,
+     "frontier": 1.0,
+     "reason": "risk 1.04 → frontier: allow"
+    },
+    "probability": null,
+    "score": 1.04,
+    "quality": null
+   },
+   "rules_engine": {
+    "variant": "rules_engine",
+    "model": "(no model)",
+    "label": "allow",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "no rule matched"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "frontier_all": {
+    "variant": "frontier_all",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "allow",
+    "confidence": null,
+    "latency_ms": 2163.389199995436,
+    "input_tokens": 433,
+    "output_tokens": 12,
+    "cost_usd": 0.000986,
+    "raw": {
+     "frontier": 1.0,
+     "reason": "frontier: allow"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/c984f9f3c51a8e5908190fb6c10597d9"
+ },
+ {
+  "idx": 12,
+  "text": "$250 online electronics (03:10 local time; customer usually shops in the evening)",
+  "expected": "review",
+  "note": null,
+  "input": {
+   "country": "UK",
+   "home_country": "UK",
+   "device": "known",
+   "amount": 250,
+   "usual_amount": 70,
+   "merchant": "online electronics",
+   "note": "03:10 local time; customer usually shops in the evening"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "review",
+    "confidence": 0.25,
+    "latency_ms": 751.5538000152446,
+    "input_tokens": 463,
+    "output_tokens": 17,
+    "cost_usd": 1.9446e-05,
+    "raw": {
+     "levels": 3,
+     "reason": "risk 1.50 → review"
+    },
+    "probability": null,
+    "score": 1.5,
+    "quality": null
+   },
+   "ladder": {
+    "variant": "ladder",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "review",
+    "confidence": null,
+    "latency_ms": 5907.269699993776,
+    "input_tokens": 906,
+    "output_tokens": 123,
+    "cost_usd": 0.001965446,
+    "raw": {
+     "levels": 3,
+     "frontier": 1.0,
+     "reason": "risk 1.43 → frontier: review"
+    },
+    "probability": null,
+    "score": 1.43,
+    "quality": null
+   },
+   "rules_engine": {
+    "variant": "rules_engine",
+    "model": "(no model)",
+    "label": "allow",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "no rule matched"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "frontier_all": {
+    "variant": "frontier_all",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "review",
+    "confidence": null,
+    "latency_ms": 2803.9773000054993,
+    "input_tokens": 443,
+    "output_tokens": 11,
+    "cost_usd": 0.000996,
+    "raw": {
+     "frontier": 1.0,
+     "reason": "frontier: review"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/64fe0f078e2351c746cebff10f6f9a12"
+ },
+ {
+  "idx": 13,
+  "text": "$150 electronics",
+  "expected": "review",
+  "note": "a few purchases in an hour",
+  "input": {
+   "country": "UK",
+   "home_country": "UK",
+   "device": "known",
+   "amount": 150,
+   "usual_amount": 70,
+   "merchant": "electronics",
+   "tx_last_hour": 3
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "review",
+    "confidence": 0.37,
+    "latency_ms": 898.8477000093553,
+    "input_tokens": 449,
+    "output_tokens": 17,
+    "cost_usd": 1.8858e-05,
+    "raw": {
+     "levels": 3,
+     "reason": "risk 1.58 → review"
+    },
+    "probability": null,
+    "score": 1.58,
+    "quality": null
+   },
+   "ladder": {
+    "variant": "ladder",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "review",
+    "confidence": null,
+    "latency_ms": 4404.322200047318,
+    "input_tokens": 880,
+    "output_tokens": 28,
+    "cost_usd": 0.000990858,
+    "raw": {
+     "levels": 3,
+     "frontier": 1.0,
+     "reason": "risk 1.55 → frontier: review"
+    },
+    "probability": null,
+    "score": 1.55,
+    "quality": null
+   },
+   "rules_engine": {
+    "variant": "rules_engine",
+    "model": "(no model)",
+    "label": "allow",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "no rule matched"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "frontier_all": {
+    "variant": "frontier_all",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "review",
+    "confidence": null,
+    "latency_ms": 2309.1484000033233,
+    "input_tokens": 431,
+    "output_tokens": 11,
+    "cost_usd": 0.000972,
+    "raw": {
+     "frontier": 1.0,
+     "reason": "frontier: review"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/81f8c56f0e98f612625e883595b53a5d"
+ },
+ {
+  "idx": 14,
+  "text": "$1 online donation page",
+  "expected": "investigate",
+  "note": "card testing",
+  "input": {
+   "country": "UK",
+   "home_country": "UK",
+   "device": "new",
+   "amount": 1.0,
+   "usual_amount": 60,
+   "merchant": "online donation page",
+   "tx_last_hour": 7
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "investigate",
+    "confidence": 0.49,
+    "latency_ms": 454.29709999007173,
+    "input_tokens": 447,
+    "output_tokens": 17,
+    "cost_usd": 1.8774e-05,
+    "raw": {
+     "levels": 3,
+     "reason": "risk 1.66 → investigate"
+    },
+    "probability": null,
+    "score": 1.66,
+    "quality": null
+   },
+   "ladder": {
+    "variant": "ladder",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "investigate",
+    "confidence": null,
+    "latency_ms": 5005.626399972243,
+    "input_tokens": 881,
+    "output_tokens": 114,
+    "cost_usd": 0.001856774,
+    "raw": {
+     "levels": 3,
+     "frontier": 1.0,
+     "reason": "risk 1.61 → frontier: investigate"
+    },
+    "probability": null,
+    "score": 1.61,
+    "quality": null
+   },
+   "rules_engine": {
+    "variant": "rules_engine",
+    "model": "(no model)",
+    "label": "investigate",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "velocity: 5+ transactions in an hour"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "frontier_all": {
+    "variant": "frontier_all",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "investigate",
+    "confidence": null,
+    "latency_ms": 4634.45139999385,
+    "input_tokens": 434,
+    "output_tokens": 123,
+    "cost_usd": 0.002098,
+    "raw": {
+     "frontier": 1.0,
+     "reason": "frontier: investigate"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/ba827c1d0b101cdfdb7ce4cc6fa7e6dd"
+ },
+ {
+  "idx": 15,
+  "text": "$450 gift cards, online",
+  "expected": "investigate",
+  "note": "hard: account takeover pattern, all in the home country",
+  "input": {
+   "country": "UK",
+   "home_country": "UK",
+   "device": "new",
+   "amount": 450,
+   "usual_amount": 70,
+   "merchant": "gift cards, online",
+   "shipping_changed_today": true
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "investigate",
+    "confidence": 1.0,
+    "latency_ms": 439.12760002422146,
+    "input_tokens": 452,
+    "output_tokens": 17,
+    "cost_usd": 1.8984e-05,
+    "raw": {
+     "levels": 3,
+     "reason": "risk 2.00 → investigate"
+    },
+    "probability": null,
+    "score": 2.0,
+    "quality": null
+   },
+   "ladder": {
+    "variant": "ladder",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "investigate",
+    "confidence": null,
+    "latency_ms": 2583.167400007369,
+    "input_tokens": 886,
+    "output_tokens": 30,
+    "cost_usd": 0.001016984,
+    "raw": {
+     "levels": 3,
+     "frontier": 1.0,
+     "reason": "risk 2.00 → frontier: investigate"
+    },
+    "probability": null,
+    "score": 2.0,
+    "quality": null
+   },
+   "rules_engine": {
+    "variant": "rules_engine",
+    "model": "(no model)",
+    "label": "review",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "amount 5x usual, foreign without notice, or new device"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "frontier_all": {
+    "variant": "frontier_all",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "investigate",
+    "confidence": null,
+    "latency_ms": 2613.441599998623,
+    "input_tokens": 434,
+    "output_tokens": 13,
+    "cost_usd": 0.000998,
+    "raw": {
+     "frontier": 1.0,
+     "reason": "frontier: investigate"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/c403d2a0a43c6b734785a9be4839fce8"
+ },
+ {
+  "idx": 16,
+  "text": "$1200 online electronics",
+  "expected": "investigate",
+  "note": "new device abroad",
+  "input": {
+   "country": "RO",
+   "home_country": "UK",
+   "device": "new",
+   "amount": 1200,
+   "usual_amount": 90,
+   "merchant": "online electronics"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "investigate",
+    "confidence": 1.0,
+    "latency_ms": 599.3371999938972,
+    "input_tokens": 444,
+    "output_tokens": 17,
+    "cost_usd": 1.8648e-05,
+    "raw": {
+     "levels": 3,
+     "reason": "risk 2.00 → investigate"
+    },
+    "probability": null,
+    "score": 2.0,
+    "quality": null
+   },
+   "ladder": {
+    "variant": "ladder",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "investigate",
+    "confidence": null,
+    "latency_ms": 2712.662800011458,
+    "input_tokens": 866,
+    "output_tokens": 30,
+    "cost_usd": 0.000992648,
+    "raw": {
+     "levels": 3,
+     "frontier": 1.0,
+     "reason": "risk 2.00 → frontier: investigate"
+    },
+    "probability": null,
+    "score": 2.0,
+    "quality": null
+   },
+   "rules_engine": {
+    "variant": "rules_engine",
+    "model": "(no model)",
+    "label": "investigate",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "new device + foreign + $500 or more"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "frontier_all": {
+    "variant": "frontier_all",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "investigate",
+    "confidence": null,
+    "latency_ms": 3987.624200002756,
+    "input_tokens": 422,
+    "output_tokens": 13,
+    "cost_usd": 0.000974,
+    "raw": {
+     "frontier": 1.0,
+     "reason": "frontier: investigate"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/0c87d727ba1d4a93b1ee6100244068a0"
+ },
+ {
+  "idx": 17,
+  "text": "$980 crypto exchange (password reset 10 minutes before this payment)",
+  "expected": "investigate",
+  "note": "hard: cash-out right after a reset",
+  "input": {
+   "country": "UK",
+   "home_country": "UK",
+   "device": "new",
+   "amount": 980,
+   "usual_amount": 80,
+   "merchant": "crypto exchange",
+   "note": "password reset 10 minutes before this payment"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "investigate",
+    "confidence": 1.0,
+    "latency_ms": 474.2993999971077,
+    "input_tokens": 459,
+    "output_tokens": 17,
+    "cost_usd": 1.9278e-05,
+    "raw": {
+     "levels": 3,
+     "reason": "risk 2.00 → investigate"
+    },
+    "probability": null,
+    "score": 2.0,
+    "quality": null
+   },
+   "ladder": {
+    "variant": "ladder",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "investigate",
+    "confidence": null,
+    "latency_ms": 2339.4198000023607,
+    "input_tokens": 900,
+    "output_tokens": 30,
+    "cost_usd": 0.001031278,
+    "raw": {
+     "levels": 3,
+     "frontier": 1.0,
+     "reason": "risk 2.00 → frontier: investigate"
+    },
+    "probability": null,
+    "score": 2.0,
+    "quality": null
+   },
+   "rules_engine": {
+    "variant": "rules_engine",
+    "model": "(no model)",
+    "label": "review",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "amount 5x usual, foreign without notice, or new device"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "frontier_all": {
+    "variant": "frontier_all",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "investigate",
+    "confidence": null,
+    "latency_ms": 1939.0298000071198,
+    "input_tokens": 441,
+    "output_tokens": 13,
+    "cost_usd": 0.001012,
+    "raw": {
+     "frontier": 1.0,
+     "reason": "frontier: investigate"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/a571fa62e1fc56bb163975c30811356b"
+ },
+ {
+  "idx": 18,
+  "text": "$3000 wire to a new overseas beneficiary (9th transfer of about $3,000 to new beneficiaries this week)",
+  "expected": "investigate",
+  "note": "hard: structuring, known device, home country",
+  "input": {
+   "country": "UK",
+   "home_country": "UK",
+   "device": "known",
+   "amount": 3000,
+   "usual_amount": 200,
+   "merchant": "wire to a new overseas beneficiary",
+   "note": "9th transfer of about $3,000 to new beneficiaries this week"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "investigate",
+    "confidence": 0.93,
+    "latency_ms": 444.18429999495856,
+    "input_tokens": 470,
+    "output_tokens": 17,
+    "cost_usd": 1.974e-05,
+    "raw": {
+     "levels": 3,
+     "reason": "risk 1.95 → investigate"
+    },
+    "probability": null,
+    "score": 1.95,
+    "quality": null
+   },
+   "ladder": {
+    "variant": "ladder",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "investigate",
+    "confidence": null,
+    "latency_ms": 3585.2496000006795,
+    "input_tokens": 928,
+    "output_tokens": 30,
+    "cost_usd": 0.0010657400000000001,
+    "raw": {
+     "levels": 3,
+     "frontier": 1.0,
+     "reason": "risk 1.97 → frontier: investigate"
+    },
+    "probability": null,
+    "score": 1.97,
+    "quality": null
+   },
+   "rules_engine": {
+    "variant": "rules_engine",
+    "model": "(no model)",
+    "label": "review",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "amount 5x usual, foreign without notice, or new device"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "frontier_all": {
+    "variant": "frontier_all",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "investigate",
+    "confidence": null,
+    "latency_ms": 3104.525400005514,
+    "input_tokens": 458,
+    "output_tokens": 13,
+    "cost_usd": 0.001046,
+    "raw": {
+     "frontier": 1.0,
+     "reason": "frontier: investigate"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/26f31374ecb36d8530f8ef45d4c313f6"
+ },
+ {
+  "idx": 19,
+  "text": "$500 gift cards, three different stores",
+  "expected": "investigate",
+  "note": "hard: gift-card cash-out below the velocity rule",
+  "input": {
+   "country": "UK",
+   "home_country": "UK",
+   "device": "known",
+   "amount": 500,
+   "usual_amount": 60,
+   "merchant": "gift cards, three different stores",
+   "tx_last_hour": 3
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "investigate",
+    "confidence": 0.99,
+    "latency_ms": 423.7554999999702,
+    "input_tokens": 454,
+    "output_tokens": 17,
+    "cost_usd": 1.9068e-05,
+    "raw": {
+     "levels": 3,
+     "reason": "risk 1.99 → investigate"
+    },
+    "probability": null,
+    "score": 1.99,
+    "quality": null
+   },
+   "ladder": {
+    "variant": "ladder",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "investigate",
+    "confidence": null,
+    "latency_ms": 3655.3257000050507,
+    "input_tokens": 891,
+    "output_tokens": 30,
+    "cost_usd": 0.0010230679999999998,
+    "raw": {
+     "levels": 3,
+     "frontier": 1.0,
+     "reason": "risk 1.99 → frontier: investigate"
+    },
+    "probability": null,
+    "score": 1.99,
+    "quality": null
+   },
+   "rules_engine": {
+    "variant": "rules_engine",
+    "model": "(no model)",
+    "label": "review",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "amount 5x usual, foreign without notice, or new device"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "frontier_all": {
+    "variant": "frontier_all",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "investigate",
+    "confidence": null,
+    "latency_ms": 4730.416800011881,
+    "input_tokens": 437,
+    "output_tokens": 97,
+    "cost_usd": 0.001844,
+    "raw": {
+     "frontier": 1.0,
+     "reason": "frontier: investigate"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/d4f21ee64fc8760eae7ac488d52b16e1"
+ },
+ {
+  "idx": 20,
+  "text": "$9800 wire to a newly added overseas beneficiary (9 wires of $9,800 over two days; retail customer, salary income, usual activity domestic bill pay)",
+  "expected": "investigate",
+  "note": "the reference fixture, with its amounts restored (the fixture's $ values were eaten by the shell)",
+  "input": {
+   "country": "UK",
+   "home_country": "UK",
+   "device": "known",
+   "amount": 9800,
+   "usual_amount": 400,
+   "merchant": "wire to a newly added overseas beneficiary",
+   "note": "9 wires of $9,800 over two days; retail customer, salary income, usual activity domestic bill pay"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "investigate",
+    "confidence": 0.99,
+    "latency_ms": 431.84000000474043,
+    "input_tokens": 481,
+    "output_tokens": 17,
+    "cost_usd": 2.0202e-05,
+    "raw": {
+     "levels": 3,
+     "reason": "risk 1.99 → investigate"
+    },
+    "probability": null,
+    "score": 1.99,
+    "quality": null
+   },
+   "ladder": {
+    "variant": "ladder",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "investigate",
+    "confidence": null,
+    "latency_ms": 5786.371800000779,
+    "input_tokens": 953,
+    "output_tokens": 136,
+    "cost_usd": 0.002154202,
+    "raw": {
+     "levels": 3,
+     "frontier": 1.0,
+     "reason": "risk 1.99 → frontier: investigate"
+    },
+    "probability": null,
+    "score": 1.99,
+    "quality": null
+   },
+   "rules_engine": {
+    "variant": "rules_engine",
+    "model": "(no model)",
+    "label": "review",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "amount 5x usual, foreign without notice, or new device"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "frontier_all": {
+    "variant": "frontier_all",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "investigate",
+    "confidence": null,
+    "latency_ms": 2054.863800003659,
+    "input_tokens": 472,
+    "output_tokens": 13,
+    "cost_usd": 0.001074,
+    "raw": {
+     "frontier": 1.0,
+     "reason": "frontier: investigate"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/09827298547ebe0c7c0e124d872f11c4"
+ }
+]

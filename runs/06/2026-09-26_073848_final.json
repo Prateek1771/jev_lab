@@ -1,0 +1,1964 @@
+[
+ {
+  "idx": 0,
+  "text": "Is it raining in London right now?",
+  "expected": "get_weather",
+  "note": null,
+  "input": {
+   "request": "Is it raining in London right now?"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "get_weather",
+    "confidence": 0.89,
+    "latency_ms": 2409.064399980707,
+    "input_tokens": 1105,
+    "output_tokens": 163,
+    "cost_usd": 7.7874e-05,
+    "raw": {
+     "steps": [
+      {
+       "tool": "get_weather",
+       "args": {
+        "city": "London"
+       },
+       "result": "11°C, overcast",
+       "confidence": 1.0,
+       "reason": "tool chosen (confidence 1.00)"
+      }
+     ],
+     "stop": "finish",
+     "reason": "selector chose finish",
+     "calls": 3
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_selector": {
+    "variant": "llm_selector",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "get_weather",
+    "confidence": null,
+    "latency_ms": 3194.1471000318415,
+    "input_tokens": 628,
+    "output_tokens": 20,
+    "cost_usd": 0.000187,
+    "raw": {
+     "steps": [
+      {
+       "tool": "get_weather",
+       "args": {
+        "city": "London"
+       },
+       "result": "11°C, overcast",
+       "confidence": null,
+       "reason": "tool chosen"
+      }
+     ],
+     "stop": "finish",
+     "reason": "selector chose finish",
+     "calls": 3
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "tool_calling": {
+    "variant": "tool_calling",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "get_weather",
+    "confidence": null,
+    "latency_ms": 1983.3358000032604,
+    "input_tokens": 577,
+    "output_tokens": 38,
+    "cost_usd": 0.00020124999999999999,
+    "raw": {
+     "steps": [
+      {
+       "tool": "get_weather",
+       "args": {
+        "city": "London"
+       },
+       "result": "11°C, overcast",
+       "confidence": null,
+       "reason": "tool call"
+      }
+     ],
+     "stop": "finish",
+     "reason": "final answer: no tool call in its last message",
+     "calls": 2
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/48a618facddc5279c33080e332ab578a"
+ },
+ {
+  "idx": 1,
+  "text": "Do I need sunglasses in Tokyo today?",
+  "expected": "get_weather",
+  "note": "hard: weather, without the word 'weather'",
+  "input": {
+   "request": "Do I need sunglasses in Tokyo today?"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "get_weather",
+    "confidence": 0.98,
+    "latency_ms": 2549.9995999853127,
+    "input_tokens": 1105,
+    "output_tokens": 163,
+    "cost_usd": 7.7874e-05,
+    "raw": {
+     "steps": [
+      {
+       "tool": "get_weather",
+       "args": {
+        "city": "Tokyo"
+       },
+       "result": "22°C, clear",
+       "confidence": 0.99,
+       "reason": "tool chosen (confidence 0.99)"
+      }
+     ],
+     "stop": "finish",
+     "reason": "selector chose finish",
+     "calls": 3
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_selector": {
+    "variant": "llm_selector",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "get_weather",
+    "confidence": null,
+    "latency_ms": 3622.8336000058334,
+    "input_tokens": 628,
+    "output_tokens": 20,
+    "cost_usd": 0.000187,
+    "raw": {
+     "steps": [
+      {
+       "tool": "get_weather",
+       "args": {
+        "city": "Tokyo"
+       },
+       "result": "22°C, clear",
+       "confidence": null,
+       "reason": "tool chosen"
+      }
+     ],
+     "stop": "finish",
+     "reason": "selector chose finish",
+     "calls": 3
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "tool_calling": {
+    "variant": "tool_calling",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "get_weather",
+    "confidence": null,
+    "latency_ms": 2102.5627000199165,
+    "input_tokens": 577,
+    "output_tokens": 38,
+    "cost_usd": 0.00020124999999999999,
+    "raw": {
+     "steps": [
+      {
+       "tool": "get_weather",
+       "args": {
+        "city": "Tokyo"
+       },
+       "result": "22°C, clear",
+       "confidence": null,
+       "reason": "tool call"
+      }
+     ],
+     "stop": "finish",
+     "reason": "final answer: no tool call in its last message",
+     "calls": 2
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/8dc382a7b9e3998a68b9864896788a27"
+ },
+ {
+  "idx": 2,
+  "text": "Who won the most recent Nobel Prize in Physics?",
+  "expected": "search_web",
+  "note": null,
+  "input": {
+   "request": "Who won the most recent Nobel Prize in Physics?"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "search_web",
+    "confidence": 0.98,
+    "latency_ms": 2011.7713999643456,
+    "input_tokens": 1174,
+    "output_tokens": 169,
+    "cost_usd": 9.2268e-05,
+    "raw": {
+     "steps": [
+      {
+       "tool": "search_web",
+       "args": {
+        "query": "most recent Nobel Prize in Physics winner"
+       },
+       "result": "Top result for 'most recent Nobel Prize in Physics winner': The 2025 Nobel Prize in Physics went to John Clarke, Michel H. Devoret and John M. Martinis, for macroscopic quantum tunnelling in an electric circuit.",
+       "confidence": 0.98,
+       "reason": "tool chosen (confidence 0.98)"
+      }
+     ],
+     "stop": "finish",
+     "reason": "selector chose finish",
+     "calls": 3
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_selector": {
+    "variant": "llm_selector",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "search_web",
+    "confidence": null,
+    "latency_ms": 2992.704699980095,
+    "input_tokens": 686,
+    "output_tokens": 26,
+    "cost_usd": 0.0002105,
+    "raw": {
+     "steps": [
+      {
+       "tool": "search_web",
+       "args": {
+        "query": "most recent Nobel Prize in Physics winner"
+       },
+       "result": "Top result for 'most recent Nobel Prize in Physics winner': The 2025 Nobel Prize in Physics went to John Clarke, Michel H. Devoret and John M. Martinis, for macroscopic quantum tunnelling in an electric circuit.",
+       "confidence": null,
+       "reason": "tool chosen"
+      }
+     ],
+     "stop": "finish",
+     "reason": "selector chose finish",
+     "calls": 3
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "tool_calling": {
+    "variant": "tool_calling",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "search_web",
+    "confidence": null,
+    "latency_ms": 1924.2911999754142,
+    "input_tokens": 635,
+    "output_tokens": 65,
+    "cost_usd": 0.00025624999999999997,
+    "raw": {
+     "steps": [
+      {
+       "tool": "search_web",
+       "args": {
+        "query": "who won the most recent nobel prize in physics"
+       },
+       "result": "Top result for 'who won the most recent nobel prize in physics': The 2025 Nobel Prize in Physics went to John Clarke, Michel H. Devoret and John M. Martinis, for macroscopic quantum tunnelling in an electric circuit.",
+       "confidence": null,
+       "reason": "tool call"
+      }
+     ],
+     "stop": "finish",
+     "reason": "final answer: no tool call in its last message",
+     "calls": 2
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/c64883be8c0760a3da3f485809d5b7e1"
+ },
+ {
+  "idx": 3,
+  "text": "What's the population of Tokyo?",
+  "expected": "search_web",
+  "note": "hard: a lookup, but not in OUR database",
+  "input": {
+   "request": "What's the population of Tokyo?"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "search_web",
+    "confidence": 0.94,
+    "latency_ms": 2053.6033999815118,
+    "input_tokens": 1142,
+    "output_tokens": 166,
+    "cost_usd": 8.6008e-05,
+    "raw": {
+     "steps": [
+      {
+       "tool": "search_web",
+       "args": {
+        "query": "current population of Tokyo"
+       },
+       "result": "Top result for 'current population of Tokyo': Tokyo's population is about 14 million (city) and about 37 million (greater Tokyo area).",
+       "confidence": 0.94,
+       "reason": "tool chosen (confidence 0.94)"
+      }
+     ],
+     "stop": "finish",
+     "reason": "selector chose finish",
+     "calls": 3
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_selector": {
+    "variant": "llm_selector",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "search_web",
+    "confidence": null,
+    "latency_ms": 3429.7275000135414,
+    "input_tokens": 662,
+    "output_tokens": 23,
+    "cost_usd": 0.00019999999999999998,
+    "raw": {
+     "steps": [
+      {
+       "tool": "search_web",
+       "args": {
+        "query": "current population of Tokyo"
+       },
+       "result": "Top result for 'current population of Tokyo': Tokyo's population is about 14 million (city) and about 37 million (greater Tokyo area).",
+       "confidence": null,
+       "reason": "tool chosen"
+      }
+     ],
+     "stop": "finish",
+     "reason": "selector chose finish",
+     "calls": 3
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "tool_calling": {
+    "variant": "tool_calling",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "search_web",
+    "confidence": null,
+    "latency_ms": 2235.3357000101823,
+    "input_tokens": 605,
+    "output_tokens": 50,
+    "cost_usd": 0.00022625,
+    "raw": {
+     "steps": [
+      {
+       "tool": "search_web",
+       "args": {
+        "query": "population of Tokyo"
+       },
+       "result": "Top result for 'population of Tokyo': Tokyo's population is about 14 million (city) and about 37 million (greater Tokyo area).",
+       "confidence": null,
+       "reason": "tool call"
+      }
+     ],
+     "stop": "finish",
+     "reason": "final answer: no tool call in its last message",
+     "calls": 2
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/ac52ebe484558a032fb851fe5c51f8f7"
+ },
+ {
+  "idx": 4,
+  "text": "What is 17.5% of 2,340?",
+  "expected": "calculator",
+  "note": "hard: an LLM may do it in its head and skip the tool",
+  "input": {
+   "request": "What is 17.5% of 2,340?"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "calculator",
+    "confidence": 0.99,
+    "latency_ms": 2501.7220999579877,
+    "input_tokens": 1151,
+    "output_tokens": 172,
+    "cost_usd": 9.938199999999999e-05,
+    "raw": {
+     "steps": [
+      {
+       "tool": "calculator",
+       "args": {
+        "expression": "2340 * 0.175"
+       },
+       "result": "409.5",
+       "confidence": 0.99,
+       "reason": "tool chosen (confidence 0.99)"
+      }
+     ],
+     "stop": "finish",
+     "reason": "selector chose finish",
+     "calls": 3
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_selector": {
+    "variant": "llm_selector",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "calculator",
+    "confidence": null,
+    "latency_ms": 3053.7290000356734,
+    "input_tokens": 668,
+    "output_tokens": 28,
+    "cost_usd": 0.000209,
+    "raw": {
+     "steps": [
+      {
+       "tool": "calculator",
+       "args": {
+        "expression": "2340 * 0.175"
+       },
+       "result": "409.5",
+       "confidence": null,
+       "reason": "tool chosen"
+      }
+     ],
+     "stop": "finish",
+     "reason": "selector chose finish",
+     "calls": 3
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "tool_calling": {
+    "variant": "tool_calling",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "calculator",
+    "confidence": null,
+    "latency_ms": 2655.0505999766756,
+    "input_tokens": 598,
+    "output_tokens": 44,
+    "cost_usd": 0.0002155,
+    "raw": {
+     "steps": [
+      {
+       "tool": "calculator",
+       "args": {
+        "expression": "2340 * 0.175"
+       },
+       "result": "409.5",
+       "confidence": null,
+       "reason": "tool call"
+      }
+     ],
+     "stop": "finish",
+     "reason": "final answer: no tool call in its last message",
+     "calls": 2
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/3dcc5290eda8644739031cd66004f443"
+ },
+ {
+  "idx": 5,
+  "text": "Split a $318.40 bill between 7 people, how much each?",
+  "expected": "calculator",
+  "note": null,
+  "input": {
+   "request": "Split a $318.40 bill between 7 people. How much does each person pay?"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "calculator",
+    "confidence": 0.98,
+    "latency_ms": 3209.5492999942508,
+    "input_tokens": 1173,
+    "output_tokens": 170,
+    "cost_usd": 9.8554e-05,
+    "raw": {
+     "steps": [
+      {
+       "tool": "calculator",
+       "args": {
+        "expression": "318.40 / 7"
+       },
+       "result": "45.48571429",
+       "confidence": 0.98,
+       "reason": "tool chosen (confidence 0.98)"
+      }
+     ],
+     "stop": "finish",
+     "reason": "selector chose finish",
+     "calls": 3
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_selector": {
+    "variant": "llm_selector",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "calculator",
+    "confidence": null,
+    "latency_ms": 3641.660799999954,
+    "input_tokens": 690,
+    "output_tokens": 31,
+    "cost_usd": 0.000219,
+    "raw": {
+     "steps": [
+      {
+       "tool": "calculator",
+       "args": {
+        "expression": "318.40 / 7"
+       },
+       "result": "45.48571429",
+       "confidence": null,
+       "reason": "tool chosen"
+      }
+     ],
+     "stop": "finish",
+     "reason": "selector chose finish",
+     "calls": 3
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "tool_calling": {
+    "variant": "tool_calling",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "calculator",
+    "confidence": null,
+    "latency_ms": 3635.947299975669,
+    "input_tokens": 614,
+    "output_tokens": 34,
+    "cost_usd": 0.00020449999999999998,
+    "raw": {
+     "steps": [
+      {
+       "tool": "calculator",
+       "args": {
+        "expression": "318.40 / 7"
+       },
+       "result": "45.48571429",
+       "confidence": null,
+       "reason": "tool call"
+      }
+     ],
+     "stop": "finish",
+     "reason": "final answer: no tool call in its last message",
+     "calls": 2
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/73529c83399c9dc975e72f2b7506feba"
+ },
+ {
+  "idx": 6,
+  "text": "What's 2 to the power of 31, minus 1?",
+  "expected": "calculator",
+  "note": null,
+  "input": {
+   "request": "What's 2 to the power of 31, minus 1?"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "calculator",
+    "confidence": 0.98,
+    "latency_ms": 2118.3971000136808,
+    "input_tokens": 1153,
+    "output_tokens": 168,
+    "cost_usd": 9.3674e-05,
+    "raw": {
+     "steps": [
+      {
+       "tool": "calculator",
+       "args": {
+        "expression": "2**31 - 1"
+       },
+       "result": "2147483647",
+       "confidence": 0.98,
+       "reason": "tool chosen (confidence 0.98)"
+      }
+     ],
+     "stop": "finish",
+     "reason": "selector chose finish",
+     "calls": 3
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_selector": {
+    "variant": "llm_selector",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "calculator",
+    "confidence": null,
+    "latency_ms": 3511.5489999880083,
+    "input_tokens": 672,
+    "output_tokens": 24,
+    "cost_usd": 0.000204,
+    "raw": {
+     "steps": [
+      {
+       "tool": "calculator",
+       "args": {
+        "expression": "2**31 - 1"
+       },
+       "result": "2147483647",
+       "confidence": null,
+       "reason": "tool chosen"
+      }
+     ],
+     "stop": "finish",
+     "reason": "selector chose finish",
+     "calls": 3
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "tool_calling": {
+    "variant": "tool_calling",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "calculator",
+    "confidence": null,
+    "latency_ms": 2438.817599992035,
+    "input_tokens": 601,
+    "output_tokens": 48,
+    "cost_usd": 0.00022225,
+    "raw": {
+     "steps": [
+      {
+       "tool": "calculator",
+       "args": {
+        "expression": "2^31 - 1"
+       },
+       "result": "2147483647",
+       "confidence": null,
+       "reason": "tool call"
+      }
+     ],
+     "stop": "finish",
+     "reason": "final answer: no tool call in its last message",
+     "calls": 2
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/ce9001ec875c70db9d14b02fbaef7a5f"
+ },
+ {
+  "idx": 7,
+  "text": "What's the status of order C-9?",
+  "expected": "database",
+  "note": null,
+  "input": {
+   "request": "What's the status of order C-9?"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "database",
+    "confidence": 0.99,
+    "latency_ms": 4114.251100021647,
+    "input_tokens": 1159,
+    "output_tokens": 166,
+    "cost_usd": 9.134200000000001e-05,
+    "raw": {
+     "steps": [
+      {
+       "tool": "database",
+       "args": {
+        "order_id": "C-9"
+       },
+       "result": "{'status': 'processing', 'items': 2, 'subtotal': 64.0, 'shipping': 5.0}",
+       "confidence": 0.99,
+       "reason": "tool chosen (confidence 0.99)"
+      }
+     ],
+     "stop": "finish",
+     "reason": "selector chose finish",
+     "calls": 3
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_selector": {
+    "variant": "llm_selector",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "database",
+    "confidence": null,
+    "latency_ms": 5357.669799996074,
+    "input_tokens": 679,
+    "output_tokens": 22,
+    "cost_usd": 0.00020275,
+    "raw": {
+     "steps": [
+      {
+       "tool": "database",
+       "args": {
+        "order_id": "C-9"
+       },
+       "result": "{'status': 'processing', 'items': 2, 'subtotal': 64.0, 'shipping': 5.0}",
+       "confidence": null,
+       "reason": "tool chosen"
+      }
+     ],
+     "stop": "finish",
+     "reason": "selector chose finish",
+     "calls": 3
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "tool_calling": {
+    "variant": "tool_calling",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "database",
+    "confidence": null,
+    "latency_ms": 4624.103900016053,
+    "input_tokens": 586,
+    "output_tokens": 30,
+    "cost_usd": 0.0001915,
+    "raw": {
+     "steps": [
+      {
+       "tool": "database",
+       "args": {
+        "order_id": "C-9"
+       },
+       "result": "{'status': 'processing', 'items': 2, 'subtotal': 64.0, 'shipping': 5.0}",
+       "confidence": null,
+       "reason": "tool call"
+      }
+     ],
+     "stop": "finish",
+     "reason": "final answer: no tool call in its last message",
+     "calls": 2
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/1761c2bcc344a92c5b909121aae71d6d"
+ },
+ {
+  "idx": 8,
+  "text": "Where is my package B-220?",
+  "expected": "database",
+  "note": "hard: 'package', not 'order'",
+  "input": {
+   "request": "Where is my package B-220?"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "database > ask_user",
+    "confidence": 0.22,
+    "latency_ms": 2001.3685000303667,
+    "input_tokens": 1162,
+    "output_tokens": 169,
+    "cost_usd": 9.426000000000001e-05,
+    "raw": {
+     "steps": [
+      {
+       "tool": "database",
+       "args": {
+        "order_id": "B-220"
+       },
+       "result": "{'status': 'in transit', 'items': 1, 'subtotal': 49.99, 'shipping': 0.0}",
+       "confidence": 0.82,
+       "reason": "tool chosen (confidence 0.82)"
+      }
+     ],
+     "stop": "ask_user",
+     "reason": "unsure which tool (confidence 0.22 < 0.45)",
+     "calls": 3
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_selector": {
+    "variant": "llm_selector",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "database",
+    "confidence": null,
+    "latency_ms": 3570.535899983952,
+    "input_tokens": 680,
+    "output_tokens": 24,
+    "cost_usd": 0.000206,
+    "raw": {
+     "steps": [
+      {
+       "tool": "database",
+       "args": {
+        "order_id": "B-220"
+       },
+       "result": "{'status': 'in transit', 'items': 1, 'subtotal': 49.99, 'shipping': 0.0}",
+       "confidence": null,
+       "reason": "tool chosen"
+      }
+     ],
+     "stop": "finish",
+     "reason": "selector chose finish",
+     "calls": 3
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "tool_calling": {
+    "variant": "tool_calling",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "database",
+    "confidence": null,
+    "latency_ms": 2968.050699972082,
+    "input_tokens": 590,
+    "output_tokens": 32,
+    "cost_usd": 0.00019549999999999998,
+    "raw": {
+     "steps": [
+      {
+       "tool": "database",
+       "args": {
+        "order_id": "B-220"
+       },
+       "result": "{'status': 'in transit', 'items': 1, 'subtotal': 49.99, 'shipping': 0.0}",
+       "confidence": null,
+       "reason": "tool call"
+      }
+     ],
+     "stop": "finish",
+     "reason": "final answer: no tool call in its last message",
+     "calls": 2
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/6df7e3fea66cffcc36829b69dc57347b"
+ },
+ {
+  "idx": 9,
+  "text": "How many items are in order A-104?",
+  "expected": "database",
+  "note": "hard: 'how many' sounds like calculator, but it's a lookup",
+  "input": {
+   "request": "How many items are in order A-104?"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "database",
+    "confidence": 1.0,
+    "latency_ms": 2071.0123000026215,
+    "input_tokens": 1168,
+    "output_tokens": 168,
+    "cost_usd": 9.4928e-05,
+    "raw": {
+     "steps": [
+      {
+       "tool": "database",
+       "args": {
+        "order_id": "A-104"
+       },
+       "result": "{'status': 'delivered', 'items': 3, 'subtotal': 120.0, 'shipping': 7.5}",
+       "confidence": 1.0,
+       "reason": "tool chosen (confidence 1.00)"
+      }
+     ],
+     "stop": "finish",
+     "reason": "selector chose finish",
+     "calls": 3
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_selector": {
+    "variant": "llm_selector",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "database",
+    "confidence": null,
+    "latency_ms": 3979.1223000211176,
+    "input_tokens": 685,
+    "output_tokens": 24,
+    "cost_usd": 0.00020725,
+    "raw": {
+     "steps": [
+      {
+       "tool": "database",
+       "args": {
+        "order_id": "A-104"
+       },
+       "result": "{'status': 'delivered', 'items': 3, 'subtotal': 120.0, 'shipping': 7.5}",
+       "confidence": null,
+       "reason": "tool chosen"
+      }
+     ],
+     "stop": "finish",
+     "reason": "selector chose finish",
+     "calls": 3
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "tool_calling": {
+    "variant": "tool_calling",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "database",
+    "confidence": null,
+    "latency_ms": 2088.7160999700427,
+    "input_tokens": 593,
+    "output_tokens": 33,
+    "cost_usd": 0.00019775,
+    "raw": {
+     "steps": [
+      {
+       "tool": "database",
+       "args": {
+        "order_id": "A-104"
+       },
+       "result": "{'status': 'delivered', 'items': 3, 'subtotal': 120.0, 'shipping': 7.5}",
+       "confidence": null,
+       "reason": "tool call"
+      }
+     ],
+     "stop": "finish",
+     "reason": "final answer: no tool call in its last message",
+     "calls": 2
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/40cb6c6e891eadfebbf49022e9c42ce1"
+ },
+ {
+  "idx": 10,
+  "text": "Our checkout page is down, log it as urgent.",
+  "expected": "create_ticket",
+  "note": null,
+  "input": {
+   "request": "Our checkout page is down for everyone. Log it as urgent for the team."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "create_ticket",
+    "confidence": 0.87,
+    "latency_ms": 2574.1322000103537,
+    "input_tokens": 1190,
+    "output_tokens": 172,
+    "cost_usd": 0.000103888,
+    "raw": {
+     "steps": [
+      {
+       "tool": "create_ticket",
+       "args": {
+        "title": "Checkout page is down",
+        "priority": "high"
+       },
+       "result": "Created (simulated): ticket T-1001 'Checkout page is down' (high)",
+       "confidence": 0.98,
+       "reason": "tool chosen (confidence 0.98)"
+      }
+     ],
+     "stop": "finish",
+     "reason": "selector chose finish",
+     "calls": 3
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_selector": {
+    "variant": "llm_selector",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "create_ticket",
+    "confidence": null,
+    "latency_ms": 3364.2732000153046,
+    "input_tokens": 705,
+    "output_tokens": 34,
+    "cost_usd": 0.00022725,
+    "raw": {
+     "steps": [
+      {
+       "tool": "create_ticket",
+       "args": {
+        "title": "Checkout page is down",
+        "priority": "high"
+       },
+       "result": "Created (simulated): ticket T-1001 'Checkout page is down' (high)",
+       "confidence": null,
+       "reason": "tool chosen"
+      }
+     ],
+     "stop": "finish",
+     "reason": "selector chose finish",
+     "calls": 3
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "tool_calling": {
+    "variant": "tool_calling",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "create_ticket",
+    "confidence": null,
+    "latency_ms": 2462.6692999736406,
+    "input_tokens": 617,
+    "output_tokens": 50,
+    "cost_usd": 0.00022925000000000002,
+    "raw": {
+     "steps": [
+      {
+       "tool": "create_ticket",
+       "args": {
+        "priority": "high",
+        "title": "Checkout page is down for everyone"
+       },
+       "result": "Created (simulated): ticket T-1001 'Checkout page is down for everyone' (high)",
+       "confidence": null,
+       "reason": "tool call"
+      }
+     ],
+     "stop": "finish",
+     "reason": "final answer: no tool call in its last message",
+     "calls": 2
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/befed5b93ca44b8450e7a497935147e4"
+ },
+ {
+  "idx": 11,
+  "text": "Open a low-priority ticket: typo on the pricing page.",
+  "expected": "create_ticket",
+  "note": null,
+  "input": {
+   "request": "Open a low-priority ticket: there's a typo on the pricing page."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "create_ticket",
+    "confidence": 0.85,
+    "latency_ms": 2031.7720000166446,
+    "input_tokens": 1197,
+    "output_tokens": 174,
+    "cost_usd": 0.00010739,
+    "raw": {
+     "steps": [
+      {
+       "tool": "create_ticket",
+       "args": {
+        "title": "Typo on the pricing page",
+        "priority": "low"
+       },
+       "result": "Created (simulated): ticket T-1001 'Typo on the pricing page' (low)",
+       "confidence": 0.85,
+       "reason": "tool chosen (confidence 0.85)"
+      }
+     ],
+     "stop": "finish",
+     "reason": "selector chose finish",
+     "calls": 3
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_selector": {
+    "variant": "llm_selector",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "create_ticket",
+    "confidence": null,
+    "latency_ms": 3680.2706999878865,
+    "input_tokens": 712,
+    "output_tokens": 36,
+    "cost_usd": 0.000232,
+    "raw": {
+     "steps": [
+      {
+       "tool": "create_ticket",
+       "args": {
+        "title": "Typo on the pricing page",
+        "priority": "low"
+       },
+       "result": "Created (simulated): ticket T-1001 'Typo on the pricing page' (low)",
+       "confidence": null,
+       "reason": "tool chosen"
+      }
+     ],
+     "stop": "finish",
+     "reason": "selector chose finish",
+     "calls": 3
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "tool_calling": {
+    "variant": "tool_calling",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "create_ticket",
+    "confidence": null,
+    "latency_ms": 2070.255599974189,
+    "input_tokens": 619,
+    "output_tokens": 59,
+    "cost_usd": 0.00024324999999999998,
+    "raw": {
+     "steps": [
+      {
+       "tool": "create_ticket",
+       "args": {
+        "priority": "low",
+        "title": "Typo on the pricing page"
+       },
+       "result": "Created (simulated): ticket T-1001 'Typo on the pricing page' (low)",
+       "confidence": null,
+       "reason": "tool call"
+      }
+     ],
+     "stop": "finish",
+     "reason": "final answer: no tool call in its last message",
+     "calls": 2
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/c3bd54ef74871e6a81d3a226bbf03141"
+ },
+ {
+  "idx": 12,
+  "text": "Email finance@acme.test that the Q3 invoice is approved.",
+  "expected": "send_email",
+  "note": null,
+  "input": {
+   "request": "Email finance@acme.test to say the Q3 invoice is approved."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "send_email",
+    "confidence": 0.93,
+    "latency_ms": 2660.0832999974955,
+    "input_tokens": 1225,
+    "output_tokens": 198,
+    "cost_usd": 0.00014831,
+    "raw": {
+     "steps": [
+      {
+       "tool": "send_email",
+       "args": {
+        "to": "finance@acme.test",
+        "subject": "Q3 Invoice Approval",
+        "body": "The Q3 invoice has been approved."
+       },
+       "result": "Sent (simulated): email to finance@acme.test, subject 'Q3 Invoice Approval'",
+       "confidence": 0.93,
+       "reason": "tool chosen (confidence 0.93)"
+      }
+     ],
+     "stop": "finish",
+     "reason": "selector chose finish",
+     "calls": 3
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_selector": {
+    "variant": "llm_selector",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "send_email",
+    "confidence": null,
+    "latency_ms": 3867.886800057022,
+    "input_tokens": 741,
+    "output_tokens": 55,
+    "cost_usd": 0.00026775,
+    "raw": {
+     "steps": [
+      {
+       "tool": "send_email",
+       "args": {
+        "to": "finance@acme.test",
+        "subject": "Q3 Invoice Approval",
+        "body": "The Q3 invoice has been approved."
+       },
+       "result": "Sent (simulated): email to finance@acme.test, subject 'Q3 Invoice Approval'",
+       "confidence": null,
+       "reason": "tool chosen"
+      }
+     ],
+     "stop": "finish",
+     "reason": "selector chose finish",
+     "calls": 3
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "tool_calling": {
+    "variant": "tool_calling",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "send_email",
+    "confidence": null,
+    "latency_ms": 1704.487799986964,
+    "input_tokens": 626,
+    "output_tokens": 61,
+    "cost_usd": 0.000248,
+    "raw": {
+     "steps": [
+      {
+       "tool": "send_email",
+       "args": {
+        "subject": "Q3 Invoice Approval",
+        "to": "finance@acme.test",
+        "body": "The Q3 invoice is approved."
+       },
+       "result": "Sent (simulated): email to finance@acme.test, subject 'Q3 Invoice Approval'",
+       "confidence": null,
+       "reason": "tool call"
+      }
+     ],
+     "stop": "finish",
+     "reason": "final answer: no tool call in its last message",
+     "calls": 2
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/4f56f10e2684811465257e743f499d3c"
+ },
+ {
+  "idx": 13,
+  "text": "Let sam@acme.test know the demo moved to 3pm, by email.",
+  "expected": "send_email",
+  "note": null,
+  "input": {
+   "request": "Let sam@acme.test know by email that the demo moved to 3pm."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "send_email",
+    "confidence": 0.94,
+    "latency_ms": 2034.7711000067648,
+    "input_tokens": 1242,
+    "output_tokens": 207,
+    "cost_usd": 0.000163148,
+    "raw": {
+     "steps": [
+      {
+       "tool": "send_email",
+       "args": {
+        "to": "sam@acme.test",
+        "subject": "Demo time update",
+        "body": "Hi Sam, just letting you know that the demo has been moved to 3pm."
+       },
+       "result": "Sent (simulated): email to sam@acme.test, subject 'Demo time update'",
+       "confidence": 0.94,
+       "reason": "tool chosen (confidence 0.94)"
+      }
+     ],
+     "stop": "finish",
+     "reason": "selector chose finish",
+     "calls": 3
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_selector": {
+    "variant": "llm_selector",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "send_email",
+    "confidence": null,
+    "latency_ms": 2959.0548000414856,
+    "input_tokens": 758,
+    "output_tokens": 64,
+    "cost_usd": 0.0002855,
+    "raw": {
+     "steps": [
+      {
+       "tool": "send_email",
+       "args": {
+        "to": "sam@acme.test",
+        "subject": "Demo time update",
+        "body": "Hi Sam, just letting you know that the demo has been moved to 3pm."
+       },
+       "result": "Sent (simulated): email to sam@acme.test, subject 'Demo time update'",
+       "confidence": null,
+       "reason": "tool chosen"
+      }
+     ],
+     "stop": "finish",
+     "reason": "selector chose finish",
+     "calls": 3
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "tool_calling": {
+    "variant": "tool_calling",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "send_email",
+    "confidence": null,
+    "latency_ms": 2653.743700007908,
+    "input_tokens": 639,
+    "output_tokens": 79,
+    "cost_usd": 0.00027825,
+    "raw": {
+     "steps": [
+      {
+       "tool": "send_email",
+       "args": {
+        "body": "Hi Sam, just letting you know that the demo has been moved to 3pm.",
+        "subject": "Demo Update",
+        "to": "sam@acme.test"
+       },
+       "result": "Sent (simulated): email to sam@acme.test, subject 'Demo Update'",
+       "confidence": null,
+       "reason": "tool call"
+      }
+     ],
+     "stop": "finish",
+     "reason": "final answer: no tool call in its last message",
+     "calls": 2
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/164d8b10cc37ffd3aa7cfb475693ed20"
+ },
+ {
+  "idx": 14,
+  "text": "Order A-104 total with shipping, plus 20% VAT?",
+  "expected": "database > calculator",
+  "note": "hard: two steps; the second needs the first's result",
+  "input": {
+   "request": "What does order A-104 cost in total with shipping, plus 20% VAT on all of it?"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "database > calculator",
+    "confidence": 0.95,
+    "latency_ms": 4524.730899982387,
+    "input_tokens": 2014,
+    "output_tokens": 267,
+    "cost_usd": 0.000205016,
+    "raw": {
+     "steps": [
+      {
+       "tool": "database",
+       "args": {
+        "order_id": "A-104"
+       },
+       "result": "{'status': 'delivered', 'items': 3, 'subtotal': 120.0, 'shipping': 7.5}",
+       "confidence": 0.99,
+       "reason": "tool chosen (confidence 0.99)"
+      },
+      {
+       "tool": "calculator",
+       "args": {
+        "expression": "(120.0 + 7.5) * 1.2"
+       },
+       "result": "153",
+       "confidence": 0.95,
+       "reason": "tool chosen (confidence 0.95)"
+      }
+     ],
+     "stop": "finish",
+     "reason": "selector chose finish",
+     "calls": 5
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_selector": {
+    "variant": "llm_selector",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "database > calculator",
+    "confidence": null,
+    "latency_ms": 6146.318400045857,
+    "input_tokens": 1273,
+    "output_tokens": 51,
+    "cost_usd": 0.00039475,
+    "raw": {
+     "steps": [
+      {
+       "tool": "database",
+       "args": {
+        "order_id": "A-104"
+       },
+       "result": "{'status': 'delivered', 'items': 3, 'subtotal': 120.0, 'shipping': 7.5}",
+       "confidence": null,
+       "reason": "tool chosen"
+      },
+      {
+       "tool": "calculator",
+       "args": {
+        "expression": "(120.0 + 7.5) * 1.2"
+       },
+       "result": "153",
+       "confidence": null,
+       "reason": "tool chosen"
+      }
+     ],
+     "stop": "finish",
+     "reason": "selector chose finish",
+     "calls": 5
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "tool_calling": {
+    "variant": "tool_calling",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "database > calculator",
+    "confidence": null,
+    "latency_ms": 2617.2033000038937,
+    "input_tokens": 974,
+    "output_tokens": 74,
+    "cost_usd": 0.0003545,
+    "raw": {
+     "steps": [
+      {
+       "tool": "database",
+       "args": {
+        "order_id": "A-104"
+       },
+       "result": "{'status': 'delivered', 'items': 3, 'subtotal': 120.0, 'shipping': 7.5}",
+       "confidence": null,
+       "reason": "tool call"
+      },
+      {
+       "tool": "calculator",
+       "args": {
+        "expression": "(120 + 7.5) * 1.2"
+       },
+       "result": "153",
+       "confidence": null,
+       "reason": "tool call"
+      }
+     ],
+     "stop": "finish",
+     "reason": "final answer: no tool call in its last message",
+     "calls": 3
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/39bc510fcf7295507ebd36de465326a1"
+ },
+ {
+  "idx": 15,
+  "text": "If I cancel C-9 and get 85% of the subtotal back, how much is that?",
+  "expected": "database > calculator",
+  "note": "hard: two steps",
+  "input": {
+   "request": "If I cancel order C-9 and get 85% of its subtotal back, how much is that?"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "database > calculator",
+    "confidence": 0.93,
+    "latency_ms": 4389.225400023861,
+    "input_tokens": 1989,
+    "output_tokens": 259,
+    "cost_usd": 0.00019092599999999998,
+    "raw": {
+     "steps": [
+      {
+       "tool": "database",
+       "args": {
+        "order_id": "C-9"
+       },
+       "result": "{'status': 'processing', 'items': 2, 'subtotal': 64.0, 'shipping': 5.0}",
+       "confidence": 0.94,
+       "reason": "tool chosen (confidence 0.94)"
+      },
+      {
+       "tool": "calculator",
+       "args": {
+        "expression": "64.0 * 0.85"
+       },
+       "result": "54.4",
+       "confidence": 0.93,
+       "reason": "tool chosen (confidence 0.93)"
+      }
+     ],
+     "stop": "finish",
+     "reason": "selector chose finish",
+     "calls": 5
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_selector": {
+    "variant": "llm_selector",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "database > calculator",
+    "confidence": null,
+    "latency_ms": 5285.028799989959,
+    "input_tokens": 1254,
+    "output_tokens": 43,
+    "cost_usd": 0.00037799999999999997,
+    "raw": {
+     "steps": [
+      {
+       "tool": "database",
+       "args": {
+        "order_id": "C-9"
+       },
+       "result": "{'status': 'processing', 'items': 2, 'subtotal': 64.0, 'shipping': 5.0}",
+       "confidence": null,
+       "reason": "tool chosen"
+      },
+      {
+       "tool": "calculator",
+       "args": {
+        "expression": "64.0 * 0.85"
+       },
+       "result": "54.4",
+       "confidence": null,
+       "reason": "tool chosen"
+      }
+     ],
+     "stop": "finish",
+     "reason": "selector chose finish",
+     "calls": 5
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "tool_calling": {
+    "variant": "tool_calling",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "database > calculator",
+    "confidence": null,
+    "latency_ms": 2826.259499968728,
+    "input_tokens": 955,
+    "output_tokens": 70,
+    "cost_usd": 0.00034375,
+    "raw": {
+     "steps": [
+      {
+       "tool": "database",
+       "args": {
+        "order_id": "C-9"
+       },
+       "result": "{'status': 'processing', 'items': 2, 'subtotal': 64.0, 'shipping': 5.0}",
+       "confidence": null,
+       "reason": "tool call"
+      },
+      {
+       "tool": "calculator",
+       "args": {
+        "expression": "64 * 0.85"
+       },
+       "result": "54.4",
+       "confidence": null,
+       "reason": "tool call"
+      }
+     ],
+     "stop": "finish",
+     "reason": "final answer: no tool call in its last message",
+     "calls": 3
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/e5900f6f67a7b1d6bc99a9e32545e0e4"
+ },
+ {
+  "idx": 16,
+  "text": "Thanks, that's everything for today!",
+  "expected": "none",
+  "note": null,
+  "input": {
+   "request": "Thanks, that's everything for today!"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "none",
+    "confidence": 1.0,
+    "latency_ms": 472.4677000194788,
+    "input_tokens": 480,
+    "output_tokens": 78,
+    "cost_usd": 2.016e-05,
+    "raw": {
+     "steps": [],
+     "stop": "finish",
+     "reason": "selector chose finish",
+     "calls": 1
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_selector": {
+    "variant": "llm_selector",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "none",
+    "confidence": null,
+    "latency_ms": 1442.771600006381,
+    "input_tokens": 245,
+    "output_tokens": 6,
+    "cost_usd": 7.025e-05,
+    "raw": {
+     "steps": [],
+     "stop": "finish",
+     "reason": "selector chose finish",
+     "calls": 1
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "tool_calling": {
+    "variant": "tool_calling",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "none",
+    "confidence": null,
+    "latency_ms": 751.3923000078648,
+    "input_tokens": 278,
+    "output_tokens": 22,
+    "cost_usd": 0.0001025,
+    "raw": {
+     "steps": [],
+     "stop": "finish",
+     "reason": "final answer: no tool call in its last message",
+     "calls": 1
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/fdcd54883bed053ddbebfd956142c3a7"
+ },
+ {
+  "idx": 17,
+  "text": "What does HTTP stand for?",
+  "expected": "none",
+  "note": "hard: general knowledge; searching is a wasted call",
+  "input": {
+   "request": "What does HTTP stand for?"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "none",
+    "confidence": 0.96,
+    "latency_ms": 538.2559999998193,
+    "input_tokens": 478,
+    "output_tokens": 78,
+    "cost_usd": 2.0076e-05,
+    "raw": {
+     "steps": [],
+     "stop": "finish",
+     "reason": "selector chose finish",
+     "calls": 1
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_selector": {
+    "variant": "llm_selector",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "search_web",
+    "confidence": null,
+    "latency_ms": 3722.648000024492,
+    "input_tokens": 634,
+    "output_tokens": 24,
+    "cost_usd": 0.0001945,
+    "raw": {
+     "steps": [
+      {
+       "tool": "search_web",
+       "args": {
+        "query": "what does HTTP stand for"
+       },
+       "result": "No results for 'what does HTTP stand for'.",
+       "confidence": null,
+       "reason": "tool chosen"
+      }
+     ],
+     "stop": "finish",
+     "reason": "selector chose finish",
+     "calls": 3
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "tool_calling": {
+    "variant": "tool_calling",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "none",
+    "confidence": null,
+    "latency_ms": 1023.4089000150561,
+    "input_tokens": 275,
+    "output_tokens": 9,
+    "cost_usd": 8.225e-05,
+    "raw": {
+     "steps": [],
+     "stop": "finish",
+     "reason": "final answer: no tool call in its last message",
+     "calls": 1
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/745e449cdef6c5c2a6d819f8e1ab0635"
+ },
+ {
+  "idx": 18,
+  "text": "Send it to him.",
+  "expected": "ask_user",
+  "note": null,
+  "input": {
+   "request": "Send it to him."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "ask_user",
+    "confidence": 0.93,
+    "latency_ms": 493.6677000077907,
+    "input_tokens": 477,
+    "output_tokens": 79,
+    "cost_usd": 2.0034e-05,
+    "raw": {
+     "steps": [],
+     "stop": "ask_user",
+     "reason": "selector chose ask_user",
+     "calls": 1
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_selector": {
+    "variant": "llm_selector",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "ask_user",
+    "confidence": null,
+    "latency_ms": 1008.9346000168007,
+    "input_tokens": 241,
+    "output_tokens": 8,
+    "cost_usd": 7.225e-05,
+    "raw": {
+     "steps": [],
+     "stop": "ask_user",
+     "reason": "selector chose ask_user",
+     "calls": 1
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "tool_calling": {
+    "variant": "tool_calling",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "ask_user",
+    "confidence": null,
+    "latency_ms": 1597.817199974088,
+    "input_tokens": 274,
+    "output_tokens": 58,
+    "cost_usd": 0.0001555,
+    "raw": {
+     "steps": [],
+     "stop": "ask_user",
+     "reason": "I'm not sure what you'd like me to send, or who \"him\" is. Could you please clarify what information or document you want me to send and provide the recipient's email address?",
+     "calls": 1
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/7518d2a0caaf963ba35746ac781fd6e9"
+ },
+ {
+  "idx": 19,
+  "text": "Check my order.",
+  "expected": "ask_user",
+  "note": "hard: the tool is obvious, but there's no order id to call it with",
+  "input": {
+   "request": "Check my order."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "ask_user",
+    "confidence": 0.95,
+    "latency_ms": 450.31489999382757,
+    "input_tokens": 476,
+    "output_tokens": 79,
+    "cost_usd": 1.9992e-05,
+    "raw": {
+     "steps": [],
+     "stop": "ask_user",
+     "reason": "selector chose ask_user",
+     "calls": 1
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_selector": {
+    "variant": "llm_selector",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "ask_user",
+    "confidence": null,
+    "latency_ms": 980.5708999920171,
+    "input_tokens": 240,
+    "output_tokens": 8,
+    "cost_usd": 7.2e-05,
+    "raw": {
+     "steps": [],
+     "stop": "ask_user",
+     "reason": "selector chose ask_user",
+     "calls": 1
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "tool_calling": {
+    "variant": "tool_calling",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "ask_user",
+    "confidence": null,
+    "latency_ms": 1272.9014999931678,
+    "input_tokens": 273,
+    "output_tokens": 23,
+    "cost_usd": 0.00010275,
+    "raw": {
+     "steps": [],
+     "stop": "ask_user",
+     "reason": "Could you please provide your order ID?",
+     "calls": 1
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/ac83026e404308899ecb3c913b773046"
+ }
+]

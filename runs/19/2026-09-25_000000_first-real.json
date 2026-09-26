@@ -1,0 +1,1451 @@
+[
+ {
+  "idx": 0,
+  "text": "VP Engineering @ Series B fintech lender scaling card payments (200): We're evaluating AI decisioning for transaction monitoring this quarter and want a technical demo.",
+  "expected": "sales_now",
+  "note": "the reference fixture, reworded: 'selling fraud APIs to banks' reads as a competitor under a competitor rule (the LLM disqualified it in the first run)",
+  "input": {
+   "company": "Series B fintech lender scaling card payments",
+   "employees": 200,
+   "title": "VP Engineering",
+   "email": "a.kim@lendstack.example",
+   "message": "We're evaluating AI decisioning for transaction monitoring this quarter and want a technical demo."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "sales_now",
+    "confidence": 0.82,
+    "latency_ms": 984.6588000073098,
+    "input_tokens": 609,
+    "output_tokens": 34,
+    "cost_usd": 2.5578e-05,
+    "raw": {
+     "fit": 1.88,
+     "intent": 2.0,
+     "id": "gen-dec-1790391669-X4FyQO93h94WARwLyb7d",
+     "reason": "fit 1.88, intent 2.00, 200 employees → sales_now"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "points": {
+    "variant": "points",
+    "model": "(no model)",
+    "label": "sales_now",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "90 points → sales_now"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "sales_now",
+    "confidence": null,
+    "latency_ms": 1995.2284999890253,
+    "input_tokens": 298,
+    "output_tokens": 8,
+    "cost_usd": 8.65e-05,
+    "raw": {
+     "text": "{\"label\": \"sales_now\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 1,
+  "text": "Procurement Manager @ Regional bank, 900 employees (900): Our CISO asked me to get a quote for fraud monitoring by Friday.",
+  "expected": "sales_now",
+  "note": "hard: not a leader title, buying on the CISO's behalf",
+  "input": {
+   "company": "Regional bank, 900 employees",
+   "employees": 900,
+   "title": "Procurement Manager",
+   "email": "j.ortiz@northbank.example",
+   "message": "Our CISO asked me to get a quote for fraud monitoring by Friday."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "nurture",
+    "confidence": 0.63,
+    "latency_ms": 429.9392999964766,
+    "input_tokens": 607,
+    "output_tokens": 34,
+    "cost_usd": 2.5494e-05,
+    "raw": {
+     "fit": 1.21,
+     "intent": 2.0,
+     "id": "gen-dec-1790391671-qwGo8SLRmzjQ0g5uIUB7",
+     "reason": "fit 1.21, intent 2.00, 900 employees → nurture"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "points": {
+    "variant": "points",
+    "model": "(no model)",
+    "label": "nurture",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "65 points → nurture"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "sales_now",
+    "confidence": null,
+    "latency_ms": 1139.4049000227824,
+    "input_tokens": 298,
+    "output_tokens": 8,
+    "cost_usd": 8.65e-05,
+    "raw": {
+     "text": "{\"label\": \"sales_now\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 2,
+  "text": "Director of Risk @ Online marketplace with a chargeback problem (650): Chargebacks doubled this year. Can we start a trial next week?",
+  "expected": "sales_now",
+  "note": null,
+  "input": {
+   "company": "Online marketplace with a chargeback problem",
+   "employees": 650,
+   "title": "Director of Risk",
+   "email": "s.patel@bazaarly.example",
+   "message": "Chargebacks doubled this year. Can we start a trial next week?"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "sales_now",
+    "confidence": 0.97,
+    "latency_ms": 941.1136000126135,
+    "input_tokens": 606,
+    "output_tokens": 34,
+    "cost_usd": 2.5452e-05,
+    "raw": {
+     "fit": 1.98,
+     "intent": 2.0,
+     "id": "gen-dec-1790391672-F9Fy2QHNfkT1UmzUVdeq",
+     "reason": "fit 1.98, intent 2.00, 650 employees → sales_now"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "points": {
+    "variant": "points",
+    "model": "(no model)",
+    "label": "sales_now",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "70 points → sales_now"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "sales_now",
+    "confidence": null,
+    "latency_ms": 979.6731999958865,
+    "input_tokens": 297,
+    "output_tokens": 13,
+    "cost_usd": 9.375e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"sales_now\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 3,
+  "text": "Founder & CEO @ Payments startup, 120 people (120): Manual review is killing us. What would it cost for 2M transactions a month? We need something live in Q1.",
+  "expected": "sales_now",
+  "note": "hard: no demo/trial word; 'what would it cost' + timeline",
+  "input": {
+   "company": "Payments startup, 120 people",
+   "employees": 120,
+   "title": "Founder & CEO",
+   "email": "dana@payloop.example",
+   "message": "Manual review is killing us. What would it cost for 2M transactions a month? We need something live in Q1."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "sales_now",
+    "confidence": 0.66,
+    "latency_ms": 423.5976999916602,
+    "input_tokens": 615,
+    "output_tokens": 34,
+    "cost_usd": 2.583e-05,
+    "raw": {
+     "fit": 1.77,
+     "intent": 2.0,
+     "id": "gen-dec-1790391673-CJ83uUJxiUjrTIxbdemD",
+     "reason": "fit 1.77, intent 2.00, 120 employees → sales_now"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "points": {
+    "variant": "points",
+    "model": "(no model)",
+    "label": "nurture",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "35 points → nurture"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "sales_now",
+    "confidence": null,
+    "latency_ms": 1277.8003999846987,
+    "input_tokens": 306,
+    "output_tokens": 8,
+    "cost_usd": 8.85e-05,
+    "raw": {
+     "text": "{\"label\": \"sales_now\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 4,
+  "text": "Head of Fraud Operations @ Neobank (340): Our analysts drown in false positives. Can someone walk us through the product on Tuesday?",
+  "expected": "sales_now",
+  "note": "hard: 'walk us through' = a demo",
+  "input": {
+   "company": "Neobank",
+   "employees": 340,
+   "title": "Head of Fraud Operations",
+   "email": "r.alves@nubankish.example",
+   "message": "Our analysts drown in false positives. Can someone walk us through the product on Tuesday?"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "sales_now",
+    "confidence": 0.99,
+    "latency_ms": 619.9383999919519,
+    "input_tokens": 604,
+    "output_tokens": 34,
+    "cost_usd": 2.5368e-05,
+    "raw": {
+     "fit": 2.0,
+     "intent": 2.0,
+     "id": "gen-dec-1790391675-bP9R2Phbk9D7UjdUJw7d",
+     "reason": "fit 2.00, intent 2.00, 340 employees → sales_now"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "points": {
+    "variant": "points",
+    "model": "(no model)",
+    "label": "nurture",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "60 points → nurture"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "sales_now",
+    "confidence": null,
+    "latency_ms": 1324.442099983571,
+    "input_tokens": 296,
+    "output_tokens": 13,
+    "cost_usd": 9.35e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"sales_now\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 5,
+  "text": "CISO @ Card issuer, 1,500 employees (1500): Please send pricing for the enterprise plan; we sign vendors before month end.",
+  "expected": "sales_now",
+  "note": null,
+  "input": {
+   "company": "Card issuer, 1,500 employees",
+   "employees": 1500,
+   "title": "CISO",
+   "email": "ciso@cardwise.example",
+   "message": "Please send pricing for the enterprise plan; we sign vendors before month end."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "sales_now",
+    "confidence": 0.61,
+    "latency_ms": 484.0760999941267,
+    "input_tokens": 606,
+    "output_tokens": 34,
+    "cost_usd": 2.5452e-05,
+    "raw": {
+     "fit": 1.74,
+     "intent": 2.0,
+     "id": "gen-dec-1790391676-Fm2K9gT1PUGPbtwJzXZJ",
+     "reason": "fit 1.74, intent 2.00, 1500 employees → sales_now"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "points": {
+    "variant": "points",
+    "model": "(no model)",
+    "label": "sales_now",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "70 points → sales_now"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "sales_now",
+    "confidence": null,
+    "latency_ms": 1473.8569000037387,
+    "input_tokens": 298,
+    "output_tokens": 8,
+    "cost_usd": 8.65e-05,
+    "raw": {
+     "text": "{\"label\": \"sales_now\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 6,
+  "text": "Engineering Manager, Payments @ E-commerce platform for fashion brands (280): We're comparing three fraud vendors this month and you're one of them.",
+  "expected": "sales_now",
+  "note": "hard: 'Manager' misses the title points",
+  "input": {
+   "company": "E-commerce platform for fashion brands",
+   "employees": 280,
+   "title": "Engineering Manager, Payments",
+   "email": "t.nguyen@stitchery.example",
+   "message": "We're comparing three fraud vendors this month and you're one of them."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "sales_now",
+    "confidence": 0.9,
+    "latency_ms": 447.0780999981798,
+    "input_tokens": 605,
+    "output_tokens": 34,
+    "cost_usd": 2.541e-05,
+    "raw": {
+     "fit": 1.93,
+     "intent": 2.0,
+     "id": "gen-dec-1790391677-aDbvvPNtipj8YHwAoBUo",
+     "reason": "fit 1.93, intent 2.00, 280 employees → sales_now"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "points": {
+    "variant": "points",
+    "model": "(no model)",
+    "label": "nurture",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "35 points → nurture"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "sales_now",
+    "confidence": null,
+    "latency_ms": 1782.527500006836,
+    "input_tokens": 300,
+    "output_tokens": 13,
+    "cost_usd": 9.45e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"sales_now\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 7,
+  "text": "Head of Fraud @ Payments processor, 400 employees (400): Loved your blog post on false positives, just following along for now.",
+  "expected": "nurture",
+  "note": "hard: perfect fit, no intent",
+  "input": {
+   "company": "Payments processor, 400 employees",
+   "employees": 400,
+   "title": "Head of Fraud",
+   "email": "m.chen@paysure.example",
+   "message": "Loved your blog post on false positives, just following along for now."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "nurture",
+    "confidence": 0.28,
+    "latency_ms": 654.1923999902792,
+    "input_tokens": 605,
+    "output_tokens": 34,
+    "cost_usd": 2.541e-05,
+    "raw": {
+     "fit": 1.98,
+     "intent": 0.52,
+     "id": "gen-dec-1790391680-UBc2VzWGTMchnz4H4fte",
+     "reason": "fit 1.98, intent 0.52, 400 employees → nurture"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "points": {
+    "variant": "points",
+    "model": "(no model)",
+    "label": "nurture",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "60 points → nurture"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "nurture",
+    "confidence": null,
+    "latency_ms": 998.0189999914728,
+    "input_tokens": 296,
+    "output_tokens": 8,
+    "cost_usd": 8.6e-05,
+    "raw": {
+     "text": "{\"label\": \"nurture\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 8,
+  "text": "Data Scientist @ Fintech lender (60): Interesting approach. Do you have a whitepaper on how the scoring works?",
+  "expected": "nurture",
+  "note": "fit, early interest",
+  "input": {
+   "company": "Fintech lender",
+   "employees": 60,
+   "title": "Data Scientist",
+   "email": "l.rossi@lendly.example",
+   "message": "Interesting approach. Do you have a whitepaper on how the scoring works?"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "nurture",
+    "confidence": 0.37,
+    "latency_ms": 566.6659999988042,
+    "input_tokens": 601,
+    "output_tokens": 34,
+    "cost_usd": 2.5242e-05,
+    "raw": {
+     "fit": 1.58,
+     "intent": 0.99,
+     "id": "gen-dec-1790391680-ZHHS30l7USDjENoL59io",
+     "reason": "fit 1.58, intent 0.99, 60 employees → nurture"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "points": {
+    "variant": "points",
+    "model": "(no model)",
+    "label": "nurture",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "35 points → nurture"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "nurture",
+    "confidence": null,
+    "latency_ms": 1218.715599999996,
+    "input_tokens": 291,
+    "output_tokens": 8,
+    "cost_usd": 8.475e-05,
+    "raw": {
+     "text": "{\"label\": \"nurture\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 9,
+  "text": "VP Engineering @ Mid-size bank (1200): We might look at fraud tooling next year. Keep me posted.",
+  "expected": "nurture",
+  "note": "hard: big title, no timeline",
+  "input": {
+   "company": "Mid-size bank",
+   "employees": 1200,
+   "title": "VP Engineering",
+   "email": "vp.eng@citybank.example",
+   "message": "We might look at fraud tooling next year. Keep me posted."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "nurture",
+    "confidence": 0.57,
+    "latency_ms": 465.90609999839216,
+    "input_tokens": 598,
+    "output_tokens": 34,
+    "cost_usd": 2.5116e-05,
+    "raw": {
+     "fit": 1.71,
+     "intent": 0.96,
+     "id": "gen-dec-1790391681-RoynAOjrVO7IU3MAVHlQ",
+     "reason": "fit 1.71, intent 0.96, 1200 employees → nurture"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "points": {
+    "variant": "points",
+    "model": "(no model)",
+    "label": "nurture",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "60 points → nurture"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "nurture",
+    "confidence": null,
+    "latency_ms": 1455.827700003283,
+    "input_tokens": 291,
+    "output_tokens": 8,
+    "cost_usd": 8.475e-05,
+    "raw": {
+     "text": "{\"label\": \"nurture\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 10,
+  "text": "Head of Operations @ Online grocery, 45 employees (45): We're seeing some card fraud. Can I get a demo?",
+  "expected": "nurture",
+  "note": "hard: intent, but under 50 employees",
+  "input": {
+   "company": "Online grocery, 45 employees",
+   "employees": 45,
+   "title": "Head of Operations",
+   "email": "ops@freshbox.example",
+   "message": "We're seeing some card fraud. Can I get a demo?"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "nurture",
+    "confidence": 0.77,
+    "latency_ms": 458.00660000531934,
+    "input_tokens": 600,
+    "output_tokens": 34,
+    "cost_usd": 2.52e-05,
+    "raw": {
+     "fit": 1.03,
+     "intent": 1.92,
+     "id": "gen-dec-1790391683-NrvJ7jyiheSPh86JEdap",
+     "reason": "fit 1.03, intent 1.92, 45 employees → nurture"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "points": {
+    "variant": "points",
+    "model": "(no model)",
+    "label": "nurture",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "55 points → nurture"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "disqualify",
+    "confidence": null,
+    "latency_ms": 1307.4019000050612,
+    "input_tokens": 292,
+    "output_tokens": 8,
+    "cost_usd": 8.5e-05,
+    "raw": {
+     "text": "{\"label\": \"disqualify\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 11,
+  "text": "IT Director @ Insurance broker (300): Could your product help with claims fraud? Send me pricing.",
+  "expected": "nurture",
+  "note": "hard: pricing request, adjacent industry (partial fit)",
+  "input": {
+   "company": "Insurance broker",
+   "employees": 300,
+   "title": "IT Director",
+   "email": "it@brokerline.example",
+   "message": "Could your product help with claims fraud? Send me pricing."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "nurture",
+    "confidence": 0.4,
+    "latency_ms": 496.1380999884568,
+    "input_tokens": 594,
+    "output_tokens": 34,
+    "cost_usd": 2.4948e-05,
+    "raw": {
+     "fit": 0.75,
+     "intent": 1.6,
+     "id": "gen-dec-1790391684-SHa5VMKOJvPpoQKTZjSG",
+     "reason": "fit 0.75, intent 1.60, 300 employees → nurture"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "points": {
+    "variant": "points",
+    "model": "(no model)",
+    "label": "sales_now",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "70 points → sales_now"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "nurture",
+    "confidence": null,
+    "latency_ms": 1192.0189000084065,
+    "input_tokens": 285,
+    "output_tokens": 8,
+    "cost_usd": 8.325e-05,
+    "raw": {
+     "text": "{\"label\": \"nurture\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 12,
+  "text": "Compliance Lead @ Crypto exchange (250): Exploring options for transaction monitoring, no rush.",
+  "expected": "nurture",
+  "note": "exploring, no timeline",
+  "input": {
+   "company": "Crypto exchange",
+   "employees": 250,
+   "title": "Compliance Lead",
+   "email": "comp@coinvault.example",
+   "message": "Exploring options for transaction monitoring, no rush."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "nurture",
+    "confidence": 0.76,
+    "latency_ms": 456.99860001332127,
+    "input_tokens": 595,
+    "output_tokens": 34,
+    "cost_usd": 2.499e-05,
+    "raw": {
+     "fit": 1.11,
+     "intent": 1.0,
+     "id": "gen-dec-1790391685-ZSOTBO2jmOSKItlmj7u4",
+     "reason": "fit 1.11, intent 1.00, 250 employees → nurture"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "points": {
+    "variant": "points",
+    "model": "(no model)",
+    "label": "disqualify",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "15 points → disqualify"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "nurture",
+    "confidence": null,
+    "latency_ms": 1596.9294999958947,
+    "input_tokens": 282,
+    "output_tokens": 13,
+    "cost_usd": 9e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"nurture\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 13,
+  "text": "Software Engineer @ Payments company (90): Is there a free tier I can play with?",
+  "expected": "nurture",
+  "note": "hard: a practitioner, curious; 'free tier' is not a buying timeline",
+  "input": {
+   "company": "Payments company",
+   "employees": 90,
+   "title": "Software Engineer",
+   "email": "dev@payfast.example",
+   "message": "Is there a free tier I can play with?"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "nurture",
+    "confidence": 0.57,
+    "latency_ms": 538.422100013122,
+    "input_tokens": 590,
+    "output_tokens": 34,
+    "cost_usd": 2.478e-05,
+    "raw": {
+     "fit": 1.24,
+     "intent": 1.14,
+     "id": "gen-dec-1790391687-Yvi12eAoPeGWIKuPiNPE",
+     "reason": "fit 1.24, intent 1.14, 90 employees → nurture"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "points": {
+    "variant": "points",
+    "model": "(no model)",
+    "label": "nurture",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "35 points → nurture"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "nurture",
+    "confidence": null,
+    "latency_ms": 822.6296000066213,
+    "input_tokens": 282,
+    "output_tokens": 8,
+    "cost_usd": 8.25e-05,
+    "raw": {
+     "text": "{\"label\": \"nurture\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 14,
+  "text": "VP of Engineering @ Two-person crypto wallet startup (3): Send me pricing and a demo link, we're evaluating this week.",
+  "expected": "disqualify",
+  "note": "hard: great words, 3 employees",
+  "input": {
+   "company": "Two-person crypto wallet startup",
+   "employees": 3,
+   "title": "VP of Engineering",
+   "email": "vp@walletz.example",
+   "message": "Send me pricing and a demo link, we're evaluating this week."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "disqualify",
+    "confidence": 0.76,
+    "latency_ms": 438.1248999852687,
+    "input_tokens": 598,
+    "output_tokens": 34,
+    "cost_usd": 2.5116e-05,
+    "raw": {
+     "fit": 0.16,
+     "intent": 1.99,
+     "id": "gen-dec-1790391688-1o3RhU4jr0fj0QvGc4dw",
+     "reason": "fit 0.16, intent 1.99, 3 employees → disqualify"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "points": {
+    "variant": "points",
+    "model": "(no model)",
+    "label": "nurture",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "55 points → nurture"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "disqualify",
+    "confidence": null,
+    "latency_ms": 1242.874599993229,
+    "input_tokens": 291,
+    "output_tokens": 8,
+    "cost_usd": 8.475e-05,
+    "raw": {
+     "text": "{\"label\": \"disqualify\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 15,
+  "text": "Student @ University (5000): Doing a class project on fraud detection, can I see your pricing and maybe a demo?",
+  "expected": "disqualify",
+  "note": "hard: student, intent words",
+  "input": {
+   "company": "University",
+   "employees": 5000,
+   "title": "Student",
+   "email": "jane.doe@gmail.com",
+   "message": "Doing a class project on fraud detection, can I see your pricing and maybe a demo?"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "disqualify",
+    "confidence": 0.87,
+    "latency_ms": 476.23600001679733,
+    "input_tokens": 599,
+    "output_tokens": 34,
+    "cost_usd": 2.5158e-05,
+    "raw": {
+     "fit": 0.0,
+     "intent": 0.09,
+     "id": "gen-dec-1790391689-psJCVd0dWlLzjHUaKXgm",
+     "reason": "fit 0.00, intent 0.09, 5000 employees → disqualify"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "points": {
+    "variant": "points",
+    "model": "(no model)",
+    "label": "disqualify",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "-10 points → disqualify"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "disqualify",
+    "confidence": null,
+    "latency_ms": 979.6193999936804,
+    "input_tokens": 291,
+    "output_tokens": 8,
+    "cost_usd": 8.475e-05,
+    "raw": {
+     "text": "{\"label\": \"disqualify\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 16,
+  "text": "Head of Product @ Fraud-detection software vendor (150): We build something similar. Could we get a demo and your API docs?",
+  "expected": "disqualify",
+  "note": "hard: a competitor, perfect keywords",
+  "input": {
+   "company": "Fraud-detection software vendor",
+   "employees": 150,
+   "title": "Head of Product",
+   "email": "pm@frauddefend.example",
+   "message": "We build something similar. Could we get a demo and your API docs?"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "disqualify",
+    "confidence": 0.16,
+    "latency_ms": 1043.321000004653,
+    "input_tokens": 604,
+    "output_tokens": 34,
+    "cost_usd": 2.5368e-05,
+    "raw": {
+     "fit": 0.03,
+     "intent": 0.56,
+     "id": "gen-dec-1790391690-kgwEdzcatz14tyBQjLwJ",
+     "reason": "fit 0.03, intent 0.56, 150 employees → disqualify"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "points": {
+    "variant": "points",
+    "model": "(no model)",
+    "label": "sales_now",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "90 points → sales_now"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "disqualify",
+    "confidence": null,
+    "latency_ms": 1545.6749000004493,
+    "input_tokens": 293,
+    "output_tokens": 8,
+    "cost_usd": 8.525e-05,
+    "raw": {
+     "text": "{\"label\": \"disqualify\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 17,
+  "text": "Owner @ Local bakery (8): Someone used a stolen card at my shop, what should I do?",
+  "expected": "disqualify",
+  "note": "tiny, not a buyer",
+  "input": {
+   "company": "Local bakery",
+   "employees": 8,
+   "title": "Owner",
+   "email": "hello@crumbs.example",
+   "message": "Someone used a stolen card at my shop, what should I do?"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "disqualify",
+    "confidence": 0.74,
+    "latency_ms": 474.0268999885302,
+    "input_tokens": 592,
+    "output_tokens": 34,
+    "cost_usd": 2.4864e-05,
+    "raw": {
+     "fit": 0.01,
+     "intent": 0.18,
+     "id": "gen-dec-1790391692-LDSNy2Ibjisrq6pHFVeM",
+     "reason": "fit 0.01, intent 0.18, 8 employees → disqualify"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "points": {
+    "variant": "points",
+    "model": "(no model)",
+    "label": "disqualify",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "0 points → disqualify"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "disqualify",
+    "confidence": null,
+    "latency_ms": 1580.977100005839,
+    "input_tokens": 283,
+    "output_tokens": 8,
+    "cost_usd": 8.275e-05,
+    "raw": {
+     "text": "{\"label\": \"disqualify\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 18,
+  "text": "Volunteer coordinator @ Animal shelter volunteer network (30): We have no budget but would love a free license for our donation page.",
+  "expected": "disqualify",
+  "note": "no budget",
+  "input": {
+   "company": "Animal shelter volunteer network",
+   "employees": 30,
+   "title": "Volunteer coordinator",
+   "email": "help@pawsnet.example",
+   "message": "We have no budget but would love a free license for our donation page."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "disqualify",
+    "confidence": 0.82,
+    "latency_ms": 460.70299998973496,
+    "input_tokens": 600,
+    "output_tokens": 34,
+    "cost_usd": 2.52e-05,
+    "raw": {
+     "fit": 0.0,
+     "intent": 0.12,
+     "id": "gen-dec-1790391693-aXAO9AnUfIokcoIqtvzz",
+     "reason": "fit 0.00, intent 0.12, 30 employees → disqualify"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "points": {
+    "variant": "points",
+    "model": "(no model)",
+    "label": "disqualify",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "0 points → disqualify"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "disqualify",
+    "confidence": null,
+    "latency_ms": 964.9480000080075,
+    "input_tokens": 290,
+    "output_tokens": 8,
+    "cost_usd": 8.45e-05,
+    "raw": {
+     "text": "{\"label\": \"disqualify\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 19,
+  "text": "Recruiter @ Recruiting agency (60): Are you hiring fraud engineers? I have great candidates.",
+  "expected": "disqualify",
+  "note": "unrelated",
+  "input": {
+   "company": "Recruiting agency",
+   "employees": 60,
+   "title": "Recruiter",
+   "email": "talent@hirefast.example",
+   "message": "Are you hiring fraud engineers? I have great candidates."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "disqualify",
+    "confidence": 0.95,
+    "latency_ms": 426.72730001504533,
+    "input_tokens": 597,
+    "output_tokens": 34,
+    "cost_usd": 2.5074e-05,
+    "raw": {
+     "fit": 0.03,
+     "intent": 0.03,
+     "id": "gen-dec-1790391694-SkjNeinHv1HD7oOklBin",
+     "reason": "fit 0.03, intent 0.03, 60 employees → disqualify"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "points": {
+    "variant": "points",
+    "model": "(no model)",
+    "label": "disqualify",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "15 points → disqualify"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "disqualify",
+    "confidence": null,
+    "latency_ms": 1443.6038999992888,
+    "input_tokens": 284,
+    "output_tokens": 8,
+    "cost_usd": 8.3e-05,
+    "raw": {
+     "text": "{\"label\": \"disqualify\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 20,
+  "text": "PhD researcher @ Research lab at a bank (2000): For my paper I'd like to benchmark your model, could I get a trial?",
+  "expected": "disqualify",
+  "note": "hard: bank + trial, but a researcher",
+  "input": {
+   "company": "Research lab at a bank",
+   "employees": 2000,
+   "title": "PhD researcher",
+   "email": "phd.research@bankresearch.example",
+   "message": "For my paper I'd like to benchmark your model, could I get a trial?"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "disqualify",
+    "confidence": 0.4,
+    "latency_ms": 417.49849999905564,
+    "input_tokens": 608,
+    "output_tokens": 34,
+    "cost_usd": 2.5536e-05,
+    "raw": {
+     "fit": 0.4,
+     "intent": 0.21,
+     "id": "gen-dec-1790391696-d8lhA9eIostaSXPTJqkH",
+     "reason": "fit 0.40, intent 0.21, 2000 employees → disqualify"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "points": {
+    "variant": "points",
+    "model": "(no model)",
+    "label": "nurture",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "65 points → nurture"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "disqualify",
+    "confidence": null,
+    "latency_ms": 2785.1863999967463,
+    "input_tokens": 298,
+    "output_tokens": 8,
+    "cost_usd": 8.65e-05,
+    "raw": {
+     "text": "{\"label\": \"disqualify\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ }
+]

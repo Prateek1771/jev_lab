@@ -1,0 +1,1190 @@
+[
+ {
+  "idx": 0,
+  "text": "The export button is slightly misaligned on mobile.",
+  "expected": "low",
+  "note": null,
+  "input": "The export button is slightly misaligned on mobile.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "low",
+    "confidence": 1.0,
+    "latency_ms": 1098.9508999919053,
+    "input_tokens": 375,
+    "output_tokens": 17,
+    "cost_usd": 1.575e-05,
+    "raw": {
+     "probabilities": {
+      "low": 1.0,
+      "medium": 0.0,
+      "high": 0.0
+     },
+     "levels": 3,
+     "id": "gen-dec-1790398183-ksZeVg9ENS1tgaJZrJdH"
+    },
+    "probability": null,
+    "score": 0.0,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "low",
+    "confidence": null,
+    "latency_ms": 1442.5443999934942,
+    "input_tokens": 106,
+    "output_tokens": 1,
+    "cost_usd": 2.8e-05,
+    "raw": {
+     "text": "low"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "low",
+    "confidence": null,
+    "latency_ms": 1696.1496000003535,
+    "input_tokens": 173,
+    "output_tokens": 6,
+    "cost_usd": 5.225e-05,
+    "raw": {
+     "text": "{\"label\": \"low\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 1,
+  "text": "How do I change the date format in reports?",
+  "expected": "low",
+  "note": null,
+  "input": "How do I change the date format in reports?",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "low",
+    "confidence": 1.0,
+    "latency_ms": 584.9421999882907,
+    "input_tokens": 374,
+    "output_tokens": 17,
+    "cost_usd": 1.5708e-05,
+    "raw": {
+     "probabilities": {
+      "low": 1.0,
+      "medium": 0.0,
+      "high": 0.0
+     },
+     "levels": 3,
+     "id": "gen-dec-1790398184-rZv9kzlJ1JADrDZNJAoz"
+    },
+    "probability": null,
+    "score": 0.0,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "low",
+    "confidence": null,
+    "latency_ms": 1529.4678999925964,
+    "input_tokens": 106,
+    "output_tokens": 1,
+    "cost_usd": 2.8e-05,
+    "raw": {
+     "text": "low"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "low",
+    "confidence": null,
+    "latency_ms": 1069.286399986595,
+    "input_tokens": 173,
+    "output_tokens": 6,
+    "cost_usd": 5.225e-05,
+    "raw": {
+     "text": "{\"label\": \"low\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 2,
+  "text": "The dark mode colors on the settings page look a bit off.",
+  "expected": "low",
+  "note": null,
+  "input": "The dark mode colors on the settings page look a bit off.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "low",
+    "confidence": 1.0,
+    "latency_ms": 478.79749999265186,
+    "input_tokens": 377,
+    "output_tokens": 17,
+    "cost_usd": 1.5834e-05,
+    "raw": {
+     "probabilities": {
+      "low": 1.0,
+      "medium": 0.0,
+      "high": 0.0
+     },
+     "levels": 3,
+     "id": "gen-dec-1790398185-86ObwBTcZ07XUHbgz7hW"
+    },
+    "probability": null,
+    "score": 0.0,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "low",
+    "confidence": null,
+    "latency_ms": 763.73129998683,
+    "input_tokens": 109,
+    "output_tokens": 1,
+    "cost_usd": 2.875e-05,
+    "raw": {
+     "text": "low"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "low",
+    "confidence": null,
+    "latency_ms": 951.9165999954566,
+    "input_tokens": 176,
+    "output_tokens": 11,
+    "cost_usd": 6.05e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"low\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 3,
+  "text": "Search is slow sometimes, but refreshing the page fixes it.",
+  "expected": "low",
+  "note": "hard: something is wrong, but there is an easy workaround",
+  "input": "Search is slow sometimes, but refreshing the page fixes it.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "low",
+    "confidence": 1.0,
+    "latency_ms": 570.2453999838326,
+    "input_tokens": 376,
+    "output_tokens": 17,
+    "cost_usd": 1.5792e-05,
+    "raw": {
+     "probabilities": {
+      "low": 1.0,
+      "medium": 0.0,
+      "high": 0.0
+     },
+     "levels": 3,
+     "id": "gen-dec-1790398187-1ssK4fVZJKPBlamEgeFW"
+    },
+    "probability": null,
+    "score": 0.0,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "low",
+    "confidence": null,
+    "latency_ms": 773.9686999993864,
+    "input_tokens": 108,
+    "output_tokens": 1,
+    "cost_usd": 2.85e-05,
+    "raw": {
+     "text": "low"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "low",
+    "confidence": null,
+    "latency_ms": 1035.5374999926426,
+    "input_tokens": 175,
+    "output_tokens": 11,
+    "cost_usd": 6.025e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"low\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 4,
+  "text": "THIS APP IS TERRIBLE, THE FONT IS TOO SMALL!!!",
+  "expected": "low",
+  "note": "hard: loud and angry, but cosmetic",
+  "input": "THIS APP IS TERRIBLE, THE FONT IS TOO SMALL!!!",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "low",
+    "confidence": 0.99,
+    "latency_ms": 1264.039200003026,
+    "input_tokens": 377,
+    "output_tokens": 17,
+    "cost_usd": 1.5834e-05,
+    "raw": {
+     "probabilities": {
+      "low": 1.0,
+      "medium": 0.0,
+      "high": 0.0
+     },
+     "levels": 3,
+     "id": "gen-dec-1790398188-g1bFe7DWcbAFIg1I2H7V"
+    },
+    "probability": null,
+    "score": 0.01,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "low",
+    "confidence": null,
+    "latency_ms": 867.718599998625,
+    "input_tokens": 110,
+    "output_tokens": 1,
+    "cost_usd": 2.9e-05,
+    "raw": {
+     "text": "low"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "low",
+    "confidence": null,
+    "latency_ms": 1787.762299994938,
+    "input_tokens": 177,
+    "output_tokens": 11,
+    "cost_usd": 6.075e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"low\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 5,
+  "text": "Can you add a keyboard shortcut for saving?",
+  "expected": "low",
+  "note": null,
+  "input": "Can you add a keyboard shortcut for saving?",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "low",
+    "confidence": 1.0,
+    "latency_ms": 613.0587999941781,
+    "input_tokens": 373,
+    "output_tokens": 17,
+    "cost_usd": 1.5666e-05,
+    "raw": {
+     "probabilities": {
+      "low": 1.0,
+      "medium": 0.0,
+      "high": 0.0
+     },
+     "levels": 3,
+     "id": "gen-dec-1790398189-Ws8V9DQIqjBPRZKyuD4N"
+    },
+    "probability": null,
+    "score": 0.0,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "low",
+    "confidence": null,
+    "latency_ms": 1212.8187000053003,
+    "input_tokens": 105,
+    "output_tokens": 1,
+    "cost_usd": 2.775e-05,
+    "raw": {
+     "text": "low"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "low",
+    "confidence": null,
+    "latency_ms": 1009.6960999944713,
+    "input_tokens": 172,
+    "output_tokens": 11,
+    "cost_usd": 5.95e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"low\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 6,
+  "text": "I can't upload attachments larger than 5 MB, and I need to send a 12 MB file.",
+  "expected": "medium",
+  "note": null,
+  "input": "I can't upload attachments larger than 5 MB, and I need to send a 12 MB file.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "medium",
+    "confidence": 0.28,
+    "latency_ms": 547.9976000206079,
+    "input_tokens": 387,
+    "output_tokens": 17,
+    "cost_usd": 1.6254e-05,
+    "raw": {
+     "probabilities": {
+      "low": 0.48,
+      "medium": 0.52,
+      "high": 0.0
+     },
+     "levels": 3,
+     "id": "gen-dec-1790398191-U5AbrDSD1iGB5YRms6Cd"
+    },
+    "probability": null,
+    "score": 0.52,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "medium",
+    "confidence": null,
+    "latency_ms": 762.9841000016313,
+    "input_tokens": 120,
+    "output_tokens": 1,
+    "cost_usd": 3.15e-05,
+    "raw": {
+     "text": "medium"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "medium",
+    "confidence": null,
+    "latency_ms": 1544.6063999843318,
+    "input_tokens": 187,
+    "output_tokens": 11,
+    "cost_usd": 6.325e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"medium\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 7,
+  "text": "My scheduled report stopped arriving three days ago.",
+  "expected": "medium",
+  "note": null,
+  "input": "My scheduled report stopped arriving three days ago.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "medium",
+    "confidence": 0.93,
+    "latency_ms": 850.147699995432,
+    "input_tokens": 373,
+    "output_tokens": 17,
+    "cost_usd": 1.5666e-05,
+    "raw": {
+     "probabilities": {
+      "low": 0.02,
+      "medium": 0.95,
+      "high": 0.03
+     },
+     "levels": 3,
+     "id": "gen-dec-1790398192-E9uu2KHJTNzPxglS7Nwd"
+    },
+    "probability": null,
+    "score": 1.01,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "medium",
+    "confidence": null,
+    "latency_ms": 1614.6926999790594,
+    "input_tokens": 105,
+    "output_tokens": 1,
+    "cost_usd": 2.775e-05,
+    "raw": {
+     "text": "medium"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "medium",
+    "confidence": null,
+    "latency_ms": 1169.9783999938518,
+    "input_tokens": 172,
+    "output_tokens": 6,
+    "cost_usd": 5.2e-05,
+    "raw": {
+     "text": "{\"label\": \"medium\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 8,
+  "text": "The CSV import fails for files with Windows line endings.",
+  "expected": "medium",
+  "note": null,
+  "input": "The CSV import fails for files with Windows line endings.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "medium",
+    "confidence": 0.73,
+    "latency_ms": 477.5194000103511,
+    "input_tokens": 375,
+    "output_tokens": 17,
+    "cost_usd": 1.575e-05,
+    "raw": {
+     "probabilities": {
+      "low": 0.11,
+      "medium": 0.8099999999999999,
+      "high": 0.08
+     },
+     "levels": 3,
+     "id": "gen-dec-1790398194-u0xqma4wLrEc8bruHwm7"
+    },
+    "probability": null,
+    "score": 0.97,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "medium",
+    "confidence": null,
+    "latency_ms": 872.9727000172716,
+    "input_tokens": 107,
+    "output_tokens": 1,
+    "cost_usd": 2.825e-05,
+    "raw": {
+     "text": "medium"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "medium",
+    "confidence": null,
+    "latency_ms": 1199.5035999862012,
+    "input_tokens": 174,
+    "output_tokens": 6,
+    "cost_usd": 5.25e-05,
+    "raw": {
+     "text": "{\"label\": \"medium\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 9,
+  "text": "Two-factor codes don't work on my new phone, so I can't log in.",
+  "expected": "medium",
+  "note": "hard: locked out sounds severe, but it is one user and nothing is lost or exposed",
+  "input": "Two-factor codes don't work on my new phone, so I can't log in.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "medium",
+    "confidence": 0.99,
+    "latency_ms": 567.4523999914527,
+    "input_tokens": 382,
+    "output_tokens": 17,
+    "cost_usd": 1.6044e-05,
+    "raw": {
+     "probabilities": {
+      "low": 0.0,
+      "medium": 1.0,
+      "high": 0.0
+     },
+     "levels": 3,
+     "id": "gen-dec-1790398195-zNugqApkkDpXWWQqekyL"
+    },
+    "probability": null,
+    "score": 1.0,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "high",
+    "confidence": null,
+    "latency_ms": 1528.1644999922719,
+    "input_tokens": 117,
+    "output_tokens": 1,
+    "cost_usd": 3.075e-05,
+    "raw": {
+     "text": "high"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "high",
+    "confidence": null,
+    "latency_ms": 847.4146999942604,
+    "input_tokens": 184,
+    "output_tokens": 6,
+    "cost_usd": 5.5e-05,
+    "raw": {
+     "text": "{\"label\": \"high\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 10,
+  "text": "The mobile app crashes when I open the calendar tab.",
+  "expected": "medium",
+  "note": null,
+  "input": "The mobile app crashes when I open the calendar tab.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "medium",
+    "confidence": 0.99,
+    "latency_ms": 503.7313000066206,
+    "input_tokens": 375,
+    "output_tokens": 17,
+    "cost_usd": 1.575e-05,
+    "raw": {
+     "probabilities": {
+      "low": 0.0,
+      "medium": 1.0,
+      "high": 0.0
+     },
+     "levels": 3,
+     "id": "gen-dec-1790398197-uVbraL5RoX6IU0YlMCi5"
+    },
+    "probability": null,
+    "score": 1.0,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "medium",
+    "confidence": null,
+    "latency_ms": 1217.0396000146866,
+    "input_tokens": 107,
+    "output_tokens": 1,
+    "cost_usd": 2.825e-05,
+    "raw": {
+     "text": "medium"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "medium",
+    "confidence": null,
+    "latency_ms": 1310.0046000035945,
+    "input_tokens": 174,
+    "output_tokens": 6,
+    "cost_usd": 5.25e-05,
+    "raw": {
+     "text": "{\"label\": \"medium\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 11,
+  "text": "Our team's Slack notifications stopped working after the update.",
+  "expected": "medium",
+  "note": null,
+  "input": "Our team's Slack notifications stopped working after the update.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "medium",
+    "confidence": 0.85,
+    "latency_ms": 643.3686999953352,
+    "input_tokens": 375,
+    "output_tokens": 17,
+    "cost_usd": 1.575e-05,
+    "raw": {
+     "probabilities": {
+      "low": 0.03,
+      "medium": 0.9,
+      "high": 0.07
+     },
+     "levels": 3,
+     "id": "gen-dec-1790398198-d7Gh44iCRyl1wX1WZ6kh"
+    },
+    "probability": null,
+    "score": 1.04,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "medium",
+    "confidence": null,
+    "latency_ms": 865.496999991592,
+    "input_tokens": 108,
+    "output_tokens": 1,
+    "cost_usd": 2.85e-05,
+    "raw": {
+     "text": "medium"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "medium",
+    "confidence": null,
+    "latency_ms": 1573.6132999882102,
+    "input_tokens": 175,
+    "output_tokens": 6,
+    "cost_usd": 5.275e-05,
+    "raw": {
+     "text": "{\"label\": \"medium\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 12,
+  "text": "Checkout is down for all our customers since 10am.",
+  "expected": "high",
+  "note": null,
+  "input": "Checkout is down for all our customers since 10am.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "high",
+    "confidence": 1.0,
+    "latency_ms": 608.8455999852158,
+    "input_tokens": 377,
+    "output_tokens": 17,
+    "cost_usd": 1.5834e-05,
+    "raw": {
+     "probabilities": {
+      "low": 0.0,
+      "medium": 0.0,
+      "high": 1.0
+     },
+     "levels": 3,
+     "id": "gen-dec-1790398200-nkTo0Cce5boYVGJ4Ct6d"
+    },
+    "probability": null,
+    "score": 2.0,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "high",
+    "confidence": null,
+    "latency_ms": 1496.361799974693,
+    "input_tokens": 109,
+    "output_tokens": 1,
+    "cost_usd": 2.875e-05,
+    "raw": {
+     "text": "high"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "high",
+    "confidence": null,
+    "latency_ms": 1309.9676000128966,
+    "input_tokens": 176,
+    "output_tokens": 11,
+    "cost_usd": 6.05e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"high\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 13,
+  "text": "We can see another company's invoices in our dashboard.",
+  "expected": "high",
+  "note": null,
+  "input": "We can see another company's invoices in our dashboard.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "high",
+    "confidence": 1.0,
+    "latency_ms": 623.4453999786638,
+    "input_tokens": 375,
+    "output_tokens": 17,
+    "cost_usd": 1.575e-05,
+    "raw": {
+     "probabilities": {
+      "low": 0.0,
+      "medium": 0.0,
+      "high": 1.0
+     },
+     "levels": 3,
+     "id": "gen-dec-1790398201-694pI3BpvDh42WKSisZ1"
+    },
+    "probability": null,
+    "score": 2.0,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "high",
+    "confidence": null,
+    "latency_ms": 913.9837000111584,
+    "input_tokens": 108,
+    "output_tokens": 1,
+    "cost_usd": 2.85e-05,
+    "raw": {
+     "text": "high"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "high",
+    "confidence": null,
+    "latency_ms": 1280.3880000137724,
+    "input_tokens": 175,
+    "output_tokens": 11,
+    "cost_usd": 6.025e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"high\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 14,
+  "text": "The nightly sync deleted half of our customer records.",
+  "expected": "high",
+  "note": null,
+  "input": "The nightly sync deleted half of our customer records.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "high",
+    "confidence": 1.0,
+    "latency_ms": 610.9826999891084,
+    "input_tokens": 374,
+    "output_tokens": 17,
+    "cost_usd": 1.5708e-05,
+    "raw": {
+     "probabilities": {
+      "low": 0.0,
+      "medium": 0.0,
+      "high": 1.0
+     },
+     "levels": 3,
+     "id": "gen-dec-1790398202-ACxIGVc85bExZAHRAKLY"
+    },
+    "probability": null,
+    "score": 2.0,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "high",
+    "confidence": null,
+    "latency_ms": 1406.7254000110552,
+    "input_tokens": 106,
+    "output_tokens": 1,
+    "cost_usd": 2.8e-05,
+    "raw": {
+     "text": "high"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "high",
+    "confidence": null,
+    "latency_ms": 1174.7177000215743,
+    "input_tokens": 173,
+    "output_tokens": 11,
+    "cost_usd": 5.975e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"high\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 15,
+  "text": "Customers were charged twice for every order placed today.",
+  "expected": "high",
+  "note": null,
+  "input": "Customers were charged twice for every order placed today.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "high",
+    "confidence": 1.0,
+    "latency_ms": 965.5804000212811,
+    "input_tokens": 374,
+    "output_tokens": 17,
+    "cost_usd": 1.5708e-05,
+    "raw": {
+     "probabilities": {
+      "low": 0.0,
+      "medium": 0.0,
+      "high": 1.0
+     },
+     "levels": 3,
+     "id": "gen-dec-1790398204-qYVkhpnmFFLGDLUbk0iu"
+    },
+    "probability": null,
+    "score": 2.0,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "high",
+    "confidence": null,
+    "latency_ms": 1223.8818999903742,
+    "input_tokens": 106,
+    "output_tokens": 1,
+    "cost_usd": 2.8e-05,
+    "raw": {
+     "text": "high"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "high",
+    "confidence": null,
+    "latency_ms": 1718.0818000051659,
+    "input_tokens": 173,
+    "output_tokens": 11,
+    "cost_usd": 5.975e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"high\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 16,
+  "text": "quick note, I think customer passwords are visible in the audit log export",
+  "expected": "high",
+  "note": "hard: calm and lowercase, but a security exposure",
+  "input": "quick note, I think customer passwords are visible in the audit log export",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "high",
+    "confidence": 1.0,
+    "latency_ms": 1538.266699993983,
+    "input_tokens": 378,
+    "output_tokens": 17,
+    "cost_usd": 1.5876e-05,
+    "raw": {
+     "probabilities": {
+      "low": 0.0,
+      "medium": 0.0,
+      "high": 1.0
+     },
+     "levels": 3,
+     "id": "gen-dec-1790398206-yA7XxMdoQk2JkrO8ioLd"
+    },
+    "probability": null,
+    "score": 2.0,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "high",
+    "confidence": null,
+    "latency_ms": 1965.2010000136215,
+    "input_tokens": 110,
+    "output_tokens": 1,
+    "cost_usd": 2.9e-05,
+    "raw": {
+     "text": "high"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "high",
+    "confidence": null,
+    "latency_ms": 2102.1706000028644,
+    "input_tokens": 177,
+    "output_tokens": 6,
+    "cost_usd": 5.325e-05,
+    "raw": {
+     "text": "{\"label\": \"high\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 17,
+  "text": "The API has returned 500 for every request for the last hour.",
+  "expected": "high",
+  "note": null,
+  "input": "The API has returned 500 for every request for the last hour.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "high",
+    "confidence": 0.93,
+    "latency_ms": 692.5635000225157,
+    "input_tokens": 380,
+    "output_tokens": 17,
+    "cost_usd": 1.596e-05,
+    "raw": {
+     "probabilities": {
+      "low": 0.0,
+      "medium": 0.05,
+      "high": 0.95
+     },
+     "levels": 3,
+     "id": "gen-dec-1790398208-mrGGPCb4vOtrLpeTgG67"
+    },
+    "probability": null,
+    "score": 1.95,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "high",
+    "confidence": null,
+    "latency_ms": 906.9763000006787,
+    "input_tokens": 112,
+    "output_tokens": 1,
+    "cost_usd": 2.95e-05,
+    "raw": {
+     "text": "high"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "high",
+    "confidence": null,
+    "latency_ms": 1732.3273999791127,
+    "input_tokens": 179,
+    "output_tokens": 6,
+    "cost_usd": 5.375e-05,
+    "raw": {
+     "text": "{\"label\": \"high\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ }
+]

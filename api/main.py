@@ -8,22 +8,55 @@ import dataclasses
 import io
 import json
 import re
+import time
 import zipfile
+from collections import defaultdict, deque
 from datetime import datetime, timezone
 from pathlib import Path
 
-from fastapi import FastAPI, HTTPException
+from fastapi import Depends, FastAPI, HTTPException, Request
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, Response, StreamingResponse
 from pydantic import BaseModel
 
+from config import settings
 from core import report
 from core.projects import ROOT, about_path, discover, traced
 from core.run import Result
 
-RUNS = ROOT / "runs"   # saved dataset runs, one folder per project (gitignored)
+RUNS = ROOT / "runs"   # saved dataset runs, one folder per project (committed: the deployed History shows them)
 _FILE = re.compile(r"^[\w.-]+\.json$")
 
 app = FastAPI(title="Jev Lab API")
+if settings.WEB_ORIGINS:   # deployed: the paid POSTs go browser → API directly (see _limit), so they need CORS
+    app.add_middleware(CORSMiddleware, allow_origins=settings.WEB_ORIGINS, allow_methods=["GET", "POST"],
+                       allow_headers=["content-type"])
+
+_hits: dict[str, deque[float]] = defaultdict(deque)   # "run:1.2.3.4" / "run:all" -> call times
+
+
+def _limit(kind: str):
+    """Caps on a paid POST: per visitor per hour, and for everyone per day (settings, 0 = off). The browser calls
+    the API directly for these, so X-Forwarded-For is the visitor, not Vercel's proxy.
+    ponytail: in memory, per process, reset on restart: fine for one Render instance, Redis if it ever scales out.
+    The header can be faked, so the per-day cap is the real spend guard."""
+    def check(request: Request):
+        ip = (request.headers.get("x-forwarded-for") or "").split(",")[0].strip() or getattr(request.client, "host", "?")
+        now, counted = time.time(), []
+        for key, cap, window, per in ((f"{kind}:{ip}", getattr(settings, f"{kind.upper()}_LIMIT_PER_IP_HOUR"), 3600, "per hour"),
+                                      (f"{kind}:all", getattr(settings, f"{kind.upper()}_LIMIT_PER_DAY"), 86400, "per day, for everyone")):
+            if not cap:
+                continue
+            hits = _hits[key]
+            while hits and hits[0] <= now - window:
+                hits.popleft()
+            if len(hits) >= cap:
+                wait = max(1, round((hits[0] + window - now) / 60))
+                raise HTTPException(429, f"Limit reached: {cap} {'runs' if kind == 'run' else 'dataset runs'} {per}. Try again in {wait} min.")
+            counted.append(hits)
+        for hits in counted:
+            hits.append(now)
+    return check
 
 
 def _json(obj) -> JSONResponse:
@@ -115,7 +148,7 @@ class RunIn(BaseModel):
     input: str | dict
 
 
-@app.post("/api/projects/{nn}/run")
+@app.post("/api/projects/{nn}/run", dependencies=[Depends(_limit("run"))])
 def run(nn: str, body: RunIn):
     m = _project(nn)
     try:
@@ -130,7 +163,7 @@ def _sse(event: str, data) -> str:
     return f"event: {event}\ndata: {json.dumps(data, default=str)}\n\n"
 
 
-@app.post("/api/projects/{nn}/dataset")
+@app.post("/api/projects/{nn}/dataset", dependencies=[Depends(_limit("dataset"))])
 def dataset(nn: str):
     """Every row, one at a time (latency measures the model, not a traffic jam), streamed as it finishes.
     The file is rewritten after each row, so a closed tab never throws away rows already paid for."""

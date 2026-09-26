@@ -1,0 +1,1635 @@
+[
+ {
+  "idx": 0,
+  "text": "I was charged twice for order A-104. Please refund the duplicate.",
+  "expected": "refund_auto",
+  "note": null,
+  "input": {
+   "message": "I was charged twice for order A-104. Please refund the duplicate.",
+   "order": "A-104: two captured charges of $49",
+   "prior_refunds_30d": 0,
+   "days_since_delivery": 2
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "refund_auto",
+    "confidence": 1.0,
+    "latency_ms": 3523.9438000135124,
+    "input_tokens": 583,
+    "output_tokens": 90,
+    "cost_usd": 2.4486e-05,
+    "raw": {
+     "band": "auto",
+     "reason": "every automatic-refund condition holds",
+     "actions": [
+      "start_refund_flow:auto",
+      "route:queue.billing"
+     ],
+     "answers": {
+      "intent": "refund",
+      "intent_conf": 1.0,
+      "policy_ok": 0.98,
+      "churn": 0.48
+     },
+     "facts": {
+      "has_order": true,
+      "prior_refunds_30d": 0,
+      "within_return_window": true
+     },
+     "id": "gen-dec-1790398212-dYfb6VygMgknN6CySdLy"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "refund_auto",
+    "confidence": null,
+    "latency_ms": 2257.1378000138793,
+    "input_tokens": 241,
+    "output_tokens": 3,
+    "cost_usd": 6.475e-05,
+    "raw": {
+     "text": "refund_auto"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "refund_auto",
+    "confidence": null,
+    "latency_ms": 2512.5872000062373,
+    "input_tokens": 320,
+    "output_tokens": 8,
+    "cost_usd": 9.2e-05,
+    "raw": {
+     "text": "{\"label\": \"refund_auto\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 1,
+  "text": "My order B-220 never arrived and it's been three weeks. Please refund it.",
+  "expected": "refund_auto",
+  "note": null,
+  "input": {
+   "message": "My order B-220 never arrived and it's been three weeks. Please refund it.",
+   "order": "B-220: shipped, never delivered",
+   "prior_refunds_30d": 0,
+   "days_since_delivery": null
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "refund_confirm",
+    "confidence": 1.0,
+    "latency_ms": 674.7591000166722,
+    "input_tokens": 583,
+    "output_tokens": 90,
+    "cost_usd": 2.4486e-05,
+    "raw": {
+     "band": "confirm",
+     "reason": "churn risk 1.50 >= 1.5",
+     "actions": [
+      "start_refund_flow:confirm",
+      "route:queue.billing"
+     ],
+     "answers": {
+      "intent": "refund",
+      "intent_conf": 1.0,
+      "policy_ok": 0.98,
+      "churn": 1.5
+     },
+     "facts": {
+      "has_order": true,
+      "prior_refunds_30d": 0,
+      "within_return_window": false
+     },
+     "id": "gen-dec-1790398213-sB3kaxtacmKCvbQf9saw"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "refund_auto",
+    "confidence": null,
+    "latency_ms": 1507.3037999973167,
+    "input_tokens": 242,
+    "output_tokens": 3,
+    "cost_usd": 6.5e-05,
+    "raw": {
+     "text": "refund_auto"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "refund_auto",
+    "confidence": null,
+    "latency_ms": 1698.9972000010312,
+    "input_tokens": 321,
+    "output_tokens": 8,
+    "cost_usd": 9.225e-05,
+    "raw": {
+     "text": "{\"label\": \"refund_auto\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 2,
+  "text": "Changed my mind about the headphones, still sealed in the box. Can I get a refund?",
+  "expected": "refund_auto",
+  "note": null,
+  "input": {
+   "message": "Changed my mind about the headphones, still sealed in the box. Can I get a refund?",
+   "order": "H-17: headphones, delivered",
+   "prior_refunds_30d": 0,
+   "days_since_delivery": 10
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "refund_auto",
+    "confidence": 1.0,
+    "latency_ms": 5430.303799977992,
+    "input_tokens": 580,
+    "output_tokens": 90,
+    "cost_usd": 2.436e-05,
+    "raw": {
+     "band": "auto",
+     "reason": "every automatic-refund condition holds",
+     "actions": [
+      "start_refund_flow:auto",
+      "route:queue.billing"
+     ],
+     "answers": {
+      "intent": "refund",
+      "intent_conf": 1.0,
+      "policy_ok": 0.91,
+      "churn": 0.48
+     },
+     "facts": {
+      "has_order": true,
+      "prior_refunds_30d": 0,
+      "within_return_window": true
+     },
+     "id": "gen-dec-1790398220-VrXB1KnBHQTvGAfoCJmC"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "refund_confirm",
+    "confidence": null,
+    "latency_ms": 1441.773500002455,
+    "input_tokens": 238,
+    "output_tokens": 3,
+    "cost_usd": 6.4e-05,
+    "raw": {
+     "text": "refund_confirm"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "refund_confirm",
+    "confidence": null,
+    "latency_ms": 5951.205099991057,
+    "input_tokens": 317,
+    "output_tokens": 8,
+    "cost_usd": 9.125e-05,
+    "raw": {
+     "text": "{\"label\": \"refund_confirm\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 3,
+  "text": "I was charged twice for order C-9, please refund one.",
+  "expected": "refund_auto",
+  "note": "hard: 1 earlier refund is under the limit of 2",
+  "input": {
+   "message": "I was charged twice for order C-9, please refund one.",
+   "order": "C-9: two captured charges of $12",
+   "prior_refunds_30d": 1,
+   "days_since_delivery": 3
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "refund_auto",
+    "confidence": 1.0,
+    "latency_ms": 680.6949999881908,
+    "input_tokens": 578,
+    "output_tokens": 90,
+    "cost_usd": 2.4276e-05,
+    "raw": {
+     "band": "auto",
+     "reason": "every automatic-refund condition holds",
+     "actions": [
+      "start_refund_flow:auto",
+      "route:queue.billing"
+     ],
+     "answers": {
+      "intent": "refund",
+      "intent_conf": 1.0,
+      "policy_ok": 0.98,
+      "churn": 0.42
+     },
+     "facts": {
+      "has_order": true,
+      "prior_refunds_30d": 1,
+      "within_return_window": true
+     },
+     "id": "gen-dec-1790398221-1AgtYJhdNmPoS7BXYAy4"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "refund_auto",
+    "confidence": null,
+    "latency_ms": 867.8522000263911,
+    "input_tokens": 236,
+    "output_tokens": 3,
+    "cost_usd": 6.35e-05,
+    "raw": {
+     "text": "refund_auto"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "refund_auto",
+    "confidence": null,
+    "latency_ms": 1605.454300006386,
+    "input_tokens": 315,
+    "output_tokens": 8,
+    "cost_usd": 9.075e-05,
+    "raw": {
+     "text": "{\"label\": \"refund_auto\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 4,
+  "text": "Charged twice for my order, refund please.",
+  "expected": "refund_confirm",
+  "note": "hard: supported, but no order on file",
+  "input": {
+   "message": "Charged twice for my order, refund please.",
+   "order": null,
+   "prior_refunds_30d": 0,
+   "days_since_delivery": null
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "refund_confirm",
+    "confidence": 1.0,
+    "latency_ms": 1840.0958999991417,
+    "input_tokens": 562,
+    "output_tokens": 90,
+    "cost_usd": 2.3604e-05,
+    "raw": {
+     "band": "confirm",
+     "reason": "no order on file",
+     "actions": [
+      "start_refund_flow:confirm",
+      "route:queue.billing"
+     ],
+     "answers": {
+      "intent": "refund",
+      "intent_conf": 1.0,
+      "policy_ok": 0.92,
+      "churn": 1.06
+     },
+     "facts": {
+      "has_order": false,
+      "prior_refunds_30d": 0,
+      "within_return_window": false
+     },
+     "id": "gen-dec-1790398224-HyCHL7cLLi7BdCLhiScc"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "human",
+    "confidence": null,
+    "latency_ms": 1399.7374000027776,
+    "input_tokens": 220,
+    "output_tokens": 1,
+    "cost_usd": 5.65e-05,
+    "raw": {
+     "text": "human"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "route_queue",
+    "confidence": null,
+    "latency_ms": 1970.7409999973606,
+    "input_tokens": 299,
+    "output_tokens": 8,
+    "cost_usd": 8.675e-05,
+    "raw": {
+     "text": "{\"label\": \"route_queue\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 5,
+  "text": "Double charge on D-44 again, please refund.",
+  "expected": "refund_confirm",
+  "note": "hard: 2 refunds in 30 days, a counting rule",
+  "input": {
+   "message": "Double charge on D-44 again, please refund.",
+   "order": "D-44: two captured charges of $30",
+   "prior_refunds_30d": 2,
+   "days_since_delivery": 1
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "refund_confirm",
+    "confidence": 1.0,
+    "latency_ms": 3014.6752999862656,
+    "input_tokens": 577,
+    "output_tokens": 90,
+    "cost_usd": 2.4234e-05,
+    "raw": {
+     "band": "confirm",
+     "reason": "2 refunds in 30 days",
+     "actions": [
+      "start_refund_flow:confirm",
+      "route:queue.billing"
+     ],
+     "answers": {
+      "intent": "refund",
+      "intent_conf": 1.0,
+      "policy_ok": 0.98,
+      "churn": 0.72
+     },
+     "facts": {
+      "has_order": true,
+      "prior_refunds_30d": 2,
+      "within_return_window": true
+     },
+     "id": "gen-dec-1790398227-7RQfN9LtLrWQzty8vqTS"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "refund_confirm",
+    "confidence": null,
+    "latency_ms": 1651.08290000353,
+    "input_tokens": 235,
+    "output_tokens": 3,
+    "cost_usd": 6.325e-05,
+    "raw": {
+     "text": "refund_confirm"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "refund_confirm",
+    "confidence": null,
+    "latency_ms": 1180.369099980453,
+    "input_tokens": 314,
+    "output_tokens": 8,
+    "cost_usd": 9.05e-05,
+    "raw": {
+     "text": "{\"label\": \"refund_confirm\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 6,
+  "text": "Charged twice AGAIN. Refund it today or I'm cancelling my account.",
+  "expected": "refund_confirm",
+  "note": "hard: supported refund, customer about to leave",
+  "input": {
+   "message": "Charged twice AGAIN. Refund it today or I'm cancelling my account.",
+   "order": "A-201: two captured charges of $19",
+   "prior_refunds_30d": 0,
+   "days_since_delivery": 1
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "refund_confirm",
+    "confidence": 1.0,
+    "latency_ms": 566.3975999923423,
+    "input_tokens": 582,
+    "output_tokens": 90,
+    "cost_usd": 2.4444e-05,
+    "raw": {
+     "band": "confirm",
+     "reason": "churn risk 1.98 >= 1.5",
+     "actions": [
+      "start_refund_flow:confirm",
+      "route:queue.billing"
+     ],
+     "answers": {
+      "intent": "refund",
+      "intent_conf": 1.0,
+      "policy_ok": 0.96,
+      "churn": 1.98
+     },
+     "facts": {
+      "has_order": true,
+      "prior_refunds_30d": 0,
+      "within_return_window": true
+     },
+     "id": "gen-dec-1790398227-ffG5juAIarXTt4WPGQgl"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "refund_confirm",
+    "confidence": null,
+    "latency_ms": 911.630199989304,
+    "input_tokens": 239,
+    "output_tokens": 3,
+    "cost_usd": 6.425e-05,
+    "raw": {
+     "text": "refund_confirm"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "refund_confirm",
+    "confidence": null,
+    "latency_ms": 1340.7739000103902,
+    "input_tokens": 318,
+    "output_tokens": 8,
+    "cost_usd": 9.15e-05,
+    "raw": {
+     "text": "{\"label\": \"refund_confirm\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 7,
+  "text": "I changed my mind, refund me please. It's unused.",
+  "expected": "refund_confirm",
+  "note": "hard: 3 refunds in 30 days",
+  "input": {
+   "message": "I changed my mind, refund me please. It's unused.",
+   "order": "K-5: kettle, delivered",
+   "prior_refunds_30d": 3,
+   "days_since_delivery": 4
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "refund_confirm",
+    "confidence": 1.0,
+    "latency_ms": 571.2323000188917,
+    "input_tokens": 573,
+    "output_tokens": 90,
+    "cost_usd": 2.4066e-05,
+    "raw": {
+     "band": "confirm",
+     "reason": "3 refunds in 30 days",
+     "actions": [
+      "start_refund_flow:confirm",
+      "route:queue.billing"
+     ],
+     "answers": {
+      "intent": "refund",
+      "intent_conf": 1.0,
+      "policy_ok": 0.95,
+      "churn": 1.29
+     },
+     "facts": {
+      "has_order": true,
+      "prior_refunds_30d": 3,
+      "within_return_window": true
+     },
+     "id": "gen-dec-1790398229-eXNjQ3JdtE1QfgxYS1Gp"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "block",
+    "confidence": null,
+    "latency_ms": 791.9935999962036,
+    "input_tokens": 232,
+    "output_tokens": 1,
+    "cost_usd": 5.95e-05,
+    "raw": {
+     "text": "block"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "block",
+    "confidence": null,
+    "latency_ms": 1327.8122000047006,
+    "input_tokens": 311,
+    "output_tokens": 6,
+    "cost_usd": 8.675e-05,
+    "raw": {
+     "text": "{\"label\": \"block\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 8,
+  "text": "My parcel never arrived. This is the third time, I'm done with you people. Refund.",
+  "expected": "refund_confirm",
+  "note": "hard: supported refund, customer about to leave",
+  "input": {
+   "message": "My parcel never arrived. This is the third time, I'm done with you people. Refund.",
+   "order": "E-5: shipped, never delivered",
+   "prior_refunds_30d": 0,
+   "days_since_delivery": null
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "refund_confirm",
+    "confidence": 1.0,
+    "latency_ms": 663.8292999996338,
+    "input_tokens": 582,
+    "output_tokens": 90,
+    "cost_usd": 2.4444e-05,
+    "raw": {
+     "band": "confirm",
+     "reason": "churn risk 2.00 >= 1.5",
+     "actions": [
+      "start_refund_flow:confirm",
+      "route:queue.billing"
+     ],
+     "answers": {
+      "intent": "refund",
+      "intent_conf": 1.0,
+      "policy_ok": 0.94,
+      "churn": 2.0
+     },
+     "facts": {
+      "has_order": true,
+      "prior_refunds_30d": 0,
+      "within_return_window": false
+     },
+     "id": "gen-dec-1790398230-rQ5TPyV5e3XrdQaMnJJX"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "refund_confirm",
+    "confidence": null,
+    "latency_ms": 853.5432000062428,
+    "input_tokens": 240,
+    "output_tokens": 3,
+    "cost_usd": 6.45e-05,
+    "raw": {
+     "text": "refund_confirm"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "refund_confirm",
+    "confidence": null,
+    "latency_ms": 927.820699987933,
+    "input_tokens": 319,
+    "output_tokens": 8,
+    "cost_usd": 9.175e-05,
+    "raw": {
+     "text": "{\"label\": \"refund_confirm\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 9,
+  "text": "Changed my mind about the lamp, it's unused. Refund please.",
+  "expected": "block",
+  "note": "hard: 45 days is outside the 30-day window (computed in code)",
+  "input": {
+   "message": "Changed my mind about the lamp, it's unused. Refund please.",
+   "order": "L-88: desk lamp, delivered",
+   "prior_refunds_30d": 0,
+   "days_since_delivery": 45
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "block",
+    "confidence": 1.0,
+    "latency_ms": 521.5117000043392,
+    "input_tokens": 577,
+    "output_tokens": 90,
+    "cost_usd": 2.4234e-05,
+    "raw": {
+     "band": "block",
+     "reason": "refund policy does not support it (P=0.06 < 0.3)",
+     "actions": [
+      "reply:refund_policy",
+      "route:queue.billing"
+     ],
+     "answers": {
+      "intent": "refund",
+      "intent_conf": 1.0,
+      "policy_ok": 0.06,
+      "churn": 1.2
+     },
+     "facts": {
+      "has_order": true,
+      "prior_refunds_30d": 0,
+      "within_return_window": false
+     },
+     "id": "gen-dec-1790398231-L7jmJsgfdFFivYUor5ot"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "block",
+    "confidence": null,
+    "latency_ms": 992.3277999914717,
+    "input_tokens": 235,
+    "output_tokens": 1,
+    "cost_usd": 6.025e-05,
+    "raw": {
+     "text": "block"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "block",
+    "confidence": null,
+    "latency_ms": 971.2572999997064,
+    "input_tokens": 314,
+    "output_tokens": 6,
+    "cost_usd": 8.75e-05,
+    "raw": {
+     "text": "{\"label\": \"block\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 10,
+  "text": "I've worn these shoes a few times but I don't like them. Refund?",
+  "expected": "block",
+  "note": null,
+  "input": {
+   "message": "I've worn these shoes a few times but I don't like them. Refund?",
+   "order": "S-3: shoes, delivered",
+   "prior_refunds_30d": 0,
+   "days_since_delivery": 7
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "block",
+    "confidence": 1.0,
+    "latency_ms": 482.12950001470745,
+    "input_tokens": 578,
+    "output_tokens": 90,
+    "cost_usd": 2.4276e-05,
+    "raw": {
+     "band": "block",
+     "reason": "refund policy does not support it (P=0.12 < 0.3)",
+     "actions": [
+      "reply:refund_policy",
+      "route:queue.billing"
+     ],
+     "answers": {
+      "intent": "refund",
+      "intent_conf": 1.0,
+      "policy_ok": 0.12,
+      "churn": 1.31
+     },
+     "facts": {
+      "has_order": true,
+      "prior_refunds_30d": 0,
+      "within_return_window": true
+     },
+     "id": "gen-dec-1790398232-xEkr6i8TLQir3un4gPCt"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "block",
+    "confidence": null,
+    "latency_ms": 1393.1145000096876,
+    "input_tokens": 237,
+    "output_tokens": 1,
+    "cost_usd": 6.075e-05,
+    "raw": {
+     "text": "block"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "block",
+    "confidence": null,
+    "latency_ms": 817.714300006628,
+    "input_tokens": 316,
+    "output_tokens": 6,
+    "cost_usd": 8.8e-05,
+    "raw": {
+     "text": "{\"label\": \"block\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 11,
+  "text": "I forgot to cancel and got renewed for another year. Please refund.",
+  "expected": "block",
+  "note": null,
+  "input": {
+   "message": "I forgot to cancel and got renewed for another year. Please refund.",
+   "order": "Annual plan renewal, $120",
+   "prior_refunds_30d": 0,
+   "days_since_delivery": null
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "block",
+    "confidence": 1.0,
+    "latency_ms": 493.3243000123184,
+    "input_tokens": 575,
+    "output_tokens": 90,
+    "cost_usd": 2.415e-05,
+    "raw": {
+     "band": "block",
+     "reason": "refund policy does not support it (P=0.05 < 0.3)",
+     "actions": [
+      "reply:refund_policy",
+      "route:queue.billing"
+     ],
+     "answers": {
+      "intent": "refund",
+      "intent_conf": 1.0,
+      "policy_ok": 0.05,
+      "churn": 1.28
+     },
+     "facts": {
+      "has_order": true,
+      "prior_refunds_30d": 0,
+      "within_return_window": false
+     },
+     "id": "gen-dec-1790398233-UxW9dNMwpN9yoJCmpH5C"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "block",
+    "confidence": null,
+    "latency_ms": 863.3056999824475,
+    "input_tokens": 233,
+    "output_tokens": 1,
+    "cost_usd": 5.975e-05,
+    "raw": {
+     "text": "block"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "block",
+    "confidence": null,
+    "latency_ms": 890.6576999870595,
+    "input_tokens": 312,
+    "output_tokens": 6,
+    "cost_usd": 8.7e-05,
+    "raw": {
+     "text": "{\"label\": \"block\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 12,
+  "text": "I was charged $49 but my plan is $39, please refund the difference.",
+  "expected": "block",
+  "note": "hard: an overcharge is not in the written policy; a human would likely refund it (a policy gap, not a model error)",
+  "input": {
+   "message": "I was charged $49 but my plan is $39, please refund the difference.",
+   "order": "P-12: one charge of $49 on a $39 plan",
+   "prior_refunds_30d": 0,
+   "days_since_delivery": null
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "block",
+    "confidence": 1.0,
+    "latency_ms": 456.6220999986399,
+    "input_tokens": 589,
+    "output_tokens": 90,
+    "cost_usd": 2.4738e-05,
+    "raw": {
+     "band": "block",
+     "reason": "refund policy does not support it (P=0.11 < 0.3)",
+     "actions": [
+      "reply:refund_policy",
+      "route:queue.billing"
+     ],
+     "answers": {
+      "intent": "refund",
+      "intent_conf": 1.0,
+      "policy_ok": 0.11,
+      "churn": 0.99
+     },
+     "facts": {
+      "has_order": true,
+      "prior_refunds_30d": 0,
+      "within_return_window": false
+     },
+     "id": "gen-dec-1790398234-M621Tq3SEOABOjK4MFRb"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "refund_auto",
+    "confidence": null,
+    "latency_ms": 826.3319999969099,
+    "input_tokens": 247,
+    "output_tokens": 3,
+    "cost_usd": 6.625e-05,
+    "raw": {
+     "text": "refund_auto"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "refund_confirm",
+    "confidence": null,
+    "latency_ms": 798.6368000274524,
+    "input_tokens": 326,
+    "output_tokens": 8,
+    "cost_usd": 9.35e-05,
+    "raw": {
+     "text": "{\"label\": \"refund_confirm\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 13,
+  "text": "Where is my order C-310?",
+  "expected": "route_queue",
+  "note": null,
+  "input": {
+   "message": "Where is my order C-310?",
+   "order": "C-310: shipped",
+   "prior_refunds_30d": 0,
+   "days_since_delivery": null
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "route_queue",
+    "confidence": 1.0,
+    "latency_ms": 914.1117999970447,
+    "input_tokens": 570,
+    "output_tokens": 90,
+    "cost_usd": 2.394e-05,
+    "raw": {
+     "band": "auto",
+     "reason": "intent is status, not a refund",
+     "actions": [
+      "route:queue.orders"
+     ],
+     "answers": {
+      "intent": "status",
+      "intent_conf": 1.0,
+      "policy_ok": 0.06,
+      "churn": 0.54
+     },
+     "facts": {
+      "has_order": true,
+      "prior_refunds_30d": 0,
+      "within_return_window": false
+     },
+     "id": "gen-dec-1790398235-qZ85XVoejxl3K3AxEdud"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "route_queue",
+    "confidence": null,
+    "latency_ms": 788.2899999967776,
+    "input_tokens": 228,
+    "output_tokens": 3,
+    "cost_usd": 6.15e-05,
+    "raw": {
+     "text": "route_queue"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "route_queue",
+    "confidence": null,
+    "latency_ms": 821.8913000018802,
+    "input_tokens": 307,
+    "output_tokens": 8,
+    "cost_usd": 8.875e-05,
+    "raw": {
+     "text": "{\"label\": \"route_queue\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 14,
+  "text": "The export button crashes the app every time.",
+  "expected": "route_queue",
+  "note": null,
+  "input": {
+   "message": "The export button crashes the app every time.",
+   "order": null,
+   "prior_refunds_30d": 0,
+   "days_since_delivery": null
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "route_queue",
+    "confidence": 1.0,
+    "latency_ms": 513.2776999962516,
+    "input_tokens": 561,
+    "output_tokens": 90,
+    "cost_usd": 2.3562e-05,
+    "raw": {
+     "band": "auto",
+     "reason": "intent is bug, not a refund",
+     "actions": [
+      "route:queue.engineering"
+     ],
+     "answers": {
+      "intent": "bug",
+      "intent_conf": 1.0,
+      "policy_ok": 0.04,
+      "churn": 1.69
+     },
+     "facts": {
+      "has_order": false,
+      "prior_refunds_30d": 0,
+      "within_return_window": false
+     },
+     "id": "gen-dec-1790398236-mgzn706MFo6F55crrBX4"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "route_queue",
+    "confidence": null,
+    "latency_ms": 804.7995000088122,
+    "input_tokens": 220,
+    "output_tokens": 3,
+    "cost_usd": 5.95e-05,
+    "raw": {
+     "text": "route_queue"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "route_queue",
+    "confidence": null,
+    "latency_ms": 839.7150999808218,
+    "input_tokens": 299,
+    "output_tokens": 8,
+    "cost_usd": 8.675e-05,
+    "raw": {
+     "text": "{\"label\": \"route_queue\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 15,
+  "text": "How do I add a teammate to my workspace?",
+  "expected": "route_queue",
+  "note": null,
+  "input": {
+   "message": "How do I add a teammate to my workspace?",
+   "order": null,
+   "prior_refunds_30d": 0,
+   "days_since_delivery": null
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "route_queue",
+    "confidence": 1.0,
+    "latency_ms": 530.7400999881793,
+    "input_tokens": 562,
+    "output_tokens": 91,
+    "cost_usd": 2.3604e-05,
+    "raw": {
+     "band": "auto",
+     "reason": "intent is how_to, not a refund",
+     "actions": [
+      "route:queue.support"
+     ],
+     "answers": {
+      "intent": "how_to",
+      "intent_conf": 1.0,
+      "policy_ok": 0.02,
+      "churn": 0.02
+     },
+     "facts": {
+      "has_order": false,
+      "prior_refunds_30d": 0,
+      "within_return_window": false
+     },
+     "id": "gen-dec-1790398237-7f9Ip3WyK8hCxH34MEaI"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "route_queue",
+    "confidence": null,
+    "latency_ms": 848.3377000084147,
+    "input_tokens": 221,
+    "output_tokens": 3,
+    "cost_usd": 5.975e-05,
+    "raw": {
+     "text": "route_queue"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "route_queue",
+    "confidence": null,
+    "latency_ms": 1052.8979999944568,
+    "input_tokens": 300,
+    "output_tokens": 8,
+    "cost_usd": 8.7e-05,
+    "raw": {
+     "text": "{\"label\": \"route_queue\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 16,
+  "text": "When will the refund you approved last week arrive?",
+  "expected": "route_queue",
+  "note": "hard: says refund, but the intent is status",
+  "input": {
+   "message": "When will the refund you approved last week arrive?",
+   "order": "R-7: refund approved 6 days ago",
+   "prior_refunds_30d": 1,
+   "days_since_delivery": null
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "route_queue",
+    "confidence": 0.95,
+    "latency_ms": 454.70250002108514,
+    "input_tokens": 573,
+    "output_tokens": 90,
+    "cost_usd": 2.4066e-05,
+    "raw": {
+     "band": "auto",
+     "reason": "intent is status, not a refund",
+     "actions": [
+      "route:queue.orders"
+     ],
+     "answers": {
+      "intent": "status",
+      "intent_conf": 0.95,
+      "policy_ok": 0.34,
+      "churn": 0.79
+     },
+     "facts": {
+      "has_order": true,
+      "prior_refunds_30d": 1,
+      "within_return_window": false
+     },
+     "id": "gen-dec-1790398238-dPWIIiR1mRUgcZumKdBc"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "route_queue",
+    "confidence": null,
+    "latency_ms": 1357.3281000135466,
+    "input_tokens": 231,
+    "output_tokens": 3,
+    "cost_usd": 6.225e-05,
+    "raw": {
+     "text": "route_queue"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "route_queue",
+    "confidence": null,
+    "latency_ms": 1710.8929999812972,
+    "input_tokens": 310,
+    "output_tokens": 8,
+    "cost_usd": 8.95e-05,
+    "raw": {
+     "text": "{\"label\": \"route_queue\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 17,
+  "text": "Thanks, the refund came through!",
+  "expected": "route_queue",
+  "note": null,
+  "input": {
+   "message": "Thanks, the refund came through!",
+   "order": null,
+   "prior_refunds_30d": 1,
+   "days_since_delivery": null
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "route_queue",
+    "confidence": 0.48,
+    "latency_ms": 689.4849999807775,
+    "input_tokens": 559,
+    "output_tokens": 90,
+    "cost_usd": 2.3478e-05,
+    "raw": {
+     "band": "auto",
+     "reason": "intent is other, not a refund",
+     "actions": [
+      "route:queue.general"
+     ],
+     "answers": {
+      "intent": "other",
+      "intent_conf": 0.48,
+      "policy_ok": 0.37,
+      "churn": 0.12
+     },
+     "facts": {
+      "has_order": false,
+      "prior_refunds_30d": 1,
+      "within_return_window": false
+     },
+     "id": "gen-dec-1790398240-ldJNOxjOU6iuXySvc2Zk"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "route_queue",
+    "confidence": null,
+    "latency_ms": 734.2901000229176,
+    "input_tokens": 218,
+    "output_tokens": 3,
+    "cost_usd": 5.9e-05,
+    "raw": {
+     "text": "route_queue"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "route_queue",
+    "confidence": null,
+    "latency_ms": 1014.8172000190243,
+    "input_tokens": 297,
+    "output_tokens": 8,
+    "cost_usd": 8.625e-05,
+    "raw": {
+     "text": "{\"label\": \"route_queue\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 18,
+  "text": "You know what I mean. Just fix it.",
+  "expected": "human",
+  "note": null,
+  "input": {
+   "message": "You know what I mean. Just fix it.",
+   "order": null,
+   "prior_refunds_30d": 0,
+   "days_since_delivery": null
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "human",
+    "confidence": 0.39,
+    "latency_ms": 731.9038000132423,
+    "input_tokens": 562,
+    "output_tokens": 90,
+    "cost_usd": 2.3604e-05,
+    "raw": {
+     "band": "human",
+     "reason": "intent unclear (confidence 0.39 < 0.45)",
+     "actions": [
+      "escalate:human_agent"
+     ],
+     "answers": {
+      "intent": "other",
+      "intent_conf": 0.39,
+      "policy_ok": 0.1,
+      "churn": 1.86
+     },
+     "facts": {
+      "has_order": false,
+      "prior_refunds_30d": 0,
+      "within_return_window": false
+     },
+     "id": "gen-dec-1790398241-L9QCZwtGeTJZPDmQRuET"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "human",
+    "confidence": null,
+    "latency_ms": 1020.0332000094932,
+    "input_tokens": 221,
+    "output_tokens": 1,
+    "cost_usd": 5.675e-05,
+    "raw": {
+     "text": "human"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "human",
+    "confidence": null,
+    "latency_ms": 1047.7237000013702,
+    "input_tokens": 300,
+    "output_tokens": 6,
+    "cost_usd": 8.4e-05,
+    "raw": {
+     "text": "{\"label\": \"human\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 19,
+  "text": "About the thing from before, can you just do what we said?",
+  "expected": "human",
+  "note": null,
+  "input": {
+   "message": "About the thing from before, can you just do what we said?",
+   "order": null,
+   "prior_refunds_30d": 0,
+   "days_since_delivery": null
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "route_queue",
+    "confidence": 0.72,
+    "latency_ms": 436.9031999958679,
+    "input_tokens": 566,
+    "output_tokens": 90,
+    "cost_usd": 2.3772e-05,
+    "raw": {
+     "band": "auto",
+     "reason": "intent is other, not a refund",
+     "actions": [
+      "route:queue.general"
+     ],
+     "answers": {
+      "intent": "other",
+      "intent_conf": 0.72,
+      "policy_ok": 0.13,
+      "churn": 0.78
+     },
+     "facts": {
+      "has_order": false,
+      "prior_refunds_30d": 0,
+      "within_return_window": false
+     },
+     "id": "gen-dec-1790398242-eObHxwXrs6Rox4Qb6Eed"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "human",
+    "confidence": null,
+    "latency_ms": 1314.9318999785464,
+    "input_tokens": 225,
+    "output_tokens": 1,
+    "cost_usd": 5.775e-05,
+    "raw": {
+     "text": "human"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "human",
+    "confidence": null,
+    "latency_ms": 1151.381500007119,
+    "input_tokens": 304,
+    "output_tokens": 6,
+    "cost_usd": 8.5e-05,
+    "raw": {
+     "text": "{\"label\": \"human\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ }
+]

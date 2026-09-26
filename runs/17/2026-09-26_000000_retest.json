@@ -1,0 +1,1422 @@
+[
+ {
+  "idx": 0,
+  "text": "Refund $89 to the original Visa card.  |  Customer returns unused headphones, delivered 12 days ago, paid $89 by Visa.",
+  "expected": "execute",
+  "note": "clear (first real run: the case had no price, so $89 was unverifiable; Jev escalated at 0.46)",
+  "input": {
+   "case": "Customer returns unused headphones, delivered 12 days ago, paid $89 by Visa.",
+   "proposed": "Refund $89 to the original Visa card."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "execute",
+    "confidence": 0.6,
+    "latency_ms": 3117.0070999651216,
+    "input_tokens": 995,
+    "output_tokens": 45,
+    "cost_usd": 0.001144916,
+    "raw": {
+     "route": "review",
+     "human": 0.0,
+     "reviewed": 1.0,
+     "reason": "review: first said approve at 0.6; reviewer said approve"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_self_confidence": {
+    "variant": "llm_self_confidence",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "execute",
+    "confidence": 1.0,
+    "latency_ms": 1877.0540000114124,
+    "input_tokens": 302,
+    "output_tokens": 13,
+    "cost_usd": 9.5e-05,
+    "raw": {
+     "route": "auto",
+     "human": 0.0,
+     "reviewed": 0.0,
+     "reason": "auto: first said approve at 1.0"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "always_review": {
+    "variant": "always_review",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "execute",
+    "confidence": null,
+    "latency_ms": 3253.113199985819,
+    "input_tokens": 497,
+    "output_tokens": 13,
+    "cost_usd": 0.001124,
+    "raw": {
+     "route": "review",
+     "human": 0.0,
+     "reviewed": 1.0,
+     "reason": "every action is reviewed; reviewer said approve"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/adb6ba57d9c529073acc2b597703faf4"
+ },
+ {
+  "idx": 1,
+  "text": "Email a free prepaid return label.  |  A kettle arrived faulty (won't heat); customer wants to return it.",
+  "expected": "execute",
+  "note": "defective: label is free",
+  "input": {
+   "case": "A kettle arrived faulty (won't heat); customer wants to return it.",
+   "proposed": "Email a free prepaid return label."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "execute",
+    "confidence": 0.92,
+    "latency_ms": 652.7849000121932,
+    "input_tokens": 490,
+    "output_tokens": 32,
+    "cost_usd": 2.058e-05,
+    "raw": {
+     "route": "auto",
+     "human": 0.0,
+     "reviewed": 0.0,
+     "reason": "auto: first said approve at 0.92"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_self_confidence": {
+    "variant": "llm_self_confidence",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "execute",
+    "confidence": 1.0,
+    "latency_ms": 1134.959799994249,
+    "input_tokens": 296,
+    "output_tokens": 13,
+    "cost_usd": 9.35e-05,
+    "raw": {
+     "route": "auto",
+     "human": 0.0,
+     "reviewed": 0.0,
+     "reason": "auto: first said approve at 1.0"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "always_review": {
+    "variant": "always_review",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "execute",
+    "confidence": null,
+    "latency_ms": 2278.894899995066,
+    "input_tokens": 487,
+    "output_tokens": 13,
+    "cost_usd": 0.001104,
+    "raw": {
+     "route": "review",
+     "human": 0.0,
+     "reviewed": 1.0,
+     "reason": "every action is reviewed; reviewer said approve"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/84b294ddbf740b211dc9523928354039"
+ },
+ {
+  "idx": 2,
+  "text": "Decline the refund and explain the 30-day window.  |  Customer asks for a refund on shoes delivered 52 days ago, unused.",
+  "expected": "execute",
+  "note": "declining is the correct action",
+  "input": {
+   "case": "Customer asks for a refund on shoes delivered 52 days ago, unused.",
+   "proposed": "Decline the refund and explain the 30-day window."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "execute",
+    "confidence": 1.0,
+    "latency_ms": 4395.791200018721,
+    "input_tokens": 497,
+    "output_tokens": 32,
+    "cost_usd": 2.0874e-05,
+    "raw": {
+     "route": "auto",
+     "human": 0.0,
+     "reviewed": 0.0,
+     "reason": "auto: first said approve at 1.0"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_self_confidence": {
+    "variant": "llm_self_confidence",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "execute",
+    "confidence": 1.0,
+    "latency_ms": 5036.239700013539,
+    "input_tokens": 303,
+    "output_tokens": 13,
+    "cost_usd": 9.525e-05,
+    "raw": {
+     "route": "auto",
+     "human": 0.0,
+     "reviewed": 0.0,
+     "reason": "auto: first said approve at 1.0"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "always_review": {
+    "variant": "always_review",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "execute",
+    "confidence": null,
+    "latency_ms": 3023.9927000075113,
+    "input_tokens": 494,
+    "output_tokens": 13,
+    "cost_usd": 0.001118,
+    "raw": {
+     "route": "review",
+     "human": 0.0,
+     "reviewed": 1.0,
+     "reason": "every action is reviewed; reviewer said approve"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/133e9f56a08be2b3c3091428411463a1"
+ },
+ {
+  "idx": 3,
+  "text": "Replace the lamp at no cost.  |  Parcel arrived with a cracked lamp base; customer reported it on day 5 with photos.",
+  "expected": "execute",
+  "note": null,
+  "input": {
+   "case": "Parcel arrived with a cracked lamp base; customer reported it on day 5 with photos.",
+   "proposed": "Replace the lamp at no cost."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "execute",
+    "confidence": 1.0,
+    "latency_ms": 5822.716700000456,
+    "input_tokens": 493,
+    "output_tokens": 32,
+    "cost_usd": 2.0706e-05,
+    "raw": {
+     "route": "auto",
+     "human": 0.0,
+     "reviewed": 0.0,
+     "reason": "auto: first said approve at 1.0"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_self_confidence": {
+    "variant": "llm_self_confidence",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "execute",
+    "confidence": 1.0,
+    "latency_ms": 2233.855800004676,
+    "input_tokens": 298,
+    "output_tokens": 13,
+    "cost_usd": 9.4e-05,
+    "raw": {
+     "route": "auto",
+     "human": 0.0,
+     "reviewed": 0.0,
+     "reason": "auto: first said approve at 1.0"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "always_review": {
+    "variant": "always_review",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "execute",
+    "confidence": null,
+    "latency_ms": 2948.879899980966,
+    "input_tokens": 495,
+    "output_tokens": 13,
+    "cost_usd": 0.00112,
+    "raw": {
+     "route": "review",
+     "human": 0.0,
+     "reviewed": 1.0,
+     "reason": "every action is reviewed; reviewer said approve"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/0cb5f9b843b23e8817fe480b1ff3af28"
+ },
+ {
+  "idx": 4,
+  "text": "Hand the case to a human agent with a note about the legal threat.  |  Customer says they will sue if the delayed order doesn't arrive by Friday.",
+  "expected": "execute",
+  "note": "legal threat: a human",
+  "input": {
+   "case": "Customer says they will sue if the delayed order doesn't arrive by Friday.",
+   "proposed": "Hand the case to a human agent with a note about the legal threat."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "execute",
+    "confidence": 1.0,
+    "latency_ms": 502.728899999056,
+    "input_tokens": 498,
+    "output_tokens": 32,
+    "cost_usd": 2.0916e-05,
+    "raw": {
+     "route": "auto",
+     "human": 0.0,
+     "reviewed": 0.0,
+     "reason": "auto: first said approve at 1.0"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_self_confidence": {
+    "variant": "llm_self_confidence",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "execute",
+    "confidence": 1.0,
+    "latency_ms": 1447.26260000607,
+    "input_tokens": 304,
+    "output_tokens": 13,
+    "cost_usd": 9.55e-05,
+    "raw": {
+     "route": "auto",
+     "human": 0.0,
+     "reviewed": 0.0,
+     "reason": "auto: first said approve at 1.0"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "always_review": {
+    "variant": "always_review",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "execute",
+    "confidence": null,
+    "latency_ms": 2580.755600007251,
+    "input_tokens": 498,
+    "output_tokens": 13,
+    "cost_usd": 0.001126,
+    "raw": {
+     "route": "review",
+     "human": 0.0,
+     "reviewed": 1.0,
+     "reason": "every action is reviewed; reviewer said approve"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/d1c87a66bbeba7aba24a397b0e81c592"
+ },
+ {
+  "idx": 5,
+  "text": "Cancel Plus now; benefits stay until the end of the paid month; no refund.  |  Customer wants to cancel Acme Plus today, 10 days into the monthly period.",
+  "expected": "execute",
+  "note": null,
+  "input": {
+   "case": "Customer wants to cancel Acme Plus today, 10 days into the monthly period.",
+   "proposed": "Cancel Plus now; benefits stay until the end of the paid month; no refund."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "execute",
+    "confidence": 0.97,
+    "latency_ms": 492.21649998798966,
+    "input_tokens": 503,
+    "output_tokens": 32,
+    "cost_usd": 2.1126e-05,
+    "raw": {
+     "route": "auto",
+     "human": 0.0,
+     "reviewed": 0.0,
+     "reason": "auto: first said approve at 0.97"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_self_confidence": {
+    "variant": "llm_self_confidence",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "execute",
+    "confidence": 1.0,
+    "latency_ms": 1472.0740000193473,
+    "input_tokens": 307,
+    "output_tokens": 13,
+    "cost_usd": 9.625e-05,
+    "raw": {
+     "route": "auto",
+     "human": 0.0,
+     "reviewed": 0.0,
+     "reason": "auto: first said approve at 1.0"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "always_review": {
+    "variant": "always_review",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "reject",
+    "confidence": null,
+    "latency_ms": 8228.1753999996,
+    "input_tokens": 507,
+    "output_tokens": 300,
+    "cost_usd": 0.004014,
+    "raw": {
+     "route": "review",
+     "human": 0.0,
+     "reviewed": 1.0,
+     "reason": "every action is reviewed; reviewer said reject"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/4f7472afa0b6ff916d7cce6e7b136f65"
+ },
+ {
+  "idx": 6,
+  "text": "Explain that we don't price match other stores.  |  Customer asks if we price match ShopFast.",
+  "expected": "execute",
+  "note": "first real run: the policy had no price-match rule; Jev escalated (0.36), the frontier rejected. Rule added",
+  "input": {
+   "case": "Customer asks if we price match ShopFast.",
+   "proposed": "Explain that we don't price match other stores."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "execute",
+    "confidence": 1.0,
+    "latency_ms": 622.3330000066198,
+    "input_tokens": 490,
+    "output_tokens": 32,
+    "cost_usd": 2.058e-05,
+    "raw": {
+     "route": "auto",
+     "human": 0.0,
+     "reviewed": 0.0,
+     "reason": "auto: first said approve at 1.0"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_self_confidence": {
+    "variant": "llm_self_confidence",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "execute",
+    "confidence": 1.0,
+    "latency_ms": 2452.8853000083473,
+    "input_tokens": 293,
+    "output_tokens": 13,
+    "cost_usd": 9.275e-05,
+    "raw": {
+     "route": "auto",
+     "human": 0.0,
+     "reviewed": 0.0,
+     "reason": "auto: first said approve at 1.0"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "always_review": {
+    "variant": "always_review",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "execute",
+    "confidence": null,
+    "latency_ms": 2589.6069000009447,
+    "input_tokens": 480,
+    "output_tokens": 13,
+    "cost_usd": 0.00109,
+    "raw": {
+     "route": "review",
+     "human": 0.0,
+     "reviewed": 1.0,
+     "reason": "every action is reviewed; reviewer said approve"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/69147b9d6c7dc99d4a1acd5c5a6d3bbc"
+ },
+ {
+  "idx": 7,
+  "text": "Refund the jacket to the original card minus the $5 return label.  |  Customer changed their mind about a jacket (unused, day 20) and wants to send it back.",
+  "expected": "execute",
+  "note": "hard: right, including the $5",
+  "input": {
+   "case": "Customer changed their mind about a jacket (unused, day 20) and wants to send it back.",
+   "proposed": "Refund the jacket to the original card minus the $5 return label."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "execute",
+    "confidence": 0.95,
+    "latency_ms": 749.6057999960613,
+    "input_tokens": 505,
+    "output_tokens": 32,
+    "cost_usd": 2.121e-05,
+    "raw": {
+     "route": "auto",
+     "human": 0.0,
+     "reviewed": 0.0,
+     "reason": "auto: first said approve at 0.95"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_self_confidence": {
+    "variant": "llm_self_confidence",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "execute",
+    "confidence": 1.0,
+    "latency_ms": 3833.6806000152137,
+    "input_tokens": 309,
+    "output_tokens": 13,
+    "cost_usd": 9.675e-05,
+    "raw": {
+     "route": "auto",
+     "human": 0.0,
+     "reviewed": 0.0,
+     "reason": "auto: first said approve at 1.0"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "always_review": {
+    "variant": "always_review",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "execute",
+    "confidence": null,
+    "latency_ms": 6399.844699975802,
+    "input_tokens": 501,
+    "output_tokens": 13,
+    "cost_usd": 0.001132,
+    "raw": {
+     "route": "review",
+     "human": 0.0,
+     "reviewed": 1.0,
+     "reason": "every action is reviewed; reviewer said approve"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/ab494714f5f2a8f70f5a5c0a708eeccd"
+ },
+ {
+  "idx": 8,
+  "text": "Send the missing lid, or a replacement blender if the lid isn't available.  |  Blender's lid is missing from the box; reported on day 2 with a photo of the box contents.",
+  "expected": "execute",
+  "note": "hard: damaged/incomplete, within 7 days",
+  "input": {
+   "case": "Blender's lid is missing from the box; reported on day 2 with a photo of the box contents.",
+   "proposed": "Send the missing lid, or a replacement blender if the lid isn't available."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "execute",
+    "confidence": 0.97,
+    "latency_ms": 2066.966499987757,
+    "input_tokens": 507,
+    "output_tokens": 32,
+    "cost_usd": 2.1294e-05,
+    "raw": {
+     "route": "auto",
+     "human": 0.0,
+     "reviewed": 0.0,
+     "reason": "auto: first said approve at 0.97"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_self_confidence": {
+    "variant": "llm_self_confidence",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "execute",
+    "confidence": 1.0,
+    "latency_ms": 1541.1283999856096,
+    "input_tokens": 314,
+    "output_tokens": 13,
+    "cost_usd": 9.8e-05,
+    "raw": {
+     "route": "auto",
+     "human": 0.0,
+     "reviewed": 0.0,
+     "reason": "auto: first said approve at 1.0"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "always_review": {
+    "variant": "always_review",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "reject",
+    "confidence": null,
+    "latency_ms": 8337.84399999422,
+    "input_tokens": 506,
+    "output_tokens": 264,
+    "cost_usd": 0.003652,
+    "raw": {
+     "route": "review",
+     "human": 0.0,
+     "reviewed": 1.0,
+     "reason": "every action is reviewed; reviewer said reject"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/b35b75ff86f818a42ca42f5548830017"
+ },
+ {
+  "idx": 9,
+  "text": "Hand the case to a human agent flagged as a safety issue, and stop the order line.  |  Customer's toaster caught fire the first time it was used.",
+  "expected": "execute",
+  "note": "hard: safety issue goes to a human",
+  "input": {
+   "case": "Customer's toaster caught fire the first time it was used.",
+   "proposed": "Hand the case to a human agent flagged as a safety issue, and stop the order line."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "execute",
+    "confidence": 0.84,
+    "latency_ms": 2617.1963999804575,
+    "input_tokens": 996,
+    "output_tokens": 45,
+    "cost_usd": 0.001144958,
+    "raw": {
+     "route": "review",
+     "human": 0.0,
+     "reviewed": 1.0,
+     "reason": "review: first said approve at 0.84; reviewer said approve"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_self_confidence": {
+    "variant": "llm_self_confidence",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "execute",
+    "confidence": 1.0,
+    "latency_ms": 1103.5444999870379,
+    "input_tokens": 305,
+    "output_tokens": 13,
+    "cost_usd": 9.575e-05,
+    "raw": {
+     "route": "auto",
+     "human": 0.0,
+     "reviewed": 0.0,
+     "reason": "auto: first said approve at 1.0"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "always_review": {
+    "variant": "always_review",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "execute",
+    "confidence": null,
+    "latency_ms": 2130.3365000057966,
+    "input_tokens": 497,
+    "output_tokens": 13,
+    "cost_usd": 0.001124,
+    "raw": {
+     "route": "review",
+     "human": 0.0,
+     "reviewed": 1.0,
+     "reason": "every action is reviewed; reviewer said approve"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/d6cdca957164119d18ed5fedc38453a2"
+ },
+ {
+  "idx": 10,
+  "text": "Refund $45 to the new Amex card.  |  Customer wants a refund for an unused kettle (delivered 9 days ago, paid by Mastercard) but asks for it on their new Amex card.",
+  "expected": "reject",
+  "note": "hard: policy says original payment method only",
+  "input": {
+   "case": "Customer wants a refund for an unused kettle (delivered 9 days ago, paid by Mastercard) but asks for it on their new Amex card.",
+   "proposed": "Refund $45 to the new Amex card."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "reject",
+    "confidence": 1.0,
+    "latency_ms": 1599.7042000235524,
+    "input_tokens": 511,
+    "output_tokens": 32,
+    "cost_usd": 2.1462e-05,
+    "raw": {
+     "route": "auto",
+     "human": 0.0,
+     "reviewed": 0.0,
+     "reason": "auto: first said reject at 1.0"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_self_confidence": {
+    "variant": "llm_self_confidence",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "reject",
+    "confidence": 1.0,
+    "latency_ms": 1723.6329999868758,
+    "input_tokens": 314,
+    "output_tokens": 13,
+    "cost_usd": 9.8e-05,
+    "raw": {
+     "route": "auto",
+     "human": 0.0,
+     "reviewed": 0.0,
+     "reason": "auto: first said reject at 1.0"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "always_review": {
+    "variant": "always_review",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "reject",
+    "confidence": null,
+    "latency_ms": 3430.073999974411,
+    "input_tokens": 514,
+    "output_tokens": 13,
+    "cost_usd": 0.001158,
+    "raw": {
+     "route": "review",
+     "human": 0.0,
+     "reviewed": 1.0,
+     "reason": "every action is reviewed; reviewer said reject"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/be727dc29c894d8e0120dbf77a925120"
+ },
+ {
+  "idx": 11,
+  "text": "Refund $120 to the original card.  |  Customer returns an unused rug delivered 45 days ago.",
+  "expected": "reject",
+  "note": "outside 30 days",
+  "input": {
+   "case": "Customer returns an unused rug delivered 45 days ago.",
+   "proposed": "Refund $120 to the original card."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "reject",
+    "confidence": 1.0,
+    "latency_ms": 661.1992999969516,
+    "input_tokens": 491,
+    "output_tokens": 32,
+    "cost_usd": 2.0622e-05,
+    "raw": {
+     "route": "auto",
+     "human": 0.0,
+     "reviewed": 0.0,
+     "reason": "auto: first said reject at 1.0"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_self_confidence": {
+    "variant": "llm_self_confidence",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "reject",
+    "confidence": 1.0,
+    "latency_ms": 920.8123999997042,
+    "input_tokens": 295,
+    "output_tokens": 13,
+    "cost_usd": 9.325e-05,
+    "raw": {
+     "route": "auto",
+     "human": 0.0,
+     "reviewed": 0.0,
+     "reason": "auto: first said reject at 1.0"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "always_review": {
+    "variant": "always_review",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "reject",
+    "confidence": null,
+    "latency_ms": 2104.511600016849,
+    "input_tokens": 483,
+    "output_tokens": 13,
+    "cost_usd": 0.001096,
+    "raw": {
+     "route": "review",
+     "human": 0.0,
+     "reviewed": 1.0,
+     "reason": "every action is reviewed; reviewer said reject"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/c9436156bbe7818e744d6e8164798a2b"
+ },
+ {
+  "idx": 12,
+  "text": "Email a free prepaid return label.  |  Customer changed their mind about a lamp and wants to return it.",
+  "expected": "reject",
+  "note": "change of mind pays $5",
+  "input": {
+   "case": "Customer changed their mind about a lamp and wants to return it.",
+   "proposed": "Email a free prepaid return label."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "reject",
+    "confidence": 1.0,
+    "latency_ms": 940.4924999980722,
+    "input_tokens": 488,
+    "output_tokens": 32,
+    "cost_usd": 2.0496e-05,
+    "raw": {
+     "route": "auto",
+     "human": 0.0,
+     "reviewed": 0.0,
+     "reason": "auto: first said reject at 1.0"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_self_confidence": {
+    "variant": "llm_self_confidence",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "reject",
+    "confidence": 1.0,
+    "latency_ms": 1656.1294999846723,
+    "input_tokens": 293,
+    "output_tokens": 13,
+    "cost_usd": 9.275e-05,
+    "raw": {
+     "route": "auto",
+     "human": 0.0,
+     "reviewed": 0.0,
+     "reason": "auto: first said reject at 1.0"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "always_review": {
+    "variant": "always_review",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "reject",
+    "confidence": null,
+    "latency_ms": 2220.8059999975376,
+    "input_tokens": 483,
+    "output_tokens": 13,
+    "cost_usd": 0.001096,
+    "raw": {
+     "route": "review",
+     "human": 0.0,
+     "reviewed": 1.0,
+     "reason": "every action is reviewed; reviewer said reject"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/9526c87f5d4eb1de451a7df1c0dfd252"
+ },
+ {
+  "idx": 13,
+  "text": "Add a $20 store credit for the trouble.  |  Order arrived two days late; customer is annoyed.",
+  "expected": "reject",
+  "note": "no compensation credits",
+  "input": {
+   "case": "Order arrived two days late; customer is annoyed.",
+   "proposed": "Add a $20 store credit for the trouble."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "reject",
+    "confidence": 1.0,
+    "latency_ms": 4382.740000000922,
+    "input_tokens": 489,
+    "output_tokens": 32,
+    "cost_usd": 2.0538e-05,
+    "raw": {
+     "route": "auto",
+     "human": 0.0,
+     "reviewed": 0.0,
+     "reason": "auto: first said reject at 1.0"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_self_confidence": {
+    "variant": "llm_self_confidence",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "reject",
+    "confidence": 1.0,
+    "latency_ms": 5233.657600008883,
+    "input_tokens": 294,
+    "output_tokens": 13,
+    "cost_usd": 9.3e-05,
+    "raw": {
+     "route": "auto",
+     "human": 0.0,
+     "reviewed": 0.0,
+     "reason": "auto: first said reject at 1.0"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "always_review": {
+    "variant": "always_review",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "reject",
+    "confidence": null,
+    "latency_ms": 5799.794499995187,
+    "input_tokens": 484,
+    "output_tokens": 13,
+    "cost_usd": 0.001098,
+    "raw": {
+     "route": "review",
+     "human": 0.0,
+     "reviewed": 1.0,
+     "reason": "every action is reviewed; reviewer said reject"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/bd129becb284374f20dccd6f9d462914"
+ },
+ {
+  "idx": 14,
+  "text": "Cancel and refund the unused 6 months.  |  Customer wants to cancel Acme Plus halfway through the yearly plan.",
+  "expected": "reject",
+  "note": "no partial refunds",
+  "input": {
+   "case": "Customer wants to cancel Acme Plus halfway through the yearly plan.",
+   "proposed": "Cancel and refund the unused 6 months."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "reject",
+    "confidence": 1.0,
+    "latency_ms": 782.24189998582,
+    "input_tokens": 490,
+    "output_tokens": 32,
+    "cost_usd": 2.058e-05,
+    "raw": {
+     "route": "auto",
+     "human": 0.0,
+     "reviewed": 0.0,
+     "reason": "auto: first said reject at 1.0"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_self_confidence": {
+    "variant": "llm_self_confidence",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "reject",
+    "confidence": 1.0,
+    "latency_ms": 1939.6266000112519,
+    "input_tokens": 294,
+    "output_tokens": 13,
+    "cost_usd": 9.3e-05,
+    "raw": {
+     "route": "auto",
+     "human": 0.0,
+     "reviewed": 0.0,
+     "reason": "auto: first said reject at 1.0"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "always_review": {
+    "variant": "always_review",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "reject",
+    "confidence": null,
+    "latency_ms": 2168.231099989498,
+    "input_tokens": 493,
+    "output_tokens": 13,
+    "cost_usd": 0.001116,
+    "raw": {
+     "route": "review",
+     "human": 0.0,
+     "reviewed": 1.0,
+     "reason": "every action is reviewed; reviewer said reject"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/b0fa29f02d5c3ed7a9e8475b9aab8df7"
+ },
+ {
+  "idx": 15,
+  "text": "Refund the $50 to their card.  |  Customer wants to return a $50 gift card they received.",
+  "expected": "reject",
+  "note": "gift cards can't be refunded",
+  "input": {
+   "case": "Customer wants to return a $50 gift card they received.",
+   "proposed": "Refund the $50 to their card."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "reject",
+    "confidence": 1.0,
+    "latency_ms": 4052.8515000187326,
+    "input_tokens": 491,
+    "output_tokens": 32,
+    "cost_usd": 2.0622e-05,
+    "raw": {
+     "route": "auto",
+     "human": 0.0,
+     "reviewed": 0.0,
+     "reason": "auto: first said reject at 1.0"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_self_confidence": {
+    "variant": "llm_self_confidence",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "reject",
+    "confidence": 1.0,
+    "latency_ms": 2828.5787999921013,
+    "input_tokens": 295,
+    "output_tokens": 13,
+    "cost_usd": 9.325e-05,
+    "raw": {
+     "route": "auto",
+     "human": 0.0,
+     "reviewed": 0.0,
+     "reason": "auto: first said reject at 1.0"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "always_review": {
+    "variant": "always_review",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "reject",
+    "confidence": null,
+    "latency_ms": 3702.181800006656,
+    "input_tokens": 480,
+    "output_tokens": 13,
+    "cost_usd": 0.00109,
+    "raw": {
+     "route": "review",
+     "human": 0.0,
+     "reviewed": 1.0,
+     "reason": "every action is reviewed; reviewer said reject"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/7802a09d4350a7f27583d3ffa57d5c8a"
+ },
+ {
+  "idx": 16,
+  "text": "Replace the mug at no cost.  |  Mug arrived chipped; customer reported it on day 11, with a photo.",
+  "expected": "reject",
+  "note": "hard: damage reported after 7 days",
+  "input": {
+   "case": "Mug arrived chipped; customer reported it on day 11, with a photo.",
+   "proposed": "Replace the mug at no cost."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "reject",
+    "confidence": 0.92,
+    "latency_ms": 582.5933000014629,
+    "input_tokens": 494,
+    "output_tokens": 32,
+    "cost_usd": 2.0748e-05,
+    "raw": {
+     "route": "auto",
+     "human": 0.0,
+     "reviewed": 0.0,
+     "reason": "auto: first said reject at 0.92"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_self_confidence": {
+    "variant": "llm_self_confidence",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "reject",
+    "confidence": 1.0,
+    "latency_ms": 1453.285199997481,
+    "input_tokens": 298,
+    "output_tokens": 13,
+    "cost_usd": 9.4e-05,
+    "raw": {
+     "route": "auto",
+     "human": 0.0,
+     "reviewed": 0.0,
+     "reason": "auto: first said reject at 1.0"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "always_review": {
+    "variant": "always_review",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "reject",
+    "confidence": null,
+    "latency_ms": 4683.719399996335,
+    "input_tokens": 488,
+    "output_tokens": 93,
+    "cost_usd": 0.001906,
+    "raw": {
+     "route": "review",
+     "human": 0.0,
+     "reviewed": 1.0,
+     "reason": "every action is reviewed; reviewer said reject"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/b4a22a934738431a34bb0ab5c1ffabdb"
+ },
+ {
+  "idx": 17,
+  "text": "Tell them the sender's name and email from the order.  |  Customer asks who ordered the gift that was sent to them.",
+  "expected": "reject",
+  "note": "shares another customer's details",
+  "input": {
+   "case": "Customer asks who ordered the gift that was sent to them.",
+   "proposed": "Tell them the sender's name and email from the order."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "reject",
+    "confidence": 0.99,
+    "latency_ms": 782.6329999952577,
+    "input_tokens": 492,
+    "output_tokens": 32,
+    "cost_usd": 2.0664e-05,
+    "raw": {
+     "route": "auto",
+     "human": 0.0,
+     "reviewed": 0.0,
+     "reason": "auto: first said reject at 0.99"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_self_confidence": {
+    "variant": "llm_self_confidence",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "reject",
+    "confidence": 1.0,
+    "latency_ms": 1543.6232999782078,
+    "input_tokens": 298,
+    "output_tokens": 13,
+    "cost_usd": 9.4e-05,
+    "raw": {
+     "route": "auto",
+     "human": 0.0,
+     "reviewed": 0.0,
+     "reason": "auto: first said reject at 1.0"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "always_review": {
+    "variant": "always_review",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "reject",
+    "confidence": null,
+    "latency_ms": 3038.090199988801,
+    "input_tokens": 486,
+    "output_tokens": 13,
+    "cost_usd": 0.001102,
+    "raw": {
+     "route": "review",
+     "human": 0.0,
+     "reviewed": 1.0,
+     "reason": "every action is reviewed; reviewer said reject"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/53c0e315393d3607a3c055ab26c6e5db"
+ },
+ {
+  "idx": 18,
+  "text": "Refund the vacuum in full today to avoid the chargeback.  |  Customer threatens a chargeback unless refunded today for a used vacuum (day 15).",
+  "expected": "reject",
+  "note": "hard: used item; the threat doesn't change policy (and legal-ish threats go to a human)",
+  "input": {
+   "case": "Customer threatens a chargeback unless refunded today for a used vacuum (day 15).",
+   "proposed": "Refund the vacuum in full today to avoid the chargeback."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "reject",
+    "confidence": 1.0,
+    "latency_ms": 506.7898000124842,
+    "input_tokens": 501,
+    "output_tokens": 32,
+    "cost_usd": 2.1042e-05,
+    "raw": {
+     "route": "auto",
+     "human": 0.0,
+     "reviewed": 0.0,
+     "reason": "auto: first said reject at 1.0"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_self_confidence": {
+    "variant": "llm_self_confidence",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "reject",
+    "confidence": 1.0,
+    "latency_ms": 947.3166999814566,
+    "input_tokens": 304,
+    "output_tokens": 19,
+    "cost_usd": 0.0001045,
+    "raw": {
+     "route": "auto",
+     "human": 0.0,
+     "reviewed": 0.0,
+     "reason": "auto: first said reject at 1.0"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "always_review": {
+    "variant": "always_review",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "reject",
+    "confidence": null,
+    "latency_ms": 3842.6373999973293,
+    "input_tokens": 502,
+    "output_tokens": 13,
+    "cost_usd": 0.001134,
+    "raw": {
+     "route": "review",
+     "human": 0.0,
+     "reviewed": 1.0,
+     "reason": "every action is reviewed; reviewer said reject"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/a706dafa4355c773f6b7e0d1dad0c1e7"
+ },
+ {
+  "idx": 19,
+  "text": "Refund in full to the original card.  |  Speaker stopped working after 3 weeks; customer wants money back.",
+  "expected": "reject",
+  "note": "hard: not damaged-on-arrival, not unused: outside refund policy; needs a human or warranty path",
+  "input": {
+   "case": "Speaker stopped working after 3 weeks; customer wants money back.",
+   "proposed": "Refund in full to the original card."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": null,
+    "confidence": 0.5,
+    "latency_ms": 576.4465000247583,
+    "input_tokens": 490,
+    "output_tokens": 32,
+    "cost_usd": 2.058e-05,
+    "raw": {
+     "route": "human",
+     "human": 1.0,
+     "reviewed": 0.0,
+     "reason": "human: first said approve at 0.5"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_self_confidence": {
+    "variant": "llm_self_confidence",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "reject",
+    "confidence": 1.0,
+    "latency_ms": 950.5009999847971,
+    "input_tokens": 294,
+    "output_tokens": 13,
+    "cost_usd": 9.3e-05,
+    "raw": {
+     "route": "auto",
+     "human": 0.0,
+     "reviewed": 0.0,
+     "reason": "auto: first said reject at 1.0"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "always_review": {
+    "variant": "always_review",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "reject",
+    "confidence": null,
+    "latency_ms": 6901.367200014647,
+    "input_tokens": 485,
+    "output_tokens": 300,
+    "cost_usd": 0.00397,
+    "raw": {
+     "route": "review",
+     "human": 0.0,
+     "reviewed": 1.0,
+     "reason": "every action is reviewed; reviewer said reject"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/dbc3875f20d4cd3baadc5ceabb3aeaba"
+ }
+]

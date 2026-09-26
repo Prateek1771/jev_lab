@@ -1,0 +1,1647 @@
+[
+ {
+  "idx": 0,
+  "text": "routes/orders.py: @app.get('/orders/<id>') def get_order(id): return jsonify(order_repo.get(id).to_dict())",
+  "expected": "flag",
+  "note": "route with no @require_auth",
+  "input": {
+   "path": "routes/orders.py",
+   "code": "@app.get('/orders/<id>')\ndef get_order(id):\n    return jsonify(order_repo.get(id).to_dict())",
+   "gold": [
+    "auth_bypass"
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "flag",
+    "confidence": null,
+    "latency_ms": 1104.8977999889757,
+    "input_tokens": 617,
+    "output_tokens": 79,
+    "cost_usd": 2.5914e-05,
+    "raw": {
+     "rules": {
+      "auth_bypass": 0.87,
+      "sensitive_exposure": 0.3,
+      "layering": 0.03,
+      "hardcoded_secret": 0.01
+     },
+     "violations": [
+      "auth_bypass"
+     ],
+     "rule_precision": 1.0,
+     "rule_recall": 1.0,
+     "reason": "auth_bypass 0.87"
+    },
+    "probability": 0.87,
+    "score": null,
+    "quality": null
+   },
+   "static_checks": {
+    "variant": "static_checks",
+    "model": "(no model)",
+    "label": "flag",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "violations": [
+      "auth_bypass"
+     ],
+     "rule_precision": 1.0,
+     "rule_recall": 1.0,
+     "reason": "auth_bypass"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_reviewer": {
+    "variant": "llm_reviewer",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 1353.8106000050902,
+    "input_tokens": 453,
+    "output_tokens": 5,
+    "cost_usd": 0.00012075,
+    "raw": {
+     "violations": [],
+     "rule_precision": null,
+     "rule_recall": 0.0,
+     "reason": "no rule broken"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 1,
+  "text": "routes/orders.py: @app.get('/orders/<id>') @require_auth def get_order(id): if request.args.get('debug') == ",
+  "expected": "flag",
+  "note": "hard: the decorator is there, a debug parameter skips the check",
+  "input": {
+   "path": "routes/orders.py",
+   "code": "@app.get('/orders/<id>')\n@require_auth\ndef get_order(id):\n    if request.args.get('debug') == '1':\n        return order_repo.get_unchecked(id)\n    return order_repo.get_for_user(id, current_user)",
+   "gold": [
+    "auth_bypass"
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 1147.2299000015482,
+    "input_tokens": 646,
+    "output_tokens": 79,
+    "cost_usd": 2.7132e-05,
+    "raw": {
+     "rules": {
+      "auth_bypass": 0.49,
+      "sensitive_exposure": 0.2,
+      "layering": 0.02,
+      "hardcoded_secret": 0.01
+     },
+     "violations": [],
+     "rule_precision": null,
+     "rule_recall": 0.0,
+     "reason": "no rule broken (highest: auth_bypass 0.49)"
+    },
+    "probability": 0.49,
+    "score": null,
+    "quality": null
+   },
+   "static_checks": {
+    "variant": "static_checks",
+    "model": "(no model)",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "violations": [],
+     "rule_precision": null,
+     "rule_recall": 0.0,
+     "reason": "no rule broken"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_reviewer": {
+    "variant": "llm_reviewer",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "flag",
+    "confidence": null,
+    "latency_ms": 1423.9635999838356,
+    "input_tokens": 490,
+    "output_tokens": 19,
+    "cost_usd": 0.000151,
+    "raw": {
+     "violations": [
+      "auth_bypass"
+     ],
+     "rule_precision": 1.0,
+     "rule_recall": 1.0,
+     "reason": "auth_bypass"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 2,
+  "text": "routes/admin.py: @app.post('/admin/refund') @require_auth def refund(): if request.headers.get('X-Internal'",
+  "expected": "flag",
+  "note": "hard: any caller can send the header; admin action with no admin check",
+  "input": {
+   "path": "routes/admin.py",
+   "code": "@app.post('/admin/refund')\n@require_auth\ndef refund():\n    if request.headers.get('X-Internal') == 'yes':\n        return payments.refund(request.json['order_id'])\n    abort(403)",
+   "gold": [
+    "auth_bypass"
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "flag",
+    "confidence": null,
+    "latency_ms": 681.4789999916684,
+    "input_tokens": 641,
+    "output_tokens": 79,
+    "cost_usd": 2.6922e-05,
+    "raw": {
+     "rules": {
+      "auth_bypass": 0.66,
+      "sensitive_exposure": 0.07,
+      "layering": 0.08,
+      "hardcoded_secret": 0.02
+     },
+     "violations": [
+      "auth_bypass"
+     ],
+     "rule_precision": 1.0,
+     "rule_recall": 1.0,
+     "reason": "auth_bypass 0.66"
+    },
+    "probability": 0.66,
+    "score": null,
+    "quality": null
+   },
+   "static_checks": {
+    "variant": "static_checks",
+    "model": "(no model)",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "violations": [],
+     "rule_precision": null,
+     "rule_recall": 0.0,
+     "reason": "no rule broken"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_reviewer": {
+    "variant": "llm_reviewer",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "flag",
+    "confidence": null,
+    "latency_ms": 1635.7128000236116,
+    "input_tokens": 481,
+    "output_tokens": 18,
+    "cost_usd": 0.00014725,
+    "raw": {
+     "violations": [
+      "layering"
+     ],
+     "rule_precision": 0.0,
+     "rule_recall": 0.0,
+     "reason": "layering"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 3,
+  "text": "services/auth.py: def login(email, password): log.info(f'login attempt {email} with password {password}') re",
+  "expected": "flag",
+  "note": "the reference's fixture, in our words",
+  "input": {
+   "path": "services/auth.py",
+   "code": "def login(email, password):\n    log.info(f'login attempt {email} with password {password}')\n    return auth.check(email, password)",
+   "gold": [
+    "sensitive_exposure"
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "flag",
+    "confidence": null,
+    "latency_ms": 583.9908999914769,
+    "input_tokens": 624,
+    "output_tokens": 79,
+    "cost_usd": 2.6208e-05,
+    "raw": {
+     "rules": {
+      "auth_bypass": 0.07,
+      "sensitive_exposure": 0.98,
+      "layering": 0.08,
+      "hardcoded_secret": 0.02
+     },
+     "violations": [
+      "sensitive_exposure"
+     ],
+     "rule_precision": 1.0,
+     "rule_recall": 1.0,
+     "reason": "sensitive_exposure 0.98"
+    },
+    "probability": 0.98,
+    "score": null,
+    "quality": null
+   },
+   "static_checks": {
+    "variant": "static_checks",
+    "model": "(no model)",
+    "label": "flag",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "violations": [
+      "sensitive_exposure"
+     ],
+     "rule_precision": 1.0,
+     "rule_recall": 1.0,
+     "reason": "sensitive_exposure"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_reviewer": {
+    "variant": "llm_reviewer",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "flag",
+    "confidence": null,
+    "latency_ms": 1208.5332999995444,
+    "input_tokens": 457,
+    "output_tokens": 19,
+    "cost_usd": 0.00014275,
+    "raw": {
+     "violations": [
+      "sensitive_exposure"
+     ],
+     "rule_precision": 1.0,
+     "rule_recall": 1.0,
+     "reason": "sensitive_exposure"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 4,
+  "text": "services/signup.py: def signup(user): logger.info(f'new signup: {user.email}, phone {user.phone}') return repo",
+  "expected": "flag",
+  "note": "hard: personal data in logs, no 'password' or 'token' word",
+  "input": {
+   "path": "services/signup.py",
+   "code": "def signup(user):\n    logger.info(f'new signup: {user.email}, phone {user.phone}')\n    return repo.save(user)",
+   "gold": [
+    "sensitive_exposure"
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "flag",
+    "confidence": null,
+    "latency_ms": 668.7822000239976,
+    "input_tokens": 621,
+    "output_tokens": 79,
+    "cost_usd": 2.6082e-05,
+    "raw": {
+     "rules": {
+      "auth_bypass": 0.25,
+      "sensitive_exposure": 0.95,
+      "layering": 0.04,
+      "hardcoded_secret": 0.02
+     },
+     "violations": [
+      "sensitive_exposure"
+     ],
+     "rule_precision": 1.0,
+     "rule_recall": 1.0,
+     "reason": "sensitive_exposure 0.95"
+    },
+    "probability": 0.95,
+    "score": null,
+    "quality": null
+   },
+   "static_checks": {
+    "variant": "static_checks",
+    "model": "(no model)",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "violations": [],
+     "rule_precision": null,
+     "rule_recall": 0.0,
+     "reason": "no rule broken"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_reviewer": {
+    "variant": "llm_reviewer",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "flag",
+    "confidence": null,
+    "latency_ms": 1611.6931999858934,
+    "input_tokens": 457,
+    "output_tokens": 13,
+    "cost_usd": 0.00013375,
+    "raw": {
+     "violations": [
+      "sensitive_exposure"
+     ],
+     "rule_precision": 1.0,
+     "rule_recall": 1.0,
+     "reason": "sensitive_exposure"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 5,
+  "text": "routes/users.py: @app.get('/users/<id>') @require_auth def get_user(id): user = db.session.query(User).get(",
+  "expected": "flag",
+  "note": "two rules: query in a route, and the hash goes out in the response",
+  "input": {
+   "path": "routes/users.py",
+   "code": "@app.get('/users/<id>')\n@require_auth\ndef get_user(id):\n    user = db.session.query(User).get(id)\n    return jsonify(user.to_dict())  # includes email and password_hash",
+   "gold": [
+    "layering",
+    "sensitive_exposure"
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "flag",
+    "confidence": null,
+    "latency_ms": 506.89889999921434,
+    "input_tokens": 636,
+    "output_tokens": 79,
+    "cost_usd": 2.6712e-05,
+    "raw": {
+     "rules": {
+      "auth_bypass": 0.14,
+      "sensitive_exposure": 0.96,
+      "layering": 0.98,
+      "hardcoded_secret": 0.03
+     },
+     "violations": [
+      "sensitive_exposure",
+      "layering"
+     ],
+     "rule_precision": 1.0,
+     "rule_recall": 1.0,
+     "reason": "sensitive_exposure 0.96, layering 0.98"
+    },
+    "probability": 0.98,
+    "score": null,
+    "quality": null
+   },
+   "static_checks": {
+    "variant": "static_checks",
+    "model": "(no model)",
+    "label": "flag",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "violations": [
+      "layering"
+     ],
+     "rule_precision": 1.0,
+     "rule_recall": 0.5,
+     "reason": "layering"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_reviewer": {
+    "variant": "llm_reviewer",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "flag",
+    "confidence": null,
+    "latency_ms": 1498.466399993049,
+    "input_tokens": 477,
+    "output_tokens": 25,
+    "cost_usd": 0.00015675,
+    "raw": {
+     "violations": [
+      "sensitive_exposure",
+      "layering"
+     ],
+     "rule_precision": 1.0,
+     "rule_recall": 1.0,
+     "reason": "sensitive_exposure, layering"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 6,
+  "text": "api/reports.py: @app.get('/reports/monthly') @require_auth def monthly(): rows = Order.objects.filter(crea",
+  "expected": "flag",
+  "note": "hard: Django ORM manager in an api/ file, no session/cursor word",
+  "input": {
+   "path": "api/reports.py",
+   "code": "@app.get('/reports/monthly')\n@require_auth\ndef monthly():\n    rows = Order.objects.filter(created__month=now().month)\n    return jsonify([r.total for r in rows])",
+   "gold": [
+    "layering"
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "flag",
+    "confidence": null,
+    "latency_ms": 9007.813000003807,
+    "input_tokens": 636,
+    "output_tokens": 79,
+    "cost_usd": 2.6712e-05,
+    "raw": {
+     "rules": {
+      "auth_bypass": 0.08,
+      "sensitive_exposure": 0.11,
+      "layering": 0.97,
+      "hardcoded_secret": 0.01
+     },
+     "violations": [
+      "layering"
+     ],
+     "rule_precision": 1.0,
+     "rule_recall": 1.0,
+     "reason": "layering 0.97"
+    },
+    "probability": 0.97,
+    "score": null,
+    "quality": null
+   },
+   "static_checks": {
+    "variant": "static_checks",
+    "model": "(no model)",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "violations": [],
+     "rule_precision": null,
+     "rule_recall": 0.0,
+     "reason": "no rule broken"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_reviewer": {
+    "variant": "llm_reviewer",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "flag",
+    "confidence": null,
+    "latency_ms": 6825.772299984237,
+    "input_tokens": 470,
+    "output_tokens": 12,
+    "cost_usd": 0.0001355,
+    "raw": {
+     "violations": [
+      "layering"
+     ],
+     "rule_precision": 1.0,
+     "rule_recall": 1.0,
+     "reason": "layering"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 7,
+  "text": "routes/search.py: @app.get('/search') @require_auth def search(): cur = conn.cursor() cur.execute('SELECT * ",
+  "expected": "flag",
+  "note": "raw cursor in a route",
+  "input": {
+   "path": "routes/search.py",
+   "code": "@app.get('/search')\n@require_auth\ndef search():\n    cur = conn.cursor()\n    cur.execute('SELECT * FROM products WHERE name LIKE %s', (request.args['q'],))\n    return jsonify(cur.fetchall())",
+   "gold": [
+    "layering"
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "flag",
+    "confidence": null,
+    "latency_ms": 670.6008999899495,
+    "input_tokens": 640,
+    "output_tokens": 79,
+    "cost_usd": 2.688e-05,
+    "raw": {
+     "rules": {
+      "auth_bypass": 0.11,
+      "sensitive_exposure": 0.12,
+      "layering": 0.98,
+      "hardcoded_secret": 0.02
+     },
+     "violations": [
+      "layering"
+     ],
+     "rule_precision": 1.0,
+     "rule_recall": 1.0,
+     "reason": "layering 0.98"
+    },
+    "probability": 0.98,
+    "score": null,
+    "quality": null
+   },
+   "static_checks": {
+    "variant": "static_checks",
+    "model": "(no model)",
+    "label": "flag",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "violations": [
+      "layering"
+     ],
+     "rule_precision": 1.0,
+     "rule_recall": 1.0,
+     "reason": "layering"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_reviewer": {
+    "variant": "llm_reviewer",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "flag",
+    "confidence": null,
+    "latency_ms": 889.0147999918554,
+    "input_tokens": 478,
+    "output_tokens": 18,
+    "cost_usd": 0.0001465,
+    "raw": {
+     "violations": [
+      "layering"
+     ],
+     "rule_precision": 1.0,
+     "rule_recall": 1.0,
+     "reason": "layering"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 8,
+  "text": "config/payments.py: STRIPE_KEY = 'sk-live-51Hx9f8a7b6c5d4e3f2a1' client = stripe.Client(STRIPE_KEY)",
+  "expected": "flag",
+  "note": "live key literal",
+  "input": {
+   "path": "config/payments.py",
+   "code": "STRIPE_KEY = 'sk-live-51Hx9f8a7b6c5d4e3f2a1'\nclient = stripe.Client(STRIPE_KEY)",
+   "gold": [
+    "hardcoded_secret"
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "flag",
+    "confidence": null,
+    "latency_ms": 517.5795000104699,
+    "input_tokens": 634,
+    "output_tokens": 79,
+    "cost_usd": 2.6628e-05,
+    "raw": {
+     "rules": {
+      "auth_bypass": 0.07,
+      "sensitive_exposure": 0.11,
+      "layering": 0.04,
+      "hardcoded_secret": 0.66
+     },
+     "violations": [
+      "hardcoded_secret"
+     ],
+     "rule_precision": 1.0,
+     "rule_recall": 1.0,
+     "reason": "hardcoded_secret 0.66"
+    },
+    "probability": 0.66,
+    "score": null,
+    "quality": null
+   },
+   "static_checks": {
+    "variant": "static_checks",
+    "model": "(no model)",
+    "label": "flag",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "violations": [
+      "hardcoded_secret"
+     ],
+     "rule_precision": 1.0,
+     "rule_recall": 1.0,
+     "reason": "hardcoded_secret"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_reviewer": {
+    "variant": "llm_reviewer",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "flag",
+    "confidence": null,
+    "latency_ms": 940.5605999927502,
+    "input_tokens": 463,
+    "output_tokens": 9,
+    "cost_usd": 0.00012925,
+    "raw": {
+     "violations": [
+      "hardcoded_secret"
+     ],
+     "rule_precision": 1.0,
+     "rule_recall": 1.0,
+     "reason": "hardcoded_secret"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 9,
+  "text": "config/db.py: DATABASE_URL = 'postgres://admin:Sup3rS3cret!@prod-db.internal:5432/orders' engine = creat",
+  "expected": "flag",
+  "note": "hard: password inside a connection string, no 'password =' literal",
+  "input": {
+   "path": "config/db.py",
+   "code": "DATABASE_URL = 'postgres://admin:Sup3rS3cret!@prod-db.internal:5432/orders'\nengine = create_engine(DATABASE_URL)",
+   "gold": [
+    "hardcoded_secret"
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "flag",
+    "confidence": null,
+    "latency_ms": 473.8890999869909,
+    "input_tokens": 629,
+    "output_tokens": 79,
+    "cost_usd": 2.6418e-05,
+    "raw": {
+     "rules": {
+      "auth_bypass": 0.09,
+      "sensitive_exposure": 0.13,
+      "layering": 0.07,
+      "hardcoded_secret": 0.89
+     },
+     "violations": [
+      "hardcoded_secret"
+     ],
+     "rule_precision": 1.0,
+     "rule_recall": 1.0,
+     "reason": "hardcoded_secret 0.89"
+    },
+    "probability": 0.89,
+    "score": null,
+    "quality": null
+   },
+   "static_checks": {
+    "variant": "static_checks",
+    "model": "(no model)",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "violations": [],
+     "rule_precision": null,
+     "rule_recall": 0.0,
+     "reason": "no rule broken"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_reviewer": {
+    "variant": "llm_reviewer",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "flag",
+    "confidence": null,
+    "latency_ms": 1499.646699987352,
+    "input_tokens": 461,
+    "output_tokens": 9,
+    "cost_usd": 0.00012875,
+    "raw": {
+     "violations": [
+      "hardcoded_secret"
+     ],
+     "rule_precision": 1.0,
+     "rule_recall": 1.0,
+     "reason": "hardcoded_secret"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 10,
+  "text": "services/errors.py: def handle(e, request): return jsonify({'error': str(e), 'headers': dict(request.headers)}",
+  "expected": "flag",
+  "note": "hard: echoes every request header (Authorization, cookies) to the client",
+  "input": {
+   "path": "services/errors.py",
+   "code": "def handle(e, request):\n    return jsonify({'error': str(e), 'headers': dict(request.headers)}), 500",
+   "gold": [
+    "sensitive_exposure"
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "flag",
+    "confidence": null,
+    "latency_ms": 567.7998999890406,
+    "input_tokens": 621,
+    "output_tokens": 79,
+    "cost_usd": 2.6082e-05,
+    "raw": {
+     "rules": {
+      "auth_bypass": 0.14,
+      "sensitive_exposure": 0.81,
+      "layering": 0.04,
+      "hardcoded_secret": 0.02
+     },
+     "violations": [
+      "sensitive_exposure"
+     ],
+     "rule_precision": 1.0,
+     "rule_recall": 1.0,
+     "reason": "sensitive_exposure 0.81"
+    },
+    "probability": 0.81,
+    "score": null,
+    "quality": null
+   },
+   "static_checks": {
+    "variant": "static_checks",
+    "model": "(no model)",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "violations": [],
+     "rule_precision": null,
+     "rule_recall": 0.0,
+     "reason": "no rule broken"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_reviewer": {
+    "variant": "llm_reviewer",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "flag",
+    "confidence": null,
+    "latency_ms": 1470.6642999954056,
+    "input_tokens": 452,
+    "output_tokens": 8,
+    "cost_usd": 0.000125,
+    "raw": {
+     "violations": [
+      "sensitive_exposure"
+     ],
+     "rule_precision": 1.0,
+     "rule_recall": 1.0,
+     "reason": "sensitive_exposure"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 11,
+  "text": "routes/health.py: @app.get('/health') def health(): return {'status': 'ok'}",
+  "expected": "clean",
+  "note": "hard: public health check, no auth needed; static flags the missing decorator",
+  "input": {
+   "path": "routes/health.py",
+   "code": "@app.get('/health')\ndef health():\n    return {'status': 'ok'}",
+   "gold": []
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 507.04359999508597,
+    "input_tokens": 611,
+    "output_tokens": 79,
+    "cost_usd": 2.5662e-05,
+    "raw": {
+     "rules": {
+      "auth_bypass": 0.03,
+      "sensitive_exposure": 0.01,
+      "layering": 0.01,
+      "hardcoded_secret": 0.01
+     },
+     "violations": [],
+     "rule_precision": null,
+     "rule_recall": null,
+     "reason": "no rule broken (highest: auth_bypass 0.03)"
+    },
+    "probability": 0.03,
+    "score": null,
+    "quality": null
+   },
+   "static_checks": {
+    "variant": "static_checks",
+    "model": "(no model)",
+    "label": "flag",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "violations": [
+      "auth_bypass"
+     ],
+     "rule_precision": 0.0,
+     "rule_recall": null,
+     "reason": "auth_bypass"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_reviewer": {
+    "variant": "llm_reviewer",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 972.2607000148855,
+    "input_tokens": 441,
+    "output_tokens": 5,
+    "cost_usd": 0.00011775,
+    "raw": {
+     "violations": [],
+     "rule_precision": null,
+     "rule_recall": null,
+     "reason": "no rule broken"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 12,
+  "text": "services/billing.py: def charge(card_token, amount): log.info(f'charging {amount} with token {card_token[:4]}**",
+  "expected": "clean",
+  "note": "hard: masked token in a log line; static flags 'token'",
+  "input": {
+   "path": "services/billing.py",
+   "code": "def charge(card_token, amount):\n    log.info(f'charging {amount} with token {card_token[:4]}****')\n    return gateway.charge(card_token, amount)",
+   "gold": []
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 644.4307999918237,
+    "input_tokens": 634,
+    "output_tokens": 79,
+    "cost_usd": 2.6628e-05,
+    "raw": {
+     "rules": {
+      "auth_bypass": 0.31,
+      "sensitive_exposure": 0.18,
+      "layering": 0.04,
+      "hardcoded_secret": 0.03
+     },
+     "violations": [],
+     "rule_precision": null,
+     "rule_recall": null,
+     "reason": "no rule broken (highest: auth_bypass 0.31)"
+    },
+    "probability": 0.31,
+    "score": null,
+    "quality": null
+   },
+   "static_checks": {
+    "variant": "static_checks",
+    "model": "(no model)",
+    "label": "flag",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "violations": [
+      "sensitive_exposure"
+     ],
+     "rule_precision": 0.0,
+     "rule_recall": null,
+     "reason": "sensitive_exposure"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_reviewer": {
+    "variant": "llm_reviewer",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 930.2527999971062,
+    "input_tokens": 466,
+    "output_tokens": 5,
+    "cost_usd": 0.000124,
+    "raw": {
+     "violations": [],
+     "rule_precision": null,
+     "rule_recall": null,
+     "reason": "no rule broken"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 13,
+  "text": "services/reset.py: def send_reset(user): mailer.send(user.email, reset_link(user)) log.info(f'password reset ",
+  "expected": "clean",
+  "note": "hard: logs that a reset was sent, not the password; static flags 'password'",
+  "input": {
+   "path": "services/reset.py",
+   "code": "def send_reset(user):\n    mailer.send(user.email, reset_link(user))\n    log.info(f'password reset sent: {True}, user_id={user.id}')",
+   "gold": []
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 620.3855999920052,
+    "input_tokens": 629,
+    "output_tokens": 79,
+    "cost_usd": 2.6418e-05,
+    "raw": {
+     "rules": {
+      "auth_bypass": 0.24,
+      "sensitive_exposure": 0.22,
+      "layering": 0.06,
+      "hardcoded_secret": 0.02
+     },
+     "violations": [],
+     "rule_precision": null,
+     "rule_recall": null,
+     "reason": "no rule broken (highest: auth_bypass 0.24)"
+    },
+    "probability": 0.24,
+    "score": null,
+    "quality": null
+   },
+   "static_checks": {
+    "variant": "static_checks",
+    "model": "(no model)",
+    "label": "flag",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "violations": [
+      "sensitive_exposure"
+     ],
+     "rule_precision": 0.0,
+     "rule_recall": null,
+     "reason": "sensitive_exposure"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_reviewer": {
+    "variant": "llm_reviewer",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 1077.2235000040382,
+    "input_tokens": 466,
+    "output_tokens": 9,
+    "cost_usd": 0.00013,
+    "raw": {
+     "violations": [],
+     "rule_precision": null,
+     "rule_recall": null,
+     "reason": "no rule broken"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 14,
+  "text": "tests/test_login.py: def test_login(client): user = make_user(email='a@test.local', password='test-password') a",
+  "expected": "clean",
+  "note": "hard: obvious placeholder in tests/; static flags the password literal",
+  "input": {
+   "path": "tests/test_login.py",
+   "code": "def test_login(client):\n    user = make_user(email='a@test.local', password='test-password')\n    assert client.post('/login', json={'email': 'a@test.local', 'password': 'test-password'}).ok",
+   "gold": []
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 573.5400999838021,
+    "input_tokens": 641,
+    "output_tokens": 79,
+    "cost_usd": 2.6922e-05,
+    "raw": {
+     "rules": {
+      "auth_bypass": 0.06,
+      "sensitive_exposure": 0.12,
+      "layering": 0.26,
+      "hardcoded_secret": 0.1
+     },
+     "violations": [],
+     "rule_precision": null,
+     "rule_recall": null,
+     "reason": "no rule broken (highest: layering 0.26)"
+    },
+    "probability": 0.26,
+    "score": null,
+    "quality": null
+   },
+   "static_checks": {
+    "variant": "static_checks",
+    "model": "(no model)",
+    "label": "flag",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "violations": [
+      "hardcoded_secret"
+     ],
+     "rule_precision": 0.0,
+     "rule_recall": null,
+     "reason": "hardcoded_secret"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_reviewer": {
+    "variant": "llm_reviewer",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 896.4605000219308,
+    "input_tokens": 481,
+    "output_tokens": 9,
+    "cost_usd": 0.00013375,
+    "raw": {
+     "violations": [],
+     "rule_precision": null,
+     "rule_recall": null,
+     "reason": "no rule broken"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 15,
+  "text": "config/payments.py: STRIPE_KEY = os.environ['STRIPE_KEY'] client = stripe.Client(STRIPE_KEY)",
+  "expected": "clean",
+  "note": "key read from the environment",
+  "input": {
+   "path": "config/payments.py",
+   "code": "STRIPE_KEY = os.environ['STRIPE_KEY']\nclient = stripe.Client(STRIPE_KEY)",
+   "gold": []
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 571.062000002712,
+    "input_tokens": 616,
+    "output_tokens": 79,
+    "cost_usd": 2.5872e-05,
+    "raw": {
+     "rules": {
+      "auth_bypass": 0.05,
+      "sensitive_exposure": 0.09,
+      "layering": 0.04,
+      "hardcoded_secret": 0.03
+     },
+     "violations": [],
+     "rule_precision": null,
+     "rule_recall": null,
+     "reason": "no rule broken (highest: sensitive_exposure 0.09)"
+    },
+    "probability": 0.09,
+    "score": null,
+    "quality": null
+   },
+   "static_checks": {
+    "variant": "static_checks",
+    "model": "(no model)",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "violations": [],
+     "rule_precision": null,
+     "rule_recall": null,
+     "reason": "no rule broken"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_reviewer": {
+    "variant": "llm_reviewer",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 1113.4953000000678,
+    "input_tokens": 447,
+    "output_tokens": 5,
+    "cost_usd": 0.00011925,
+    "raw": {
+     "violations": [],
+     "rule_precision": null,
+     "rule_recall": null,
+     "reason": "no rule broken"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 16,
+  "text": "routes/orders.py: @app.get('/orders/<id>') @require_auth def get_order(id): return jsonify(order_repo.get_fo",
+  "expected": "clean",
+  "note": "the right way: auth plus repository",
+  "input": {
+   "path": "routes/orders.py",
+   "code": "@app.get('/orders/<id>')\n@require_auth\ndef get_order(id):\n    return jsonify(order_repo.get_for_user(id, current_user).to_dict())",
+   "gold": []
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 8763.54660000652,
+    "input_tokens": 627,
+    "output_tokens": 79,
+    "cost_usd": 2.6334e-05,
+    "raw": {
+     "rules": {
+      "auth_bypass": 0.09,
+      "sensitive_exposure": 0.33,
+      "layering": 0.02,
+      "hardcoded_secret": 0.01
+     },
+     "violations": [],
+     "rule_precision": null,
+     "rule_recall": null,
+     "reason": "no rule broken (highest: sensitive_exposure 0.33)"
+    },
+    "probability": 0.33,
+    "score": null,
+    "quality": null
+   },
+   "static_checks": {
+    "variant": "static_checks",
+    "model": "(no model)",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "violations": [],
+     "rule_precision": null,
+     "rule_recall": null,
+     "reason": "no rule broken"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_reviewer": {
+    "variant": "llm_reviewer",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 5051.232700003311,
+    "input_tokens": 467,
+    "output_tokens": 5,
+    "cost_usd": 0.00012425,
+    "raw": {
+     "violations": [],
+     "rule_precision": null,
+     "rule_recall": null,
+     "reason": "no rule broken"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 17,
+  "text": "repositories/orders.py: class OrderRepo: def get_for_user(self, id, user): return db.session.query(Order).filter_b",
+  "expected": "clean",
+  "note": "hard: database code in the repository layer is where it belongs",
+  "input": {
+   "path": "repositories/orders.py",
+   "code": "class OrderRepo:\n    def get_for_user(self, id, user):\n        return db.session.query(Order).filter_by(id=id, user_id=user.id).one()",
+   "gold": []
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 10238.260999991326,
+    "input_tokens": 629,
+    "output_tokens": 79,
+    "cost_usd": 2.6418e-05,
+    "raw": {
+     "rules": {
+      "auth_bypass": 0.26,
+      "sensitive_exposure": 0.03,
+      "layering": 0.05,
+      "hardcoded_secret": 0.01
+     },
+     "violations": [],
+     "rule_precision": null,
+     "rule_recall": null,
+     "reason": "no rule broken (highest: auth_bypass 0.26)"
+    },
+    "probability": 0.26,
+    "score": null,
+    "quality": null
+   },
+   "static_checks": {
+    "variant": "static_checks",
+    "model": "(no model)",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "violations": [],
+     "rule_precision": null,
+     "rule_recall": null,
+     "reason": "no rule broken"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_reviewer": {
+    "variant": "llm_reviewer",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 8078.321000008145,
+    "input_tokens": 468,
+    "output_tokens": 9,
+    "cost_usd": 0.0001305,
+    "raw": {
+     "violations": [],
+     "rule_precision": null,
+     "rule_recall": null,
+     "reason": "no rule broken"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 18,
+  "text": "routes/login.py: @app.post('/login') def login(): ok = auth.check(request.json['email'], request.json['pass",
+  "expected": "clean",
+  "note": "hard: login must be public; static flags the missing decorator",
+  "input": {
+   "path": "routes/login.py",
+   "code": "@app.post('/login')\ndef login():\n    ok = auth.check(request.json['email'], request.json['password'])\n    return ({'ok': True}, 200) if ok else ({'ok': False}, 401)",
+   "gold": []
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 1048.2495999895036,
+    "input_tokens": 644,
+    "output_tokens": 79,
+    "cost_usd": 2.7048e-05,
+    "raw": {
+     "rules": {
+      "auth_bypass": 0.07,
+      "sensitive_exposure": 0.08,
+      "layering": 0.06,
+      "hardcoded_secret": 0.02
+     },
+     "violations": [],
+     "rule_precision": null,
+     "rule_recall": null,
+     "reason": "no rule broken (highest: sensitive_exposure 0.08)"
+    },
+    "probability": 0.08,
+    "score": null,
+    "quality": null
+   },
+   "static_checks": {
+    "variant": "static_checks",
+    "model": "(no model)",
+    "label": "flag",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "violations": [
+      "auth_bypass"
+     ],
+     "rule_precision": 0.0,
+     "rule_recall": null,
+     "reason": "auth_bypass"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_reviewer": {
+    "variant": "llm_reviewer",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 1157.7269000117667,
+    "input_tokens": 480,
+    "output_tokens": 9,
+    "cost_usd": 0.0001335,
+    "raw": {
+     "violations": [],
+     "rule_precision": null,
+     "rule_recall": null,
+     "reason": "no rule broken"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 19,
+  "text": "services/audit.py: def record_login(user): audit.write(event='login', user_id=user.id, secret_rotated=user.se",
+  "expected": "clean",
+  "note": "hard: a boolean about a secret; nothing sensitive leaves",
+  "input": {
+   "path": "services/audit.py",
+   "code": "def record_login(user):\n    audit.write(event='login', user_id=user.id, secret_rotated=user.secret_rotated)",
+   "gold": []
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 696.7494999989867,
+    "input_tokens": 620,
+    "output_tokens": 79,
+    "cost_usd": 2.604e-05,
+    "raw": {
+     "rules": {
+      "auth_bypass": 0.14,
+      "sensitive_exposure": 0.21,
+      "layering": 0.14,
+      "hardcoded_secret": 0.02
+     },
+     "violations": [],
+     "rule_precision": null,
+     "rule_recall": null,
+     "reason": "no rule broken (highest: sensitive_exposure 0.21)"
+    },
+    "probability": 0.21,
+    "score": null,
+    "quality": null
+   },
+   "static_checks": {
+    "variant": "static_checks",
+    "model": "(no model)",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "violations": [],
+     "rule_precision": null,
+     "rule_recall": null,
+     "reason": "no rule broken"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_reviewer": {
+    "variant": "llm_reviewer",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "clean",
+    "confidence": null,
+    "latency_ms": 832.576999993762,
+    "input_tokens": 455,
+    "output_tokens": 9,
+    "cost_usd": 0.00012725,
+    "raw": {
+     "violations": [],
+     "rule_precision": null,
+     "rule_recall": null,
+     "reason": "no rule broken"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ }
+]

@@ -1,0 +1,1342 @@
+[
+ {
+  "idx": 0,
+  "text": "I was charged twice for order A-104. Please refund the duplicate.",
+  "expected": "billing",
+  "note": null,
+  "input": "I was charged twice for order A-104. Please refund the duplicate.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "billing",
+    "confidence": 1,
+    "latency_ms": 1145.9079000051133,
+    "input_tokens": 407,
+    "output_tokens": 52,
+    "cost_usd": 1.7094e-05,
+    "raw": {
+     "probabilities": {
+      "other": 0,
+      "account": 0,
+      "sales": 0,
+      "technical": 0,
+      "billing": 1
+     },
+     "id": "gen-dec-1790354879-XDHf4zyLPNOyi71f2RBA"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "billing",
+    "confidence": null,
+    "latency_ms": 2533.2692000083625,
+    "input_tokens": 97,
+    "output_tokens": 1,
+    "cost_usd": 2.575e-05,
+    "raw": {
+     "text": "billing"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "billing",
+    "confidence": null,
+    "latency_ms": 2927.4156999890693,
+    "input_tokens": 170,
+    "output_tokens": 6,
+    "cost_usd": 5.15e-05,
+    "raw": {
+     "text": "{\"label\": \"billing\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 1,
+  "text": "Where can I download last month's invoice as a PDF?",
+  "expected": "billing",
+  "note": null,
+  "input": "Where can I download last month's invoice as a PDF?",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "billing",
+    "confidence": 1,
+    "latency_ms": 603.5594000131823,
+    "input_tokens": 402,
+    "output_tokens": 52,
+    "cost_usd": 1.6884e-05,
+    "raw": {
+     "probabilities": {
+      "other": 0,
+      "sales": 0,
+      "technical": 0,
+      "account": 0,
+      "billing": 1
+     },
+     "id": "gen-dec-1790354882-pl71V7pTMcjjUsezEnTG"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "billing",
+    "confidence": null,
+    "latency_ms": 1158.9837000065017,
+    "input_tokens": 93,
+    "output_tokens": 1,
+    "cost_usd": 2.475e-05,
+    "raw": {
+     "text": "billing"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "billing",
+    "confidence": null,
+    "latency_ms": 1744.1323999955785,
+    "input_tokens": 166,
+    "output_tokens": 11,
+    "cost_usd": 5.8e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"billing\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 2,
+  "text": "My card was declined but the money still left my account.",
+  "expected": "billing",
+  "note": null,
+  "input": "My card was declined but the money still left my account.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "billing",
+    "confidence": 1,
+    "latency_ms": 505.42199998744763,
+    "input_tokens": 402,
+    "output_tokens": 52,
+    "cost_usd": 1.6884e-05,
+    "raw": {
+     "probabilities": {
+      "billing": 1,
+      "account": 0,
+      "other": 0,
+      "sales": 0,
+      "technical": 0
+     },
+     "id": "gen-dec-1790354884-gGtEvRYXpgQFYDBWzdcc"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "billing",
+    "confidence": null,
+    "latency_ms": 1551.621399994474,
+    "input_tokens": 92,
+    "output_tokens": 1,
+    "cost_usd": 2.45e-05,
+    "raw": {
+     "text": "billing"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "billing",
+    "confidence": null,
+    "latency_ms": 1541.807500005234,
+    "input_tokens": 165,
+    "output_tokens": 11,
+    "cost_usd": 5.775e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"billing\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 3,
+  "text": "Please switch our payment method from card to bank transfer.",
+  "expected": "billing",
+  "note": null,
+  "input": "Please switch our payment method from card to bank transfer.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "billing",
+    "confidence": 1,
+    "latency_ms": 454.842799983453,
+    "input_tokens": 401,
+    "output_tokens": 52,
+    "cost_usd": 1.6842e-05,
+    "raw": {
+     "probabilities": {
+      "billing": 1,
+      "sales": 0,
+      "technical": 0,
+      "other": 0,
+      "account": 0
+     },
+     "id": "gen-dec-1790354885-gK6vEffUzHfIazKII6fv"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "billing",
+    "confidence": null,
+    "latency_ms": 1478.3394999976736,
+    "input_tokens": 91,
+    "output_tokens": 1,
+    "cost_usd": 2.425e-05,
+    "raw": {
+     "text": "billing"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "billing",
+    "confidence": null,
+    "latency_ms": 1053.839300002437,
+    "input_tokens": 164,
+    "output_tokens": 6,
+    "cost_usd": 5e-05,
+    "raw": {
+     "text": "{\"label\": \"billing\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 4,
+  "text": "The API returns 502 for every request since this morning.",
+  "expected": "technical",
+  "note": null,
+  "input": "The API returns 502 for every request since this morning.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "technical",
+    "confidence": 1,
+    "latency_ms": 461.2372000119649,
+    "input_tokens": 404,
+    "output_tokens": 52,
+    "cost_usd": 1.6968e-05,
+    "raw": {
+     "probabilities": {
+      "other": 0,
+      "billing": 0,
+      "sales": 0,
+      "account": 0,
+      "technical": 1
+     },
+     "id": "gen-dec-1790354887-QusAdl6CEAGsaWA7B7jN"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "technical",
+    "confidence": null,
+    "latency_ms": 1355.0918999826536,
+    "input_tokens": 94,
+    "output_tokens": 1,
+    "cost_usd": 2.5e-05,
+    "raw": {
+     "text": "technical"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "technical",
+    "confidence": null,
+    "latency_ms": 1524.295599985635,
+    "input_tokens": 167,
+    "output_tokens": 6,
+    "cost_usd": 5.075e-05,
+    "raw": {
+     "text": "{\"label\": \"technical\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 5,
+  "text": "Webhook deliveries to our Slack integration stopped firing.",
+  "expected": "technical",
+  "note": null,
+  "input": "Webhook deliveries to our Slack integration stopped firing.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "technical",
+    "confidence": 1,
+    "latency_ms": 651.4371999946889,
+    "input_tokens": 401,
+    "output_tokens": 52,
+    "cost_usd": 1.6842e-05,
+    "raw": {
+     "probabilities": {
+      "account": 0,
+      "sales": 0,
+      "technical": 1,
+      "billing": 0,
+      "other": 0
+     },
+     "id": "gen-dec-1790354888-79aoytdyJFLy7HW8vj6o"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "technical",
+    "confidence": null,
+    "latency_ms": 1548.9385999972,
+    "input_tokens": 89,
+    "output_tokens": 1,
+    "cost_usd": 2.375e-05,
+    "raw": {
+     "text": "technical"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "technical",
+    "confidence": null,
+    "latency_ms": 963.2100999879185,
+    "input_tokens": 162,
+    "output_tokens": 11,
+    "cost_usd": 5.7e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"technical\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 6,
+  "text": "Exports to CSV come out with every column shifted by one.",
+  "expected": "technical",
+  "note": null,
+  "input": "Exports to CSV come out with every column shifted by one.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "technical",
+    "confidence": 1,
+    "latency_ms": 521.783600008348,
+    "input_tokens": 402,
+    "output_tokens": 52,
+    "cost_usd": 1.6884e-05,
+    "raw": {
+     "probabilities": {
+      "other": 0,
+      "sales": 0,
+      "technical": 1,
+      "billing": 0,
+      "account": 0
+     },
+     "id": "gen-dec-1790354890-fNSTdohvnvFavjG9zbHM"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "technical",
+    "confidence": null,
+    "latency_ms": 1177.7596000174526,
+    "input_tokens": 92,
+    "output_tokens": 1,
+    "cost_usd": 2.45e-05,
+    "raw": {
+     "text": "technical"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "technical",
+    "confidence": null,
+    "latency_ms": 1521.3731999974698,
+    "input_tokens": 165,
+    "output_tokens": 6,
+    "cost_usd": 5.025e-05,
+    "raw": {
+     "text": "{\"label\": \"technical\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 7,
+  "text": "Your billing page throws a 500 error when I try to download my invoice.",
+  "expected": "technical",
+  "note": "hard: says billing and invoice, but the problem is an error",
+  "input": "Your billing page throws a 500 error when I try to download my invoice.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "technical",
+    "confidence": 0.82,
+    "latency_ms": 496.29619999905117,
+    "input_tokens": 408,
+    "output_tokens": 52,
+    "cost_usd": 1.7136e-05,
+    "raw": {
+     "probabilities": {
+      "other": 0,
+      "sales": 0,
+      "account": 0,
+      "technical": 0.86,
+      "billing": 0.14
+     },
+     "id": "gen-dec-1790354892-kWnhIJi6EzAM2r0uxZ4y"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "technical",
+    "confidence": null,
+    "latency_ms": 1002.4436000094283,
+    "input_tokens": 98,
+    "output_tokens": 1,
+    "cost_usd": 2.6e-05,
+    "raw": {
+     "text": "technical"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "technical",
+    "confidence": null,
+    "latency_ms": 1076.8056999950204,
+    "input_tokens": 171,
+    "output_tokens": 6,
+    "cost_usd": 5.175e-05,
+    "raw": {
+     "text": "{\"label\": \"technical\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 8,
+  "text": "I can't reset my password, the email never arrives.",
+  "expected": "account",
+  "note": "hard: an email that never arrives could be read as a bug",
+  "input": "I can't reset my password, the email never arrives.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "account",
+    "confidence": 1,
+    "latency_ms": 416.80199999245815,
+    "input_tokens": 402,
+    "output_tokens": 52,
+    "cost_usd": 1.6884e-05,
+    "raw": {
+     "probabilities": {
+      "technical": 0,
+      "billing": 0,
+      "other": 0,
+      "sales": 0,
+      "account": 1
+     },
+     "id": "gen-dec-1790354893-sscIwnlxEcbpFYaZOgQY"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "account",
+    "confidence": null,
+    "latency_ms": 1203.3741000050213,
+    "input_tokens": 93,
+    "output_tokens": 1,
+    "cost_usd": 2.475e-05,
+    "raw": {
+     "text": "account"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "account",
+    "confidence": null,
+    "latency_ms": 1176.1620000179391,
+    "input_tokens": 166,
+    "output_tokens": 6,
+    "cost_usd": 5.05e-05,
+    "raw": {
+     "text": "{\"label\": \"account\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 9,
+  "text": "Please remove my ex-colleague's admin permissions.",
+  "expected": "account",
+  "note": null,
+  "input": "Please remove my ex-colleague's admin permissions.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "account",
+    "confidence": 1,
+    "latency_ms": 492.8272000106517,
+    "input_tokens": 401,
+    "output_tokens": 52,
+    "cost_usd": 1.6842e-05,
+    "raw": {
+     "probabilities": {
+      "technical": 0,
+      "other": 0,
+      "account": 1,
+      "sales": 0,
+      "billing": 0
+     },
+     "id": "gen-dec-1790354894-oMGmLk9LetgAlqGvyq6n"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "account",
+    "confidence": null,
+    "latency_ms": 877.6352000131737,
+    "input_tokens": 92,
+    "output_tokens": 1,
+    "cost_usd": 2.45e-05,
+    "raw": {
+     "text": "account"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "account",
+    "confidence": null,
+    "latency_ms": 955.6273000198416,
+    "input_tokens": 165,
+    "output_tokens": 11,
+    "cost_usd": 5.775e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"account\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 10,
+  "text": "How do I turn on two-factor authentication?",
+  "expected": "account",
+  "note": null,
+  "input": "How do I turn on two-factor authentication?",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "account",
+    "confidence": 1,
+    "latency_ms": 459.4775000005029,
+    "input_tokens": 399,
+    "output_tokens": 52,
+    "cost_usd": 1.6758e-05,
+    "raw": {
+     "probabilities": {
+      "sales": 0,
+      "technical": 0,
+      "account": 1,
+      "billing": 0,
+      "other": 0
+     },
+     "id": "gen-dec-1790354895-3bAwcGK3g0FsCBRBLuMY"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "account",
+    "confidence": null,
+    "latency_ms": 986.862400022801,
+    "input_tokens": 90,
+    "output_tokens": 1,
+    "cost_usd": 2.4e-05,
+    "raw": {
+     "text": "account"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "account",
+    "confidence": null,
+    "latency_ms": 1118.3532999712043,
+    "input_tokens": 163,
+    "output_tokens": 6,
+    "cost_usd": 4.975e-05,
+    "raw": {
+     "text": "{\"label\": \"account\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 11,
+  "text": "I need to change the email address on my profile.",
+  "expected": "account",
+  "note": null,
+  "input": "I need to change the email address on my profile.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "account",
+    "confidence": 1,
+    "latency_ms": 628.2518999942113,
+    "input_tokens": 401,
+    "output_tokens": 52,
+    "cost_usd": 1.6842e-05,
+    "raw": {
+     "probabilities": {
+      "technical": 0,
+      "billing": 0,
+      "sales": 0,
+      "other": 0,
+      "account": 1
+     },
+     "id": "gen-dec-1790354896-wrtZmQSw4fjKdT4Klt6I"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "account",
+    "confidence": null,
+    "latency_ms": 1074.730600026669,
+    "input_tokens": 91,
+    "output_tokens": 1,
+    "cost_usd": 2.425e-05,
+    "raw": {
+     "text": "account"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "account",
+    "confidence": null,
+    "latency_ms": 1246.205800009193,
+    "input_tokens": 164,
+    "output_tokens": 6,
+    "cost_usd": 5e-05,
+    "raw": {
+     "text": "{\"label\": \"account\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 12,
+  "text": "Do you offer a discount for non-profits on the Team plan?",
+  "expected": "sales",
+  "note": null,
+  "input": "Do you offer a discount for non-profits on the Team plan?",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "sales",
+    "confidence": 0.98,
+    "latency_ms": 541.855299990857,
+    "input_tokens": 404,
+    "output_tokens": 52,
+    "cost_usd": 1.6968e-05,
+    "raw": {
+     "probabilities": {
+      "billing": 0.02,
+      "other": 0,
+      "technical": 0,
+      "sales": 0.98,
+      "account": 0
+     },
+     "id": "gen-dec-1790354897-rwQQs1rWQ8rSD4j62bJf"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "sales",
+    "confidence": null,
+    "latency_ms": 1144.210500002373,
+    "input_tokens": 94,
+    "output_tokens": 1,
+    "cost_usd": 2.5e-05,
+    "raw": {
+     "text": "sales"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "sales",
+    "confidence": null,
+    "latency_ms": 1596.1894000065513,
+    "input_tokens": 167,
+    "output_tokens": 11,
+    "cost_usd": 5.825e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"sales\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 13,
+  "text": "Can we book a demo for our procurement team next week?",
+  "expected": "sales",
+  "note": null,
+  "input": "Can we book a demo for our procurement team next week?",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "sales",
+    "confidence": 1,
+    "latency_ms": 471.2696000060532,
+    "input_tokens": 402,
+    "output_tokens": 52,
+    "cost_usd": 1.6884e-05,
+    "raw": {
+     "probabilities": {
+      "technical": 0,
+      "account": 0,
+      "sales": 1,
+      "other": 0,
+      "billing": 0
+     },
+     "id": "gen-dec-1790354899-zIUlOl25k9Jb3UDM1vNU"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "sales",
+    "confidence": null,
+    "latency_ms": 1483.8674000056926,
+    "input_tokens": 92,
+    "output_tokens": 1,
+    "cost_usd": 2.45e-05,
+    "raw": {
+     "text": "sales"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "sales",
+    "confidence": null,
+    "latency_ms": 1237.380700011272,
+    "input_tokens": 165,
+    "output_tokens": 6,
+    "cost_usd": 5.025e-05,
+    "raw": {
+     "text": "{\"label\": \"sales\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 14,
+  "text": "How much would it cost to move our 40-seat team to the Enterprise plan?",
+  "expected": "sales",
+  "note": "hard: 'cost' sounds like billing, but it is an upgrade question",
+  "input": "How much would it cost to move our 40-seat team to the Enterprise plan?",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "sales",
+    "confidence": 1,
+    "latency_ms": 619.8166999965906,
+    "input_tokens": 408,
+    "output_tokens": 52,
+    "cost_usd": 1.7136e-05,
+    "raw": {
+     "probabilities": {
+      "other": 0,
+      "sales": 1,
+      "technical": 0,
+      "account": 0,
+      "billing": 0
+     },
+     "id": "gen-dec-1790354901-ACNcnMOZTxkUii2BKZ7S"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "sales",
+    "confidence": null,
+    "latency_ms": 1035.4026000131853,
+    "input_tokens": 99,
+    "output_tokens": 1,
+    "cost_usd": 2.625e-05,
+    "raw": {
+     "text": "sales"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "sales",
+    "confidence": null,
+    "latency_ms": 1024.1521999996621,
+    "input_tokens": 172,
+    "output_tokens": 11,
+    "cost_usd": 5.95e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"sales\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 15,
+  "text": "We'd like to open a second workspace for our EU subsidiary.",
+  "expected": "sales",
+  "note": null,
+  "input": "We'd like to open a second workspace for our EU subsidiary.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "sales",
+    "confidence": 0.9,
+    "latency_ms": 536.8000000016764,
+    "input_tokens": 403,
+    "output_tokens": 52,
+    "cost_usd": 1.6926e-05,
+    "raw": {
+     "probabilities": {
+      "sales": 0.93,
+      "account": 0.06,
+      "other": 0.01,
+      "billing": 0,
+      "technical": 0
+     },
+     "id": "gen-dec-1790354902-zhIgLbHZY6CZvg5lHz8F"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "sales",
+    "confidence": null,
+    "latency_ms": 1413.643999985652,
+    "input_tokens": 94,
+    "output_tokens": 1,
+    "cost_usd": 2.5e-05,
+    "raw": {
+     "text": "sales"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "sales",
+    "confidence": null,
+    "latency_ms": 1654.394900018815,
+    "input_tokens": 167,
+    "output_tokens": 6,
+    "cost_usd": 5.075e-05,
+    "raw": {
+     "text": "{\"label\": \"sales\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 16,
+  "text": "Just wanted to say the new dashboard looks great!",
+  "expected": "other",
+  "note": null,
+  "input": "Just wanted to say the new dashboard looks great!",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "other",
+    "confidence": 1,
+    "latency_ms": 495.3228000085801,
+    "input_tokens": 400,
+    "output_tokens": 52,
+    "cost_usd": 1.68e-05,
+    "raw": {
+     "probabilities": {
+      "sales": 0,
+      "billing": 0,
+      "technical": 0,
+      "account": 0,
+      "other": 1
+     },
+     "id": "gen-dec-1790354903-T6PXu6e5NrB4eye2S16C"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "other",
+    "confidence": null,
+    "latency_ms": 2353.42650001985,
+    "input_tokens": 90,
+    "output_tokens": 1,
+    "cost_usd": 2.4e-05,
+    "raw": {
+     "text": "other"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "other",
+    "confidence": null,
+    "latency_ms": 1388.7869000027422,
+    "input_tokens": 163,
+    "output_tokens": 6,
+    "cost_usd": 4.975e-05,
+    "raw": {
+     "text": "{\"label\": \"other\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 17,
+  "text": "Are you hiring backend engineers?",
+  "expected": "other",
+  "note": null,
+  "input": "Are you hiring backend engineers?",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "other",
+    "confidence": 0.98,
+    "latency_ms": 530.0706999842077,
+    "input_tokens": 396,
+    "output_tokens": 52,
+    "cost_usd": 1.6632e-05,
+    "raw": {
+     "probabilities": {
+      "other": 0.99,
+      "sales": 0.01,
+      "billing": 0,
+      "technical": 0,
+      "account": 0
+     },
+     "id": "gen-dec-1790354906-yndJy2lYkhfRWstf5aW4"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "other",
+    "confidence": null,
+    "latency_ms": 1266.751999995904,
+    "input_tokens": 86,
+    "output_tokens": 1,
+    "cost_usd": 2.3e-05,
+    "raw": {
+     "text": "other"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "other",
+    "confidence": null,
+    "latency_ms": 1269.517700013239,
+    "input_tokens": 159,
+    "output_tokens": 6,
+    "cost_usd": 4.875e-05,
+    "raw": {
+     "text": "{\"label\": \"other\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 18,
+  "text": "What's your office address for sending a thank-you card?",
+  "expected": "other",
+  "note": null,
+  "input": "What's your office address for sending a thank-you card?",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "other",
+    "confidence": 0.98,
+    "latency_ms": 516.4446999842767,
+    "input_tokens": 402,
+    "output_tokens": 52,
+    "cost_usd": 1.6884e-05,
+    "raw": {
+     "probabilities": {
+      "billing": 0,
+      "sales": 0.01,
+      "technical": 0,
+      "other": 0.99,
+      "account": 0
+     },
+     "id": "gen-dec-1790354907-qQcYOa8pXCaSpAowBq9L"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "other",
+    "confidence": null,
+    "latency_ms": 1399.5064999908209,
+    "input_tokens": 94,
+    "output_tokens": 1,
+    "cost_usd": 2.5e-05,
+    "raw": {
+     "text": "other"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "other",
+    "confidence": null,
+    "latency_ms": 1367.872200004058,
+    "input_tokens": 167,
+    "output_tokens": 6,
+    "cost_usd": 5.075e-05,
+    "raw": {
+     "text": "{\"label\": \"other\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 19,
+  "text": "Is this chat monitored by a human or a bot?",
+  "expected": "other",
+  "note": null,
+  "input": "Is this chat monitored by a human or a bot?",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "other",
+    "confidence": 0.99,
+    "latency_ms": 489.0272000047844,
+    "input_tokens": 401,
+    "output_tokens": 52,
+    "cost_usd": 1.6842e-05,
+    "raw": {
+     "probabilities": {
+      "technical": 0.01,
+      "billing": 0,
+      "sales": 0,
+      "other": 0.99,
+      "account": 0
+     },
+     "id": "gen-dec-1790354909-TNt768E4zMePLhPReJ1x"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "other",
+    "confidence": null,
+    "latency_ms": 934.9995999946259,
+    "input_tokens": 91,
+    "output_tokens": 1,
+    "cost_usd": 2.425e-05,
+    "raw": {
+     "text": "other"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "other",
+    "confidence": null,
+    "latency_ms": 1548.4422999725211,
+    "input_tokens": 164,
+    "output_tokens": 11,
+    "cost_usd": 5.75e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"other\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ }
+]

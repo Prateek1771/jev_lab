@@ -1,3 +1,4 @@
+
 # Jev Lab
 
 Twenty-four decisions an AI product makes every day (classify, gate, route, filter, verify), each decided three ways:
@@ -61,7 +62,8 @@ jev_lab/
 ├── scripts/          dev.py (start the servers) · capture_prompts.py · import_runs.py
 ├── tests/            cross-project tests: API, Streamlit, datasets, shared
 ├── docs/             roadmap.md (the research this started from) · screenshots/ (the README images)
-└── runs/             saved dataset runs, shown in History (gitignored)
+├── render.yaml       Render Blueprint for the API (see Deploy)
+└── runs/             saved dataset runs, shown in History (committed, so the deployed site has them)
 ```
 
 Each project's `experiment.py` exposes `run_experiment(input) → Result`, `EXAMPLES`, `DATASET`, `LABELS`, `TITLE`,
@@ -80,6 +82,45 @@ uv run pytest -q                          # offline tests: no keys, no spend
 
 Keys go in `config/.env` (`OPENROUTER_API_KEY`, optional Langfuse keys). Real runs cost money: a full dataset run of all
 24 projects is about $0.51.
+
+## Deploy
+
+The API goes to **Render** and the web UI to **Vercel**. Secrets are typed into their dashboards and never committed.
+
+1. **Push** this repo to GitHub.
+2. **Render (API):** New → Blueprint → pick the repo. It reads `render.yaml` and asks for three values:
+   - `OPENROUTER_API_KEY`: your key.
+   - `WEB_ORIGINS` and `WEB_UI_URL`: the Vercel URL, e.g. `https://jev-lab.vercel.app`. You don't have it yet, so put a
+     placeholder and fix it in step 4.
+
+   When it's live, `https://<api>.onrender.com/api/projects` lists 24 projects. The free plan sleeps when idle, so the
+   first visit after a while takes about 30 s.
+3. **Vercel (web):** Add New → Project → the same repo. Set **Root Directory** to `web`; the framework is detected as
+   Next.js. Environment variables, both set to the Render URL:
+   - `JEV_API_URL=https://<api>.onrender.com` (server-side pages and the `/api` rewrite)
+   - `NEXT_PUBLIC_API_URL=https://<api>.onrender.com` (the browser's Run and Dataset calls)
+
+   Deploy.
+4. **Back on Render:** set `WEB_ORIGINS` and `WEB_UI_URL` to the real Vercel URL. Saving redeploys the API.
+5. **Backstop:** set a credit limit on the OpenRouter key (openrouter.ai → Keys).
+
+**Spam limits.** Run and Dataset spend your key, so the API caps them. The values are in `render.yaml` and you can
+change them in the Render dashboard (0 = off; locally they're off):
+
+| Setting | Default | Caps |
+|---|---|---|
+| `RUN_LIMIT_PER_IP_HOUR` | 20 | single runs per visitor per hour |
+| `RUN_LIMIT_PER_DAY` | 300 | single runs per day, everyone together |
+| `DATASET_LIMIT_PER_IP_HOUR` | 3 | dataset runs per visitor per hour |
+| `DATASET_LIMIT_PER_DAY` | 30 | dataset runs per day, everyone together |
+
+At these values the worst case stays well under $2 a day. The counters live in memory, so a restart resets them.
+
+**Also:**
+- Runs made on the deployed site are saved to Render's disk, which is wiped on every deploy. The committed `runs/`
+  come back each time.
+- Streamlit isn't deployed, and the nav toggle then shows how to start it locally.
+- `web/.npmrc` points npm's cache at a local `D:` path. If Vercel's install fails on it, delete the file.
 
 ## Adding a project
 

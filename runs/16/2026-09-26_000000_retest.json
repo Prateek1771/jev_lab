@@ -1,0 +1,1682 @@
+[
+ {
+  "idx": 0,
+  "text": "What are the latest EU AI Act deadlines for general-purpose models?",
+  "expected": "research",
+  "note": null,
+  "input": {
+   "request": "What are the latest EU AI Act deadlines for general-purpose models?",
+   "tool": "web_search"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "research",
+    "confidence": 1.0,
+    "latency_ms": 2239.69479999505,
+    "input_tokens": 766,
+    "output_tokens": 90,
+    "cost_usd": 3.2172e-05,
+    "raw": {
+     "agent_confidence": 1.0,
+     "tool_confidence": 1.0,
+     "tool": "web_search",
+     "tool_accuracy": 1.0,
+     "reason": "research → web_search"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_agent_router": {
+    "variant": "llm_agent_router",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "research",
+    "confidence": null,
+    "latency_ms": 2352.9545000055805,
+    "input_tokens": 433,
+    "output_tokens": 15,
+    "cost_usd": 0.00013075,
+    "raw": {
+     "tool": "web_search",
+     "tool_accuracy": 1.0,
+     "reason": "research → web_search"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "flat_agent": {
+    "variant": "flat_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "research",
+    "confidence": null,
+    "latency_ms": 1396.0716000001412,
+    "input_tokens": 346,
+    "output_tokens": 26,
+    "cost_usd": 0.0001255,
+    "raw": {
+     "tool": "web_search",
+     "tool_accuracy": 1.0,
+     "reason": "research → web_search"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/d99d9789250e35fb5bf7db490d1af16f"
+ },
+ {
+  "idx": 1,
+  "text": "Has any competitor launched a same-day refund feature this year?",
+  "expected": "research",
+  "note": "hard: 'refund' but it asks about the outside world",
+  "input": {
+   "request": "Has any competitor launched a same-day refund feature this year?",
+   "tool": "web_search"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "research",
+    "confidence": 0.99,
+    "latency_ms": 1746.434100001352,
+    "input_tokens": 764,
+    "output_tokens": 90,
+    "cost_usd": 3.2088e-05,
+    "raw": {
+     "agent_confidence": 0.99,
+     "tool_confidence": 1.0,
+     "tool": "web_search",
+     "tool_accuracy": 1.0,
+     "reason": "research → web_search"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_agent_router": {
+    "variant": "llm_agent_router",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "research",
+    "confidence": null,
+    "latency_ms": 1055.4107000061776,
+    "input_tokens": 432,
+    "output_tokens": 15,
+    "cost_usd": 0.0001305,
+    "raw": {
+     "tool": "web_search",
+     "tool_accuracy": 1.0,
+     "reason": "research → web_search"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "flat_agent": {
+    "variant": "flat_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "research",
+    "confidence": null,
+    "latency_ms": 901.9775000051595,
+    "input_tokens": 345,
+    "output_tokens": 28,
+    "cost_usd": 0.00012825,
+    "raw": {
+     "tool": "web_search",
+     "tool_accuracy": 1.0,
+     "reason": "research → web_search"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/0cbae12339baf2503ca09fec1e30cc37"
+ },
+ {
+  "idx": 2,
+  "text": "Pull up 'Attention Is All You Need' and tell me what the positional encoding is.",
+  "expected": "research",
+  "note": null,
+  "input": {
+   "request": "Pull up 'Attention Is All You Need' and tell me what the positional encoding is.",
+   "tool": "read_paper"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "research",
+    "confidence": 0.98,
+    "latency_ms": 953.1557000009343,
+    "input_tokens": 776,
+    "output_tokens": 91,
+    "cost_usd": 3.2592e-05,
+    "raw": {
+     "agent_confidence": 1.0,
+     "tool_confidence": 0.98,
+     "tool": "read_paper",
+     "tool_accuracy": 1.0,
+     "reason": "research → read_paper"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_agent_router": {
+    "variant": "llm_agent_router",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "research",
+    "confidence": null,
+    "latency_ms": 896.3478000077885,
+    "input_tokens": 437,
+    "output_tokens": 15,
+    "cost_usd": 0.00013175,
+    "raw": {
+     "tool": "read_paper",
+     "tool_accuracy": 1.0,
+     "reason": "research → read_paper"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "flat_agent": {
+    "variant": "flat_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "research",
+    "confidence": null,
+    "latency_ms": 925.6220999814104,
+    "input_tokens": 350,
+    "output_tokens": 20,
+    "cost_usd": 0.0001175,
+    "raw": {
+     "tool": "read_paper",
+     "tool_accuracy": 1.0,
+     "reason": "research → read_paper"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/1305620505ae1eebdd84ca87234a02f8"
+ },
+ {
+  "idx": 3,
+  "text": "What does arXiv 2305.10403 say about its evaluation set?",
+  "expected": "research",
+  "note": "an id, not a URL",
+  "input": {
+   "request": "What does arXiv 2305.10403 say about its evaluation set?",
+   "tool": "read_paper"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "research",
+    "confidence": 0.99,
+    "latency_ms": 903.9049000130035,
+    "input_tokens": 784,
+    "output_tokens": 91,
+    "cost_usd": 3.2928e-05,
+    "raw": {
+     "agent_confidence": 1.0,
+     "tool_confidence": 0.99,
+     "tool": "read_paper",
+     "tool_accuracy": 1.0,
+     "reason": "research → read_paper"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_agent_router": {
+    "variant": "llm_agent_router",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "research",
+    "confidence": null,
+    "latency_ms": 1533.1291999900714,
+    "input_tokens": 439,
+    "output_tokens": 15,
+    "cost_usd": 0.00013225,
+    "raw": {
+     "tool": "read_paper",
+     "tool_accuracy": 1.0,
+     "reason": "research → read_paper"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "flat_agent": {
+    "variant": "flat_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "research",
+    "confidence": null,
+    "latency_ms": 1396.823699993547,
+    "input_tokens": 352,
+    "output_tokens": 25,
+    "cost_usd": 0.0001255,
+    "raw": {
+     "tool": "read_paper",
+     "tool_accuracy": 1.0,
+     "reason": "research → read_paper"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/89e680c8e9eecfc550fece0f0ba73297"
+ },
+ {
+  "idx": 4,
+  "text": "Give me the gist of https://blog.example.com/eu-ai-act-timeline",
+  "expected": "research",
+  "note": null,
+  "input": {
+   "request": "Give me the gist of https://blog.example.com/eu-ai-act-timeline",
+   "tool": "summarize_url"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "research",
+    "confidence": 1.0,
+    "latency_ms": 921.766999992542,
+    "input_tokens": 774,
+    "output_tokens": 92,
+    "cost_usd": 3.2508e-05,
+    "raw": {
+     "agent_confidence": 1.0,
+     "tool_confidence": 1.0,
+     "tool": "summarize_url",
+     "tool_accuracy": 1.0,
+     "reason": "research → summarize_url"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_agent_router": {
+    "variant": "llm_agent_router",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "research",
+    "confidence": null,
+    "latency_ms": 1428.2620000012685,
+    "input_tokens": 439,
+    "output_tokens": 16,
+    "cost_usd": 0.00013375,
+    "raw": {
+     "tool": "summarize_url",
+     "tool_accuracy": 1.0,
+     "reason": "research → summarize_url"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "flat_agent": {
+    "variant": "flat_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "research",
+    "confidence": null,
+    "latency_ms": 839.8189999861643,
+    "input_tokens": 352,
+    "output_tokens": 31,
+    "cost_usd": 0.0001345,
+    "raw": {
+     "tool": "summarize_url",
+     "tool_accuracy": 1.0,
+     "reason": "research → summarize_url"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/735445d50ae395b5f4e7e578a1d87d79"
+ },
+ {
+  "idx": 5,
+  "text": "Can you boil down this pricing page for me? https://acme.example/pricing",
+  "expected": "research",
+  "note": "hard: 'pricing' but it's one given page",
+  "input": {
+   "request": "Can you boil down this pricing page for me? https://acme.example/pricing",
+   "tool": "summarize_url"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "research",
+    "confidence": 1.0,
+    "latency_ms": 1051.1198999884073,
+    "input_tokens": 774,
+    "output_tokens": 92,
+    "cost_usd": 3.2508e-05,
+    "raw": {
+     "agent_confidence": 1.0,
+     "tool_confidence": 1.0,
+     "tool": "summarize_url",
+     "tool_accuracy": 1.0,
+     "reason": "research → summarize_url"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_agent_router": {
+    "variant": "llm_agent_router",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "research",
+    "confidence": null,
+    "latency_ms": 935.7157000049483,
+    "input_tokens": 437,
+    "output_tokens": 16,
+    "cost_usd": 0.00013325,
+    "raw": {
+     "tool": "summarize_url",
+     "tool_accuracy": 1.0,
+     "reason": "research → summarize_url"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "flat_agent": {
+    "variant": "flat_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "research",
+    "confidence": null,
+    "latency_ms": 895.5013999948278,
+    "input_tokens": 350,
+    "output_tokens": 24,
+    "cost_usd": 0.0001235,
+    "raw": {
+     "tool": "summarize_url",
+     "tool_accuracy": 1.0,
+     "reason": "research → summarize_url"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/c51767d2140ed5c7969b856571565cf7"
+ },
+ {
+  "idx": 6,
+  "text": "Did my change to the cart module break anything?",
+  "expected": "coding",
+  "note": null,
+  "input": {
+   "request": "Did my change to the cart module break anything?",
+   "tool": "run_tests"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "coding",
+    "confidence": 0.96,
+    "latency_ms": 947.4383000051603,
+    "input_tokens": 756,
+    "output_tokens": 88,
+    "cost_usd": 3.1752000000000004e-05,
+    "raw": {
+     "agent_confidence": 1.0,
+     "tool_confidence": 0.96,
+     "tool": "run_tests",
+     "tool_accuracy": 1.0,
+     "reason": "coding → run_tests"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_agent_router": {
+    "variant": "llm_agent_router",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "coding",
+    "confidence": null,
+    "latency_ms": 1461.4240999799222,
+    "input_tokens": 429,
+    "output_tokens": 15,
+    "cost_usd": 0.00012975,
+    "raw": {
+     "tool": "run_tests",
+     "tool_accuracy": 1.0,
+     "reason": "coding → run_tests"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "flat_agent": {
+    "variant": "flat_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "coding",
+    "confidence": null,
+    "latency_ms": 915.3644999896642,
+    "input_tokens": 342,
+    "output_tokens": 17,
+    "cost_usd": 0.000111,
+    "raw": {
+     "tool": "run_tests",
+     "tool_accuracy": 1.0,
+     "reason": "coding → run_tests"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/363d1eeae072d96aa525a57c026d98e4"
+ },
+ {
+  "idx": 7,
+  "text": "Check whether the payments code still passes after the refactor.",
+  "expected": "coding",
+  "note": "hard: 'payments' but it is a code check",
+  "input": {
+   "request": "Check whether the payments code still passes after the refactor.",
+   "tool": "run_tests"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "coding",
+    "confidence": 1.0,
+    "latency_ms": 1067.9855999769643,
+    "input_tokens": 760,
+    "output_tokens": 88,
+    "cost_usd": 3.192e-05,
+    "raw": {
+     "agent_confidence": 1.0,
+     "tool_confidence": 1.0,
+     "tool": "run_tests",
+     "tool_accuracy": 1.0,
+     "reason": "coding → run_tests"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_agent_router": {
+    "variant": "llm_agent_router",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "coding",
+    "confidence": null,
+    "latency_ms": 967.9468999966048,
+    "input_tokens": 431,
+    "output_tokens": 15,
+    "cost_usd": 0.00013025,
+    "raw": {
+     "tool": "run_tests",
+     "tool_accuracy": 1.0,
+     "reason": "coding → run_tests"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "flat_agent": {
+    "variant": "flat_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "coding",
+    "confidence": null,
+    "latency_ms": 830.2773999748752,
+    "input_tokens": 344,
+    "output_tokens": 16,
+    "cost_usd": 0.00011,
+    "raw": {
+     "tool": "run_tests",
+     "tool_accuracy": 1.0,
+     "reason": "coding → run_tests"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/088e595a3d67fa495d46822d5d28d8a2"
+ },
+ {
+  "idx": 8,
+  "text": "The refund endpoint returns a 500. Where is it implemented?",
+  "expected": "coding",
+  "note": "hard: 'refund' is a code location here",
+  "input": {
+   "request": "The refund endpoint returns a 500. Where is it implemented?",
+   "tool": "search_code"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "coding",
+    "confidence": 0.98,
+    "latency_ms": 1041.2281000171788,
+    "input_tokens": 766,
+    "output_tokens": 88,
+    "cost_usd": 3.2172e-05,
+    "raw": {
+     "agent_confidence": 0.98,
+     "tool_confidence": 1.0,
+     "tool": "search_code",
+     "tool_accuracy": 1.0,
+     "reason": "coding → search_code"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_agent_router": {
+    "variant": "llm_agent_router",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "coding",
+    "confidence": null,
+    "latency_ms": 1001.5845000161789,
+    "input_tokens": 434,
+    "output_tokens": 15,
+    "cost_usd": 0.000131,
+    "raw": {
+     "tool": "search_code",
+     "tool_accuracy": 1.0,
+     "reason": "coding → search_code"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "flat_agent": {
+    "variant": "flat_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "coding",
+    "confidence": null,
+    "latency_ms": 956.9568999868352,
+    "input_tokens": 347,
+    "output_tokens": 16,
+    "cost_usd": 0.00011075,
+    "raw": {
+     "tool": "search_code",
+     "tool_accuracy": 1.0,
+     "reason": "coding → search_code"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/974e65cc329f1542283c5a0bbd2872bb"
+ },
+ {
+  "idx": 9,
+  "text": "Which files still import the old invoice formatter?",
+  "expected": "coding",
+  "note": "hard: 'invoice' is a code symbol here",
+  "input": {
+   "request": "Which files still import the old invoice formatter?",
+   "tool": "search_code"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "coding",
+    "confidence": 1.0,
+    "latency_ms": 875.8477000228595,
+    "input_tokens": 754,
+    "output_tokens": 88,
+    "cost_usd": 3.1667999999999996e-05,
+    "raw": {
+     "agent_confidence": 1.0,
+     "tool_confidence": 1.0,
+     "tool": "search_code",
+     "tool_accuracy": 1.0,
+     "reason": "coding → search_code"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_agent_router": {
+    "variant": "llm_agent_router",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "coding",
+    "confidence": null,
+    "latency_ms": 1186.5951000072528,
+    "input_tokens": 428,
+    "output_tokens": 15,
+    "cost_usd": 0.0001295,
+    "raw": {
+     "tool": "search_code",
+     "tool_accuracy": 1.0,
+     "reason": "coding → search_code"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "flat_agent": {
+    "variant": "flat_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "coding",
+    "confidence": null,
+    "latency_ms": 1529.7711000021081,
+    "input_tokens": 341,
+    "output_tokens": 18,
+    "cost_usd": 0.00011225,
+    "raw": {
+     "tool": "search_code",
+     "tool_accuracy": 1.0,
+     "reason": "coding → search_code"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/a529b38d630cd27258b6f91a9703a955"
+ },
+ {
+  "idx": 10,
+  "text": "Open a PR from fix/typo into main with the README fix.",
+  "expected": "coding",
+  "note": null,
+  "input": {
+   "request": "Open a PR from fix/typo into main with the README fix.",
+   "tool": "open_pull_request"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "coding",
+    "confidence": 1.0,
+    "latency_ms": 941.7886000010185,
+    "input_tokens": 766,
+    "output_tokens": 89,
+    "cost_usd": 3.2172e-05,
+    "raw": {
+     "agent_confidence": 1.0,
+     "tool_confidence": 1.0,
+     "tool": "open_pull_request",
+     "tool_accuracy": 1.0,
+     "reason": "coding → open_pull_request"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_agent_router": {
+    "variant": "llm_agent_router",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "coding",
+    "confidence": null,
+    "latency_ms": 1025.1340999966487,
+    "input_tokens": 434,
+    "output_tokens": 17,
+    "cost_usd": 0.000134,
+    "raw": {
+     "tool": "open_pull_request",
+     "tool_accuracy": 1.0,
+     "reason": "coding → open_pull_request"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "flat_agent": {
+    "variant": "flat_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "coding",
+    "confidence": null,
+    "latency_ms": 1034.2285000078846,
+    "input_tokens": 347,
+    "output_tokens": 27,
+    "cost_usd": 0.00012725,
+    "raw": {
+     "tool": "open_pull_request",
+     "tool_accuracy": 1.0,
+     "reason": "coding → open_pull_request"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/25e6a3537cad82ad25cfc05fa1883878"
+ },
+ {
+  "idx": 11,
+  "text": "My branch feat/search is ready for review, put it up.",
+  "expected": "coding",
+  "note": "no 'PR' word",
+  "input": {
+   "request": "My branch feat/search is ready for review, put it up.",
+   "tool": "open_pull_request"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "coding",
+    "confidence": 1.0,
+    "latency_ms": 1494.9087999993935,
+    "input_tokens": 762,
+    "output_tokens": 89,
+    "cost_usd": 3.2004e-05,
+    "raw": {
+     "agent_confidence": 1.0,
+     "tool_confidence": 1.0,
+     "tool": "open_pull_request",
+     "tool_accuracy": 1.0,
+     "reason": "coding → open_pull_request"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_agent_router": {
+    "variant": "llm_agent_router",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "coding",
+    "confidence": null,
+    "latency_ms": 1003.2736000139266,
+    "input_tokens": 433,
+    "output_tokens": 17,
+    "cost_usd": 0.00013375,
+    "raw": {
+     "tool": "open_pull_request",
+     "tool_accuracy": 1.0,
+     "reason": "coding → open_pull_request"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "flat_agent": {
+    "variant": "flat_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "coding",
+    "confidence": null,
+    "latency_ms": 1410.0479000189807,
+    "input_tokens": 346,
+    "output_tokens": 20,
+    "cost_usd": 0.0001165,
+    "raw": {
+     "tool": "open_pull_request",
+     "tool_accuracy": 1.0,
+     "reason": "coding → open_pull_request"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/6d3ab2f30ff97fe3bd87b2022e175574"
+ },
+ {
+  "idx": 12,
+  "text": "Send me invoice INV-2291, the auditor needs it.",
+  "expected": "finance",
+  "note": null,
+  "input": {
+   "request": "Send me invoice INV-2291, the auditor needs it.",
+   "tool": "get_invoice"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "finance",
+    "confidence": 0.99,
+    "latency_ms": 1387.170400004834,
+    "input_tokens": 761,
+    "output_tokens": 89,
+    "cost_usd": 3.1962e-05,
+    "raw": {
+     "agent_confidence": 0.99,
+     "tool_confidence": 1.0,
+     "tool": "get_invoice",
+     "tool_accuracy": 1.0,
+     "reason": "finance → get_invoice"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_agent_router": {
+    "variant": "llm_agent_router",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "finance",
+    "confidence": null,
+    "latency_ms": 981.466899975203,
+    "input_tokens": 434,
+    "output_tokens": 15,
+    "cost_usd": 0.000131,
+    "raw": {
+     "tool": "get_invoice",
+     "tool_accuracy": 1.0,
+     "reason": "finance → get_invoice"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "flat_agent": {
+    "variant": "flat_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "finance",
+    "confidence": null,
+    "latency_ms": 773.3858000137843,
+    "input_tokens": 347,
+    "output_tokens": 21,
+    "cost_usd": 0.00011825,
+    "raw": {
+     "tool": "get_invoice",
+     "tool_accuracy": 1.0,
+     "reason": "finance → get_invoice"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/7cbaa3228088578bf332fb0682814f93"
+ },
+ {
+  "idx": 13,
+  "text": "What was billed on INV-3310?",
+  "expected": "finance",
+  "note": null,
+  "input": {
+   "request": "What was billed on INV-3310?",
+   "tool": "get_invoice"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "finance",
+    "confidence": 0.99,
+    "latency_ms": 1357.2860000131186,
+    "input_tokens": 753,
+    "output_tokens": 89,
+    "cost_usd": 3.1626e-05,
+    "raw": {
+     "agent_confidence": 0.99,
+     "tool_confidence": 1.0,
+     "tool": "get_invoice",
+     "tool_accuracy": 1.0,
+     "reason": "finance → get_invoice"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_agent_router": {
+    "variant": "llm_agent_router",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "finance",
+    "confidence": null,
+    "latency_ms": 930.127600004198,
+    "input_tokens": 430,
+    "output_tokens": 15,
+    "cost_usd": 0.00013,
+    "raw": {
+     "tool": "get_invoice",
+     "tool_accuracy": 1.0,
+     "reason": "finance → get_invoice"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "flat_agent": {
+    "variant": "flat_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "finance",
+    "confidence": null,
+    "latency_ms": 1520.9892999846488,
+    "input_tokens": 343,
+    "output_tokens": 21,
+    "cost_usd": 0.00011725,
+    "raw": {
+     "tool": "get_invoice",
+     "tool_accuracy": 1.0,
+     "reason": "finance → get_invoice"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/5f624b72c4467bcc4150943cee1bc21e"
+ },
+ {
+  "idx": 14,
+  "text": "Order 5521 was charged twice, refund the duplicate charge.",
+  "expected": "finance",
+  "note": "hard: an order number, but the action is money",
+  "input": {
+   "request": "Order 5521 was charged twice, refund the duplicate charge.",
+   "tool": "issue_refund"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "finance",
+    "confidence": 0.9,
+    "latency_ms": 1938.881300011417,
+    "input_tokens": 761,
+    "output_tokens": 90,
+    "cost_usd": 3.1962e-05,
+    "raw": {
+     "agent_confidence": 0.96,
+     "tool_confidence": 0.9,
+     "tool": "issue_refund",
+     "tool_accuracy": 1.0,
+     "reason": "finance → issue_refund"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_agent_router": {
+    "variant": "llm_agent_router",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "finance",
+    "confidence": null,
+    "latency_ms": 1229.4334000034723,
+    "input_tokens": 434,
+    "output_tokens": 15,
+    "cost_usd": 0.000131,
+    "raw": {
+     "tool": "issue_refund",
+     "tool_accuracy": 1.0,
+     "reason": "finance → issue_refund"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "flat_agent": {
+    "variant": "flat_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "support",
+    "confidence": null,
+    "latency_ms": 1119.1533999808598,
+    "input_tokens": 347,
+    "output_tokens": 19,
+    "cost_usd": 0.00011525,
+    "raw": {
+     "tool": "lookup_order",
+     "tool_accuracy": 0.0,
+     "reason": "support → lookup_order"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/c0da1f81d6024d97b46f49520fe54631"
+ },
+ {
+  "idx": 15,
+  "text": "Give the customer on charge ch_88213 their $40 back.",
+  "expected": "finance",
+  "note": "no 'refund' word",
+  "input": {
+   "request": "Give the customer on charge ch_88213 their $40 back.",
+   "tool": "issue_refund"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "finance",
+    "confidence": 0.99,
+    "latency_ms": 912.5801999762189,
+    "input_tokens": 767,
+    "output_tokens": 90,
+    "cost_usd": 3.2214e-05,
+    "raw": {
+     "agent_confidence": 0.99,
+     "tool_confidence": 1.0,
+     "tool": "issue_refund",
+     "tool_accuracy": 1.0,
+     "reason": "finance → issue_refund"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_agent_router": {
+    "variant": "llm_agent_router",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "finance",
+    "confidence": null,
+    "latency_ms": 983.8813000242226,
+    "input_tokens": 437,
+    "output_tokens": 15,
+    "cost_usd": 0.00013175,
+    "raw": {
+     "tool": "issue_refund",
+     "tool_accuracy": 1.0,
+     "reason": "finance → issue_refund"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "flat_agent": {
+    "variant": "flat_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "finance",
+    "confidence": null,
+    "latency_ms": 823.85020001675,
+    "input_tokens": 350,
+    "output_tokens": 22,
+    "cost_usd": 0.0001205,
+    "raw": {
+     "tool": "issue_refund",
+     "tool_accuracy": 1.0,
+     "reason": "finance → issue_refund"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/8f7c04d53896cfe55acfb6c9484969b8"
+ },
+ {
+  "idx": 16,
+  "text": "Project next quarter's revenue from the last eight quarters.",
+  "expected": "finance",
+  "note": null,
+  "input": {
+   "request": "Project next quarter's revenue from the last eight quarters.",
+   "tool": "forecast_revenue"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "finance",
+    "confidence": 0.99,
+    "latency_ms": 899.2242000240367,
+    "input_tokens": 753,
+    "output_tokens": 90,
+    "cost_usd": 3.1626e-05,
+    "raw": {
+     "agent_confidence": 0.99,
+     "tool_confidence": 1.0,
+     "tool": "forecast_revenue",
+     "tool_accuracy": 1.0,
+     "reason": "finance → forecast_revenue"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_agent_router": {
+    "variant": "llm_agent_router",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "finance",
+    "confidence": null,
+    "latency_ms": 1174.0666999830864,
+    "input_tokens": 431,
+    "output_tokens": 15,
+    "cost_usd": 0.00013025,
+    "raw": {
+     "tool": "forecast_revenue",
+     "tool_accuracy": 1.0,
+     "reason": "finance → forecast_revenue"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "flat_agent": {
+    "variant": "flat_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "finance",
+    "confidence": null,
+    "latency_ms": 872.5320000085048,
+    "input_tokens": 344,
+    "output_tokens": 18,
+    "cost_usd": 0.000113,
+    "raw": {
+     "tool": "forecast_revenue",
+     "tool_accuracy": 1.0,
+     "reason": "finance → forecast_revenue"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/c479fc2001b5952296da4f31d84e8dab"
+ },
+ {
+  "idx": 17,
+  "text": "Roughly what should we expect to bring in during Q1 2027?",
+  "expected": "finance",
+  "note": "no 'forecast' word",
+  "input": {
+   "request": "Roughly what should we expect to bring in during Q1 2027?",
+   "tool": "forecast_revenue"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "finance",
+    "confidence": 0.9,
+    "latency_ms": 1077.4027000297792,
+    "input_tokens": 769,
+    "output_tokens": 90,
+    "cost_usd": 3.2298e-05,
+    "raw": {
+     "agent_confidence": 0.9,
+     "tool_confidence": 1.0,
+     "tool": "forecast_revenue",
+     "tool_accuracy": 1.0,
+     "reason": "finance → forecast_revenue"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_agent_router": {
+    "variant": "llm_agent_router",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "finance",
+    "confidence": null,
+    "latency_ms": 1555.6972000049427,
+    "input_tokens": 437,
+    "output_tokens": 15,
+    "cost_usd": 0.00013175,
+    "raw": {
+     "tool": "forecast_revenue",
+     "tool_accuracy": 1.0,
+     "reason": "finance → forecast_revenue"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "flat_agent": {
+    "variant": "flat_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "finance",
+    "confidence": null,
+    "latency_ms": 1308.306500024628,
+    "input_tokens": 350,
+    "output_tokens": 22,
+    "cost_usd": 0.0001205,
+    "raw": {
+     "tool": "forecast_revenue",
+     "tool_accuracy": 1.0,
+     "reason": "finance → forecast_revenue"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/a9c87432e1392445128fbb81d22445d9"
+ },
+ {
+  "idx": 18,
+  "text": "Where is my order 7730? It said out for delivery yesterday.",
+  "expected": "support",
+  "note": null,
+  "input": {
+   "request": "Where is my order 7730? It said out for delivery yesterday.",
+   "tool": "lookup_order"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "support",
+    "confidence": 1.0,
+    "latency_ms": 967.8041999868583,
+    "input_tokens": 784,
+    "output_tokens": 87,
+    "cost_usd": 3.2928e-05,
+    "raw": {
+     "agent_confidence": 1.0,
+     "tool_confidence": 1.0,
+     "tool": "lookup_order",
+     "tool_accuracy": 1.0,
+     "reason": "support → lookup_order"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_agent_router": {
+    "variant": "llm_agent_router",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "support",
+    "confidence": null,
+    "latency_ms": 1456.0637999966275,
+    "input_tokens": 436,
+    "output_tokens": 15,
+    "cost_usd": 0.0001315,
+    "raw": {
+     "tool": "lookup_order",
+     "tool_accuracy": 1.0,
+     "reason": "support → lookup_order"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "flat_agent": {
+    "variant": "flat_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "support",
+    "confidence": null,
+    "latency_ms": 1222.861299989745,
+    "input_tokens": 349,
+    "output_tokens": 19,
+    "cost_usd": 0.00011575,
+    "raw": {
+     "tool": "lookup_order",
+     "tool_accuracy": 1.0,
+     "reason": "support → lookup_order"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/09fc0587200567eea86123727d0deb58"
+ },
+ {
+  "idx": 19,
+  "text": "Has order 5521 shipped yet?",
+  "expected": "support",
+  "note": "hard: same order as the refund row, different need",
+  "input": {
+   "request": "Has order 5521 shipped yet?",
+   "tool": "lookup_order"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "support",
+    "confidence": 1.0,
+    "latency_ms": 848.9125999913085,
+    "input_tokens": 770,
+    "output_tokens": 87,
+    "cost_usd": 3.234e-05,
+    "raw": {
+     "agent_confidence": 1.0,
+     "tool_confidence": 1.0,
+     "tool": "lookup_order",
+     "tool_accuracy": 1.0,
+     "reason": "support → lookup_order"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_agent_router": {
+    "variant": "llm_agent_router",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "support",
+    "confidence": null,
+    "latency_ms": 1609.6751999866683,
+    "input_tokens": 429,
+    "output_tokens": 15,
+    "cost_usd": 0.00012975,
+    "raw": {
+     "tool": "lookup_order",
+     "tool_accuracy": 1.0,
+     "reason": "support → lookup_order"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "flat_agent": {
+    "variant": "flat_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "support",
+    "confidence": null,
+    "latency_ms": 1675.3809999790974,
+    "input_tokens": 342,
+    "output_tokens": 19,
+    "cost_usd": 0.000114,
+    "raw": {
+     "tool": "lookup_order",
+     "tool_accuracy": 1.0,
+     "reason": "support → lookup_order"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/83c6d94f4c80a35556b26c32140891a2"
+ },
+ {
+  "idx": 20,
+  "text": "I forgot my password, can you send me a new link?",
+  "expected": "support",
+  "note": null,
+  "input": {
+   "request": "I forgot my password, can you send me a new link?",
+   "tool": "reset_password"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "support",
+    "confidence": 0.98,
+    "latency_ms": 864.5231999980751,
+    "input_tokens": 776,
+    "output_tokens": 87,
+    "cost_usd": 3.2592e-05,
+    "raw": {
+     "agent_confidence": 1.0,
+     "tool_confidence": 0.98,
+     "tool": "reset_password",
+     "tool_accuracy": 1.0,
+     "reason": "support → reset_password"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_agent_router": {
+    "variant": "llm_agent_router",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "support",
+    "confidence": null,
+    "latency_ms": 946.1904999916442,
+    "input_tokens": 432,
+    "output_tokens": 15,
+    "cost_usd": 0.0001305,
+    "raw": {
+     "tool": "reset_password",
+     "tool_accuracy": 1.0,
+     "reason": "support → reset_password"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "flat_agent": {
+    "variant": "flat_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "support",
+    "confidence": null,
+    "latency_ms": 1229.1904999874532,
+    "input_tokens": 345,
+    "output_tokens": 20,
+    "cost_usd": 0.00011625,
+    "raw": {
+     "tool": "reset_password",
+     "tool_accuracy": 1.0,
+     "reason": "support → reset_password"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/392d6a3edcdf80d1cc6a7b7845952576"
+ },
+ {
+  "idx": 21,
+  "text": "I'm locked out of my account after changing phones.",
+  "expected": "support",
+  "note": "hard: no 'password' word",
+  "input": {
+   "request": "I'm locked out of my account after changing phones.",
+   "tool": "reset_password"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "support",
+    "confidence": 0.79,
+    "latency_ms": 1192.1099000028335,
+    "input_tokens": 772,
+    "output_tokens": 87,
+    "cost_usd": 3.2424e-05,
+    "raw": {
+     "agent_confidence": 1.0,
+     "tool_confidence": 0.79,
+     "tool": "reset_password",
+     "tool_accuracy": 1.0,
+     "reason": "support → reset_password"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_agent_router": {
+    "variant": "llm_agent_router",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "support",
+    "confidence": null,
+    "latency_ms": 1462.4626000004355,
+    "input_tokens": 431,
+    "output_tokens": 15,
+    "cost_usd": 0.00013025,
+    "raw": {
+     "tool": "reset_password",
+     "tool_accuracy": 1.0,
+     "reason": "support → reset_password"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "flat_agent": {
+    "variant": "flat_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "support",
+    "confidence": null,
+    "latency_ms": 949.2796999984421,
+    "input_tokens": 344,
+    "output_tokens": 22,
+    "cost_usd": 0.000119,
+    "raw": {
+     "tool": "reset_password",
+     "tool_accuracy": 1.0,
+     "reason": "support → reset_password"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/4809bb1aa4650a316088ae6cf0d85f00"
+ },
+ {
+  "idx": 22,
+  "text": "The password reset email never arrives, I've tried three times today.",
+  "expected": "support",
+  "note": "hard: a reset already failed: hand it to a human",
+  "input": {
+   "request": "The password reset email never arrives, I've tried three times today.",
+   "tool": "create_ticket"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "support",
+    "confidence": 0.33,
+    "latency_ms": 1125.287600007141,
+    "input_tokens": 778,
+    "output_tokens": 87,
+    "cost_usd": 3.2676e-05,
+    "raw": {
+     "agent_confidence": 1.0,
+     "tool_confidence": 0.33,
+     "tool": "create_ticket",
+     "tool_accuracy": 1.0,
+     "reason": "support → create_ticket"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_agent_router": {
+    "variant": "llm_agent_router",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "support",
+    "confidence": null,
+    "latency_ms": 1019.3633000017144,
+    "input_tokens": 434,
+    "output_tokens": 15,
+    "cost_usd": 0.000131,
+    "raw": {
+     "tool": "create_ticket",
+     "tool_accuracy": 1.0,
+     "reason": "support → create_ticket"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "flat_agent": {
+    "variant": "flat_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "support",
+    "confidence": null,
+    "latency_ms": 955.8308999985456,
+    "input_tokens": 347,
+    "output_tokens": 30,
+    "cost_usd": 0.00013175,
+    "raw": {
+     "tool": "reset_password",
+     "tool_accuracy": 0.0,
+     "reason": "support → reset_password"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/d1ce5bc2ef12716375dde5a1d1554fb3"
+ },
+ {
+  "idx": 23,
+  "text": "Your courier left my parcel in the rain and everything inside is ruined.",
+  "expected": "support",
+  "note": "damage claim: needs a person",
+  "input": {
+   "request": "Your courier left my parcel in the rain and everything inside is ruined.",
+   "tool": "create_ticket"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "support",
+    "confidence": 0.93,
+    "latency_ms": 1210.0995999935549,
+    "input_tokens": 778,
+    "output_tokens": 87,
+    "cost_usd": 3.2676e-05,
+    "raw": {
+     "agent_confidence": 0.93,
+     "tool_confidence": 0.94,
+     "tool": "create_ticket",
+     "tool_accuracy": 1.0,
+     "reason": "support → create_ticket"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_agent_router": {
+    "variant": "llm_agent_router",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "support",
+    "confidence": null,
+    "latency_ms": 1558.0126999993809,
+    "input_tokens": 433,
+    "output_tokens": 15,
+    "cost_usd": 0.00013075,
+    "raw": {
+     "tool": "create_ticket",
+     "tool_accuracy": 1.0,
+     "reason": "support → create_ticket"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "flat_agent": {
+    "variant": "flat_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "support",
+    "confidence": null,
+    "latency_ms": 1072.2385999979451,
+    "input_tokens": 346,
+    "output_tokens": 39,
+    "cost_usd": 0.000145,
+    "raw": {
+     "tool": "create_ticket",
+     "tool_accuracy": 1.0,
+     "reason": "support → create_ticket"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/c1d3a84199bb39480edf54ae32ad5ebe"
+ }
+]

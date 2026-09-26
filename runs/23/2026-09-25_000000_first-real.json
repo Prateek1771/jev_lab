@@ -1,0 +1,1495 @@
+[
+ {
+  "idx": 0,
+  "text": "(Priya Nair) -[works_at]-> (Northwind Labs)  |  Priya Nair joined Northwind Labs as CTO in 2023. Before that…",
+  "expected": "valid",
+  "note": null,
+  "input": {
+   "document": "Priya Nair joined Northwind Labs as CTO in 2023. Before that, she spent six years at Contoso, where she led the payments team. Northwind's CEO, Tom Becker, founded the company in 2019.",
+   "subject": "Priya Nair",
+   "relation": "works_at",
+   "object": "Northwind Labs"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "valid",
+    "confidence": 0.82,
+    "latency_ms": 492.1920000051614,
+    "input_tokens": 494,
+    "output_tokens": 42,
+    "cost_usd": 2.0748e-05,
+    "raw": {
+     "choice": "supports",
+     "means": "Priya Nair currently works at Northwind Labs",
+     "id": "gen-dec-1790394367-yAtboEskevqYmuaNUX7A",
+     "reason": "supports (P(supports) 0.88): Priya Nair currently works at Northwind Labs"
+    },
+    "probability": 0.88,
+    "score": null,
+    "quality": null
+   },
+   "store_all": {
+    "variant": "store_all",
+    "model": "(no model)",
+    "label": "valid",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "every extracted edge is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_self_check": {
+    "variant": "llm_self_check",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "valid",
+    "confidence": null,
+    "latency_ms": 2271.0101999982726,
+    "input_tokens": 279,
+    "output_tokens": 6,
+    "cost_usd": 7.875e-05,
+    "raw": {
+     "text": "{\"label\": \"valid\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 1,
+  "text": "(Priya Nair) -[works_at]-> (Contoso)  |  Priya Nair joined Northwind Labs as CTO in 2023. Before that…",
+  "expected": "invalid",
+  "note": "hard: a former job, not a current one",
+  "input": {
+   "document": "Priya Nair joined Northwind Labs as CTO in 2023. Before that, she spent six years at Contoso, where she led the payments team. Northwind's CEO, Tom Becker, founded the company in 2019.",
+   "subject": "Priya Nair",
+   "relation": "works_at",
+   "object": "Contoso"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "invalid",
+    "confidence": 1.0,
+    "latency_ms": 733.2138000056148,
+    "input_tokens": 490,
+    "output_tokens": 44,
+    "cost_usd": 2.058e-05,
+    "raw": {
+     "choice": "contradicts",
+     "means": "Priya Nair currently works at Contoso",
+     "id": "gen-dec-1790394370-lPcRR1RTtZqtqHEwUNlj",
+     "reason": "contradicts (P(supports) 0.00): Priya Nair currently works at Contoso"
+    },
+    "probability": 0.0,
+    "score": null,
+    "quality": null
+   },
+   "store_all": {
+    "variant": "store_all",
+    "model": "(no model)",
+    "label": "valid",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "every extracted edge is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_self_check": {
+    "variant": "llm_self_check",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "invalid",
+    "confidence": null,
+    "latency_ms": 1226.5899000049103,
+    "input_tokens": 278,
+    "output_tokens": 6,
+    "cost_usd": 7.85e-05,
+    "raw": {
+     "text": "{\"label\": \"invalid\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 2,
+  "text": "(Tom Becker) -[founded]-> (Northwind Labs)  |  Priya Nair joined Northwind Labs as CTO in 2023. Before that…",
+  "expected": "valid",
+  "note": "'the company' refers back to Northwind",
+  "input": {
+   "document": "Priya Nair joined Northwind Labs as CTO in 2023. Before that, she spent six years at Contoso, where she led the payments team. Northwind's CEO, Tom Becker, founded the company in 2019.",
+   "subject": "Tom Becker",
+   "relation": "founded",
+   "object": "Northwind Labs"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "valid",
+    "confidence": 1.0,
+    "latency_ms": 439.20550000621006,
+    "input_tokens": 489,
+    "output_tokens": 42,
+    "cost_usd": 2.0538e-05,
+    "raw": {
+     "choice": "supports",
+     "means": "Tom Becker founded Northwind Labs",
+     "id": "gen-dec-1790394371-YYzX6LH9faOJ37PdXZDx",
+     "reason": "supports (P(supports) 1.00): Tom Becker founded Northwind Labs"
+    },
+    "probability": 1.0,
+    "score": null,
+    "quality": null
+   },
+   "store_all": {
+    "variant": "store_all",
+    "model": "(no model)",
+    "label": "valid",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "every extracted edge is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_self_check": {
+    "variant": "llm_self_check",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "valid",
+    "confidence": null,
+    "latency_ms": 1658.6735000018962,
+    "input_tokens": 276,
+    "output_tokens": 6,
+    "cost_usd": 7.8e-05,
+    "raw": {
+     "text": "{\"label\": \"valid\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 3,
+  "text": "(Priya Nair) -[founded]-> (Northwind Labs)  |  Priya Nair joined Northwind Labs as CTO in 2023. Before that…",
+  "expected": "invalid",
+  "note": "hard: wrong relation (she joined as CTO)",
+  "input": {
+   "document": "Priya Nair joined Northwind Labs as CTO in 2023. Before that, she spent six years at Contoso, where she led the payments team. Northwind's CEO, Tom Becker, founded the company in 2019.",
+   "subject": "Priya Nair",
+   "relation": "founded",
+   "object": "Northwind Labs"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "invalid",
+    "confidence": 0.99,
+    "latency_ms": 1101.6321000060998,
+    "input_tokens": 493,
+    "output_tokens": 44,
+    "cost_usd": 2.0706e-05,
+    "raw": {
+     "choice": "contradicts",
+     "means": "Priya Nair founded Northwind Labs",
+     "id": "gen-dec-1790394373-U2fQmTyvUtAjXIUXeQ1j",
+     "reason": "contradicts (P(supports) 0.00): Priya Nair founded Northwind Labs"
+    },
+    "probability": 0.0,
+    "score": null,
+    "quality": null
+   },
+   "store_all": {
+    "variant": "store_all",
+    "model": "(no model)",
+    "label": "valid",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "every extracted edge is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_self_check": {
+    "variant": "llm_self_check",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "invalid",
+    "confidence": null,
+    "latency_ms": 1358.1918000127189,
+    "input_tokens": 277,
+    "output_tokens": 6,
+    "cost_usd": 7.825e-05,
+    "raw": {
+     "text": "{\"label\": \"invalid\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 4,
+  "text": "(Tom Becker) -[ceo_of]-> (Northwind Labs)  |  Priya Nair joined Northwind Labs as CTO in 2023. Before that…",
+  "expected": "valid",
+  "note": null,
+  "input": {
+   "document": "Priya Nair joined Northwind Labs as CTO in 2023. Before that, she spent six years at Contoso, where she led the payments team. Northwind's CEO, Tom Becker, founded the company in 2019.",
+   "subject": "Tom Becker",
+   "relation": "ceo_of",
+   "object": "Northwind Labs"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "valid",
+    "confidence": 0.9,
+    "latency_ms": 881.2298999982886,
+    "input_tokens": 495,
+    "output_tokens": 42,
+    "cost_usd": 2.079e-05,
+    "raw": {
+     "choice": "supports",
+     "means": "Tom Becker is currently the CEO or leader of Northwind Labs",
+     "id": "gen-dec-1790394374-mRcbJGPMwpJUlUJ42AgH",
+     "reason": "supports (P(supports) 0.93): Tom Becker is currently the CEO or leader of Northwind Labs"
+    },
+    "probability": 0.93,
+    "score": null,
+    "quality": null
+   },
+   "store_all": {
+    "variant": "store_all",
+    "model": "(no model)",
+    "label": "valid",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "every extracted edge is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_self_check": {
+    "variant": "llm_self_check",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "valid",
+    "confidence": null,
+    "latency_ms": 2128.749000024982,
+    "input_tokens": 278,
+    "output_tokens": 6,
+    "cost_usd": 7.85e-05,
+    "raw": {
+     "text": "{\"label\": \"valid\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 5,
+  "text": "(Priya Nair) -[works_at]-> (Microsoft)  |  Priya Nair joined Northwind Labs as CTO in 2023. Before that…",
+  "expected": "invalid",
+  "note": "an entity the extractor invented: code rejects it",
+  "input": {
+   "document": "Priya Nair joined Northwind Labs as CTO in 2023. Before that, she spent six years at Contoso, where she led the payments team. Northwind's CEO, Tom Becker, founded the company in 2019.",
+   "subject": "Priya Nair",
+   "relation": "works_at",
+   "object": "Microsoft"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "(code rule)",
+    "label": "invalid",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "not in the document: ['Microsoft']"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "store_all": {
+    "variant": "store_all",
+    "model": "(no model)",
+    "label": "valid",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "every extracted edge is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_self_check": {
+    "variant": "llm_self_check",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "invalid",
+    "confidence": null,
+    "latency_ms": 1270.7301000191364,
+    "input_tokens": 277,
+    "output_tokens": 6,
+    "cost_usd": 7.825e-05,
+    "raw": {
+     "text": "{\"label\": \"invalid\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 6,
+  "text": "(Tom Becker) -[works_at]-> (Northwind Labs)  |  Priya Nair joined Northwind Labs as CTO in 2023. Before that…",
+  "expected": "valid",
+  "note": "hard: implied by being its CEO",
+  "input": {
+   "document": "Priya Nair joined Northwind Labs as CTO in 2023. Before that, she spent six years at Contoso, where she led the payments team. Northwind's CEO, Tom Becker, founded the company in 2019.",
+   "subject": "Tom Becker",
+   "relation": "works_at",
+   "object": "Northwind Labs"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "valid",
+    "confidence": 0.29,
+    "latency_ms": 934.2935000022408,
+    "input_tokens": 490,
+    "output_tokens": 42,
+    "cost_usd": 2.058e-05,
+    "raw": {
+     "choice": "supports",
+     "means": "Tom Becker currently works at Northwind Labs",
+     "id": "gen-dec-1790394377-N25UDOL4NLH4zJuPeQKJ",
+     "reason": "supports (P(supports) 0.53): Tom Becker currently works at Northwind Labs"
+    },
+    "probability": 0.53,
+    "score": null,
+    "quality": null
+   },
+   "store_all": {
+    "variant": "store_all",
+    "model": "(no model)",
+    "label": "valid",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "every extracted edge is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_self_check": {
+    "variant": "llm_self_check",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "valid",
+    "confidence": null,
+    "latency_ms": 1090.3344000107609,
+    "input_tokens": 278,
+    "output_tokens": 6,
+    "cost_usd": 7.85e-05,
+    "raw": {
+     "text": "{\"label\": \"valid\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 7,
+  "text": "(Fabrikam) -[acquired]-> (Tailspin Toys)  |  Fabrikam acquired Tailspin Toys in March for $40M. Tailspin'…",
+  "expected": "valid",
+  "note": null,
+  "input": {
+   "document": "Fabrikam acquired Tailspin Toys in March for $40M. Tailspin's founder, Maria Lopez, will stay on as an adviser.",
+   "subject": "Fabrikam",
+   "relation": "acquired",
+   "object": "Tailspin Toys"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "valid",
+    "confidence": 1.0,
+    "latency_ms": 1448.308499995619,
+    "input_tokens": 469,
+    "output_tokens": 42,
+    "cost_usd": 1.9698e-05,
+    "raw": {
+     "choice": "supports",
+     "means": "Fabrikam bought Tailspin Toys (completed, not planned)",
+     "id": "gen-dec-1790394379-mDRTXabbxW69rvJgE5NG",
+     "reason": "supports (P(supports) 1.00): Fabrikam bought Tailspin Toys (completed, not planned)"
+    },
+    "probability": 1.0,
+    "score": null,
+    "quality": null
+   },
+   "store_all": {
+    "variant": "store_all",
+    "model": "(no model)",
+    "label": "valid",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "every extracted edge is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_self_check": {
+    "variant": "llm_self_check",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "valid",
+    "confidence": null,
+    "latency_ms": 2015.7292000076268,
+    "input_tokens": 255,
+    "output_tokens": 6,
+    "cost_usd": 7.275e-05,
+    "raw": {
+     "text": "{\"label\": \"valid\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 8,
+  "text": "(Tailspin Toys) -[acquired]-> (Fabrikam)  |  Fabrikam acquired Tailspin Toys in March for $40M. Tailspin'…",
+  "expected": "invalid",
+  "note": "hard: direction reversed",
+  "input": {
+   "document": "Fabrikam acquired Tailspin Toys in March for $40M. Tailspin's founder, Maria Lopez, will stay on as an adviser.",
+   "subject": "Tailspin Toys",
+   "relation": "acquired",
+   "object": "Fabrikam"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "invalid",
+    "confidence": 1.0,
+    "latency_ms": 466.55439998721704,
+    "input_tokens": 468,
+    "output_tokens": 44,
+    "cost_usd": 1.9656e-05,
+    "raw": {
+     "choice": "contradicts",
+     "means": "Tailspin Toys bought Fabrikam (completed, not planned)",
+     "id": "gen-dec-1790394380-zyjwEhlaHJcGXK9ll26N",
+     "reason": "contradicts (P(supports) 0.00): Tailspin Toys bought Fabrikam (completed, not planned)"
+    },
+    "probability": 0.0,
+    "score": null,
+    "quality": null
+   },
+   "store_all": {
+    "variant": "store_all",
+    "model": "(no model)",
+    "label": "valid",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "every extracted edge is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_self_check": {
+    "variant": "llm_self_check",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "invalid",
+    "confidence": null,
+    "latency_ms": 1274.1726000094786,
+    "input_tokens": 255,
+    "output_tokens": 11,
+    "cost_usd": 8.025e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"invalid\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 9,
+  "text": "(Maria Lopez) -[founded]-> (Tailspin Toys)  |  Fabrikam acquired Tailspin Toys in March for $40M. Tailspin'…",
+  "expected": "valid",
+  "note": null,
+  "input": {
+   "document": "Fabrikam acquired Tailspin Toys in March for $40M. Tailspin's founder, Maria Lopez, will stay on as an adviser.",
+   "subject": "Maria Lopez",
+   "relation": "founded",
+   "object": "Tailspin Toys"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "valid",
+    "confidence": 0.87,
+    "latency_ms": 939.366800012067,
+    "input_tokens": 462,
+    "output_tokens": 42,
+    "cost_usd": 1.9404e-05,
+    "raw": {
+     "choice": "supports",
+     "means": "Maria Lopez founded Tailspin Toys",
+     "id": "gen-dec-1790394382-c7CeDwxXIyMStkkfo6HP",
+     "reason": "supports (P(supports) 0.92): Maria Lopez founded Tailspin Toys"
+    },
+    "probability": 0.92,
+    "score": null,
+    "quality": null
+   },
+   "store_all": {
+    "variant": "store_all",
+    "model": "(no model)",
+    "label": "valid",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "every extracted edge is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_self_check": {
+    "variant": "llm_self_check",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "valid",
+    "confidence": null,
+    "latency_ms": 1018.3750999858603,
+    "input_tokens": 254,
+    "output_tokens": 11,
+    "cost_usd": 8e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"valid\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 10,
+  "text": "(Maria Lopez) -[ceo_of]-> (Tailspin Toys)  |  Fabrikam acquired Tailspin Toys in March for $40M. Tailspin'…",
+  "expected": "invalid",
+  "note": "hard: founder and adviser, not stated as CEO",
+  "input": {
+   "document": "Fabrikam acquired Tailspin Toys in March for $40M. Tailspin's founder, Maria Lopez, will stay on as an adviser.",
+   "subject": "Maria Lopez",
+   "relation": "ceo_of",
+   "object": "Tailspin Toys"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "invalid",
+    "confidence": 0.88,
+    "latency_ms": 1411.9659999851137,
+    "input_tokens": 468,
+    "output_tokens": 44,
+    "cost_usd": 1.9656e-05,
+    "raw": {
+     "choice": "contradicts",
+     "means": "Maria Lopez is currently the CEO or leader of Tailspin Toys",
+     "id": "gen-dec-1790394383-BhB4C8KvgNrxcZgJjL98",
+     "reason": "contradicts (P(supports) 0.00): Maria Lopez is currently the CEO or leader of Tailspin Toys"
+    },
+    "probability": 0.0,
+    "score": null,
+    "quality": null
+   },
+   "store_all": {
+    "variant": "store_all",
+    "model": "(no model)",
+    "label": "valid",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "every extracted edge is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_self_check": {
+    "variant": "llm_self_check",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "invalid",
+    "confidence": null,
+    "latency_ms": 1495.3137999982573,
+    "input_tokens": 256,
+    "output_tokens": 6,
+    "cost_usd": 7.3e-05,
+    "raw": {
+     "text": "{\"label\": \"invalid\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 11,
+  "text": "(Dr. Chen) -[works_at]-> (Hillview University)  |  Dr. Chen declined an offer from Globex and remains a profess…",
+  "expected": "valid",
+  "note": null,
+  "input": {
+   "document": "Dr. Chen declined an offer from Globex and remains a professor at Hillview University.",
+   "subject": "Dr. Chen",
+   "relation": "works_at",
+   "object": "Hillview University"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "valid",
+    "confidence": 1.0,
+    "latency_ms": 675.2985999919474,
+    "input_tokens": 457,
+    "output_tokens": 42,
+    "cost_usd": 1.9194e-05,
+    "raw": {
+     "choice": "supports",
+     "means": "Dr. Chen currently works at Hillview University",
+     "id": "gen-dec-1790394384-8NWK8BxUvJIf04hgLgOm",
+     "reason": "supports (P(supports) 1.00): Dr. Chen currently works at Hillview University"
+    },
+    "probability": 1.0,
+    "score": null,
+    "quality": null
+   },
+   "store_all": {
+    "variant": "store_all",
+    "model": "(no model)",
+    "label": "valid",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "every extracted edge is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_self_check": {
+    "variant": "llm_self_check",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "valid",
+    "confidence": null,
+    "latency_ms": 1412.1236999926623,
+    "input_tokens": 244,
+    "output_tokens": 6,
+    "cost_usd": 7e-05,
+    "raw": {
+     "text": "{\"label\": \"valid\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 12,
+  "text": "(Dr. Chen) -[works_at]-> (Globex)  |  Dr. Chen declined an offer from Globex and remains a profess…",
+  "expected": "invalid",
+  "note": "hard: declined the offer (negation)",
+  "input": {
+   "document": "Dr. Chen declined an offer from Globex and remains a professor at Hillview University.",
+   "subject": "Dr. Chen",
+   "relation": "works_at",
+   "object": "Globex"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "invalid",
+    "confidence": 1.0,
+    "latency_ms": 918.8588999968488,
+    "input_tokens": 455,
+    "output_tokens": 44,
+    "cost_usd": 1.911e-05,
+    "raw": {
+     "choice": "contradicts",
+     "means": "Dr. Chen currently works at Globex",
+     "id": "gen-dec-1790394385-P0zDxzPmYs3D4yDIMMq4",
+     "reason": "contradicts (P(supports) 0.00): Dr. Chen currently works at Globex"
+    },
+    "probability": 0.0,
+    "score": null,
+    "quality": null
+   },
+   "store_all": {
+    "variant": "store_all",
+    "model": "(no model)",
+    "label": "valid",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "every extracted edge is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_self_check": {
+    "variant": "llm_self_check",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "invalid",
+    "confidence": null,
+    "latency_ms": 1121.5717000013683,
+    "input_tokens": 243,
+    "output_tokens": 6,
+    "cost_usd": 6.975e-05,
+    "raw": {
+     "text": "{\"label\": \"invalid\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 13,
+  "text": "(Initech) -[acquired]-> (Vandelay Industries)  |  According to unconfirmed reports, Initech is in early talks …",
+  "expected": "invalid",
+  "note": "hard: an unconfirmed rumour of talks",
+  "input": {
+   "document": "According to unconfirmed reports, Initech is in early talks to buy Vandelay Industries.",
+   "subject": "Initech",
+   "relation": "acquired",
+   "object": "Vandelay Industries"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "invalid",
+    "confidence": 0.36,
+    "latency_ms": 488.3364999841433,
+    "input_tokens": 461,
+    "output_tokens": 44,
+    "cost_usd": 1.9362e-05,
+    "raw": {
+     "choice": "contradicts",
+     "means": "Initech bought Vandelay Industries (completed, not planned)",
+     "id": "gen-dec-1790394386-ZRUQF96kcTxl3ot7eRti",
+     "reason": "contradicts (P(supports) 0.00): Initech bought Vandelay Industries (completed, not planned)"
+    },
+    "probability": 0.0,
+    "score": null,
+    "quality": null
+   },
+   "store_all": {
+    "variant": "store_all",
+    "model": "(no model)",
+    "label": "valid",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "every extracted edge is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_self_check": {
+    "variant": "llm_self_check",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "invalid",
+    "confidence": null,
+    "latency_ms": 2165.4835999943316,
+    "input_tokens": 243,
+    "output_tokens": 6,
+    "cost_usd": 6.975e-05,
+    "raw": {
+     "text": "{\"label\": \"invalid\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 14,
+  "text": "(Ana Silva) -[manages]-> (Sam Porter)  |  Sam Porter, who manages the Berlin office, reports to Ana Si…",
+  "expected": "valid",
+  "note": "hard: stated as 'Sam reports to Ana'",
+  "input": {
+   "document": "Sam Porter, who manages the Berlin office, reports to Ana Silva, Acme's COO.",
+   "subject": "Ana Silva",
+   "relation": "manages",
+   "object": "Sam Porter"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "valid",
+    "confidence": 0.96,
+    "latency_ms": 500.5650999955833,
+    "input_tokens": 450,
+    "output_tokens": 42,
+    "cost_usd": 1.89e-05,
+    "raw": {
+     "choice": "supports",
+     "means": "Ana Silva is Sam Porter's manager",
+     "id": "gen-dec-1790394389-sRu3s0fmQ3lj48DKjoGe",
+     "reason": "supports (P(supports) 0.98): Ana Silva is Sam Porter's manager"
+    },
+    "probability": 0.98,
+    "score": null,
+    "quality": null
+   },
+   "store_all": {
+    "variant": "store_all",
+    "model": "(no model)",
+    "label": "valid",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "every extracted edge is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_self_check": {
+    "variant": "llm_self_check",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "valid",
+    "confidence": null,
+    "latency_ms": 1694.5116999850143,
+    "input_tokens": 242,
+    "output_tokens": 6,
+    "cost_usd": 6.95e-05,
+    "raw": {
+     "text": "{\"label\": \"valid\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 15,
+  "text": "(Sam Porter) -[manages]-> (Ana Silva)  |  Sam Porter, who manages the Berlin office, reports to Ana Si…",
+  "expected": "invalid",
+  "note": "hard: direction reversed",
+  "input": {
+   "document": "Sam Porter, who manages the Berlin office, reports to Ana Silva, Acme's COO.",
+   "subject": "Sam Porter",
+   "relation": "manages",
+   "object": "Ana Silva"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "invalid",
+    "confidence": 1.0,
+    "latency_ms": 470.6208000134211,
+    "input_tokens": 450,
+    "output_tokens": 44,
+    "cost_usd": 1.89e-05,
+    "raw": {
+     "choice": "contradicts",
+     "means": "Sam Porter is Ana Silva's manager",
+     "id": "gen-dec-1790394390-Tk5Sn63pTRAijvCSJIYB",
+     "reason": "contradicts (P(supports) 0.00): Sam Porter is Ana Silva's manager"
+    },
+    "probability": 0.0,
+    "score": null,
+    "quality": null
+   },
+   "store_all": {
+    "variant": "store_all",
+    "model": "(no model)",
+    "label": "valid",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "every extracted edge is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_self_check": {
+    "variant": "llm_self_check",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "invalid",
+    "confidence": null,
+    "latency_ms": 2010.6006000132766,
+    "input_tokens": 242,
+    "output_tokens": 6,
+    "cost_usd": 6.95e-05,
+    "raw": {
+     "text": "{\"label\": \"invalid\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 16,
+  "text": "(Ana Silva) -[coo_of]-> (Acme)  |  Sam Porter, who manages the Berlin office, reports to Ana Si…",
+  "expected": "valid",
+  "note": null,
+  "input": {
+   "document": "Sam Porter, who manages the Berlin office, reports to Ana Silva, Acme's COO.",
+   "subject": "Ana Silva",
+   "relation": "coo_of",
+   "object": "Acme"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "valid",
+    "confidence": 0.98,
+    "latency_ms": 3123.0887999990955,
+    "input_tokens": 452,
+    "output_tokens": 42,
+    "cost_usd": 1.8984e-05,
+    "raw": {
+     "choice": "supports",
+     "means": "Ana Silva is currently COO of Acme",
+     "id": "gen-dec-1790394395-mUJKHwwMSKsoVoibR1Pe",
+     "reason": "supports (P(supports) 0.99): Ana Silva is currently COO of Acme"
+    },
+    "probability": 0.99,
+    "score": null,
+    "quality": null
+   },
+   "store_all": {
+    "variant": "store_all",
+    "model": "(no model)",
+    "label": "valid",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "every extracted edge is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_self_check": {
+    "variant": "llm_self_check",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "valid",
+    "confidence": null,
+    "latency_ms": 3022.664000018267,
+    "input_tokens": 244,
+    "output_tokens": 11,
+    "cost_usd": 7.75e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"valid\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 17,
+  "text": "(Hooli) -[headquartered_in]-> (Austin)  |  Hooli's new headquarters in Austin opened on Monday. The com…",
+  "expected": "valid",
+  "note": null,
+  "input": {
+   "document": "Hooli's new headquarters in Austin opened on Monday. The company, led by Gavin Belson, previously operated from Palo Alto.",
+   "subject": "Hooli",
+   "relation": "headquartered_in",
+   "object": "Austin"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "valid",
+    "confidence": 0.99,
+    "latency_ms": 919.5077000185847,
+    "input_tokens": 460,
+    "output_tokens": 42,
+    "cost_usd": 1.932e-05,
+    "raw": {
+     "choice": "supports",
+     "means": "Hooli's headquarters are currently in Austin",
+     "id": "gen-dec-1790394396-bFDP7C9jRLbp8GOt1mUu",
+     "reason": "supports (P(supports) 0.99): Hooli's headquarters are currently in Austin"
+    },
+    "probability": 0.99,
+    "score": null,
+    "quality": null
+   },
+   "store_all": {
+    "variant": "store_all",
+    "model": "(no model)",
+    "label": "valid",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "every extracted edge is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_self_check": {
+    "variant": "llm_self_check",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "valid",
+    "confidence": null,
+    "latency_ms": 1858.4020000125747,
+    "input_tokens": 251,
+    "output_tokens": 6,
+    "cost_usd": 7.175e-05,
+    "raw": {
+     "text": "{\"label\": \"valid\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 18,
+  "text": "(Hooli) -[headquartered_in]-> (Palo Alto)  |  Hooli's new headquarters in Austin opened on Monday. The com…",
+  "expected": "invalid",
+  "note": "hard: previously",
+  "input": {
+   "document": "Hooli's new headquarters in Austin opened on Monday. The company, led by Gavin Belson, previously operated from Palo Alto.",
+   "subject": "Hooli",
+   "relation": "headquartered_in",
+   "object": "Palo Alto"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "invalid",
+    "confidence": 1.0,
+    "latency_ms": 1640.7918999902904,
+    "input_tokens": 463,
+    "output_tokens": 44,
+    "cost_usd": 1.9446e-05,
+    "raw": {
+     "choice": "contradicts",
+     "means": "Hooli's headquarters are currently in Palo Alto",
+     "id": "gen-dec-1790394399-35ZdA98kxNJnRxiaZTj5",
+     "reason": "contradicts (P(supports) 0.00): Hooli's headquarters are currently in Palo Alto"
+    },
+    "probability": 0.0,
+    "score": null,
+    "quality": null
+   },
+   "store_all": {
+    "variant": "store_all",
+    "model": "(no model)",
+    "label": "valid",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "every extracted edge is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_self_check": {
+    "variant": "llm_self_check",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "invalid",
+    "confidence": null,
+    "latency_ms": 2297.6809999963734,
+    "input_tokens": 253,
+    "output_tokens": 6,
+    "cost_usd": 7.225e-05,
+    "raw": {
+     "text": "{\"label\": \"invalid\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 19,
+  "text": "(Gavin Belson) -[ceo_of]-> (Hooli)  |  Hooli's new headquarters in Austin opened on Monday. The com…",
+  "expected": "valid",
+  "note": "'led by'",
+  "input": {
+   "document": "Hooli's new headquarters in Austin opened on Monday. The company, led by Gavin Belson, previously operated from Palo Alto.",
+   "subject": "Gavin Belson",
+   "relation": "ceo_of",
+   "object": "Hooli"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "valid",
+    "confidence": 0.96,
+    "latency_ms": 487.5363000028301,
+    "input_tokens": 466,
+    "output_tokens": 42,
+    "cost_usd": 1.9572e-05,
+    "raw": {
+     "choice": "supports",
+     "means": "Gavin Belson is currently the CEO or leader of Hooli",
+     "id": "gen-dec-1790394400-u7a5vPKhNC83XjfLb0Il",
+     "reason": "supports (P(supports) 0.97): Gavin Belson is currently the CEO or leader of Hooli"
+    },
+    "probability": 0.97,
+    "score": null,
+    "quality": null
+   },
+   "store_all": {
+    "variant": "store_all",
+    "model": "(no model)",
+    "label": "valid",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "every extracted edge is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_self_check": {
+    "variant": "llm_self_check",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "valid",
+    "confidence": null,
+    "latency_ms": 1339.8546999960672,
+    "input_tokens": 253,
+    "output_tokens": 6,
+    "cost_usd": 7.225e-05,
+    "raw": {
+     "text": "{\"label\": \"valid\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 20,
+  "text": "(Umbrella Corp) -[owns]-> (Riverside plant)  |  The Riverside plant, owned by Umbrella Corp since 2015, was …",
+  "expected": "invalid",
+  "note": "hard: owned until it was sold",
+  "input": {
+   "document": "The Riverside plant, owned by Umbrella Corp since 2015, was sold to Stark Industries last year.",
+   "subject": "Umbrella Corp",
+   "relation": "owns",
+   "object": "Riverside plant"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "invalid",
+    "confidence": 1.0,
+    "latency_ms": 549.3354999925941,
+    "input_tokens": 457,
+    "output_tokens": 44,
+    "cost_usd": 1.9194e-05,
+    "raw": {
+     "choice": "contradicts",
+     "means": "Umbrella Corp currently owns Riverside plant",
+     "id": "gen-dec-1790394401-11hLPjn7GRWPYKBcKoI6",
+     "reason": "contradicts (P(supports) 0.00): Umbrella Corp currently owns Riverside plant"
+    },
+    "probability": 0.0,
+    "score": null,
+    "quality": null
+   },
+   "store_all": {
+    "variant": "store_all",
+    "model": "(no model)",
+    "label": "valid",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "every extracted edge is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_self_check": {
+    "variant": "llm_self_check",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "invalid",
+    "confidence": null,
+    "latency_ms": 1437.0096999919042,
+    "input_tokens": 247,
+    "output_tokens": 6,
+    "cost_usd": 7.075e-05,
+    "raw": {
+     "text": "{\"label\": \"invalid\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 21,
+  "text": "(Stark Industries) -[owns]-> (Riverside plant)  |  The Riverside plant, owned by Umbrella Corp since 2015, was …",
+  "expected": "valid",
+  "note": null,
+  "input": {
+   "document": "The Riverside plant, owned by Umbrella Corp since 2015, was sold to Stark Industries last year.",
+   "subject": "Stark Industries",
+   "relation": "owns",
+   "object": "Riverside plant"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "valid",
+    "confidence": 0.89,
+    "latency_ms": 905.7313000084832,
+    "input_tokens": 457,
+    "output_tokens": 42,
+    "cost_usd": 1.9194e-05,
+    "raw": {
+     "choice": "supports",
+     "means": "Stark Industries currently owns Riverside plant",
+     "id": "gen-dec-1790394403-u8J7spVYeSd5wevKoevW",
+     "reason": "supports (P(supports) 0.93): Stark Industries currently owns Riverside plant"
+    },
+    "probability": 0.93,
+    "score": null,
+    "quality": null
+   },
+   "store_all": {
+    "variant": "store_all",
+    "model": "(no model)",
+    "label": "valid",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "every extracted edge is stored"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_self_check": {
+    "variant": "llm_self_check",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "valid",
+    "confidence": null,
+    "latency_ms": 1242.0382000273094,
+    "input_tokens": 247,
+    "output_tokens": 6,
+    "cost_usd": 7.075e-05,
+    "raw": {
+     "text": "{\"label\": \"valid\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ }
+]

@@ -1,0 +1,1206 @@
+[
+ {
+  "idx": 0,
+  "text": "I was charged twice for order A-104. Please refund the duplicate.",
+  "expected": "billing",
+  "note": "the reference fixture (first real run: the rubric also demanded '$49', which the question never asked; both correct answers failed)",
+  "input": {
+   "message": "I was charged twice for order A-104. Please refund the duplicate.",
+   "facts": {
+    "order": {
+     "id": "A-104",
+     "charges": [
+      49,
+      49
+     ]
+    }
+   },
+   "rubric": "Required: the duplicate charge will be refunded."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "billing",
+    "confidence": 1.0,
+    "latency_ms": 9899.878500029445,
+    "input_tokens": 707,
+    "output_tokens": 112,
+    "cost_usd": 0.00012455,
+    "raw": {
+     "needs_human": 0.08,
+     "priority": "high",
+     "reason": "intent billing (1.00), needs_human 0.08, urgency 0.58 → billing",
+     "answer": "I have confirmed that you were charged twice for order A-104. As duplicate charges are always refunded, I have initiated a refund for the extra charge to your original payment method.",
+     "grade_cost": 1.785e-05,
+     "route": "billing"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.91
+   },
+   "single_agent": {
+    "variant": "single_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "billing",
+    "confidence": null,
+    "latency_ms": 5572.685000021011,
+    "input_tokens": 338,
+    "output_tokens": 42,
+    "cost_usd": 0.0001475,
+    "raw": {
+     "finish_reason": "stop",
+     "reason": "route billing",
+     "answer": "I have confirmed that you were charged twice for order A-104. Per our policy, duplicate charges are always refunded to the original payment method.",
+     "grade_cost": 1.7556e-05,
+     "route": "billing"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.85
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/aa18de5aa0086cf8b5816560fc65872e"
+ },
+ {
+  "idx": 1,
+  "text": "Can I get a refund for the lamp? Never used it, it arrived 10 days ago.",
+  "expected": "billing",
+  "note": null,
+  "input": {
+   "message": "Can I get a refund for the lamp? Never used it, it arrived 10 days ago.",
+   "facts": {
+    "order": {
+     "id": "3301",
+     "item": "lamp",
+     "delivered_days_ago": 10
+    }
+   },
+   "rubric": "Required: yes, it can be refunded (unused, within 30 days)."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "billing",
+    "confidence": 1.0,
+    "latency_ms": 8330.415799922775,
+    "input_tokens": 725,
+    "output_tokens": 127,
+    "cost_usd": 0.00014947,
+    "raw": {
+     "needs_human": 0.08,
+     "priority": "normal",
+     "reason": "intent billing (1.00), needs_human 0.08, urgency 0.23 → billing",
+     "answer": "Since your lamp is unused and arrived within the last 30 days, you are eligible for a refund to your original payment method. Please note that because this is a change-of-mind return, a $5 label fee will be deducted from your refund.",
+     "grade_cost": 1.8942e-05,
+     "route": "billing"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.92
+   },
+   "single_agent": {
+    "variant": "single_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "billing",
+    "confidence": null,
+    "latency_ms": 2528.214999998454,
+    "input_tokens": 346,
+    "output_tokens": 54,
+    "cost_usd": 0.0001675,
+    "raw": {
+     "finish_reason": "stop",
+     "reason": "route billing",
+     "answer": "Since your lamp is unused and arrived within the last 30 days, you are eligible for a refund to your original payment method. Please note that change-of-mind returns require a $5 label fee.",
+     "grade_cost": 1.8522e-05,
+     "route": "billing"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.92
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/b20bf8d4ae1373c52acaf6d21de8e065"
+ },
+ {
+  "idx": 2,
+  "text": "WHY did you charge me $9 AGAIN this month?! I never asked for this!!",
+  "expected": "billing",
+  "note": "hard: angry, but routine",
+  "input": {
+   "message": "WHY did you charge me $9 AGAIN this month?! I never asked for this!!",
+   "facts": {
+    "subscription": "Acme Plus, monthly, $9, renewed 2026-09-01"
+   },
+   "rubric": "Required: explains the $9 is the Acme Plus monthly renewal."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "billing",
+    "confidence": 1.0,
+    "latency_ms": 7755.763000051957,
+    "input_tokens": 707,
+    "output_tokens": 131,
+    "cost_usd": 0.000153466,
+    "raw": {
+     "needs_human": 0.18,
+     "priority": "high",
+     "reason": "intent billing (1.00), needs_human 0.18, urgency 0.60 → billing",
+     "answer": "Your Acme Plus subscription is a monthly service that renews automatically at $9 per month. Since this was a recurring subscription charge rather than a duplicate, it does not qualify for a refund under our policy. You can manage or cancel your subscription settings at any time through your account dashboard.",
+     "grade_cost": 1.89e-05,
+     "route": "billing"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.93
+   },
+   "single_agent": {
+    "variant": "single_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "billing",
+    "confidence": null,
+    "latency_ms": 3773.113999981433,
+    "input_tokens": 340,
+    "output_tokens": 47,
+    "cost_usd": 0.0001555,
+    "raw": {
+     "finish_reason": "stop",
+     "reason": "route billing",
+     "answer": "Your Acme Plus subscription is a monthly service that costs $9 per month. This charge reflects the automatic renewal of your plan on September 1st.",
+     "grade_cost": 1.7766e-05,
+     "route": "billing"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.95
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/c5ac74a5b81372f90b213e7ee3ebe180"
+ },
+ {
+  "idx": 3,
+  "text": "I returned the jacket but got $5 less back than I paid.",
+  "expected": "billing",
+  "note": null,
+  "input": {
+   "message": "I returned the jacket but got $5 less back than I paid.",
+   "facts": {
+    "return": {
+     "item": "jacket",
+     "reason": "change of mind",
+     "refunded": 55,
+     "paid": 60
+    }
+   },
+   "rubric": "Required: explains the $5 return-label charge for change-of-mind returns."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "billing",
+    "confidence": 1.0,
+    "latency_ms": 3497.4310000543483,
+    "input_tokens": 718,
+    "output_tokens": 113,
+    "cost_usd": 0.000127344,
+    "raw": {
+     "needs_human": 0.13,
+     "priority": "normal",
+     "reason": "intent billing (1.00), needs_human 0.13, urgency 0.24 → billing",
+     "answer": "We have processed your refund for the jacket, but a $5 deduction was applied as per our policy for change-of-mind returns. This amount covers the cost of the return shipping label.",
+     "grade_cost": 1.8018e-05,
+     "route": "billing"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.94
+   },
+   "single_agent": {
+    "variant": "single_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "billing",
+    "confidence": null,
+    "latency_ms": 1723.7260999972932,
+    "input_tokens": 342,
+    "output_tokens": 50,
+    "cost_usd": 0.0001605,
+    "raw": {
+     "finish_reason": "stop",
+     "reason": "route billing",
+     "answer": "For change-of-mind returns, a $5 shipping label fee is deducted from your refund amount. Since you returned the jacket for this reason, the $5 difference reflects that standard policy.",
+     "grade_cost": 1.8018e-05,
+     "route": "billing"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.83
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/7f9f9b57dec8fcd352dccf28cca700c4"
+ },
+ {
+  "idx": 4,
+  "text": "Please refund my $50 gift card, I won't use it.",
+  "expected": "billing",
+  "note": null,
+  "input": {
+   "message": "Please refund my $50 gift card, I won't use it.",
+   "facts": {
+    "gift_card": {
+     "value": 50
+    }
+   },
+   "rubric": "Required: explains gift cards cannot be refunded."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "billing",
+    "confidence": 1.0,
+    "latency_ms": 2313.7283000396565,
+    "input_tokens": 675,
+    "output_tokens": 105,
+    "cost_usd": 0.000109794,
+    "raw": {
+     "needs_human": 0.19,
+     "priority": "normal",
+     "reason": "intent billing (1.00), needs_human 0.19, urgency 0.22 → billing",
+     "answer": "I apologize, but per our company policy, gift cards cannot be refunded. We are unable to process a return for your $50 gift card balance.",
+     "grade_cost": 1.7472e-05,
+     "route": "billing"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.95
+   },
+   "single_agent": {
+    "variant": "single_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "billing",
+    "confidence": null,
+    "latency_ms": 1968.4151000110433,
+    "input_tokens": 324,
+    "output_tokens": 37,
+    "cost_usd": 0.0001365,
+    "raw": {
+     "finish_reason": "stop",
+     "reason": "route billing",
+     "answer": "I am sorry, but our policy states that gift cards cannot be refunded. We are unable to process a return for this item.",
+     "grade_cost": 1.7262e-05,
+     "route": "billing"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.95
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/5ecaa40177c70f07ef95ce7a5cd2d739"
+ },
+ {
+  "idx": 5,
+  "text": "Where is order 7730?",
+  "expected": "orders",
+  "note": null,
+  "input": {
+   "message": "Where is order 7730?",
+   "facts": {
+    "order": {
+     "id": "7730",
+     "status": "out for delivery",
+     "eta": "today"
+    }
+   },
+   "rubric": "Required: order 7730 is out for delivery and arrives today."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "orders",
+    "confidence": 1.0,
+    "latency_ms": 2819.475300027989,
+    "input_tokens": 698,
+    "output_tokens": 106,
+    "cost_usd": 0.000113924,
+    "raw": {
+     "needs_human": 0.05,
+     "priority": "high",
+     "reason": "intent orders (1.00), needs_human 0.05, urgency 0.59 → orders",
+     "answer": "Order 7730 is currently out for delivery and is expected to arrive today. Please let me know if you need any further assistance with your shipment.",
+     "grade_cost": 1.7556e-05,
+     "route": "orders"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.94
+   },
+   "single_agent": {
+    "variant": "single_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "orders",
+    "confidence": null,
+    "latency_ms": 1596.7151999939233,
+    "input_tokens": 332,
+    "output_tokens": 40,
+    "cost_usd": 0.000143,
+    "raw": {
+     "finish_reason": "stop",
+     "reason": "route orders",
+     "answer": "Your order 7730 is currently out for delivery and is expected to arrive today. You can track the status through your account dashboard.",
+     "grade_cost": 1.743e-05,
+     "route": "orders"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.97
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/e7d438a0141317ee75f58a40c3bbf715"
+ },
+ {
+  "idx": 6,
+  "text": "Has order 5521 shipped yet?",
+  "expected": "orders",
+  "note": null,
+  "input": {
+   "message": "Has order 5521 shipped yet?",
+   "facts": {
+    "order": {
+     "id": "5521",
+     "status": "packing",
+     "ships": "tomorrow"
+    }
+   },
+   "rubric": "Required: it has not shipped yet; it ships tomorrow."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "orders",
+    "confidence": 1.0,
+    "latency_ms": 7902.646499976981,
+    "input_tokens": 698,
+    "output_tokens": 110,
+    "cost_usd": 0.000119716,
+    "raw": {
+     "needs_human": 0.03,
+     "priority": "normal",
+     "reason": "intent orders (1.00), needs_human 0.03, urgency 0.23 → orders",
+     "answer": "Order 5521 has not shipped yet and is currently in the packing stage. It is scheduled to ship tomorrow, so you can still update your delivery address if needed.",
+     "grade_cost": 1.7598e-05,
+     "route": "orders"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.97
+   },
+   "single_agent": {
+    "variant": "single_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "orders",
+    "confidence": null,
+    "latency_ms": 3235.158599971328,
+    "input_tokens": 331,
+    "output_tokens": 48,
+    "cost_usd": 0.00015475,
+    "raw": {
+     "finish_reason": "stop",
+     "reason": "route orders",
+     "answer": "Your order 5521 is currently being packed and is scheduled to ship tomorrow. Since it has not shipped yet, you are still able to update your shipping address if needed.",
+     "grade_cost": 1.764e-05,
+     "route": "orders"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.98
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/1e993789ce2c701986663eddad89b386"
+ },
+ {
+  "idx": 7,
+  "text": "Can I still change the delivery address on order 8812?",
+  "expected": "orders",
+  "note": null,
+  "input": {
+   "message": "Can I still change the delivery address on order 8812?",
+   "facts": {
+    "order": {
+     "id": "8812",
+     "status": "processing"
+    }
+   },
+   "rubric": "Required: yes, because it has not shipped yet."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "orders",
+    "confidence": 1.0,
+    "latency_ms": 8915.968200017232,
+    "input_tokens": 692,
+    "output_tokens": 117,
+    "cost_usd": 0.000129756,
+    "raw": {
+     "needs_human": 0.09,
+     "priority": "normal",
+     "reason": "intent orders (1.00), needs_human 0.09, urgency 0.32 → orders",
+     "answer": "Yes, you can change the delivery address for order 8812 because it is currently in the processing stage. Please provide the new address details, and I will update them for you before the order ships.",
+     "grade_cost": 1.806e-05,
+     "route": "orders"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.82
+   },
+   "single_agent": {
+    "variant": "single_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "orders",
+    "confidence": null,
+    "latency_ms": 1933.4680000320077,
+    "input_tokens": 330,
+    "output_tokens": 52,
+    "cost_usd": 0.0001605,
+    "raw": {
+     "finish_reason": "stop",
+     "reason": "route orders",
+     "answer": "You can change the delivery address for order 8812 as long as it has not yet shipped. Since your order is currently in the processing stage, please contact us immediately to update your information.",
+     "grade_cost": 1.7976e-05,
+     "route": "orders"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.84
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/e090eeee230ef58821fa4363e34a4ce0"
+ },
+ {
+  "idx": 8,
+  "text": "It says my parcel was delivered but I don't have it!!",
+  "expected": "orders",
+  "note": "hard: upset, but a lookup answers it",
+  "input": {
+   "message": "It says my parcel was delivered but I don't have it!!",
+   "facts": {
+    "order": {
+     "id": "9004",
+     "status": "delivered",
+     "delivered": "yesterday 14:02",
+     "left_at": "front door"
+    }
+   },
+   "rubric": "Required: it was marked delivered yesterday at 14:02 at the front door."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "orders",
+    "confidence": 1.0,
+    "latency_ms": 4231.605999928433,
+    "input_tokens": 740,
+    "output_tokens": 125,
+    "cost_usd": 0.000148348,
+    "raw": {
+     "needs_human": 0.26,
+     "priority": "high",
+     "reason": "intent orders (1.00), needs_human 0.26, urgency 0.60 → orders",
+     "answer": "I am sorry to hear you have not received your order, which shows as delivered to your front door yesterday at 14:02. Please check around your property or with neighbors, as the status confirms it was successfully dropped off at that time.",
+     "grade_cost": 1.8648e-05,
+     "route": "orders"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.94
+   },
+   "single_agent": {
+    "variant": "single_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "orders",
+    "confidence": null,
+    "latency_ms": 1526.0590999969281,
+    "input_tokens": 352,
+    "output_tokens": 56,
+    "cost_usd": 0.000172,
+    "raw": {
+     "finish_reason": "stop",
+     "reason": "route orders",
+     "answer": "Your order 9004 was marked as delivered yesterday at 14:02 and left at your front door. Please check your immediate surroundings or with neighbors to see if it was placed in a secure location.",
+     "grade_cost": 1.8396e-05,
+     "route": "orders"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.93
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/7664b7f18827871f76367c4e08e51730"
+ },
+ {
+  "idx": 9,
+  "text": "I ordered express at 11am today, when does it arrive?",
+  "expected": "orders",
+  "note": null,
+  "input": {
+   "message": "I ordered express at 11am today, when does it arrive?",
+   "facts": {
+    "order": {
+     "id": "9120",
+     "shipping": "express",
+     "ordered": "today 11:00"
+    }
+   },
+   "rubric": "Required: the next business day."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "orders",
+    "confidence": 1.0,
+    "latency_ms": 1523.9641000516713,
+    "input_tokens": 718,
+    "output_tokens": 110,
+    "cost_usd": 0.000122844,
+    "raw": {
+     "needs_human": 0.05,
+     "priority": "high",
+     "reason": "intent orders (1.00), needs_human 0.05, urgency 0.54 → orders",
+     "answer": "Since your express order was placed before 2pm today, it is scheduled to arrive the next business day. Please let us know if you need any further assistance with your delivery.",
+     "grade_cost": 1.7598e-05,
+     "route": "orders"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.94
+   },
+   "single_agent": {
+    "variant": "single_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "orders",
+    "confidence": null,
+    "latency_ms": 1494.4969000061974,
+    "input_tokens": 342,
+    "output_tokens": 43,
+    "cost_usd": 0.00015,
+    "raw": {
+     "finish_reason": "stop",
+     "reason": "route orders",
+     "answer": "Since your express order was placed before 2pm, it is scheduled to arrive the next business day. You can track your package status through your account dashboard.",
+     "grade_cost": 1.743e-05,
+     "route": "orders"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.94
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/f3c59cbc3099127dc52f76ff7941cec2"
+ },
+ {
+  "idx": 10,
+  "text": "The app crashes every time I open my cart.",
+  "expected": "tech",
+  "note": null,
+  "input": {
+   "message": "The app crashes every time I open my cart.",
+   "facts": {
+    "known_issue": "cart crash in app 4.2.0, fixed in 4.2.1"
+   },
+   "rubric": "Required: update the app to 4.2.1."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "tech",
+    "confidence": 1.0,
+    "latency_ms": 1984.524799976498,
+    "input_tokens": 695,
+    "output_tokens": 131,
+    "cost_usd": 0.00015213,
+    "raw": {
+     "needs_human": 0.09,
+     "priority": "high",
+     "reason": "intent tech (1.00), needs_human 0.09, urgency 0.60 → tech",
+     "answer": "I am sorry to hear you are experiencing crashes in the app. This is a known issue in version 4.2.0, which has been resolved in the latest update, version 4.2.1. Please update your app to the newest version to fix this problem.",
+     "grade_cost": 1.8522e-05,
+     "route": "tech"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.96
+   },
+   "single_agent": {
+    "variant": "single_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "tech",
+    "confidence": null,
+    "latency_ms": 1337.8221999737434,
+    "input_tokens": 332,
+    "output_tokens": 55,
+    "cost_usd": 0.0001655,
+    "raw": {
+     "finish_reason": "stop",
+     "reason": "route tech",
+     "answer": "We are aware of a crashing issue in app version 4.2.0 when opening the cart. Please update your application to version 4.2.1 to resolve this problem.",
+     "grade_cost": 1.7724e-05,
+     "route": "tech"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.96
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/377b77407d36480f669e5bb0c099c44d"
+ },
+ {
+  "idx": 11,
+  "text": "I can't log in, it keeps saying my password is wrong.",
+  "expected": "tech",
+  "note": null,
+  "input": {
+   "message": "I can't log in, it keeps saying my password is wrong.",
+   "facts": {},
+   "rubric": "Required: use Forgot password on the login page."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "tech",
+    "confidence": 1.0,
+    "latency_ms": 1665.2388000511564,
+    "input_tokens": 654,
+    "output_tokens": 113,
+    "cost_usd": 0.000119456,
+    "raw": {
+     "needs_human": 0.16,
+     "priority": "high",
+     "reason": "intent tech (1.00), needs_human 0.16, urgency 0.80 → tech",
+     "answer": "To regain access to your account, please request a new password reset link through the login page. Please note that these links expire after one hour, so be sure to use it promptly once received.",
+     "grade_cost": 1.7808e-05,
+     "route": "tech"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.79
+   },
+   "single_agent": {
+    "variant": "single_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "tech",
+    "confidence": null,
+    "latency_ms": 1463.4969999897294,
+    "input_tokens": 313,
+    "output_tokens": 53,
+    "cost_usd": 0.00015775,
+    "raw": {
+     "finish_reason": "stop",
+     "reason": "route tech",
+     "answer": "You can reset your password by requesting a new link, but please note that these links expire after one hour. If you continue to have trouble, please check your account settings to ensure your login credentials are correct.",
+     "grade_cost": 1.7934e-05,
+     "route": "tech"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.33
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/41176e9bc6c7c2b271584e78568705ec"
+ },
+ {
+  "idx": 12,
+  "text": "How do I turn on two-factor authentication?",
+  "expected": "tech",
+  "note": null,
+  "input": {
+   "message": "How do I turn on two-factor authentication?",
+   "facts": {},
+   "rubric": "Required: Settings > Security, using an authenticator app."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "tech",
+    "confidence": 1.0,
+    "latency_ms": 1327.1796999615617,
+    "input_tokens": 644,
+    "output_tokens": 105,
+    "cost_usd": 0.000105996,
+    "raw": {
+     "needs_human": 0.05,
+     "priority": "normal",
+     "reason": "intent tech (1.00), needs_human 0.05, urgency 0.14 → tech",
+     "answer": "To turn on two-factor authentication, please navigate to Settings and then select Security. From there, you can enable the feature using an authenticator app.",
+     "grade_cost": 1.7388e-05,
+     "route": "tech"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.95
+   },
+   "single_agent": {
+    "variant": "single_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "tech",
+    "confidence": null,
+    "latency_ms": 1080.0715000368655,
+    "input_tokens": 308,
+    "output_tokens": 40,
+    "cost_usd": 0.000137,
+    "raw": {
+     "finish_reason": "stop",
+     "reason": "route tech",
+     "answer": "You can enable two-factor authentication by navigating to Settings and then selecting Security. From there, you can set up your preferred authenticator app.",
+     "grade_cost": 1.7304e-05,
+     "route": "tech"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.9
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/3ad3bf1b98c85fa16b4b29b9f9d5e003"
+ },
+ {
+  "idx": 13,
+  "text": "The checkout button does nothing in Safari. This is costing me time!",
+  "expected": "tech",
+  "note": "hard: urgent tone, routine fix",
+  "input": {
+   "message": "The checkout button does nothing in Safari. This is costing me time!",
+   "facts": {
+    "known_issue": "Safari 17 content blockers break checkout; disable them or use another browser"
+   },
+   "rubric": "Required: disable content blockers in Safari or use another browser."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "tech",
+    "confidence": 1.0,
+    "latency_ms": 1797.9630999616347,
+    "input_tokens": 696,
+    "output_tokens": 118,
+    "cost_usd": 0.000132672,
+    "raw": {
+     "needs_human": 0.1,
+     "priority": "high",
+     "reason": "intent tech (1.00), needs_human 0.10, urgency 0.80 → tech",
+     "answer": "I apologize for the trouble you are experiencing with the checkout button in Safari. This is a known issue caused by Safari 17 content blockers, so please try disabling them or using a different browser to complete your purchase.",
+     "grade_cost": 1.8102e-05,
+     "route": "tech"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.94
+   },
+   "single_agent": {
+    "variant": "single_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "tech",
+    "confidence": null,
+    "latency_ms": 2024.4449999881908,
+    "input_tokens": 332,
+    "output_tokens": 44,
+    "cost_usd": 0.000149,
+    "raw": {
+     "finish_reason": "stop",
+     "reason": "route tech",
+     "answer": "We are aware that Safari 17 content blockers can interfere with the checkout button. Please try disabling your content blockers or using a different browser to complete your purchase.",
+     "grade_cost": 1.764e-05,
+     "route": "tech"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.95
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/a7faee3c56c0488a15ec9ec99357d28b"
+ },
+ {
+  "idx": 14,
+  "text": "I never receive any of your emails.",
+  "expected": "tech",
+  "note": "hard: the answer is in the facts",
+  "input": {
+   "message": "I never receive any of your emails.",
+   "facts": {
+    "account": {
+     "email": "tom.becker@gmial.com",
+     "last_email": "bounced"
+    }
+   },
+   "rubric": "Required: the email on file looks misspelled (gmial.com) and should be corrected."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "tech",
+    "confidence": 1.0,
+    "latency_ms": 2125.2424999838695,
+    "input_tokens": 695,
+    "output_tokens": 115,
+    "cost_usd": 0.00012792199999999999,
+    "raw": {
+     "needs_human": 0.18,
+     "priority": "normal",
+     "reason": "intent tech (1.00), needs_human 0.18, urgency 0.33 → tech",
+     "answer": "It appears your email address is currently listed as \"bounced\" in our system, which is why you are not receiving our messages. Please update your contact information in your account settings to ensure future delivery.",
+     "grade_cost": 1.806e-05,
+     "route": "tech"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.06
+   },
+   "single_agent": {
+    "variant": "single_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "tech",
+    "confidence": null,
+    "latency_ms": 1743.0639999802224,
+    "input_tokens": 331,
+    "output_tokens": 59,
+    "cost_usd": 0.00017125,
+    "raw": {
+     "finish_reason": "stop",
+     "reason": "route tech",
+     "answer": "It appears your email address is currently bouncing, which prevents our messages from reaching you. Please check your account settings to ensure your email address is correct and verify that your inbox is not full or blocking our domain.",
+     "grade_cost": 1.8102e-05,
+     "route": "tech"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.14
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/58490ac9a66cd8aa86b180dfaa6b893d"
+ },
+ {
+  "idx": 15,
+  "text": "Your toaster caught fire and burned my kitchen counter. I need to speak to someone now.",
+  "expected": "human",
+  "note": "safety issue",
+  "input": {
+   "message": "Your toaster caught fire and burned my kitchen counter. I need to speak to someone now.",
+   "facts": {
+    "order": {
+     "id": "4410",
+     "item": "toaster"
+    }
+   }
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "human",
+    "confidence": 0.32,
+    "latency_ms": 591.2456000223756,
+    "input_tokens": 522,
+    "output_tokens": 74,
+    "cost_usd": 2.1924e-05,
+    "raw": {
+     "needs_human": 0.92,
+     "priority": "high",
+     "reason": "intent billing (0.32), needs_human 0.92, urgency 0.92 → human",
+     "answer": null,
+     "grade_cost": null,
+     "route": "human"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "single_agent": {
+    "variant": "single_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "human",
+    "confidence": null,
+    "latency_ms": 1069.1864000400528,
+    "input_tokens": 333,
+    "output_tokens": 42,
+    "cost_usd": 0.00014625,
+    "raw": {
+     "finish_reason": "stop",
+     "reason": "route human",
+     "answer": null,
+     "grade_cost": null,
+     "route": "human"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/ee288d7a0c2111c042ca48ff0ba7d087"
+ },
+ {
+  "idx": 16,
+  "text": "Third lost order in a row. I'm cancelling everything and telling everyone I know about this.",
+  "expected": "human",
+  "note": "threat to leave and go public",
+  "input": {
+   "message": "Third lost order in a row. I'm cancelling everything and telling everyone I know about this.",
+   "facts": {
+    "orders_lost_90d": 3
+   }
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "human",
+    "confidence": 0.99,
+    "latency_ms": 1228.8747999700718,
+    "input_tokens": 509,
+    "output_tokens": 74,
+    "cost_usd": 2.1378e-05,
+    "raw": {
+     "needs_human": 0.84,
+     "priority": "high",
+     "reason": "intent orders (0.99), needs_human 0.84, urgency 0.76 → human",
+     "answer": null,
+     "grade_cost": null,
+     "route": "human"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "single_agent": {
+    "variant": "single_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "human",
+    "confidence": null,
+    "latency_ms": 1825.4201000090688,
+    "input_tokens": 328,
+    "output_tokens": 55,
+    "cost_usd": 0.0001645,
+    "raw": {
+     "finish_reason": "stop",
+     "reason": "route human",
+     "answer": null,
+     "grade_cost": null,
+     "route": "human"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/f0fc7daf843ec0bb6ab3abf535846b9f"
+ },
+ {
+  "idx": 17,
+  "text": "Please note that my lawyer will contact you regarding the injury your heater caused.",
+  "expected": "human",
+  "note": "hard: calm, but legal",
+  "input": {
+   "message": "Please note that my lawyer will contact you regarding the injury your heater caused.",
+   "facts": {
+    "order": {
+     "id": "6120",
+     "item": "space heater",
+     "status": "delivered"
+    }
+   }
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "human",
+    "confidence": 0.42,
+    "latency_ms": 450.28129999991506,
+    "input_tokens": 528,
+    "output_tokens": 74,
+    "cost_usd": 2.2176e-05,
+    "raw": {
+     "needs_human": 0.95,
+     "priority": "normal",
+     "reason": "intent orders (0.42), needs_human 0.95, urgency 0.36 → human",
+     "answer": null,
+     "grade_cost": null,
+     "route": "human"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "single_agent": {
+    "variant": "single_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "human",
+    "confidence": null,
+    "latency_ms": 1404.7005000174977,
+    "input_tokens": 337,
+    "output_tokens": 44,
+    "cost_usd": 0.00015025,
+    "raw": {
+     "finish_reason": "stop",
+     "reason": "route human",
+     "answer": null,
+     "grade_cost": null,
+     "route": "human"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/16eb4fef8621ad9ec84da5ccd223bdf8"
+ },
+ {
+  "idx": 18,
+  "text": "I want to dispute a charge from two years ago on an account I closed.",
+  "expected": "human",
+  "note": "hard: calm, nothing a standard tool can do",
+  "input": {
+   "message": "I want to dispute a charge from two years ago on an account I closed.",
+   "facts": {
+    "account": {
+     "status": "closed",
+     "closed": "2024-08"
+    }
+   }
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "billing",
+    "confidence": 1.0,
+    "latency_ms": 3575.519899954088,
+    "input_tokens": 700,
+    "output_tokens": 128,
+    "cost_usd": 0.00014742399999999998,
+    "raw": {
+     "needs_human": 0.41,
+     "priority": "normal",
+     "reason": "intent billing (1.00), needs_human 0.41, urgency 0.16 → billing",
+     "answer": "I am sorry, but we can only process refunds for unused items within 30 days of purchase. As your account has been closed since August 2024 and the charge is from two years ago, we are unable to issue a refund for this transaction.",
+     "grade_cost": null,
+     "route": "billing"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "single_agent": {
+    "variant": "single_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "human",
+    "confidence": null,
+    "latency_ms": 1214.8644999833778,
+    "input_tokens": 334,
+    "output_tokens": 42,
+    "cost_usd": 0.0001465,
+    "raw": {
+     "finish_reason": "stop",
+     "reason": "route human",
+     "answer": null,
+     "grade_cost": null,
+     "route": "human"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/e4569aa3ea34a2a4c99b11fc9d0c6742"
+ },
+ {
+  "idx": 19,
+  "text": "Someone got into my account and changed my email address!",
+  "expected": "human",
+  "note": "security incident",
+  "input": {
+   "message": "Someone got into my account and changed my email address!",
+   "facts": {
+    "account": {
+     "email_changed": "today 03:12",
+     "new_login_country": "unknown"
+    }
+   }
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "human",
+    "confidence": 1.0,
+    "latency_ms": 444.7492000181228,
+    "input_tokens": 520,
+    "output_tokens": 74,
+    "cost_usd": 2.184e-05,
+    "raw": {
+     "needs_human": 0.92,
+     "priority": "high",
+     "reason": "intent tech (1.00), needs_human 0.92, urgency 0.90 → human",
+     "answer": null,
+     "grade_cost": null,
+     "route": "human"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "single_agent": {
+    "variant": "single_agent",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "human",
+    "confidence": null,
+    "latency_ms": 1244.0053999889642,
+    "input_tokens": 335,
+    "output_tokens": 43,
+    "cost_usd": 0.00014825,
+    "raw": {
+     "finish_reason": "stop",
+     "reason": "route human",
+     "answer": null,
+     "grade_cost": null,
+     "route": "human"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/7331c2315459c1fc9d19bf2097d7ad7b"
+ }
+]

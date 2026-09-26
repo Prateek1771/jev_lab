@@ -1,0 +1,1242 @@
+[
+ {
+  "idx": 0,
+  "text": "Our checkout is down and we're losing sales every minute. Please help now.",
+  "expected": "urgent",
+  "note": null,
+  "input": "Our checkout is down and we're losing sales every minute. Please help now.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "urgent",
+    "confidence": null,
+    "latency_ms": 1189.249999995809,
+    "input_tokens": 369,
+    "output_tokens": 20,
+    "cost_usd": 1.5498e-05,
+    "raw": {
+     "noul": 0.98,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398208-aW6uVlr9TP9qHke7TEEo"
+    },
+    "probability": 0.98,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "urgent",
+    "confidence": null,
+    "latency_ms": 1060.729100019671,
+    "input_tokens": 114,
+    "output_tokens": 1,
+    "cost_usd": 3e-05,
+    "raw": {
+     "text": "yes"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "urgent",
+    "confidence": null,
+    "latency_ms": 1172.7132000087295,
+    "input_tokens": 186,
+    "output_tokens": 11,
+    "cost_usd": 6.3e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"urgent\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 1,
+  "text": "I need the invoice corrected before our audit tomorrow morning.",
+  "expected": "urgent",
+  "note": null,
+  "input": "I need the invoice corrected before our audit tomorrow morning.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "urgent",
+    "confidence": null,
+    "latency_ms": 4189.876499993261,
+    "input_tokens": 364,
+    "output_tokens": 20,
+    "cost_usd": 1.5288e-05,
+    "raw": {
+     "noul": 0.95,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398212-rkf66qIJZP9TVc84UhDN"
+    },
+    "probability": 0.95,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "urgent",
+    "confidence": null,
+    "latency_ms": 2896.2150999868754,
+    "input_tokens": 108,
+    "output_tokens": 1,
+    "cost_usd": 2.85e-05,
+    "raw": {
+     "text": "yes"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "urgent",
+    "confidence": null,
+    "latency_ms": 3833.5985000012442,
+    "input_tokens": 180,
+    "output_tokens": 11,
+    "cost_usd": 6.15e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"urgent\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 2,
+  "text": "URGENT: all users are locked out of the admin panel.",
+  "expected": "urgent",
+  "note": null,
+  "input": "URGENT: all users are locked out of the admin panel.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "urgent",
+    "confidence": null,
+    "latency_ms": 767.8003000037279,
+    "input_tokens": 366,
+    "output_tokens": 20,
+    "cost_usd": 1.5372e-05,
+    "raw": {
+     "noul": 0.96,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398213-5hi2AEsJUFN52ba56GrX"
+    },
+    "probability": 0.96,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "urgent",
+    "confidence": null,
+    "latency_ms": 981.6743000119459,
+    "input_tokens": 111,
+    "output_tokens": 1,
+    "cost_usd": 2.925e-05,
+    "raw": {
+     "text": "yes"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "urgent",
+    "confidence": null,
+    "latency_ms": 945.3677000128664,
+    "input_tokens": 183,
+    "output_tokens": 11,
+    "cost_usd": 6.225e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"urgent\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 3,
+  "text": "Payroll runs in two hours and the export is failing.",
+  "expected": "urgent",
+  "note": null,
+  "input": "Payroll runs in two hours and the export is failing.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "urgent",
+    "confidence": null,
+    "latency_ms": 6717.032199987443,
+    "input_tokens": 365,
+    "output_tokens": 20,
+    "cost_usd": 1.533e-05,
+    "raw": {
+     "noul": 0.97,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398220-5hydmKH8dv2BUqYDuSRU"
+    },
+    "probability": 0.97,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "urgent",
+    "confidence": null,
+    "latency_ms": 3632.730499986792,
+    "input_tokens": 108,
+    "output_tokens": 1,
+    "cost_usd": 2.85e-05,
+    "raw": {
+     "text": "yes"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "urgent",
+    "confidence": null,
+    "latency_ms": 7142.739700007951,
+    "input_tokens": 180,
+    "output_tokens": 11,
+    "cost_usd": 6.15e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"urgent\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 4,
+  "text": "Can someone call me back ASAP about the double charge?",
+  "expected": "urgent",
+  "note": null,
+  "input": "Can someone call me back ASAP about the double charge?",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "urgent",
+    "confidence": null,
+    "latency_ms": 1527.132299990626,
+    "input_tokens": 364,
+    "output_tokens": 20,
+    "cost_usd": 1.5288e-05,
+    "raw": {
+     "noul": 0.96,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398222-azEKQTON8A4WDjOmuWeO"
+    },
+    "probability": 0.96,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "urgent",
+    "confidence": null,
+    "latency_ms": 1544.5868000097107,
+    "input_tokens": 108,
+    "output_tokens": 1,
+    "cost_usd": 2.85e-05,
+    "raw": {
+     "text": "yes"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "urgent",
+    "confidence": null,
+    "latency_ms": 1143.171900010202,
+    "input_tokens": 180,
+    "output_tokens": 11,
+    "cost_usd": 6.15e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"urgent\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 5,
+  "text": "The demo for our board is at 3pm today and the app won't load.",
+  "expected": "urgent",
+  "note": null,
+  "input": "The demo for our board is at 3pm today and the app won't load.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "urgent",
+    "confidence": null,
+    "latency_ms": 1448.4856000053696,
+    "input_tokens": 371,
+    "output_tokens": 20,
+    "cost_usd": 1.5582e-05,
+    "raw": {
+     "noul": 0.97,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398223-BZCbcXy55Mq0B2E8rBjN"
+    },
+    "probability": 0.97,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "urgent",
+    "confidence": null,
+    "latency_ms": 1903.6493000166956,
+    "input_tokens": 116,
+    "output_tokens": 1,
+    "cost_usd": 3.05e-05,
+    "raw": {
+     "text": "yes"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "urgent",
+    "confidence": null,
+    "latency_ms": 948.1218000000808,
+    "input_tokens": 188,
+    "output_tokens": 11,
+    "cost_usd": 6.35e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"urgent\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 6,
+  "text": "We go live on Monday, please confirm the API limit increase by Friday.",
+  "expected": "urgent",
+  "note": "hard: a deadline without any urgent wording",
+  "input": "We go live on Monday, please confirm the API limit increase by Friday.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "urgent",
+    "confidence": null,
+    "latency_ms": 2802.8948999999557,
+    "input_tokens": 368,
+    "output_tokens": 20,
+    "cost_usd": 1.5456e-05,
+    "raw": {
+     "noul": 0.9,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398227-JTkUS2OxrmcFd6ptmc2E"
+    },
+    "probability": 0.9,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "urgent",
+    "confidence": null,
+    "latency_ms": 2510.648299998138,
+    "input_tokens": 112,
+    "output_tokens": 1,
+    "cost_usd": 2.95e-05,
+    "raw": {
+     "text": "yes"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "urgent",
+    "confidence": null,
+    "latency_ms": 2803.491500002565,
+    "input_tokens": 184,
+    "output_tokens": 11,
+    "cost_usd": 6.25e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"urgent\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 7,
+  "text": "Hi, sorry to bother you, but our site has been offline since 9am.",
+  "expected": "urgent",
+  "note": "hard: polite and apologetic, but an outage is in progress",
+  "input": "Hi, sorry to bother you, but our site has been offline since 9am.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "urgent",
+    "confidence": null,
+    "latency_ms": 587.078799988376,
+    "input_tokens": 371,
+    "output_tokens": 20,
+    "cost_usd": 1.5582e-05,
+    "raw": {
+     "noul": 0.96,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398227-yFWDbuudbmIyVnZy7I42"
+    },
+    "probability": 0.96,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "urgent",
+    "confidence": null,
+    "latency_ms": 1286.499800015008,
+    "input_tokens": 115,
+    "output_tokens": 1,
+    "cost_usd": 3.025e-05,
+    "raw": {
+     "text": "yes"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "urgent",
+    "confidence": null,
+    "latency_ms": 1570.2233999909367,
+    "input_tokens": 187,
+    "output_tokens": 11,
+    "cost_usd": 6.325e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"urgent\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 8,
+  "text": "Please expedite, our contract expires at midnight.",
+  "expected": "urgent",
+  "note": null,
+  "input": "Please expedite, our contract expires at midnight.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "urgent",
+    "confidence": null,
+    "latency_ms": 489.8774999892339,
+    "input_tokens": 364,
+    "output_tokens": 20,
+    "cost_usd": 1.5288e-05,
+    "raw": {
+     "noul": 0.97,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398229-TGWpLWbau06nMqp2ozHz"
+    },
+    "probability": 0.97,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "urgent",
+    "confidence": null,
+    "latency_ms": 1075.7102000061423,
+    "input_tokens": 106,
+    "output_tokens": 1,
+    "cost_usd": 2.8e-05,
+    "raw": {
+     "text": "yes"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "urgent",
+    "confidence": null,
+    "latency_ms": 882.331200002227,
+    "input_tokens": 178,
+    "output_tokens": 11,
+    "cost_usd": 6.1e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"urgent\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 9,
+  "text": "Production is returning 500s for every customer right now.",
+  "expected": "urgent",
+  "note": null,
+  "input": "Production is returning 500s for every customer right now.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "urgent",
+    "confidence": null,
+    "latency_ms": 607.2797999950126,
+    "input_tokens": 367,
+    "output_tokens": 20,
+    "cost_usd": 1.5414e-05,
+    "raw": {
+     "noul": 0.98,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398230-OE0wSdmXrPdISvj7kQ5t"
+    },
+    "probability": 0.98,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "urgent",
+    "confidence": null,
+    "latency_ms": 714.6080000093207,
+    "input_tokens": 111,
+    "output_tokens": 1,
+    "cost_usd": 2.925e-05,
+    "raw": {
+     "text": "yes"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "urgent",
+    "confidence": null,
+    "latency_ms": 1011.2025999987964,
+    "input_tokens": 183,
+    "output_tokens": 11,
+    "cost_usd": 6.225e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"urgent\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 10,
+  "text": "Not urgent, but could you add a dark mode at some point?",
+  "expected": "not_urgent",
+  "note": "hard: contains the word urgent, negated",
+  "input": "Not urgent, but could you add a dark mode at some point?",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "not_urgent",
+    "confidence": null,
+    "latency_ms": 533.4097000013571,
+    "input_tokens": 367,
+    "output_tokens": 20,
+    "cost_usd": 1.5414e-05,
+    "raw": {
+     "noul": 0.01,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398231-dwUTawi5uUjX4qxlNTyW"
+    },
+    "probability": 0.01,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "not_urgent",
+    "confidence": null,
+    "latency_ms": 637.8716000181157,
+    "input_tokens": 111,
+    "output_tokens": 1,
+    "cost_usd": 2.925e-05,
+    "raw": {
+     "text": "no"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "not_urgent",
+    "confidence": null,
+    "latency_ms": 1537.0888999896124,
+    "input_tokens": 183,
+    "output_tokens": 13,
+    "cost_usd": 6.525e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"not_urgent\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 11,
+  "text": "I'm really disappointed with how slow support has been this month.",
+  "expected": "not_urgent",
+  "note": "hard: unhappy is not time-sensitive",
+  "input": "I'm really disappointed with how slow support has been this month.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "not_urgent",
+    "confidence": null,
+    "latency_ms": 556.1676000070293,
+    "input_tokens": 366,
+    "output_tokens": 20,
+    "cost_usd": 1.5372e-05,
+    "raw": {
+     "noul": 0.08,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398233-ZVWkmngnYGAfbbO2T6fo"
+    },
+    "probability": 0.08,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "not_urgent",
+    "confidence": null,
+    "latency_ms": 933.1984000164084,
+    "input_tokens": 111,
+    "output_tokens": 1,
+    "cost_usd": 2.925e-05,
+    "raw": {
+     "text": "no"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "not_urgent",
+    "confidence": null,
+    "latency_ms": 1043.553299998166,
+    "input_tokens": 183,
+    "output_tokens": 13,
+    "cost_usd": 6.525e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"not_urgent\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 12,
+  "text": "Whenever you get a chance, can you send me last year's invoices?",
+  "expected": "not_urgent",
+  "note": null,
+  "input": "Whenever you get a chance, can you send me last year's invoices?",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "not_urgent",
+    "confidence": null,
+    "latency_ms": 440.54850001703016,
+    "input_tokens": 368,
+    "output_tokens": 20,
+    "cost_usd": 1.5456e-05,
+    "raw": {
+     "noul": 0.05,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398234-oaSybyRA759DCKlMlmMr"
+    },
+    "probability": 0.05,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "not_urgent",
+    "confidence": null,
+    "latency_ms": 828.0095000227448,
+    "input_tokens": 113,
+    "output_tokens": 1,
+    "cost_usd": 2.975e-05,
+    "raw": {
+     "text": "no"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "not_urgent",
+    "confidence": null,
+    "latency_ms": 940.93189999694,
+    "input_tokens": 185,
+    "output_tokens": 8,
+    "cost_usd": 5.825e-05,
+    "raw": {
+     "text": "{\"label\": \"not_urgent\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 13,
+  "text": "THIS IS THE WORST APP I HAVE EVER USED.",
+  "expected": "not_urgent",
+  "note": "hard: all-caps anger with no time pressure",
+  "input": "THIS IS THE WORST APP I HAVE EVER USED.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "not_urgent",
+    "confidence": null,
+    "latency_ms": 593.0876999918837,
+    "input_tokens": 364,
+    "output_tokens": 20,
+    "cost_usd": 1.5288e-05,
+    "raw": {
+     "noul": 0.04,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398235-l9o3SjrtNHLgGRitswKi"
+    },
+    "probability": 0.04,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "not_urgent",
+    "confidence": null,
+    "latency_ms": 1293.5745000140741,
+    "input_tokens": 108,
+    "output_tokens": 1,
+    "cost_usd": 2.85e-05,
+    "raw": {
+     "text": "no"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "not_urgent",
+    "confidence": null,
+    "latency_ms": 1096.7353000014555,
+    "input_tokens": 180,
+    "output_tokens": 8,
+    "cost_usd": 5.7e-05,
+    "raw": {
+     "text": "{\"label\": \"not_urgent\"}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 14,
+  "text": "Do you have a roadmap for the mobile app?",
+  "expected": "not_urgent",
+  "note": null,
+  "input": "Do you have a roadmap for the mobile app?",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "not_urgent",
+    "confidence": null,
+    "latency_ms": 559.7404000000097,
+    "input_tokens": 363,
+    "output_tokens": 20,
+    "cost_usd": 1.5246e-05,
+    "raw": {
+     "noul": 0.04,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398236-Ngq7mBZuCZYFPkx02QKN"
+    },
+    "probability": 0.04,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "not_urgent",
+    "confidence": null,
+    "latency_ms": 1134.3941999948584,
+    "input_tokens": 107,
+    "output_tokens": 1,
+    "cost_usd": 2.825e-05,
+    "raw": {
+     "text": "no"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "not_urgent",
+    "confidence": null,
+    "latency_ms": 944.813800015254,
+    "input_tokens": 179,
+    "output_tokens": 13,
+    "cost_usd": 6.425e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"not_urgent\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 15,
+  "text": "Thanks for fixing the bug last week, everything works now.",
+  "expected": "not_urgent",
+  "note": null,
+  "input": "Thanks for fixing the bug last week, everything works now.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "not_urgent",
+    "confidence": null,
+    "latency_ms": 507.3071999941021,
+    "input_tokens": 365,
+    "output_tokens": 20,
+    "cost_usd": 1.533e-05,
+    "raw": {
+     "noul": 0.02,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398237-Blrzl1zY3XZbLAf0RP2b"
+    },
+    "probability": 0.02,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "not_urgent",
+    "confidence": null,
+    "latency_ms": 1126.9744999881368,
+    "input_tokens": 109,
+    "output_tokens": 1,
+    "cost_usd": 2.875e-05,
+    "raw": {
+     "text": "no"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "not_urgent",
+    "confidence": null,
+    "latency_ms": 1051.257400016766,
+    "input_tokens": 181,
+    "output_tokens": 13,
+    "cost_usd": 6.475e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"not_urgent\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 16,
+  "text": "No rush at all, just curious whether you support SSO.",
+  "expected": "not_urgent",
+  "note": null,
+  "input": "No rush at all, just curious whether you support SSO.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "not_urgent",
+    "confidence": null,
+    "latency_ms": 397.74009998654947,
+    "input_tokens": 366,
+    "output_tokens": 20,
+    "cost_usd": 1.5372e-05,
+    "raw": {
+     "noul": 0.01,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398238-3kglA7gH8sFAQDLEsQ8x"
+    },
+    "probability": 0.01,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "not_urgent",
+    "confidence": null,
+    "latency_ms": 1081.2255999771878,
+    "input_tokens": 109,
+    "output_tokens": 1,
+    "cost_usd": 2.875e-05,
+    "raw": {
+     "text": "no"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "not_urgent",
+    "confidence": null,
+    "latency_ms": 1155.5290000105742,
+    "input_tokens": 181,
+    "output_tokens": 13,
+    "cost_usd": 6.475e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"not_urgent\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 17,
+  "text": "Could you explain how the monthly usage limit is calculated?",
+  "expected": "not_urgent",
+  "note": null,
+  "input": "Could you explain how the monthly usage limit is calculated?",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "not_urgent",
+    "confidence": null,
+    "latency_ms": 597.9777000029571,
+    "input_tokens": 364,
+    "output_tokens": 20,
+    "cost_usd": 1.5288e-05,
+    "raw": {
+     "noul": 0.03,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398240-hVNOo6ZadFLRdyzohnzw"
+    },
+    "probability": 0.03,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "not_urgent",
+    "confidence": null,
+    "latency_ms": 1208.1042000208981,
+    "input_tokens": 108,
+    "output_tokens": 1,
+    "cost_usd": 2.85e-05,
+    "raw": {
+     "text": "no"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "not_urgent",
+    "confidence": null,
+    "latency_ms": 1441.7760000214912,
+    "input_tokens": 180,
+    "output_tokens": 13,
+    "cost_usd": 6.45e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"not_urgent\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 18,
+  "text": "I'd like to update the billing address for next quarter's invoice.",
+  "expected": "not_urgent",
+  "note": null,
+  "input": "I'd like to update the billing address for next quarter's invoice.",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "not_urgent",
+    "confidence": null,
+    "latency_ms": 443.5931999760214,
+    "input_tokens": 367,
+    "output_tokens": 20,
+    "cost_usd": 1.5414e-05,
+    "raw": {
+     "noul": 0.08,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398241-lHm2b7LQXPlJdtbZ6GTO"
+    },
+    "probability": 0.08,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "not_urgent",
+    "confidence": null,
+    "latency_ms": 808.7557000108063,
+    "input_tokens": 113,
+    "output_tokens": 1,
+    "cost_usd": 2.975e-05,
+    "raw": {
+     "text": "no"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "not_urgent",
+    "confidence": null,
+    "latency_ms": 880.8301000099164,
+    "input_tokens": 185,
+    "output_tokens": 13,
+    "cost_usd": 6.575e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"not_urgent\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 19,
+  "text": "Last month the site was down for an hour, which was annoying. Is there a status page?",
+  "expected": "not_urgent",
+  "note": "hard: an outage, but in the past",
+  "input": "Last month the site was down for an hour, which was annoying. Is there a status page?",
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "not_urgent",
+    "confidence": null,
+    "latency_ms": 440.2381999825593,
+    "input_tokens": 373,
+    "output_tokens": 20,
+    "cost_usd": 1.5666e-05,
+    "raw": {
+     "noul": 0.06,
+     "threshold": 0.5,
+     "id": "gen-dec-1790398242-C44uvTnCEfpurO47k6Xn"
+    },
+    "probability": 0.06,
+    "score": null,
+    "quality": null
+   },
+   "baseline": {
+    "variant": "baseline",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "not_urgent",
+    "confidence": null,
+    "latency_ms": 610.8705000078771,
+    "input_tokens": 117,
+    "output_tokens": 1,
+    "cost_usd": 3.075e-05,
+    "raw": {
+     "text": "no"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "structured": {
+    "variant": "structured",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "not_urgent",
+    "confidence": null,
+    "latency_ms": 1021.2007999944035,
+    "input_tokens": 189,
+    "output_tokens": 13,
+    "cost_usd": 6.675e-05,
+    "raw": {
+     "text": "{\n  \"label\": \"not_urgent\"\n}",
+     "parsing_error": null
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": null
+ }
+]

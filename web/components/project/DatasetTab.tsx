@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Button, Label, Pill } from "@/components/ui";
+import { API_BASE } from "@/lib/api";
 import type { ProjectDetail } from "@/lib/types";
 import { ReportView } from "./ReportView";
 
@@ -52,8 +53,8 @@ export function DatasetTab({ project, onSaved }: { project: ProjectDetail; onSav
     const t0 = Date.now();
     setStarted(t0); setNow(t0);
     try {
-      const res = await fetch(`/api/projects/${project.id}/dataset`, { method: "POST" });
-      if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+      const res = await fetch(`${API_BASE}/api/projects/${project.id}/dataset`, { method: "POST" });
+      if (!res.ok) throw new Error((await res.json().catch(() => ({}))).detail ?? `${res.status} ${res.statusText}`);
       for await (const { event, data } of events(res)) {
         if (event === "start") setTotal(data.rows);
         if (event === "working") setCurrent(data);

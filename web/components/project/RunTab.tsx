@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { ValueBars } from "@/components/charts";
 import { Button, Chip, Label, Panel } from "@/components/ui";
-import { client } from "@/lib/api";
+import { API_BASE, client } from "@/lib/api";
 import { ms, seriesColor, usd } from "@/lib/format";
 import type { ProjectDetail, ResultJson } from "@/lib/types";
 import { VariantCard } from "./VariantCard";
@@ -36,7 +36,7 @@ export function RunTab({ project }: { project: ProjectDetail }) {
     }
     setBusy(true);
     try {
-      setResult(await client<ResultJson>(`/api/projects/${project.id}/run`, {
+      setResult(await client<ResultJson>(`${API_BASE}/api/projects/${project.id}/run`, {
         method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ input }),
       }));
     } catch (e) {

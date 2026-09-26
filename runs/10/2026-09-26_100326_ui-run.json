@@ -1,0 +1,1874 @@
+[
+ {
+  "idx": 0,
+  "text": "Unused items can be returned within 30 days of delivery for a full refund [returns-window].",
+  "expected": "supported",
+  "note": null,
+  "input": {
+   "question": "Can I return something I haven't used?",
+   "answer": "Unused items can be returned within 30 days of delivery for a full refund [returns-window].",
+   "sources": [
+    {
+     "id": "returns-window",
+     "text": "Unused items can be returned within 30 days of delivery for a full refund."
+    },
+    {
+     "id": "returns-label",
+     "text": "Return labels are free for defective items. For change-of-mind returns, $5 is taken off the refund to cover the label."
+    }
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "supported",
+    "confidence": 1.0,
+    "latency_ms": 1238.372599997092,
+    "input_tokens": 413,
+    "output_tokens": 42,
+    "cost_usd": 1.7346e-05,
+    "raw": {
+     "claims": [
+      {
+       "text": "Unused items can be returned within 30 days of delivery for a full refund.",
+       "cites": [
+        "returns-window"
+       ],
+       "code": null,
+       "checks": [
+        {
+         "source": "returns-window",
+         "choice": "supports",
+         "confidence": 1.0
+        }
+       ],
+       "verdict": "supported"
+      }
+     ],
+     "calls": 1,
+     "reason": "\"Unused items can be returned within 30 days of delivery for a full refund.\" → supported"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_judge": {
+    "variant": "llm_judge",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "supported",
+    "confidence": null,
+    "latency_ms": 1559.9005999974906,
+    "input_tokens": 287,
+    "output_tokens": 26,
+    "cost_usd": 0.00011075,
+    "raw": {
+     "reason": "The answer directly reflects the information provided in the source [returns-window].",
+     "finish_reason": "stop"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "trust_citations": {
+    "variant": "trust_citations",
+    "model": "(no model)",
+    "label": "supported",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "every sentence has a citation"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/fe3f00d6934179730521779b41a163af"
+ },
+ {
+  "idx": 1,
+  "text": "Order express before 2pm and it arrives the following working day, for $14.99 [shipping-express].",
+  "expected": "supported",
+  "note": "hard: paraphrase, few shared words",
+  "input": {
+   "question": "When does express shipping arrive?",
+   "answer": "Order express before 2pm and it arrives the following working day, for $14.99 [shipping-express].",
+   "sources": [
+    {
+     "id": "shipping-express",
+     "text": "Express shipping delivers the next business day for $14.99 if you order before 2pm."
+    },
+    {
+     "id": "shipping-standard",
+     "text": "Standard shipping takes 3 to 5 business days. It is free on orders over $50, otherwise it costs $4.99."
+    }
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "supported",
+    "confidence": 1.0,
+    "latency_ms": 456.57109998865053,
+    "input_tokens": 423,
+    "output_tokens": 42,
+    "cost_usd": 1.7766e-05,
+    "raw": {
+     "claims": [
+      {
+       "text": "Order express before 2pm and it arrives the following working day, for $14.99.",
+       "cites": [
+        "shipping-express"
+       ],
+       "code": null,
+       "checks": [
+        {
+         "source": "shipping-express",
+         "choice": "supports",
+         "confidence": 1.0
+        }
+       ],
+       "verdict": "supported"
+      }
+     ],
+     "calls": 1,
+     "reason": "\"Order express before 2pm and it arrives the following working day, for $14.99.\" → supported"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_judge": {
+    "variant": "llm_judge",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "supported",
+    "confidence": null,
+    "latency_ms": 2018.0495000095107,
+    "input_tokens": 293,
+    "output_tokens": 32,
+    "cost_usd": 0.00012125,
+    "raw": {
+     "reason": "The answer accurately reflects the information provided in the source, including the cutoff time, delivery timeframe, and cost.",
+     "finish_reason": "stop"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "trust_citations": {
+    "variant": "trust_citations",
+    "model": "(no model)",
+    "label": "supported",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "every sentence has a citation"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/51a50dd2753bd9d8287b14915114d9d6"
+ },
+ {
+  "idx": 2,
+  "text": "Standard delivery takes 3 to 5 business days [shipping-standard]. Orders above $50 ship free [shipping-standard].",
+  "expected": "supported",
+  "note": null,
+  "input": {
+   "question": "How long does standard shipping take?",
+   "answer": "Standard delivery takes 3 to 5 business days [shipping-standard]. Orders above $50 ship free [shipping-standard].",
+   "sources": [
+    {
+     "id": "shipping-standard",
+     "text": "Standard shipping takes 3 to 5 business days. It is free on orders over $50, otherwise it costs $4.99."
+    },
+    {
+     "id": "shipping-express",
+     "text": "Express shipping delivers the next business day for $14.99 if you order before 2pm."
+    }
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "supported",
+    "confidence": 0.97,
+    "latency_ms": 532.6371999690309,
+    "input_tokens": 837,
+    "output_tokens": 84,
+    "cost_usd": 3.5153999999999996e-05,
+    "raw": {
+     "claims": [
+      {
+       "text": "Standard delivery takes 3 to 5 business days.",
+       "cites": [
+        "shipping-standard"
+       ],
+       "code": null,
+       "checks": [
+        {
+         "source": "shipping-standard",
+         "choice": "supports",
+         "confidence": 0.99
+        }
+       ],
+       "verdict": "supported"
+      },
+      {
+       "text": "Orders above $50 ship free.",
+       "cites": [
+        "shipping-standard"
+       ],
+       "code": null,
+       "checks": [
+        {
+         "source": "shipping-standard",
+         "choice": "supports",
+         "confidence": 0.97
+        }
+       ],
+       "verdict": "supported"
+      }
+     ],
+     "calls": 2,
+     "reason": "\"Standard delivery takes 3 to 5 business days.\" → supported"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_judge": {
+    "variant": "llm_judge",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "supported",
+    "confidence": null,
+    "latency_ms": 1429.260200005956,
+    "input_tokens": 295,
+    "output_tokens": 43,
+    "cost_usd": 0.00013825,
+    "raw": {
+     "reason": "The answer accurately reflects the information provided in the source [shipping-standard] regarding both the delivery timeframe and the free shipping threshold.",
+     "finish_reason": "stop"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "trust_citations": {
+    "variant": "trust_citations",
+    "model": "(no model)",
+    "label": "supported",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "every sentence has a citation"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/ef457b0a1bb7df37c063f85a578dcf9e"
+ },
+ {
+  "idx": 3,
+  "text": "Your reset link stops working 60 minutes after it is sent [account-password].",
+  "expected": "supported",
+  "note": "hard: 1 hour written as 60 minutes",
+  "input": {
+   "question": "How long is the password reset link valid?",
+   "answer": "Your reset link stops working 60 minutes after it is sent [account-password].",
+   "sources": [
+    {
+     "id": "account-password",
+     "text": "To reset your password, use 'Forgot password' on the login page. The reset link expires after 1 hour."
+    },
+    {
+     "id": "account-delete",
+     "text": "To delete your account, email privacy@acme.test. Deletion is completed within 30 days."
+    }
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "supported",
+    "confidence": 1.0,
+    "latency_ms": 565.2628999669105,
+    "input_tokens": 417,
+    "output_tokens": 42,
+    "cost_usd": 1.7514e-05,
+    "raw": {
+     "claims": [
+      {
+       "text": "Your reset link stops working 60 minutes after it is sent.",
+       "cites": [
+        "account-password"
+       ],
+       "code": null,
+       "checks": [
+        {
+         "source": "account-password",
+         "choice": "supports",
+         "confidence": 1.0
+        }
+       ],
+       "verdict": "supported"
+      }
+     ],
+     "calls": 1,
+     "reason": "\"Your reset link stops working 60 minutes after it is sent.\" → supported"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_judge": {
+    "variant": "llm_judge",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "supported",
+    "confidence": null,
+    "latency_ms": 1041.6829999885522,
+    "input_tokens": 283,
+    "output_tokens": 30,
+    "cost_usd": 0.00011575,
+    "raw": {
+     "reason": "The source states the link expires after 1 hour, which is equivalent to 60 minutes.",
+     "finish_reason": "stop"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "trust_citations": {
+    "variant": "trust_citations",
+    "model": "(no model)",
+    "label": "supported",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "every sentence has a citation"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/c324115e1a3e123510a4216979f608d8"
+ },
+ {
+  "idx": 4,
+  "text": "Unused items can be returned within 30 days of delivery [returns-window][returns-2019].",
+  "expected": "supported",
+  "note": "hard: also cites the stale 2019 policy, which says 60 days; the current page supports it",
+  "input": {
+   "question": "What is the return window?",
+   "answer": "Unused items can be returned within 30 days of delivery [returns-window][returns-2019].",
+   "sources": [
+    {
+     "id": "returns-window",
+     "text": "Unused items can be returned within 30 days of delivery for a full refund."
+    },
+    {
+     "id": "returns-2019",
+     "text": "Archived 2019 policy: returns were accepted within 60 days of delivery. This policy was replaced in 2021."
+    }
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "supported",
+    "confidence": 0.63,
+    "latency_ms": 568.3089999947697,
+    "input_tokens": 832,
+    "output_tokens": 86,
+    "cost_usd": 3.4943999999999996e-05,
+    "raw": {
+     "claims": [
+      {
+       "text": "Unused items can be returned within 30 days of delivery.",
+       "cites": [
+        "returns-window",
+        "returns-2019"
+       ],
+       "code": null,
+       "checks": [
+        {
+         "source": "returns-window",
+         "choice": "supports",
+         "confidence": 1.0
+        },
+        {
+         "source": "returns-2019",
+         "choice": "contradicts",
+         "confidence": 0.63
+        }
+       ],
+       "verdict": "supported"
+      }
+     ],
+     "calls": 2,
+     "reason": "\"Unused items can be returned within 30 days of delivery.\" → supported"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_judge": {
+    "variant": "llm_judge",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "contradicted",
+    "confidence": null,
+    "latency_ms": 1065.6584999524057,
+    "input_tokens": 292,
+    "output_tokens": 56,
+    "cost_usd": 0.000157,
+    "raw": {
+     "reason": "The answer cites two sources, but one of them (returns-2019) contradicts the statement as it refers to an outdated policy that allowed 60 days, whereas the current policy is 30 days.",
+     "finish_reason": "stop"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "trust_citations": {
+    "variant": "trust_citations",
+    "model": "(no model)",
+    "label": "supported",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "every sentence has a citation"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/cc9dc63f8e5cf435f95b4c11ccc79073"
+ },
+ {
+  "idx": 5,
+  "text": "Gift cards do not expire [gift-cards]. They can't be swapped for cash [gift-cards].",
+  "expected": "supported",
+  "note": null,
+  "input": {
+   "question": "Do gift cards expire?",
+   "answer": "Gift cards do not expire [gift-cards]. They can't be swapped for cash [gift-cards].",
+   "sources": [
+    {
+     "id": "gift-cards",
+     "text": "Gift cards never expire. They cannot be refunded or exchanged for cash."
+    },
+    {
+     "id": "plus-price",
+     "text": "Acme Plus costs $9 per month or $90 per year, and includes free express shipping."
+    }
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "supported",
+    "confidence": 0.99,
+    "latency_ms": 524.6581999817863,
+    "input_tokens": 800,
+    "output_tokens": 84,
+    "cost_usd": 3.3600000000000004e-05,
+    "raw": {
+     "claims": [
+      {
+       "text": "Gift cards do not expire.",
+       "cites": [
+        "gift-cards"
+       ],
+       "code": null,
+       "checks": [
+        {
+         "source": "gift-cards",
+         "choice": "supports",
+         "confidence": 0.99
+        }
+       ],
+       "verdict": "supported"
+      },
+      {
+       "text": "They can't be swapped for cash.",
+       "cites": [
+        "gift-cards"
+       ],
+       "code": null,
+       "checks": [
+        {
+         "source": "gift-cards",
+         "choice": "supports",
+         "confidence": 1.0
+        }
+       ],
+       "verdict": "supported"
+      }
+     ],
+     "calls": 2,
+     "reason": "\"Gift cards do not expire.\" → supported"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_judge": {
+    "variant": "llm_judge",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "supported",
+    "confidence": null,
+    "latency_ms": 1047.1948999911547,
+    "input_tokens": 272,
+    "output_tokens": 39,
+    "cost_usd": 0.0001265,
+    "raw": {
+     "reason": "The answer accurately reflects the information provided in the source 'gift-cards', which states that gift cards never expire and cannot be exchanged for cash.",
+     "finish_reason": "stop"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "trust_citations": {
+    "variant": "trust_citations",
+    "model": "(no model)",
+    "label": "supported",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "every sentence has a citation"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/6d86033ee06b799166c4f9b1fcb72f90"
+ },
+ {
+  "idx": 6,
+  "text": "Acme Plus is $90 a year and comes with free express shipping [plus-price].",
+  "expected": "supported",
+  "note": null,
+  "input": {
+   "question": "What does Acme Plus cost per year?",
+   "answer": "Acme Plus is $90 a year and comes with free express shipping [plus-price].",
+   "sources": [
+    {
+     "id": "plus-price",
+     "text": "Acme Plus costs $9 per month or $90 per year, and includes free express shipping."
+    },
+    {
+     "id": "plus-cancel",
+     "text": "You can cancel Acme Plus at any time. You keep the benefits until the end of the paid period; there are no partial refunds."
+    }
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "supported",
+    "confidence": 1.0,
+    "latency_ms": 428.34789998596534,
+    "input_tokens": 416,
+    "output_tokens": 42,
+    "cost_usd": 1.7472e-05,
+    "raw": {
+     "claims": [
+      {
+       "text": "Acme Plus is $90 a year and comes with free express shipping.",
+       "cites": [
+        "plus-price"
+       ],
+       "code": null,
+       "checks": [
+        {
+         "source": "plus-price",
+         "choice": "supports",
+         "confidence": 1.0
+        }
+       ],
+       "verdict": "supported"
+      }
+     ],
+     "calls": 1,
+     "reason": "\"Acme Plus is $90 a year and comes with free express shipping.\" → supported"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_judge": {
+    "variant": "llm_judge",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "supported",
+    "confidence": null,
+    "latency_ms": 968.9775999868289,
+    "input_tokens": 285,
+    "output_tokens": 31,
+    "cost_usd": 0.00011775,
+    "raw": {
+     "reason": "The answer accurately reflects the price and benefits mentioned in the cited source.",
+     "finish_reason": "stop"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "trust_citations": {
+    "variant": "trust_citations",
+    "model": "(no model)",
+    "label": "supported",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "every sentence has a citation"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/bd001fb2939549376a96ed0d91f6cf6e"
+ },
+ {
+  "idx": 7,
+  "text": "After approval, a refund takes 5 to 10 business days to reach your card [refunds-timing].",
+  "expected": "supported",
+  "note": null,
+  "input": {
+   "question": "When will my refund arrive?",
+   "answer": "After approval, a refund takes 5 to 10 business days to reach your card [refunds-timing].",
+   "sources": [
+    {
+     "id": "refunds-timing",
+     "text": "Once a refund is approved, the money reaches your card in 5 to 10 business days."
+    },
+    {
+     "id": "returns-window",
+     "text": "Unused items can be returned within 30 days of delivery for a full refund."
+    }
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "supported",
+    "confidence": 1.0,
+    "latency_ms": 443.9002000144683,
+    "input_tokens": 419,
+    "output_tokens": 42,
+    "cost_usd": 1.7598e-05,
+    "raw": {
+     "claims": [
+      {
+       "text": "After approval, a refund takes 5 to 10 business days to reach your card.",
+       "cites": [
+        "refunds-timing"
+       ],
+       "code": null,
+       "checks": [
+        {
+         "source": "refunds-timing",
+         "choice": "supports",
+         "confidence": 1.0
+        }
+       ],
+       "verdict": "supported"
+      }
+     ],
+     "calls": 1,
+     "reason": "\"After approval, a refund takes 5 to 10 business days to reach your card.\" → supported"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_judge": {
+    "variant": "llm_judge",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "supported",
+    "confidence": null,
+    "latency_ms": 1024.791700008791,
+    "input_tokens": 279,
+    "output_tokens": 27,
+    "cost_usd": 0.00011025,
+    "raw": {
+     "reason": "The answer accurately reflects the information provided in the source [refunds-timing].",
+     "finish_reason": "stop"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "trust_citations": {
+    "variant": "trust_citations",
+    "model": "(no model)",
+    "label": "supported",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "every sentence has a citation"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/e285806444f4abe30c5b259ce26adc21"
+ },
+ {
+  "idx": 8,
+  "text": "You have 60 days to return unused items [returns-window].",
+  "expected": "contradicted",
+  "note": "hard: one changed number",
+  "input": {
+   "question": "How long do I have to return an item?",
+   "answer": "You have 60 days to return unused items [returns-window].",
+   "sources": [
+    {
+     "id": "returns-window",
+     "text": "Unused items can be returned within 30 days of delivery for a full refund."
+    },
+    {
+     "id": "returns-label",
+     "text": "Return labels are free for defective items. For change-of-mind returns, $5 is taken off the refund to cover the label."
+    }
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "contradicted",
+    "confidence": 1.0,
+    "latency_ms": 597.5197000079788,
+    "input_tokens": 407,
+    "output_tokens": 44,
+    "cost_usd": 1.7094e-05,
+    "raw": {
+     "claims": [
+      {
+       "text": "You have 60 days to return unused items.",
+       "cites": [
+        "returns-window"
+       ],
+       "code": null,
+       "checks": [
+        {
+         "source": "returns-window",
+         "choice": "contradicts",
+         "confidence": 1.0
+        }
+       ],
+       "verdict": "contradicted"
+      }
+     ],
+     "calls": 1,
+     "reason": "\"You have 60 days to return unused items.\" → contradicted"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_judge": {
+    "variant": "llm_judge",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "contradicted",
+    "confidence": null,
+    "latency_ms": 1193.7180000240915,
+    "input_tokens": 280,
+    "output_tokens": 35,
+    "cost_usd": 0.0001225,
+    "raw": {
+     "reason": "The source states that unused items can be returned within 30 days, but the answer claims 60 days.",
+     "finish_reason": "stop"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "trust_citations": {
+    "variant": "trust_citations",
+    "model": "(no model)",
+    "label": "supported",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "every sentence has a citation"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/5ed4af7f687e3b2401fbf673d57016aa"
+ },
+ {
+  "idx": 9,
+  "text": "Return shipping is always free [returns-label].",
+  "expected": "contradicted",
+  "note": "hard: true for defective items only",
+  "input": {
+   "question": "Do I pay for the return label?",
+   "answer": "Return shipping is always free [returns-label].",
+   "sources": [
+    {
+     "id": "returns-label",
+     "text": "Return labels are free for defective items. For change-of-mind returns, $5 is taken off the refund to cover the label."
+    },
+    {
+     "id": "returns-window",
+     "text": "Unused items can be returned within 30 days of delivery for a full refund."
+    }
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "contradicted",
+    "confidence": 1.0,
+    "latency_ms": 1465.47409996856,
+    "input_tokens": 412,
+    "output_tokens": 44,
+    "cost_usd": 1.7304e-05,
+    "raw": {
+     "claims": [
+      {
+       "text": "Return shipping is always free.",
+       "cites": [
+        "returns-label"
+       ],
+       "code": null,
+       "checks": [
+        {
+         "source": "returns-label",
+         "choice": "contradicts",
+         "confidence": 1.0
+        }
+       ],
+       "verdict": "contradicted"
+      }
+     ],
+     "calls": 1,
+     "reason": "\"Return shipping is always free.\" → contradicted"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_judge": {
+    "variant": "llm_judge",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "contradicted",
+    "confidence": null,
+    "latency_ms": 958.6809999891557,
+    "input_tokens": 273,
+    "output_tokens": 44,
+    "cost_usd": 0.00013425,
+    "raw": {
+     "reason": "The source states that return labels are only free for defective items and cost $5 for change-of-mind returns, contradicting the claim that they are always free.",
+     "finish_reason": "stop"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "trust_citations": {
+    "variant": "trust_citations",
+    "model": "(no model)",
+    "label": "supported",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "every sentence has a citation"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/f0a4424bb2efac0c00d09c828a02a8b0"
+ },
+ {
+  "idx": 10,
+  "text": "Standard shipping takes 3 to 5 business days [shipping-standard]. It is free on every order [shipping-standard].",
+  "expected": "contradicted",
+  "note": "hard: the first claim is right, the second is not",
+  "input": {
+   "question": "Is shipping free?",
+   "answer": "Standard shipping takes 3 to 5 business days [shipping-standard]. It is free on every order [shipping-standard].",
+   "sources": [
+    {
+     "id": "shipping-standard",
+     "text": "Standard shipping takes 3 to 5 business days. It is free on orders over $50, otherwise it costs $4.99."
+    },
+    {
+     "id": "shipping-express",
+     "text": "Express shipping delivers the next business day for $14.99 if you order before 2pm."
+    }
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "contradicted",
+    "confidence": 1.0,
+    "latency_ms": 507.16219999594614,
+    "input_tokens": 836,
+    "output_tokens": 86,
+    "cost_usd": 3.5112e-05,
+    "raw": {
+     "claims": [
+      {
+       "text": "Standard shipping takes 3 to 5 business days.",
+       "cites": [
+        "shipping-standard"
+       ],
+       "code": null,
+       "checks": [
+        {
+         "source": "shipping-standard",
+         "choice": "supports",
+         "confidence": 1.0
+        }
+       ],
+       "verdict": "supported"
+      },
+      {
+       "text": "It is free on every order.",
+       "cites": [
+        "shipping-standard"
+       ],
+       "code": null,
+       "checks": [
+        {
+         "source": "shipping-standard",
+         "choice": "contradicts",
+         "confidence": 1.0
+        }
+       ],
+       "verdict": "contradicted"
+      }
+     ],
+     "calls": 2,
+     "reason": "\"It is free on every order.\" → contradicted"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_judge": {
+    "variant": "llm_judge",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "contradicted",
+    "confidence": null,
+    "latency_ms": 1127.8933999710716,
+    "input_tokens": 291,
+    "output_tokens": 42,
+    "cost_usd": 0.00013575,
+    "raw": {
+     "reason": "The source [shipping-standard] states that shipping is free only on orders over $50, contradicting the claim that it is free on every order.",
+     "finish_reason": "stop"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "trust_citations": {
+    "variant": "trust_citations",
+    "model": "(no model)",
+    "label": "supported",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "every sentence has a citation"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/42c9c3774b477ed97883f958d39a5800"
+ },
+ {
+  "idx": 11,
+  "text": "Customs fees on international orders are covered by us [shipping-intl].",
+  "expected": "contradicted",
+  "note": null,
+  "input": {
+   "question": "Who pays customs on international orders?",
+   "answer": "Customs fees on international orders are covered by us [shipping-intl].",
+   "sources": [
+    {
+     "id": "shipping-intl",
+     "text": "We ship to the EU and the UK. International orders take 7 to 14 days, and customs fees are paid by the customer."
+    },
+    {
+     "id": "shipping-standard",
+     "text": "Standard shipping takes 3 to 5 business days. It is free on orders over $50, otherwise it costs $4.99."
+    }
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "contradicted",
+    "confidence": 1.0,
+    "latency_ms": 458.6303000105545,
+    "input_tokens": 420,
+    "output_tokens": 44,
+    "cost_usd": 1.764e-05,
+    "raw": {
+     "claims": [
+      {
+       "text": "Customs fees on international orders are covered by us.",
+       "cites": [
+        "shipping-intl"
+       ],
+       "code": null,
+       "checks": [
+        {
+         "source": "shipping-intl",
+         "choice": "contradicts",
+         "confidence": 1.0
+        }
+       ],
+       "verdict": "contradicted"
+      }
+     ],
+     "calls": 1,
+     "reason": "\"Customs fees on international orders are covered by us.\" → contradicted"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_judge": {
+    "variant": "llm_judge",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "contradicted",
+    "confidence": null,
+    "latency_ms": 911.284500034526,
+    "input_tokens": 290,
+    "output_tokens": 36,
+    "cost_usd": 0.0001265,
+    "raw": {
+     "reason": "The source [shipping-intl] explicitly states that customs fees are paid by the customer, which directly contradicts the answer provided.",
+     "finish_reason": "stop"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "trust_citations": {
+    "variant": "trust_citations",
+    "model": "(no model)",
+    "label": "supported",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "every sentence has a citation"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/9ef753606fbbdffc7c6e56b31791d581"
+ },
+ {
+  "idx": 12,
+  "text": "Electronics come with a 1-year warranty that also covers accidental damage [warranty].",
+  "expected": "contradicted",
+  "note": null,
+  "input": {
+   "question": "What does the warranty cover?",
+   "answer": "Electronics come with a 1-year warranty that also covers accidental damage [warranty].",
+   "sources": [
+    {
+     "id": "warranty",
+     "text": "Electronics carry a 1-year limited warranty covering manufacturing defects. Accidental damage is not covered."
+    },
+    {
+     "id": "account-password",
+     "text": "To reset your password, use 'Forgot password' on the login page. The reset link expires after 1 hour."
+    }
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "contradicted",
+    "confidence": 1.0,
+    "latency_ms": 419.2180999671109,
+    "input_tokens": 417,
+    "output_tokens": 44,
+    "cost_usd": 1.7514e-05,
+    "raw": {
+     "claims": [
+      {
+       "text": "Electronics come with a 1-year warranty that also covers accidental damage.",
+       "cites": [
+        "warranty"
+       ],
+       "code": null,
+       "checks": [
+        {
+         "source": "warranty",
+         "choice": "contradicts",
+         "confidence": 1.0
+        }
+       ],
+       "verdict": "contradicted"
+      }
+     ],
+     "calls": 1,
+     "reason": "\"Electronics come with a 1-year warranty that also covers accidental damage.\" → contradicted"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_judge": {
+    "variant": "llm_judge",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "contradicted",
+    "confidence": null,
+    "latency_ms": 982.7908999868669,
+    "input_tokens": 274,
+    "output_tokens": 37,
+    "cost_usd": 0.000124,
+    "raw": {
+     "reason": "The source explicitly states that accidental damage is not covered, which contradicts the claim in the answer.",
+     "finish_reason": "stop"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "trust_citations": {
+    "variant": "trust_citations",
+    "model": "(no model)",
+    "label": "supported",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "every sentence has a citation"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/a04ce78f409818f8f7de970474c7d181"
+ },
+ {
+  "idx": 13,
+  "text": "If you cancel Acme Plus, you get a partial refund for the unused months [plus-cancel].",
+  "expected": "contradicted",
+  "note": null,
+  "input": {
+   "question": "What happens if I cancel Acme Plus?",
+   "answer": "If you cancel Acme Plus, you get a partial refund for the unused months [plus-cancel].",
+   "sources": [
+    {
+     "id": "plus-cancel",
+     "text": "You can cancel Acme Plus at any time. You keep the benefits until the end of the paid period; there are no partial refunds."
+    },
+    {
+     "id": "plus-price",
+     "text": "Acme Plus costs $9 per month or $90 per year, and includes free express shipping."
+    }
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "contradicted",
+    "confidence": 1.0,
+    "latency_ms": 456.25160000054166,
+    "input_tokens": 424,
+    "output_tokens": 44,
+    "cost_usd": 1.7808e-05,
+    "raw": {
+     "claims": [
+      {
+       "text": "If you cancel Acme Plus, you get a partial refund for the unused months.",
+       "cites": [
+        "plus-cancel"
+       ],
+       "code": null,
+       "checks": [
+        {
+         "source": "plus-cancel",
+         "choice": "contradicts",
+         "confidence": 1.0
+        }
+       ],
+       "verdict": "contradicted"
+      }
+     ],
+     "calls": 1,
+     "reason": "\"If you cancel Acme Plus, you get a partial refund for the unused months.\" → contradicted"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_judge": {
+    "variant": "llm_judge",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "contradicted",
+    "confidence": null,
+    "latency_ms": 1009.6556000062265,
+    "input_tokens": 285,
+    "output_tokens": 35,
+    "cost_usd": 0.00012375,
+    "raw": {
+     "reason": "The source [plus-cancel] explicitly states that there are no partial refunds, which contradicts the claim in the answer.",
+     "finish_reason": "stop"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "trust_citations": {
+    "variant": "trust_citations",
+    "model": "(no model)",
+    "label": "supported",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "every sentence has a citation"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/db644bacc5e212855e4cc24bbd8aeeb5"
+ },
+ {
+  "idx": 14,
+  "text": "Refunds reach your card in 5 to 10 business days [returns-window].",
+  "expected": "insufficient",
+  "note": "hard: the fact is true, but cited to the wrong source",
+  "input": {
+   "question": "How long do refunds take?",
+   "answer": "Refunds reach your card in 5 to 10 business days [returns-window].",
+   "sources": [
+    {
+     "id": "returns-window",
+     "text": "Unused items can be returned within 30 days of delivery for a full refund."
+    },
+    {
+     "id": "refunds-timing",
+     "text": "Once a refund is approved, the money reaches your card in 5 to 10 business days."
+    }
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "insufficient",
+    "confidence": 1.0,
+    "latency_ms": 521.6515999636613,
+    "input_tokens": 411,
+    "output_tokens": 44,
+    "cost_usd": 1.7262e-05,
+    "raw": {
+     "claims": [
+      {
+       "text": "Refunds reach your card in 5 to 10 business days.",
+       "cites": [
+        "returns-window"
+       ],
+       "code": null,
+       "checks": [
+        {
+         "source": "returns-window",
+         "choice": "not_addressed",
+         "confidence": 1.0
+        }
+       ],
+       "verdict": "insufficient"
+      }
+     ],
+     "calls": 1,
+     "reason": "\"Refunds reach your card in 5 to 10 business days.\" → insufficient"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_judge": {
+    "variant": "llm_judge",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "insufficient",
+    "confidence": null,
+    "latency_ms": 1051.6580999828875,
+    "input_tokens": 274,
+    "output_tokens": 49,
+    "cost_usd": 0.000142,
+    "raw": {
+     "reason": "The answer cites the source 'returns-window', which discusses the return policy window rather than the refund processing time. The correct source for the refund timing is 'refunds-timing'.",
+     "finish_reason": "stop"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "trust_citations": {
+    "variant": "trust_citations",
+    "model": "(no model)",
+    "label": "supported",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "every sentence has a citation"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/baecc92a1914cbafb6c64d942640eab6"
+ },
+ {
+  "idx": 15,
+  "text": "Unused items can be returned within 30 days of delivery [returns-window]. Refunds take 5 to 10 business days.",
+  "expected": "insufficient",
+  "note": "hard: the second claim is true but uncited",
+  "input": {
+   "question": "Can I return an item and how fast is the refund?",
+   "answer": "Unused items can be returned within 30 days of delivery [returns-window]. Refunds take 5 to 10 business days.",
+   "sources": [
+    {
+     "id": "returns-window",
+     "text": "Unused items can be returned within 30 days of delivery for a full refund."
+    },
+    {
+     "id": "refunds-timing",
+     "text": "Once a refund is approved, the money reaches your card in 5 to 10 business days."
+    }
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "insufficient",
+    "confidence": 1.0,
+    "latency_ms": 540.3194000246003,
+    "input_tokens": 409,
+    "output_tokens": 42,
+    "cost_usd": 1.7178e-05,
+    "raw": {
+     "claims": [
+      {
+       "text": "Unused items can be returned within 30 days of delivery.",
+       "cites": [
+        "returns-window"
+       ],
+       "code": null,
+       "checks": [
+        {
+         "source": "returns-window",
+         "choice": "supports",
+         "confidence": 1.0
+        }
+       ],
+       "verdict": "supported"
+      },
+      {
+       "text": "Refunds take 5 to 10 business days.",
+       "cites": [],
+       "code": "uncited",
+       "checks": [],
+       "verdict": "insufficient"
+      }
+     ],
+     "calls": 1,
+     "reason": "\"Refunds take 5 to 10 business days.\" → uncited"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_judge": {
+    "variant": "llm_judge",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "insufficient",
+    "confidence": null,
+    "latency_ms": 1151.1723000439815,
+    "input_tokens": 289,
+    "output_tokens": 42,
+    "cost_usd": 0.00013525,
+    "raw": {
+     "reason": "The answer provides a timeframe for refunds but fails to cite the source 'refunds-timing' for that specific information.",
+     "finish_reason": "stop"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "trust_citations": {
+    "variant": "trust_citations",
+    "model": "(no model)",
+    "label": "insufficient",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "uncited: \"Refunds take 5 to 10 business days.\""
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/14f4ab6637f665ee367d64264a202dd4"
+ },
+ {
+  "idx": 16,
+  "text": "Opened software can be returned within 14 days [software-policy].",
+  "expected": "insufficient",
+  "note": "a citation id that was never retrieved",
+  "input": {
+   "question": "Can I return opened software?",
+   "answer": "Opened software can be returned within 14 days [software-policy].",
+   "sources": [
+    {
+     "id": "returns-window",
+     "text": "Unused items can be returned within 30 days of delivery for a full refund."
+    },
+    {
+     "id": "returns-label",
+     "text": "Return labels are free for defective items. For change-of-mind returns, $5 is taken off the refund to cover the label."
+    }
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13",
+    "label": "insufficient",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0,
+    "raw": {
+     "claims": [
+      {
+       "text": "Opened software can be returned within 14 days.",
+       "cites": [
+        "software-policy"
+       ],
+       "code": "unknown_source",
+       "checks": [],
+       "verdict": "insufficient"
+      }
+     ],
+     "calls": 0,
+     "reason": "\"Opened software can be returned within 14 days.\" → unknown_source"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_judge": {
+    "variant": "llm_judge",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "insufficient",
+    "confidence": null,
+    "latency_ms": 949.6505000279285,
+    "input_tokens": 276,
+    "output_tokens": 37,
+    "cost_usd": 0.0001245,
+    "raw": {
+     "reason": "The source 'software-policy' is not provided in the list of sources, and the provided sources do not mention software returns.",
+     "finish_reason": "stop"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "trust_citations": {
+    "variant": "trust_citations",
+    "model": "(no model)",
+    "label": "supported",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "every sentence has a citation"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/b5447dc519b386a72eb1394d0886a068"
+ },
+ {
+  "idx": 17,
+  "text": "Email privacy@acme.test and your account is deleted within 30 days, with a confirmation email when it is done [account-delete].",
+  "expected": "insufficient",
+  "note": "hard: the confirmation email is not in the source",
+  "input": {
+   "question": "How do I delete my account?",
+   "answer": "Email privacy@acme.test and your account is deleted within 30 days, with a confirmation email when it is done [account-delete].",
+   "sources": [
+    {
+     "id": "account-delete",
+     "text": "To delete your account, email privacy@acme.test. Deletion is completed within 30 days."
+    },
+    {
+     "id": "account-password",
+     "text": "To reset your password, use 'Forgot password' on the login page. The reset link expires after 1 hour."
+    }
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "insufficient",
+    "confidence": 0.66,
+    "latency_ms": 604.9132000189275,
+    "input_tokens": 428,
+    "output_tokens": 44,
+    "cost_usd": 1.7976e-05,
+    "raw": {
+     "claims": [
+      {
+       "text": "Email privacy@acme.test and your account is deleted within 30 days, with a confirmation email when it is done.",
+       "cites": [
+        "account-delete"
+       ],
+       "code": null,
+       "checks": [
+        {
+         "source": "account-delete",
+         "choice": "not_addressed",
+         "confidence": 0.66
+        }
+       ],
+       "verdict": "insufficient"
+      }
+     ],
+     "calls": 1,
+     "reason": "\"Email privacy@acme.test and your account is deleted within 30 days, with a confirmation email when it is done.\" → insufficient"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_judge": {
+    "variant": "llm_judge",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "insufficient",
+    "confidence": null,
+    "latency_ms": 1048.2798999873921,
+    "input_tokens": 294,
+    "output_tokens": 45,
+    "cost_usd": 0.000141,
+    "raw": {
+     "reason": "The source [account-delete] confirms the email address and the 30-day timeframe, but it does not mention that a confirmation email is sent upon completion.",
+     "finish_reason": "stop"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "trust_citations": {
+    "variant": "trust_citations",
+    "model": "(no model)",
+    "label": "supported",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "every sentence has a citation"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/c2cda1fb3edd7e55ed848f157d4b55e4"
+ },
+ {
+  "idx": 18,
+  "text": "Gift cards never expire [plus-price].",
+  "expected": "insufficient",
+  "note": "the right fact, the wrong citation",
+  "input": {
+   "question": "Do gift cards expire?",
+   "answer": "Gift cards never expire [plus-price].",
+   "sources": [
+    {
+     "id": "gift-cards",
+     "text": "Gift cards never expire. They cannot be refunded or exchanged for cash."
+    },
+    {
+     "id": "plus-price",
+     "text": "Acme Plus costs $9 per month or $90 per year, and includes free express shipping."
+    }
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "insufficient",
+    "confidence": 1.0,
+    "latency_ms": 755.8565000072122,
+    "input_tokens": 405,
+    "output_tokens": 44,
+    "cost_usd": 1.701e-05,
+    "raw": {
+     "claims": [
+      {
+       "text": "Gift cards never expire.",
+       "cites": [
+        "plus-price"
+       ],
+       "code": null,
+       "checks": [
+        {
+         "source": "plus-price",
+         "choice": "not_addressed",
+         "confidence": 1.0
+        }
+       ],
+       "verdict": "insufficient"
+      }
+     ],
+     "calls": 1,
+     "reason": "\"Gift cards never expire.\" → insufficient"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_judge": {
+    "variant": "llm_judge",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "insufficient",
+    "confidence": null,
+    "latency_ms": 1170.1186999562196,
+    "input_tokens": 258,
+    "output_tokens": 39,
+    "cost_usd": 0.000123,
+    "raw": {
+     "reason": "The source cited, [plus-price], discusses the pricing of Acme Plus and does not contain any information regarding the expiration of gift cards.",
+     "finish_reason": "stop"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "trust_citations": {
+    "variant": "trust_citations",
+    "model": "(no model)",
+    "label": "supported",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "every sentence has a citation"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/9334d905864b8cbff9d7903dbcb0bf2c"
+ },
+ {
+  "idx": 19,
+  "text": "Yes, express shipping is available to the UK [shipping-express].",
+  "expected": "insufficient",
+  "note": "hard: the UK is served, but no source says express goes there",
+  "input": {
+   "question": "Can I get express shipping to the UK?",
+   "answer": "Yes, express shipping is available to the UK [shipping-express].",
+   "sources": [
+    {
+     "id": "shipping-express",
+     "text": "Express shipping delivers the next business day for $14.99 if you order before 2pm."
+    },
+    {
+     "id": "shipping-intl",
+     "text": "We ship to the EU and the UK. International orders take 7 to 14 days, and customs fees are paid by the customer."
+    }
+   ]
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "insufficient",
+    "confidence": 0.97,
+    "latency_ms": 694.9230000027455,
+    "input_tokens": 411,
+    "output_tokens": 44,
+    "cost_usd": 1.7262e-05,
+    "raw": {
+     "claims": [
+      {
+       "text": "Yes, express shipping is available to the UK.",
+       "cites": [
+        "shipping-express"
+       ],
+       "code": null,
+       "checks": [
+        {
+         "source": "shipping-express",
+         "choice": "not_addressed",
+         "confidence": 0.97
+        }
+       ],
+       "verdict": "insufficient"
+      }
+     ],
+     "calls": 1,
+     "reason": "\"Yes, express shipping is available to the UK.\" → insufficient"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "llm_judge": {
+    "variant": "llm_judge",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "contradicted",
+    "confidence": null,
+    "latency_ms": 1225.077799987048,
+    "input_tokens": 283,
+    "output_tokens": 68,
+    "cost_usd": 0.00017275,
+    "raw": {
+     "reason": "The source shipping-express mentions express shipping details but does not explicitly state that express shipping is available to the UK. The source shipping-intl confirms shipping to the UK but specifies a 7 to 14 day delivery window for international orders, which contradicts the availability of express shipping.",
+     "finish_reason": "stop"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   },
+   "trust_citations": {
+    "variant": "trust_citations",
+    "model": "(no model)",
+    "label": "supported",
+    "confidence": null,
+    "latency_ms": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "raw": {
+     "reason": "every sentence has a citation"
+    },
+    "probability": null,
+    "score": null,
+    "quality": null
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/5903a3571c4f94a971b9a3952f121add"
+ }
+]

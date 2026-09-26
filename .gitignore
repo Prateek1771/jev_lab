@@ -12,8 +12,7 @@ wheels/
 # Secrets
 config/.env
 
-# Web UI
-runs/
+# Web UI (runs/ is committed: the deployed History and charts show the saved runs)
 web/node_modules/
 web/.next/
 

@@ -1,0 +1,3486 @@
+[
+ {
+  "idx": 0,
+  "text": "How long do I have to return an item?",
+  "expected": "answer",
+  "note": "hard: the answer is 5th; a FAQ page that only NAMES 'the return window' outranks it",
+  "input": {
+   "question": "How long do I have to return an item?",
+   "rubric": "Required: 30 days from delivery.",
+   "gold": {
+    "returns-window": 2,
+    "returns-how": 1,
+    "returns-label-cost": 1,
+    "returns-faq": 1
+   }
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "answer",
+    "confidence": 0.98,
+    "latency_ms": 3252.282000030391,
+    "input_tokens": 4079,
+    "output_tokens": 211,
+    "cost_usd": 0.00023880199999999998,
+    "raw": {
+     "scores": {
+      "returns-how": {
+       "score": 0.99,
+       "p_top": 0.0
+      },
+      "returns-label-cost": {
+       "score": 0.97,
+       "p_top": 0.0
+      },
+      "refunds-store-credit": {
+       "score": 0.91,
+       "p_top": 0.0
+      },
+      "returns-faq": {
+       "score": 1.0,
+       "p_top": 0.0
+      },
+      "returns-window": {
+       "score": 2.0,
+       "p_top": 1.0
+      },
+      "warranty-cover": {
+       "score": 0.92,
+       "p_top": 0.01
+      },
+      "account-email": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "account-overview": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "account-password": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "giftcards": {
+       "score": 0.2,
+       "p_top": 0.0
+      }
+     },
+     "answer": "You have 30 days from delivery to return unused items for a full refund [returns-window].",
+     "finish_reason": "stop",
+     "order": [
+      "returns-window",
+      "returns-faq",
+      "returns-how",
+      "returns-label-cost",
+      "warranty-cover",
+      "refunds-store-credit",
+      "giftcards",
+      "account-email",
+      "account-overview",
+      "account-password"
+     ],
+     "top": [
+      "returns-window",
+      "returns-faq",
+      "returns-how"
+     ],
+     "ndcg": 1.0,
+     "mrr": 1.0,
+     "grade_cost": 1.68e-05,
+     "reason": "top 3: returns-window, returns-faq, returns-how"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.95
+   },
+   "llm_rank": {
+    "variant": "llm_rank",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "answer",
+    "confidence": null,
+    "latency_ms": 3281.017100031022,
+    "input_tokens": 715,
+    "output_tokens": 107,
+    "cost_usd": 0.00033925,
+    "raw": {
+     "answer": "You have 30 days from delivery to return unused items for a full refund [returns-window].",
+     "finish_reason": "stop",
+     "order": [
+      "returns-window",
+      "returns-faq",
+      "returns-how",
+      "returns-label-cost",
+      "refunds-store-credit",
+      "warranty-cover",
+      "account-email",
+      "account-overview",
+      "account-password",
+      "giftcards"
+     ],
+     "top": [
+      "returns-window",
+      "returns-faq",
+      "returns-how"
+     ],
+     "ndcg": 1.0,
+     "mrr": 1.0,
+     "grade_cost": 1.68e-05,
+     "reason": "top 3: returns-window, returns-faq, returns-how"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.96
+   },
+   "retriever_order": {
+    "variant": "retriever_order",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "no_answer",
+    "confidence": null,
+    "latency_ms": 1417.6386999897659,
+    "input_tokens": 188,
+    "output_tokens": 3,
+    "cost_usd": 5.15e-05,
+    "raw": {
+     "answer": "NO_ANSWER",
+     "finish_reason": "stop",
+     "order": [
+      "returns-how",
+      "returns-label-cost",
+      "refunds-store-credit",
+      "returns-faq",
+      "returns-window",
+      "warranty-cover",
+      "account-email",
+      "account-overview",
+      "account-password",
+      "giftcards"
+     ],
+     "top": [
+      "returns-how",
+      "returns-label-cost",
+      "refunds-store-credit"
+     ],
+     "ndcg": 0.39480936517049525,
+     "mrr": 0.2,
+     "grade_cost": 1.6128e-05,
+     "reason": "top 3: returns-how, returns-label-cost, refunds-store-credit"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.01
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/4ee52029eb07749ed495eab1f3bd8a60"
+ },
+ {
+  "idx": 1,
+  "text": "How do I start a return?",
+  "expected": "answer",
+  "note": null,
+  "input": {
+   "question": "How do I start a return?",
+   "rubric": "Required: open Orders, choose the item and click Return, then use the prepaid label.",
+   "gold": {
+    "returns-how": 2,
+    "returns-label-cost": 1,
+    "returns-window": 1,
+    "returns-faq": 1
+   }
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "answer",
+    "confidence": 0.94,
+    "latency_ms": 1627.0406999392435,
+    "input_tokens": 4025,
+    "output_tokens": 223,
+    "cost_usd": 0.000254534,
+    "raw": {
+     "scores": {
+      "returns-how": {
+       "score": 2.0,
+       "p_top": 1.0
+      },
+      "order-track": {
+       "score": 0.81,
+       "p_top": 0.01
+      },
+      "returns-faq": {
+       "score": 0.99,
+       "p_top": 0.0
+      },
+      "returns-label-cost": {
+       "score": 0.99,
+       "p_top": 0.01
+      },
+      "account-email": {
+       "score": 0.01,
+       "p_top": 0.0
+      },
+      "account-overview": {
+       "score": 0.01,
+       "p_top": 0.0
+      },
+      "account-password": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "giftcards": {
+       "score": 0.22,
+       "p_top": 0.0
+      },
+      "order-address": {
+       "score": 0.18,
+       "p_top": 0.0
+      },
+      "order-cancel": {
+       "score": 1.96,
+       "p_top": 0.96
+      }
+     },
+     "answer": "To start a return, open Orders, choose the item and click Return. Print the prepaid label and drop the parcel at any post office. [returns-how]",
+     "finish_reason": "stop",
+     "order": [
+      "returns-how",
+      "order-cancel",
+      "returns-faq",
+      "returns-label-cost",
+      "order-track",
+      "giftcards",
+      "order-address",
+      "account-email",
+      "account-overview",
+      "account-password"
+     ],
+     "top": [
+      "returns-how",
+      "order-cancel",
+      "returns-faq"
+     ],
+     "ndcg": 0.8472668887613066,
+     "mrr": 1.0,
+     "grade_cost": 1.7556e-05,
+     "reason": "top 3: returns-how, order-cancel, returns-faq"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.89
+   },
+   "llm_rank": {
+    "variant": "llm_rank",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "answer",
+    "confidence": null,
+    "latency_ms": 2112.5212000333704,
+    "input_tokens": 698,
+    "output_tokens": 116,
+    "cost_usd": 0.0003485,
+    "raw": {
+     "answer": "To start a return, open Orders, choose the item and click Return. Print the prepaid label and drop the parcel at any post office. [returns-how]",
+     "finish_reason": "stop",
+     "order": [
+      "returns-how",
+      "returns-faq",
+      "returns-label-cost",
+      "order-cancel",
+      "order-track",
+      "account-email",
+      "account-overview",
+      "account-password",
+      "giftcards",
+      "order-address"
+     ],
+     "top": [
+      "returns-how",
+      "returns-faq",
+      "returns-label-cost"
+     ],
+     "ndcg": 1.0,
+     "mrr": 1.0,
+     "grade_cost": 1.7556e-05,
+     "reason": "top 3: returns-how, returns-faq, returns-label-cost"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.89
+   },
+   "retriever_order": {
+    "variant": "retriever_order",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "answer",
+    "confidence": null,
+    "latency_ms": 966.2549000349827,
+    "input_tokens": 169,
+    "output_tokens": 32,
+    "cost_usd": 9.025e-05,
+    "raw": {
+     "answer": "To start a return, open Orders, choose the item and click Return. Print the prepaid label and drop the parcel at any post office [returns-how].",
+     "finish_reason": "stop",
+     "order": [
+      "returns-how",
+      "order-track",
+      "returns-faq",
+      "returns-label-cost",
+      "account-email",
+      "account-overview",
+      "account-password",
+      "giftcards",
+      "order-address",
+      "order-cancel"
+     ],
+     "top": [
+      "returns-how",
+      "order-track",
+      "returns-faq"
+     ],
+     "ndcg": 0.8472668887613066,
+     "mrr": 1.0,
+     "grade_cost": 1.7514e-05,
+     "reason": "top 3: returns-how, order-track, returns-faq"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.85
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/7ae5cc5902b0fea16ae0640068bf6bb4"
+ },
+ {
+  "idx": 2,
+  "text": "Do I pay for the return label?",
+  "expected": "answer",
+  "note": "hard: the FAQ page ranks first",
+  "input": {
+   "question": "Do I pay for the return label?",
+   "rubric": "Required: free for defective items; $5 is taken off the refund for change-of-mind returns.",
+   "gold": {
+    "returns-label-cost": 2,
+    "returns-how": 1,
+    "returns-faq": 1
+   }
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "answer",
+    "confidence": 0.97,
+    "latency_ms": 2895.713599980809,
+    "input_tokens": 4049,
+    "output_tokens": 225,
+    "cost_usd": 0.000260414,
+    "raw": {
+     "scores": {
+      "returns-faq": {
+       "score": 0.98,
+       "p_top": 0.0
+      },
+      "returns-how": {
+       "score": 1.99,
+       "p_top": 0.99
+      },
+      "returns-label-cost": {
+       "score": 2.0,
+       "p_top": 1.0
+      },
+      "pay-methods": {
+       "score": 0.08,
+       "p_top": 0.0
+      },
+      "payments-overview": {
+       "score": 0.13,
+       "p_top": 0.0
+      },
+      "account-email": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "account-overview": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "account-password": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "giftcards": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "order-address": {
+       "score": 0.14,
+       "p_top": 0.0
+      }
+     },
+     "answer": "Return labels are free for defective items, but for change-of-mind returns, $5 is deducted from your refund to cover the cost [returns-label-cost].",
+     "finish_reason": "stop",
+     "order": [
+      "returns-label-cost",
+      "returns-how",
+      "returns-faq",
+      "order-address",
+      "payments-overview",
+      "pay-methods",
+      "account-email",
+      "account-overview",
+      "account-password",
+      "giftcards"
+     ],
+     "top": [
+      "returns-label-cost",
+      "returns-how",
+      "returns-faq"
+     ],
+     "ndcg": 1.0,
+     "mrr": 1.0,
+     "grade_cost": 1.7724e-05,
+     "reason": "top 3: returns-label-cost, returns-how, returns-faq"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.91
+   },
+   "llm_rank": {
+    "variant": "llm_rank",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "answer",
+    "confidence": null,
+    "latency_ms": 2309.5443000202067,
+    "input_tokens": 697,
+    "output_tokens": 118,
+    "cost_usd": 0.00035125,
+    "raw": {
+     "answer": "Return labels are free for defective items, but for change-of-mind returns, $5 is deducted from your refund to cover the cost [returns-label-cost].",
+     "finish_reason": "stop",
+     "order": [
+      "returns-label-cost",
+      "returns-faq",
+      "returns-how",
+      "pay-methods",
+      "payments-overview",
+      "account-email",
+      "account-overview",
+      "account-password",
+      "giftcards",
+      "order-address"
+     ],
+     "top": [
+      "returns-label-cost",
+      "returns-faq",
+      "returns-how"
+     ],
+     "ndcg": 1.0,
+     "mrr": 1.0,
+     "grade_cost": 1.7724e-05,
+     "reason": "top 3: returns-label-cost, returns-faq, returns-how"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.91
+   },
+   "retriever_order": {
+    "variant": "retriever_order",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "answer",
+    "confidence": null,
+    "latency_ms": 1039.4250999670476,
+    "input_tokens": 182,
+    "output_tokens": 37,
+    "cost_usd": 0.000101,
+    "raw": {
+     "answer": "Return labels are free for defective items. For change-of-mind returns, $5 is deducted from your refund to cover the cost of the label [returns-label-cost].",
+     "finish_reason": "stop",
+     "order": [
+      "returns-faq",
+      "returns-how",
+      "returns-label-cost",
+      "pay-methods",
+      "payments-overview",
+      "account-email",
+      "account-overview",
+      "account-password",
+      "giftcards",
+      "order-address"
+     ],
+     "top": [
+      "returns-faq",
+      "returns-how",
+      "returns-label-cost"
+     ],
+     "ndcg": 0.7579237460681981,
+     "mrr": 0.3333333333333333,
+     "grade_cost": 1.7808e-05,
+     "reason": "top 3: returns-faq, returns-how, returns-label-cost"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.94
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/1efa8c6bcef54e4c60d413645b0d4575"
+ },
+ {
+  "idx": 3,
+  "text": "When will I get my refund?",
+  "expected": "answer",
+  "note": "hard: the answer never says 'when', so it ranks 3rd behind unrelated chunks",
+  "input": {
+   "question": "When will I get my refund?",
+   "rubric": "Required: 5 to 10 business days after the parcel reaches the warehouse.",
+   "gold": {
+    "refunds-timing": 2,
+    "refunds-store-credit": 1
+   }
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "answer",
+    "confidence": 0.45,
+    "latency_ms": 2424.5699999737553,
+    "input_tokens": 4014,
+    "output_tokens": 221,
+    "cost_usd": 0.0002492,
+    "raw": {
+     "scores": {
+      "order-address": {
+       "score": 0.1,
+       "p_top": 0.0
+      },
+      "plus-cancel": {
+       "score": 1.36,
+       "p_top": 0.36
+      },
+      "refunds-timing": {
+       "score": 2.0,
+       "p_top": 1.0
+      },
+      "returns-faq": {
+       "score": 1.0,
+       "p_top": 0.0
+      },
+      "returns-label-cost": {
+       "score": 0.96,
+       "p_top": 0.0
+      },
+      "returns-window": {
+       "score": 1.02,
+       "p_top": 0.02
+      },
+      "account-email": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "account-overview": {
+       "score": 0.01,
+       "p_top": 0.0
+      },
+      "account-password": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "giftcards": {
+       "score": 0.27,
+       "p_top": 0.0
+      }
+     },
+     "answer": "Your refund will be credited to your original payment method within 5 to 10 business days after your parcel reaches the warehouse [refunds-timing].",
+     "finish_reason": "stop",
+     "order": [
+      "refunds-timing",
+      "plus-cancel",
+      "returns-window",
+      "returns-faq",
+      "returns-label-cost",
+      "giftcards",
+      "order-address",
+      "account-overview",
+      "account-email",
+      "account-password"
+     ],
+     "top": [
+      "refunds-timing",
+      "plus-cancel",
+      "returns-window"
+     ],
+     "ndcg": 0.8262346571285599,
+     "mrr": 1.0,
+     "grade_cost": 1.7472e-05,
+     "reason": "top 3: refunds-timing, plus-cancel, returns-window"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.97
+   },
+   "llm_rank": {
+    "variant": "llm_rank",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "answer",
+    "confidence": null,
+    "latency_ms": 3405.5482000112534,
+    "input_tokens": 684,
+    "output_tokens": 115,
+    "cost_usd": 0.0003435,
+    "raw": {
+     "answer": "Your refund will be processed to your original payment method within 5 to 10 business days after your parcel reaches the warehouse [refunds-timing].",
+     "finish_reason": "stop",
+     "order": [
+      "refunds-timing",
+      "returns-faq",
+      "returns-window",
+      "returns-label-cost",
+      "plus-cancel",
+      "order-address",
+      "account-email",
+      "account-overview",
+      "account-password",
+      "giftcards"
+     ],
+     "top": [
+      "refunds-timing",
+      "returns-faq",
+      "returns-window"
+     ],
+     "ndcg": 0.8262346571285599,
+     "mrr": 1.0,
+     "grade_cost": 1.7472e-05,
+     "reason": "top 3: refunds-timing, returns-faq, returns-window"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.97
+   },
+   "retriever_order": {
+    "variant": "retriever_order",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "answer",
+    "confidence": null,
+    "latency_ms": 1597.1978000015952,
+    "input_tokens": 159,
+    "output_tokens": 30,
+    "cost_usd": 8.475e-05,
+    "raw": {
+     "answer": "Your refund will land on your original payment method in 5 to 10 business days after your parcel reaches the warehouse [refunds-timing].",
+     "finish_reason": "stop",
+     "order": [
+      "order-address",
+      "plus-cancel",
+      "refunds-timing",
+      "returns-faq",
+      "returns-label-cost",
+      "returns-window",
+      "account-email",
+      "account-overview",
+      "account-password",
+      "giftcards"
+     ],
+     "top": [
+      "order-address",
+      "plus-cancel",
+      "refunds-timing"
+     ],
+     "ndcg": 0.41311732856427996,
+     "mrr": 0.3333333333333333,
+     "grade_cost": 1.743e-05,
+     "reason": "top 3: order-address, plus-cancel, refunds-timing"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.96
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/e85ebf45abc24e0298d17e996beaf841"
+ },
+ {
+  "idx": 4,
+  "text": "Can I get store credit instead of a refund?",
+  "expected": "answer",
+  "note": null,
+  "input": {
+   "question": "Can I get store credit instead of a refund?",
+   "rubric": "Required: yes, chosen when sending the item back, and issued instantly.",
+   "gold": {
+    "refunds-store-credit": 2,
+    "refunds-timing": 1
+   }
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "answer",
+    "confidence": 0.67,
+    "latency_ms": 1931.932199979201,
+    "input_tokens": 4063,
+    "output_tokens": 218,
+    "cost_usd": 0.000248006,
+    "raw": {
+     "scores": {
+      "refunds-store-credit": {
+       "score": 1.91,
+       "p_top": 0.91
+      },
+      "order-cancel": {
+       "score": 0.95,
+       "p_top": 0.01
+      },
+      "plus-cancel": {
+       "score": 1.07,
+       "p_top": 0.15
+      },
+      "price-match": {
+       "score": 0.02,
+       "p_top": 0.0
+      },
+      "refunds-timing": {
+       "score": 1.01,
+       "p_top": 0.02
+      },
+      "returns-faq": {
+       "score": 0.98,
+       "p_top": 0.0
+      },
+      "returns-label-cost": {
+       "score": 0.97,
+       "p_top": 0.0
+      },
+      "returns-window": {
+       "score": 1.02,
+       "p_top": 0.02
+      },
+      "account-email": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "account-overview": {
+       "score": 0.0,
+       "p_top": 0.0
+      }
+     },
+     "answer": "Yes, you can choose store credit when you send an item back, and it will be issued instantly [refunds-store-credit].",
+     "finish_reason": "stop",
+     "order": [
+      "refunds-store-credit",
+      "plus-cancel",
+      "returns-window",
+      "refunds-timing",
+      "returns-faq",
+      "returns-label-cost",
+      "order-cancel",
+      "price-match",
+      "account-email",
+      "account-overview"
+     ],
+     "top": [
+      "refunds-store-credit",
+      "plus-cancel",
+      "returns-window"
+     ],
+     "ndcg": 0.8262346571285599,
+     "mrr": 1.0,
+     "grade_cost": 1.7346e-05,
+     "reason": "top 3: refunds-store-credit, plus-cancel, returns-window"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.86
+   },
+   "llm_rank": {
+    "variant": "llm_rank",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "answer",
+    "confidence": null,
+    "latency_ms": 2775.5262999562547,
+    "input_tokens": 720,
+    "output_tokens": 116,
+    "cost_usd": 0.00035400000000000004,
+    "raw": {
+     "answer": "Yes, you can choose store credit when you send an item back, and it will be issued instantly [refunds-store-credit].",
+     "finish_reason": "stop",
+     "order": [
+      "refunds-store-credit",
+      "returns-faq",
+      "refunds-timing",
+      "returns-window",
+      "returns-label-cost",
+      "order-cancel",
+      "plus-cancel",
+      "price-match",
+      "account-email",
+      "account-overview"
+     ],
+     "top": [
+      "refunds-store-credit",
+      "returns-faq",
+      "refunds-timing"
+     ],
+     "ndcg": 0.9639404333166532,
+     "mrr": 1.0,
+     "grade_cost": 1.7346e-05,
+     "reason": "top 3: refunds-store-credit, returns-faq, refunds-timing"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.86
+   },
+   "retriever_order": {
+    "variant": "retriever_order",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "answer",
+    "confidence": null,
+    "latency_ms": 1153.273799980525,
+    "input_tokens": 173,
+    "output_tokens": 28,
+    "cost_usd": 8.525e-05,
+    "raw": {
+     "answer": "Yes, you can choose store credit when you send an item back, and it will be issued instantly [refunds-store-credit].",
+     "finish_reason": "stop",
+     "order": [
+      "refunds-store-credit",
+      "order-cancel",
+      "plus-cancel",
+      "price-match",
+      "refunds-timing",
+      "returns-faq",
+      "returns-label-cost",
+      "returns-window",
+      "account-email",
+      "account-overview"
+     ],
+     "top": [
+      "refunds-store-credit",
+      "order-cancel",
+      "plus-cancel"
+     ],
+     "ndcg": 0.8262346571285599,
+     "mrr": 1.0,
+     "grade_cost": 1.7346e-05,
+     "reason": "top 3: refunds-store-credit, order-cancel, plus-cancel"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.87
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/03b6f5bac3d4107b6afc98a9d9711e42"
+ },
+ {
+  "idx": 5,
+  "text": "How long does standard delivery take?",
+  "expected": "answer",
+  "note": "hard: a blog post full of the same words ranks first",
+  "input": {
+   "question": "How long does standard delivery take?",
+   "rubric": "Required: 3 to 5 business days.",
+   "gold": {
+    "shipping-times": 2,
+    "shipping-cost": 1
+   }
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "answer",
+    "confidence": 0.9,
+    "latency_ms": 2465.8519999939017,
+    "input_tokens": 4037,
+    "output_tokens": 205,
+    "cost_usd": 0.000227622,
+    "raw": {
+     "scores": {
+      "shipping-news": {
+       "score": 1.02,
+       "p_top": 0.02
+      },
+      "shipping-times": {
+       "score": 2.0,
+       "p_top": 1.0
+      },
+      "order-address": {
+       "score": 0.63,
+       "p_top": 0.0
+      },
+      "plus-benefits": {
+       "score": 0.87,
+       "p_top": 0.0
+      },
+      "returns-faq": {
+       "score": 0.15,
+       "p_top": 0.0
+      },
+      "returns-window": {
+       "score": 0.44,
+       "p_top": 0.0
+      },
+      "shipping-cost": {
+       "score": 0.99,
+       "p_top": 0.0
+      },
+      "shipping-intl": {
+       "score": 1.93,
+       "p_top": 0.94
+      },
+      "account-email": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "account-overview": {
+       "score": 0.0,
+       "p_top": 0.0
+      }
+     },
+     "answer": "Standard delivery takes 3 to 5 business days [shipping-times].",
+     "finish_reason": "stop",
+     "order": [
+      "shipping-times",
+      "shipping-intl",
+      "shipping-news",
+      "shipping-cost",
+      "plus-benefits",
+      "order-address",
+      "returns-window",
+      "returns-faq",
+      "account-email",
+      "account-overview"
+     ],
+     "top": [
+      "shipping-times",
+      "shipping-intl",
+      "shipping-news"
+     ],
+     "ndcg": 0.8262346571285599,
+     "mrr": 1.0,
+     "grade_cost": 1.6464e-05,
+     "reason": "top 3: shipping-times, shipping-intl, shipping-news"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.95
+   },
+   "llm_rank": {
+    "variant": "llm_rank",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "answer",
+    "confidence": null,
+    "latency_ms": 3188.311400008388,
+    "input_tokens": 694,
+    "output_tokens": 97,
+    "cost_usd": 0.000319,
+    "raw": {
+     "answer": "Standard delivery takes 3 to 5 business days [shipping-times].",
+     "finish_reason": "stop",
+     "order": [
+      "shipping-times",
+      "shipping-news",
+      "shipping-intl",
+      "shipping-cost",
+      "order-address",
+      "plus-benefits",
+      "returns-faq",
+      "returns-window",
+      "account-email",
+      "account-overview"
+     ],
+     "top": [
+      "shipping-times",
+      "shipping-news",
+      "shipping-intl"
+     ],
+     "ndcg": 0.8262346571285599,
+     "mrr": 1.0,
+     "grade_cost": 1.6464e-05,
+     "reason": "top 3: shipping-times, shipping-news, shipping-intl"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.95
+   },
+   "retriever_order": {
+    "variant": "retriever_order",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "answer",
+    "confidence": null,
+    "latency_ms": 1008.8273999863304,
+    "input_tokens": 154,
+    "output_tokens": 15,
+    "cost_usd": 6.1e-05,
+    "raw": {
+     "answer": "Standard delivery takes 3 to 5 business days [shipping-times].",
+     "finish_reason": "stop",
+     "order": [
+      "shipping-news",
+      "shipping-times",
+      "order-address",
+      "plus-benefits",
+      "returns-faq",
+      "returns-window",
+      "shipping-cost",
+      "shipping-intl",
+      "account-email",
+      "account-overview"
+     ],
+     "top": [
+      "shipping-news",
+      "shipping-times",
+      "order-address"
+     ],
+     "ndcg": 0.52129602861432,
+     "mrr": 0.5,
+     "grade_cost": 1.6464e-05,
+     "reason": "top 3: shipping-news, shipping-times, order-address"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.94
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/d905c3da9ba044e99f8ada62310c5813"
+ },
+ {
+  "idx": 6,
+  "text": "How much does express delivery cost?",
+  "expected": "answer",
+  "note": "hard: the Plus benefits chunk mentions express and ranks first",
+  "input": {
+   "question": "How much does express delivery cost?",
+   "rubric": "Required: $14.99 (free for Acme Plus members is fine to add).",
+   "gold": {
+    "shipping-cost": 2,
+    "shipping-times": 1,
+    "plus-benefits": 1
+   }
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "answer",
+    "confidence": 0.56,
+    "latency_ms": 2476.49650007952,
+    "input_tokens": 4000,
+    "output_tokens": 204,
+    "cost_usd": 0.000222072,
+    "raw": {
+     "scores": {
+      "plus-benefits": {
+       "score": 1.28,
+       "p_top": 0.29
+      },
+      "shipping-cost": {
+       "score": 2.0,
+       "p_top": 1.0
+      },
+      "shipping-news": {
+       "score": 0.93,
+       "p_top": 0.0
+      },
+      "shipping-times": {
+       "score": 0.99,
+       "p_top": 0.0
+      },
+      "order-address": {
+       "score": 0.26,
+       "p_top": 0.0
+      },
+      "pay-methods": {
+       "score": 0.05,
+       "p_top": 0.0
+      },
+      "plus-overview": {
+       "score": 0.54,
+       "p_top": 0.03
+      },
+      "plus-price": {
+       "score": 0.25,
+       "p_top": 0.01
+      },
+      "returns-window": {
+       "score": 0.03,
+       "p_top": 0.0
+      },
+      "account-email": {
+       "score": 0.0,
+       "p_top": 0.0
+      }
+     },
+     "answer": "Express delivery costs $14.99 [shipping-cost].",
+     "finish_reason": "stop",
+     "order": [
+      "shipping-cost",
+      "plus-benefits",
+      "shipping-times",
+      "shipping-news",
+      "plus-overview",
+      "order-address",
+      "plus-price",
+      "pay-methods",
+      "returns-window",
+      "account-email"
+     ],
+     "top": [
+      "shipping-cost",
+      "plus-benefits",
+      "shipping-times"
+     ],
+     "ndcg": 1.0,
+     "mrr": 1.0,
+     "grade_cost": 1.6842e-05,
+     "reason": "top 3: shipping-cost, plus-benefits, shipping-times"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.89
+   },
+   "llm_rank": {
+    "variant": "llm_rank",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "answer",
+    "confidence": null,
+    "latency_ms": 2461.8956000194885,
+    "input_tokens": 661,
+    "output_tokens": 96,
+    "cost_usd": 0.00030924999999999995,
+    "raw": {
+     "answer": "Express delivery costs $14.99 [shipping-cost].",
+     "finish_reason": "stop",
+     "order": [
+      "shipping-cost",
+      "plus-benefits",
+      "shipping-news",
+      "shipping-times",
+      "order-address",
+      "pay-methods",
+      "plus-overview",
+      "plus-price",
+      "returns-window",
+      "account-email"
+     ],
+     "top": [
+      "shipping-cost",
+      "plus-benefits",
+      "shipping-news"
+     ],
+     "ndcg": 0.878961873034099,
+     "mrr": 1.0,
+     "grade_cost": 1.6842e-05,
+     "reason": "top 3: shipping-cost, plus-benefits, shipping-news"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.91
+   },
+   "retriever_order": {
+    "variant": "retriever_order",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "answer",
+    "confidence": null,
+    "latency_ms": 828.8855000282638,
+    "input_tokens": 165,
+    "output_tokens": 29,
+    "cost_usd": 8.475e-05,
+    "raw": {
+     "answer": "Express delivery costs $14.99 [shipping-cost]. Acme Plus members get free express delivery on every order [plus-benefits].",
+     "finish_reason": "stop",
+     "order": [
+      "plus-benefits",
+      "shipping-cost",
+      "shipping-news",
+      "shipping-times",
+      "order-address",
+      "pay-methods",
+      "plus-overview",
+      "plus-price",
+      "returns-window",
+      "account-email"
+     ],
+     "top": [
+      "plus-benefits",
+      "shipping-cost",
+      "shipping-news"
+     ],
+     "ndcg": 0.7002755876478819,
+     "mrr": 0.5,
+     "grade_cost": 1.7556e-05,
+     "reason": "top 3: plus-benefits, shipping-cost, shipping-news"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.95
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/03aba4b3eea037ec94a69f1209488d2c"
+ },
+ {
+  "idx": 7,
+  "text": "Do you deliver to the UK, and who pays import duties?",
+  "expected": "answer",
+  "note": null,
+  "input": {
+   "question": "Do you deliver to the UK, and who pays import duties?",
+   "rubric": "Required: yes, and the customer pays import duties.",
+   "gold": {
+    "shipping-intl": 2
+   }
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "answer",
+    "confidence": 0.59,
+    "latency_ms": 2213.004599965643,
+    "input_tokens": 4065,
+    "output_tokens": 216,
+    "cost_usd": 0.000243634,
+    "raw": {
+     "scores": {
+      "shipping-intl": {
+       "score": 2.0,
+       "p_top": 1.0
+      },
+      "pay-methods": {
+       "score": 0.08,
+       "p_top": 0.0
+      },
+      "payments-overview": {
+       "score": 0.07,
+       "p_top": 0.0
+      },
+      "account-email": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "account-overview": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "account-password": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "giftcards": {
+       "score": 0.01,
+       "p_top": 0.0
+      },
+      "order-address": {
+       "score": 0.27,
+       "p_top": 0.0
+      },
+      "order-cancel": {
+       "score": 0.07,
+       "p_top": 0.0
+      },
+      "order-track": {
+       "score": 0.02,
+       "p_top": 0.0
+      }
+     },
+     "answer": "Yes, we deliver to the UK [shipping-intl]. Import duties are paid by the customer on arrival [shipping-intl].",
+     "finish_reason": "stop",
+     "order": [
+      "shipping-intl",
+      "order-address",
+      "pay-methods",
+      "payments-overview",
+      "order-cancel",
+      "order-track",
+      "giftcards",
+      "account-email",
+      "account-overview",
+      "account-password"
+     ],
+     "top": [
+      "shipping-intl",
+      "order-address",
+      "pay-methods"
+     ],
+     "ndcg": 1.0,
+     "mrr": 1.0,
+     "grade_cost": 1.7262e-05,
+     "reason": "top 3: shipping-intl, order-address, pay-methods"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.97
+   },
+   "llm_rank": {
+    "variant": "llm_rank",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "answer",
+    "confidence": null,
+    "latency_ms": 2903.7033000495285,
+    "input_tokens": 678,
+    "output_tokens": 107,
+    "cost_usd": 0.00033,
+    "raw": {
+     "answer": "Yes, we deliver to the UK [shipping-intl]. Import duties are paid by the customer on arrival [shipping-intl].",
+     "finish_reason": "stop",
+     "order": [
+      "shipping-intl",
+      "pay-methods",
+      "payments-overview",
+      "account-email",
+      "account-overview",
+      "account-password",
+      "giftcards",
+      "order-address",
+      "order-cancel",
+      "order-track"
+     ],
+     "top": [
+      "shipping-intl",
+      "pay-methods",
+      "payments-overview"
+     ],
+     "ndcg": 1.0,
+     "mrr": 1.0,
+     "grade_cost": 1.7262e-05,
+     "reason": "top 3: shipping-intl, pay-methods, payments-overview"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.97
+   },
+   "retriever_order": {
+    "variant": "retriever_order",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "answer",
+    "confidence": null,
+    "latency_ms": 909.7928000264801,
+    "input_tokens": 172,
+    "output_tokens": 26,
+    "cost_usd": 8.2e-05,
+    "raw": {
+     "answer": "Yes, we deliver to the UK [shipping-intl]. Import duties are paid by the customer on arrival [shipping-intl].",
+     "finish_reason": "stop",
+     "order": [
+      "shipping-intl",
+      "pay-methods",
+      "payments-overview",
+      "account-email",
+      "account-overview",
+      "account-password",
+      "giftcards",
+      "order-address",
+      "order-cancel",
+      "order-track"
+     ],
+     "top": [
+      "shipping-intl",
+      "pay-methods",
+      "payments-overview"
+     ],
+     "ndcg": 1.0,
+     "mrr": 1.0,
+     "grade_cost": 1.7262e-05,
+     "reason": "top 3: shipping-intl, pay-methods, payments-overview"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.97
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/efdbd0e0b1915b20fc385acb6d9e45a5"
+ },
+ {
+  "idx": 8,
+  "text": "How do I track my order?",
+  "expected": "answer",
+  "note": null,
+  "input": {
+   "question": "How do I track my order?",
+   "rubric": "Required: open Orders and press Track.",
+   "gold": {
+    "order-track": 2,
+    "orders-overview": 1
+   }
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "answer",
+    "confidence": 0.51,
+    "latency_ms": 2066.747300035786,
+    "input_tokens": 4027,
+    "output_tokens": 200,
+    "cost_usd": 0.000218038,
+    "raw": {
+     "scores": {
+      "order-track": {
+       "score": 2.0,
+       "p_top": 1.0
+      },
+      "orders-overview": {
+       "score": 1.06,
+       "p_top": 0.06
+      },
+      "order-cancel": {
+       "score": 0.68,
+       "p_top": 0.0
+      },
+      "plus-benefits": {
+       "score": 0.1,
+       "p_top": 0.0
+      },
+      "returns-how": {
+       "score": 0.35,
+       "p_top": 0.0
+      },
+      "shipping-cost": {
+       "score": 0.64,
+       "p_top": 0.0
+      },
+      "warranty-claim": {
+       "score": 0.15,
+       "p_top": 0.0
+      },
+      "account-email": {
+       "score": 0.02,
+       "p_top": 0.0
+      },
+      "account-overview": {
+       "score": 0.02,
+       "p_top": 0.0
+      },
+      "account-password": {
+       "score": 0.0,
+       "p_top": 0.0
+      }
+     },
+     "answer": "Open Orders and press Track [order-track].",
+     "finish_reason": "stop",
+     "order": [
+      "order-track",
+      "orders-overview",
+      "order-cancel",
+      "shipping-cost",
+      "returns-how",
+      "warranty-claim",
+      "plus-benefits",
+      "account-email",
+      "account-overview",
+      "account-password"
+     ],
+     "top": [
+      "order-track",
+      "orders-overview",
+      "order-cancel"
+     ],
+     "ndcg": 1.0,
+     "mrr": 1.0,
+     "grade_cost": 1.617e-05,
+     "reason": "top 3: order-track, orders-overview, order-cancel"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.91
+   },
+   "llm_rank": {
+    "variant": "llm_rank",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "answer",
+    "confidence": null,
+    "latency_ms": 2771.955900010653,
+    "input_tokens": 688,
+    "output_tokens": 92,
+    "cost_usd": 0.00030999999999999995,
+    "raw": {
+     "answer": "Open Orders and press Track [order-track].",
+     "finish_reason": "stop",
+     "order": [
+      "order-track",
+      "orders-overview",
+      "order-cancel",
+      "returns-how",
+      "shipping-cost",
+      "plus-benefits",
+      "warranty-claim",
+      "account-overview",
+      "account-email",
+      "account-password"
+     ],
+     "top": [
+      "order-track",
+      "orders-overview",
+      "order-cancel"
+     ],
+     "ndcg": 1.0,
+     "mrr": 1.0,
+     "grade_cost": 1.617e-05,
+     "reason": "top 3: order-track, orders-overview, order-cancel"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.91
+   },
+   "retriever_order": {
+    "variant": "retriever_order",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "answer",
+    "confidence": null,
+    "latency_ms": 776.1135000037029,
+    "input_tokens": 163,
+    "output_tokens": 10,
+    "cost_usd": 5.575e-05,
+    "raw": {
+     "answer": "Open Orders and press Track [order-track].",
+     "finish_reason": "stop",
+     "order": [
+      "order-track",
+      "orders-overview",
+      "order-cancel",
+      "plus-benefits",
+      "returns-how",
+      "shipping-cost",
+      "warranty-claim",
+      "account-email",
+      "account-overview",
+      "account-password"
+     ],
+     "top": [
+      "order-track",
+      "orders-overview",
+      "order-cancel"
+     ],
+     "ndcg": 1.0,
+     "mrr": 1.0,
+     "grade_cost": 1.617e-05,
+     "reason": "top 3: order-track, orders-overview, order-cancel"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.91
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/dc44853db3b2ebb97d0a015d8e06f537"
+ },
+ {
+  "idx": 9,
+  "text": "Can I cancel my order?",
+  "expected": "answer",
+  "note": null,
+  "input": {
+   "question": "Can I cancel my order?",
+   "rubric": "Required: yes, until it is dispatched (Orders, then Cancel).",
+   "gold": {
+    "order-cancel": 2,
+    "orders-overview": 1,
+    "order-address": 1
+   }
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "answer",
+    "confidence": 0.76,
+    "latency_ms": 1956.4394000335597,
+    "input_tokens": 4018,
+    "output_tokens": 228,
+    "cost_usd": 0.00025945199999999997,
+    "raw": {
+     "scores": {
+      "order-cancel": {
+       "score": 2.0,
+       "p_top": 1.0
+      },
+      "orders-overview": {
+       "score": 1.03,
+       "p_top": 0.03
+      },
+      "order-track": {
+       "score": 0.84,
+       "p_top": 0.0
+      },
+      "plus-benefits": {
+       "score": 0.12,
+       "p_top": 0.0
+      },
+      "plus-cancel": {
+       "score": 0.63,
+       "p_top": 0.02
+      },
+      "returns-how": {
+       "score": 0.8,
+       "p_top": 0.0
+      },
+      "shipping-cost": {
+       "score": 0.15,
+       "p_top": 0.0
+      },
+      "warranty-claim": {
+       "score": 0.15,
+       "p_top": 0.0
+      },
+      "account-email": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "account-overview": {
+       "score": 0.01,
+       "p_top": 0.0
+      }
+     },
+     "answer": "Yes, you can cancel your order until the parcel is dispatched by going to Orders and selecting Cancel. After the parcel has been dispatched, you must send it back instead [order-cancel].",
+     "finish_reason": "stop",
+     "order": [
+      "order-cancel",
+      "orders-overview",
+      "order-track",
+      "returns-how",
+      "plus-cancel",
+      "shipping-cost",
+      "warranty-claim",
+      "plus-benefits",
+      "account-overview",
+      "account-email"
+     ],
+     "top": [
+      "order-cancel",
+      "orders-overview",
+      "order-track"
+     ],
+     "ndcg": 0.878961873034099,
+     "mrr": 1.0,
+     "grade_cost": 1.7598e-05,
+     "reason": "top 3: order-cancel, orders-overview, order-track"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.93
+   },
+   "llm_rank": {
+    "variant": "llm_rank",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "answer",
+    "confidence": null,
+    "latency_ms": 3091.5553999948315,
+    "input_tokens": 687,
+    "output_tokens": 120,
+    "cost_usd": 0.00035174999999999996,
+    "raw": {
+     "answer": "Yes, you can cancel your order until the parcel is dispatched by going to Orders and selecting Cancel. After the parcel has been dispatched, you must send it back instead [order-cancel].",
+     "finish_reason": "stop",
+     "order": [
+      "order-cancel",
+      "orders-overview",
+      "order-track",
+      "returns-how",
+      "warranty-claim",
+      "plus-benefits",
+      "plus-cancel",
+      "shipping-cost",
+      "account-email",
+      "account-overview"
+     ],
+     "top": [
+      "order-cancel",
+      "orders-overview",
+      "order-track"
+     ],
+     "ndcg": 0.878961873034099,
+     "mrr": 1.0,
+     "grade_cost": 1.7598e-05,
+     "reason": "top 3: order-cancel, orders-overview, order-track"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.92
+   },
+   "retriever_order": {
+    "variant": "retriever_order",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "answer",
+    "confidence": null,
+    "latency_ms": 1644.4403000059538,
+    "input_tokens": 162,
+    "output_tokens": 38,
+    "cost_usd": 9.75e-05,
+    "raw": {
+     "answer": "Yes, you can cancel your order until the parcel is dispatched by going to Orders and selecting Cancel. After the parcel has been dispatched, you must send it back instead [order-cancel].",
+     "finish_reason": "stop",
+     "order": [
+      "order-cancel",
+      "orders-overview",
+      "order-track",
+      "plus-benefits",
+      "plus-cancel",
+      "returns-how",
+      "shipping-cost",
+      "warranty-claim",
+      "account-email",
+      "account-overview"
+     ],
+     "top": [
+      "order-cancel",
+      "orders-overview",
+      "order-track"
+     ],
+     "ndcg": 0.878961873034099,
+     "mrr": 1.0,
+     "grade_cost": 1.7598e-05,
+     "reason": "top 3: order-cancel, orders-overview, order-track"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.93
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/194d56d29f940a2f7f6cc076798fb99e"
+ },
+ {
+  "idx": 10,
+  "text": "Can I change my delivery address?",
+  "expected": "answer",
+  "note": null,
+  "input": {
+   "question": "Can I change my delivery address?",
+   "rubric": "Required: yes, by contacting support before dispatch.",
+   "gold": {
+    "order-address": 2,
+    "order-cancel": 1,
+    "orders-overview": 1
+   }
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "answer",
+    "confidence": 0.71,
+    "latency_ms": 1816.0016000038013,
+    "input_tokens": 4022,
+    "output_tokens": 211,
+    "cost_usd": 0.000233912,
+    "raw": {
+     "scores": {
+      "order-address": {
+       "score": 1.99,
+       "p_top": 1.0
+      },
+      "account-email": {
+       "score": 0.08,
+       "p_top": 0.0
+      },
+      "account-overview": {
+       "score": 0.16,
+       "p_top": 0.0
+      },
+      "orders-overview": {
+       "score": 1.01,
+       "p_top": 0.02
+      },
+      "pay-failed": {
+       "score": 0.07,
+       "p_top": 0.0
+      },
+      "plus-benefits": {
+       "score": 0.1,
+       "p_top": 0.0
+      },
+      "returns-label-cost": {
+       "score": 0.11,
+       "p_top": 0.0
+      },
+      "returns-window": {
+       "score": 0.2,
+       "p_top": 0.0
+      },
+      "shipping-news": {
+       "score": 0.81,
+       "p_top": 0.0
+      },
+      "shipping-times": {
+       "score": 0.8,
+       "p_top": 0.0
+      }
+     },
+     "answer": "Yes, you can change your delivery address by contacting support before the order is dispatched [order-address].",
+     "finish_reason": "stop",
+     "order": [
+      "order-address",
+      "orders-overview",
+      "shipping-news",
+      "shipping-times",
+      "returns-window",
+      "account-overview",
+      "returns-label-cost",
+      "plus-benefits",
+      "account-email",
+      "pay-failed"
+     ],
+     "top": [
+      "order-address",
+      "orders-overview",
+      "shipping-news"
+     ],
+     "ndcg": 0.878961873034099,
+     "mrr": 1.0,
+     "grade_cost": 1.6716e-05,
+     "reason": "top 3: order-address, orders-overview, shipping-news"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.89
+   },
+   "llm_rank": {
+    "variant": "llm_rank",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "answer",
+    "confidence": null,
+    "latency_ms": 3636.3058999413624,
+    "input_tokens": 684,
+    "output_tokens": 105,
+    "cost_usd": 0.0003285,
+    "raw": {
+     "answer": "Yes, you can change your delivery address by contacting support before the order is dispatched [order-address].",
+     "finish_reason": "stop",
+     "order": [
+      "order-address",
+      "orders-overview",
+      "account-email",
+      "account-overview",
+      "pay-failed",
+      "plus-benefits",
+      "returns-label-cost",
+      "returns-window",
+      "shipping-news",
+      "shipping-times"
+     ],
+     "top": [
+      "order-address",
+      "orders-overview",
+      "account-email"
+     ],
+     "ndcg": 0.878961873034099,
+     "mrr": 1.0,
+     "grade_cost": 1.6716e-05,
+     "reason": "top 3: order-address, orders-overview, account-email"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.87
+   },
+   "retriever_order": {
+    "variant": "retriever_order",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "answer",
+    "confidence": null,
+    "latency_ms": 1529.8012999701314,
+    "input_tokens": 156,
+    "output_tokens": 21,
+    "cost_usd": 7.05e-05,
+    "raw": {
+     "answer": "Yes, you can change your delivery address by contacting support before the order is dispatched [order-address].",
+     "finish_reason": "stop",
+     "order": [
+      "order-address",
+      "account-email",
+      "account-overview",
+      "orders-overview",
+      "pay-failed",
+      "plus-benefits",
+      "returns-label-cost",
+      "returns-window",
+      "shipping-news",
+      "shipping-times"
+     ],
+     "top": [
+      "order-address",
+      "account-email",
+      "account-overview"
+     ],
+     "ndcg": 0.7262287617954056,
+     "mrr": 1.0,
+     "grade_cost": 1.6716e-05,
+     "reason": "top 3: order-address, account-email, account-overview"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.85
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/b98bff439df15aa0d00cf345eb210129"
+ },
+ {
+  "idx": 11,
+  "text": "Which payment methods do you accept?",
+  "expected": "answer",
+  "note": "hard: the answer is 4th, below an overview page and two unrelated chunks",
+  "input": {
+   "question": "Which payment methods do you accept?",
+   "rubric": "Required: Visa, Mastercard, American Express, PayPal and Apple Pay.",
+   "gold": {
+    "pay-methods": 2,
+    "payments-overview": 1
+   }
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "answer",
+    "confidence": 0.69,
+    "latency_ms": 1646.2483999785036,
+    "input_tokens": 4006,
+    "output_tokens": 209,
+    "cost_usd": 0.00023024,
+    "raw": {
+     "scores": {
+      "payments-overview": {
+       "score": 1.19,
+       "p_top": 0.2
+      },
+      "refunds-timing": {
+       "score": 0.94,
+       "p_top": 0.01
+      },
+      "pay-failed": {
+       "score": 0.96,
+       "p_top": 0.0
+      },
+      "pay-methods": {
+       "score": 2.0,
+       "p_top": 1.0
+      },
+      "account-email": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "account-overview": {
+       "score": 0.01,
+       "p_top": 0.0
+      },
+      "account-password": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "giftcards": {
+       "score": 0.95,
+       "p_top": 0.01
+      },
+      "order-address": {
+       "score": 0.01,
+       "p_top": 0.0
+      },
+      "order-cancel": {
+       "score": 0.07,
+       "p_top": 0.0
+      }
+     },
+     "answer": "We accept Visa, Mastercard, American Express, PayPal and Apple Pay. [pay-methods]",
+     "finish_reason": "stop",
+     "order": [
+      "pay-methods",
+      "payments-overview",
+      "pay-failed",
+      "giftcards",
+      "refunds-timing",
+      "order-cancel",
+      "account-overview",
+      "order-address",
+      "account-email",
+      "account-password"
+     ],
+     "top": [
+      "pay-methods",
+      "payments-overview",
+      "pay-failed"
+     ],
+     "ndcg": 1.0,
+     "mrr": 1.0,
+     "grade_cost": 1.6968e-05,
+     "reason": "top 3: pay-methods, payments-overview, pay-failed"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.95
+   },
+   "llm_rank": {
+    "variant": "llm_rank",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "answer",
+    "confidence": null,
+    "latency_ms": 2832.599500019569,
+    "input_tokens": 665,
+    "output_tokens": 101,
+    "cost_usd": 0.00031775,
+    "raw": {
+     "answer": "We accept Visa, Mastercard, American Express, PayPal and Apple Pay. [pay-methods]",
+     "finish_reason": "stop",
+     "order": [
+      "pay-methods",
+      "payments-overview",
+      "pay-failed",
+      "refunds-timing",
+      "giftcards",
+      "account-email",
+      "account-overview",
+      "account-password",
+      "order-address",
+      "order-cancel"
+     ],
+     "top": [
+      "pay-methods",
+      "payments-overview",
+      "pay-failed"
+     ],
+     "ndcg": 1.0,
+     "mrr": 1.0,
+     "grade_cost": 1.6968e-05,
+     "reason": "top 3: pay-methods, payments-overview, pay-failed"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.96
+   },
+   "retriever_order": {
+    "variant": "retriever_order",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "no_answer",
+    "confidence": null,
+    "latency_ms": 1390.578499995172,
+    "input_tokens": 173,
+    "output_tokens": 3,
+    "cost_usd": 4.775e-05,
+    "raw": {
+     "answer": "NO_ANSWER",
+     "finish_reason": "stop",
+     "order": [
+      "payments-overview",
+      "refunds-timing",
+      "pay-failed",
+      "pay-methods",
+      "account-email",
+      "account-overview",
+      "account-password",
+      "giftcards",
+      "order-address",
+      "order-cancel"
+     ],
+     "top": [
+      "payments-overview",
+      "refunds-timing",
+      "pay-failed"
+     ],
+     "ndcg": 0.27541155237618664,
+     "mrr": 0.25,
+     "grade_cost": 1.6254e-05,
+     "reason": "top 3: payments-overview, refunds-timing, pay-failed"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.01
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/d14348d5cd3cf5a9de7c14fe4d659217"
+ },
+ {
+  "idx": 12,
+  "text": "Why did my payment fail?",
+  "expected": "answer",
+  "note": "hard: the overview page ranks first",
+  "input": {
+   "question": "Why did my payment fail?",
+   "rubric": "Required: the billing address may not match the card, or the bank may block online purchases.",
+   "gold": {
+    "pay-failed": 2,
+    "payments-overview": 1
+   }
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "answer",
+    "confidence": 0.26,
+    "latency_ms": 2814.745599986054,
+    "input_tokens": 3992,
+    "output_tokens": 219,
+    "cost_usd": 0.00024361199999999998,
+    "raw": {
+     "scores": {
+      "payments-overview": {
+       "score": 1.24,
+       "p_top": 0.24
+      },
+      "pay-failed": {
+       "score": 1.97,
+       "p_top": 0.97
+      },
+      "refunds-timing": {
+       "score": 0.27,
+       "p_top": 0.0
+      },
+      "account-email": {
+       "score": 0.05,
+       "p_top": 0.0
+      },
+      "account-overview": {
+       "score": 0.05,
+       "p_top": 0.0
+      },
+      "account-password": {
+       "score": 0.01,
+       "p_top": 0.0
+      },
+      "giftcards": {
+       "score": 0.51,
+       "p_top": 0.0
+      },
+      "order-address": {
+       "score": 0.01,
+       "p_top": 0.0
+      },
+      "order-cancel": {
+       "score": 0.18,
+       "p_top": 0.0
+      },
+      "order-track": {
+       "score": 0.03,
+       "p_top": 0.0
+      }
+     },
+     "answer": "Your payment may have failed because the billing address does not match your card, or because your bank blocks online purchases by default [pay-failed].",
+     "finish_reason": "stop",
+     "order": [
+      "pay-failed",
+      "payments-overview",
+      "giftcards",
+      "refunds-timing",
+      "order-cancel",
+      "account-email",
+      "account-overview",
+      "order-track",
+      "account-password",
+      "order-address"
+     ],
+     "top": [
+      "pay-failed",
+      "payments-overview",
+      "giftcards"
+     ],
+     "ndcg": 1.0,
+     "mrr": 1.0,
+     "grade_cost": 1.743e-05,
+     "reason": "top 3: pay-failed, payments-overview, giftcards"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.94
+   },
+   "llm_rank": {
+    "variant": "llm_rank",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "answer",
+    "confidence": null,
+    "latency_ms": 2185.472099983599,
+    "input_tokens": 679,
+    "output_tokens": 111,
+    "cost_usd": 0.00033625,
+    "raw": {
+     "answer": "Your payment may have failed because the billing address does not match your card, or because your bank blocks online purchases by default [pay-failed].",
+     "finish_reason": "stop",
+     "order": [
+      "pay-failed",
+      "payments-overview",
+      "refunds-timing",
+      "account-email",
+      "account-overview",
+      "account-password",
+      "giftcards",
+      "order-address",
+      "order-cancel",
+      "order-track"
+     ],
+     "top": [
+      "pay-failed",
+      "payments-overview",
+      "refunds-timing"
+     ],
+     "ndcg": 1.0,
+     "mrr": 1.0,
+     "grade_cost": 1.743e-05,
+     "reason": "top 3: pay-failed, payments-overview, refunds-timing"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.94
+   },
+   "retriever_order": {
+    "variant": "retriever_order",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "answer",
+    "confidence": null,
+    "latency_ms": 1032.4655000003986,
+    "input_tokens": 172,
+    "output_tokens": 28,
+    "cost_usd": 8.5e-05,
+    "raw": {
+     "answer": "A payment may fail because the billing address does not match your card, or because some banks block online purchases by default [pay-failed].",
+     "finish_reason": "stop",
+     "order": [
+      "payments-overview",
+      "pay-failed",
+      "refunds-timing",
+      "account-email",
+      "account-overview",
+      "account-password",
+      "giftcards",
+      "order-address",
+      "order-cancel",
+      "order-track"
+     ],
+     "top": [
+      "payments-overview",
+      "pay-failed",
+      "refunds-timing"
+     ],
+     "ndcg": 0.7967075809905066,
+     "mrr": 0.5,
+     "grade_cost": 1.7388e-05,
+     "reason": "top 3: payments-overview, pay-failed, refunds-timing"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.95
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/1c9f8a7d1b72d3f2f86128351cf208e8"
+ },
+ {
+  "idx": 13,
+  "text": "How do I change my account email?",
+  "expected": "answer",
+  "note": "hard: two overview pages rank above the answer",
+  "input": {
+   "question": "How do I change my account email?",
+   "rubric": "Required: Settings, then Profile, then confirm the new address.",
+   "gold": {
+    "account-email": 2,
+    "account-overview": 1
+   }
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "answer",
+    "confidence": 0.37,
+    "latency_ms": 3741.59240006702,
+    "input_tokens": 4027,
+    "output_tokens": 216,
+    "cost_usd": 0.000243078,
+    "raw": {
+     "scores": {
+      "account-overview": {
+       "score": 1.04,
+       "p_top": 0.05
+      },
+      "orders-overview": {
+       "score": 0.42,
+       "p_top": 0.0
+      },
+      "account-email": {
+       "score": 2.0,
+       "p_top": 1.0
+      },
+      "returns-label-cost": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "account-password": {
+       "score": 0.23,
+       "p_top": 0.0
+      },
+      "giftcards": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "order-address": {
+       "score": 0.02,
+       "p_top": 0.0
+      },
+      "order-cancel": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "order-track": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "pay-failed": {
+       "score": 0.0,
+       "p_top": 0.0
+      }
+     },
+     "answer": "To change your account email, go to Settings, then Profile, and confirm the new address from your inbox [account-email].",
+     "finish_reason": "stop",
+     "order": [
+      "account-email",
+      "account-overview",
+      "orders-overview",
+      "account-password",
+      "order-address",
+      "returns-label-cost",
+      "giftcards",
+      "order-cancel",
+      "order-track",
+      "pay-failed"
+     ],
+     "top": [
+      "account-email",
+      "account-overview",
+      "orders-overview"
+     ],
+     "ndcg": 1.0,
+     "mrr": 1.0,
+     "grade_cost": 1.7094e-05,
+     "reason": "top 3: account-email, account-overview, orders-overview"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.74
+   },
+   "llm_rank": {
+    "variant": "llm_rank",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "answer",
+    "confidence": null,
+    "latency_ms": 2386.4863000344485,
+    "input_tokens": 684,
+    "output_tokens": 109,
+    "cost_usd": 0.0003345,
+    "raw": {
+     "answer": "To change your account email, go to Settings, then Profile, and confirm the new address from your inbox [account-email].",
+     "finish_reason": "stop",
+     "order": [
+      "account-email",
+      "account-overview",
+      "orders-overview",
+      "returns-label-cost",
+      "account-password",
+      "giftcards",
+      "order-address",
+      "order-cancel",
+      "order-track",
+      "pay-failed"
+     ],
+     "top": [
+      "account-email",
+      "account-overview",
+      "orders-overview"
+     ],
+     "ndcg": 1.0,
+     "mrr": 1.0,
+     "grade_cost": 1.7094e-05,
+     "reason": "top 3: account-email, account-overview, orders-overview"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.76
+   },
+   "retriever_order": {
+    "variant": "retriever_order",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "answer",
+    "confidence": null,
+    "latency_ms": 1644.9095999705605,
+    "input_tokens": 168,
+    "output_tokens": 26,
+    "cost_usd": 8.1e-05,
+    "raw": {
+     "answer": "To change your account email, go to Settings, then Profile, and confirm the new address from your inbox [account-email].",
+     "finish_reason": "stop",
+     "order": [
+      "account-overview",
+      "orders-overview",
+      "account-email",
+      "returns-label-cost",
+      "account-password",
+      "giftcards",
+      "order-address",
+      "order-cancel",
+      "order-track",
+      "pay-failed"
+     ],
+     "top": [
+      "account-overview",
+      "orders-overview",
+      "account-email"
+     ],
+     "ndcg": 0.6885288809404666,
+     "mrr": 0.3333333333333333,
+     "grade_cost": 1.7094e-05,
+     "reason": "top 3: account-overview, orders-overview, account-email"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.76
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/14ed4b06645116e21ee8c72243e1e087"
+ },
+ {
+  "idx": 14,
+  "text": "What does Acme Plus include?",
+  "expected": "answer",
+  "note": "hard: the overview page ranks first",
+  "input": {
+   "question": "What does Acme Plus include?",
+   "rubric": "Required: free express delivery and early access to sales.",
+   "gold": {
+    "plus-benefits": 2,
+    "plus-price": 1,
+    "plus-overview": 1,
+    "plus-cancel": 1
+   }
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "answer",
+    "confidence": 0.74,
+    "latency_ms": 2006.7934999824502,
+    "input_tokens": 3976,
+    "output_tokens": 211,
+    "cost_usd": 0.000229692,
+    "raw": {
+     "scores": {
+      "plus-overview": {
+       "score": 1.14,
+       "p_top": 0.15
+      },
+      "plus-benefits": {
+       "score": 2.0,
+       "p_top": 1.0
+      },
+      "plus-price": {
+       "score": 0.93,
+       "p_top": 0.0
+      },
+      "account-email": {
+       "score": 0.07,
+       "p_top": 0.0
+      },
+      "account-overview": {
+       "score": 0.54,
+       "p_top": 0.06
+      },
+      "account-password": {
+       "score": 0.06,
+       "p_top": 0.0
+      },
+      "giftcards": {
+       "score": 0.59,
+       "p_top": 0.0
+      },
+      "order-address": {
+       "score": 0.22,
+       "p_top": 0.0
+      },
+      "order-cancel": {
+       "score": 0.24,
+       "p_top": 0.0
+      },
+      "order-track": {
+       "score": 0.42,
+       "p_top": 0.01
+      }
+     },
+     "answer": "Acme Plus members get free express delivery on every order and early access to sales [plus-benefits].",
+     "finish_reason": "stop",
+     "order": [
+      "plus-benefits",
+      "plus-overview",
+      "plus-price",
+      "giftcards",
+      "account-overview",
+      "order-track",
+      "order-cancel",
+      "order-address",
+      "account-email",
+      "account-password"
+     ],
+     "top": [
+      "plus-benefits",
+      "plus-overview",
+      "plus-price"
+     ],
+     "ndcg": 1.0,
+     "mrr": 1.0,
+     "grade_cost": 1.6842e-05,
+     "reason": "top 3: plus-benefits, plus-overview, plus-price"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.92
+   },
+   "llm_rank": {
+    "variant": "llm_rank",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "answer",
+    "confidence": null,
+    "latency_ms": 2681.0613000416197,
+    "input_tokens": 634,
+    "output_tokens": 102,
+    "cost_usd": 0.00031150000000000004,
+    "raw": {
+     "answer": "Acme Plus members get free express delivery on every order and early access to sales [plus-benefits].",
+     "finish_reason": "stop",
+     "order": [
+      "plus-benefits",
+      "plus-overview",
+      "plus-price",
+      "account-email",
+      "account-overview",
+      "account-password",
+      "giftcards",
+      "order-address",
+      "order-cancel",
+      "order-track"
+     ],
+     "top": [
+      "plus-benefits",
+      "plus-overview",
+      "plus-price"
+     ],
+     "ndcg": 1.0,
+     "mrr": 1.0,
+     "grade_cost": 1.6842e-05,
+     "reason": "top 3: plus-benefits, plus-overview, plus-price"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.92
+   },
+   "retriever_order": {
+    "variant": "retriever_order",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "answer",
+    "confidence": null,
+    "latency_ms": 2028.6396999727003,
+    "input_tokens": 150,
+    "output_tokens": 20,
+    "cost_usd": 6.75e-05,
+    "raw": {
+     "answer": "Acme Plus includes free express delivery on every order and early access to sales [plus-benefits].",
+     "finish_reason": "stop",
+     "order": [
+      "plus-overview",
+      "plus-benefits",
+      "plus-price",
+      "account-email",
+      "account-overview",
+      "account-password",
+      "giftcards",
+      "order-address",
+      "order-cancel",
+      "order-track"
+     ],
+     "top": [
+      "plus-overview",
+      "plus-benefits",
+      "plus-price"
+     ],
+     "ndcg": 0.8213137146137828,
+     "mrr": 0.5,
+     "grade_cost": 1.68e-05,
+     "reason": "top 3: plus-overview, plus-benefits, plus-price"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.92
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/502a9d1c808722c80ec72bb53f4fc138"
+ },
+ {
+  "idx": 15,
+  "text": "Is accidental damage covered by the warranty?",
+  "expected": "answer",
+  "note": null,
+  "input": {
+   "question": "Is accidental damage covered by the warranty?",
+   "rubric": "Required: no, only manufacturing defects are covered.",
+   "gold": {
+    "warranty-cover": 2,
+    "warranty-overview": 1,
+    "warranty-claim": 1
+   }
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "answer",
+    "confidence": 0.89,
+    "latency_ms": 2422.009200032335,
+    "input_tokens": 4042,
+    "output_tokens": 205,
+    "cost_usd": 0.000226792,
+    "raw": {
+     "scores": {
+      "warranty-cover": {
+       "score": 2.0,
+       "p_top": 1.0
+      },
+      "warranty-overview": {
+       "score": 1.05,
+       "p_top": 0.06
+      },
+      "pay-failed": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "shipping-intl": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "account-email": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "account-overview": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "account-password": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "giftcards": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "order-address": {
+       "score": 0.01,
+       "p_top": 0.0
+      },
+      "order-cancel": {
+       "score": 0.06,
+       "p_top": 0.0
+      }
+     },
+     "answer": "No, accidental damage is not covered by the warranty [warranty-cover].",
+     "finish_reason": "stop",
+     "order": [
+      "warranty-cover",
+      "warranty-overview",
+      "order-cancel",
+      "order-address",
+      "pay-failed",
+      "shipping-intl",
+      "account-email",
+      "account-overview",
+      "account-password",
+      "giftcards"
+     ],
+     "top": [
+      "warranty-cover",
+      "warranty-overview",
+      "order-cancel"
+     ],
+     "ndcg": 0.878961873034099,
+     "mrr": 1.0,
+     "grade_cost": 1.6632e-05,
+     "reason": "top 3: warranty-cover, warranty-overview, order-cancel"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.57
+   },
+   "llm_rank": {
+    "variant": "llm_rank",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "answer",
+    "confidence": null,
+    "latency_ms": 1887.6418999861926,
+    "input_tokens": 687,
+    "output_tokens": 96,
+    "cost_usd": 0.00031575,
+    "raw": {
+     "answer": "No, accidental damage is not covered by the warranty [warranty-cover].",
+     "finish_reason": "stop",
+     "order": [
+      "warranty-cover",
+      "warranty-overview",
+      "pay-failed",
+      "shipping-intl",
+      "account-email",
+      "account-overview",
+      "account-password",
+      "giftcards",
+      "order-address",
+      "order-cancel"
+     ],
+     "top": [
+      "warranty-cover",
+      "warranty-overview",
+      "pay-failed"
+     ],
+     "ndcg": 0.878961873034099,
+     "mrr": 1.0,
+     "grade_cost": 1.6632e-05,
+     "reason": "top 3: warranty-cover, warranty-overview, pay-failed"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.5
+   },
+   "retriever_order": {
+    "variant": "retriever_order",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "answer",
+    "confidence": null,
+    "latency_ms": 1318.6477000126615,
+    "input_tokens": 170,
+    "output_tokens": 15,
+    "cost_usd": 6.5e-05,
+    "raw": {
+     "answer": "No, accidental damage is not covered by the warranty [warranty-cover].",
+     "finish_reason": "stop",
+     "order": [
+      "warranty-cover",
+      "warranty-overview",
+      "pay-failed",
+      "shipping-intl",
+      "account-email",
+      "account-overview",
+      "account-password",
+      "giftcards",
+      "order-address",
+      "order-cancel"
+     ],
+     "top": [
+      "warranty-cover",
+      "warranty-overview",
+      "pay-failed"
+     ],
+     "ndcg": 0.878961873034099,
+     "mrr": 1.0,
+     "grade_cost": 1.6632e-05,
+     "reason": "top 3: warranty-cover, warranty-overview, pay-failed"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.48
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/1c509ec448b3a481fa3d884f47fa640a"
+ },
+ {
+  "idx": 16,
+  "text": "Is there a student discount?",
+  "expected": "no_answer",
+  "note": null,
+  "input": {
+   "question": "Is there a student discount?",
+   "rubric": "Required: the reply is NO_ANSWER, or says the help centre does not mention one. Must not: invent a discount.",
+   "gold": {}
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "no_answer",
+    "confidence": 0.41,
+    "latency_ms": 2908.4683999535628,
+    "input_tokens": 3973,
+    "output_tokens": 193,
+    "cost_usd": 0.000201734,
+    "raw": {
+     "scores": {
+      "account-email": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "account-overview": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "account-password": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "giftcards": {
+       "score": 0.03,
+       "p_top": 0.0
+      },
+      "order-address": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "order-cancel": {
+       "score": 0.02,
+       "p_top": 0.0
+      },
+      "order-track": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "orders-overview": {
+       "score": 0.07,
+       "p_top": 0.0
+      },
+      "pay-failed": {
+       "score": 0.02,
+       "p_top": 0.0
+      },
+      "pay-methods": {
+       "score": 0.39,
+       "p_top": 0.0
+      }
+     },
+     "answer": "NO_ANSWER",
+     "finish_reason": "stop",
+     "order": [
+      "pay-methods",
+      "orders-overview",
+      "giftcards",
+      "order-cancel",
+      "pay-failed",
+      "account-email",
+      "account-overview",
+      "account-password",
+      "order-address",
+      "order-track"
+     ],
+     "top": [
+      "pay-methods",
+      "orders-overview",
+      "giftcards"
+     ],
+     "ndcg": null,
+     "mrr": null,
+     "grade_cost": 1.6716e-05,
+     "reason": "top 3: pay-methods, orders-overview, giftcards"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.94
+   },
+   "llm_rank": {
+    "variant": "llm_rank",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "no_answer",
+    "confidence": null,
+    "latency_ms": 4413.594500045292,
+    "input_tokens": 662,
+    "output_tokens": 84,
+    "cost_usd": 0.0002915,
+    "raw": {
+     "answer": "NO_ANSWER",
+     "finish_reason": "stop",
+     "order": [
+      "orders-overview",
+      "account-overview",
+      "account-email",
+      "account-password",
+      "giftcards",
+      "order-address",
+      "order-cancel",
+      "order-track",
+      "pay-failed",
+      "pay-methods"
+     ],
+     "top": [
+      "orders-overview",
+      "account-overview",
+      "account-email"
+     ],
+     "ndcg": null,
+     "mrr": null,
+     "grade_cost": 1.6716e-05,
+     "reason": "top 3: orders-overview, account-overview, account-email"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.94
+   },
+   "retriever_order": {
+    "variant": "retriever_order",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "no_answer",
+    "confidence": null,
+    "latency_ms": 1671.7700000153854,
+    "input_tokens": 161,
+    "output_tokens": 3,
+    "cost_usd": 4.475e-05,
+    "raw": {
+     "answer": "NO_ANSWER",
+     "finish_reason": "stop",
+     "order": [
+      "account-email",
+      "account-overview",
+      "account-password",
+      "giftcards",
+      "order-address",
+      "order-cancel",
+      "order-track",
+      "orders-overview",
+      "pay-failed",
+      "pay-methods"
+     ],
+     "top": [
+      "account-email",
+      "account-overview",
+      "account-password"
+     ],
+     "ndcg": null,
+     "mrr": null,
+     "grade_cost": 1.6716e-05,
+     "reason": "top 3: account-email, account-overview, account-password"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.93
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/8fa6bc4a3e33f0e83cb07e0f48911084"
+ },
+ {
+  "idx": 17,
+  "text": "Can I pay in installments?",
+  "expected": "no_answer",
+  "note": "hard: the payment methods chunk is related, but says nothing about installments",
+  "input": {
+   "question": "Can I pay in installments?",
+   "rubric": "Required: the reply is NO_ANSWER, or says the help centre does not cover installments. Must not: say yes or no as fact.",
+   "gold": {
+    "pay-methods": 1,
+    "payments-overview": 1
+   }
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "no_answer",
+    "confidence": 0.47,
+    "latency_ms": 1693.5553000075743,
+    "input_tokens": 4006,
+    "output_tokens": 193,
+    "cost_usd": 0.000205824,
+    "raw": {
+     "scores": {
+      "pay-methods": {
+       "score": 0.99,
+       "p_top": 0.0
+      },
+      "payments-overview": {
+       "score": 1.0,
+       "p_top": 0.02
+      },
+      "account-email": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "account-overview": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "account-password": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "giftcards": {
+       "score": 0.16,
+       "p_top": 0.0
+      },
+      "order-address": {
+       "score": 0.03,
+       "p_top": 0.0
+      },
+      "order-cancel": {
+       "score": 0.18,
+       "p_top": 0.0
+      },
+      "order-track": {
+       "score": 0.01,
+       "p_top": 0.0
+      },
+      "orders-overview": {
+       "score": 0.64,
+       "p_top": 0.0
+      }
+     },
+     "answer": "NO_ANSWER",
+     "finish_reason": "stop",
+     "order": [
+      "payments-overview",
+      "pay-methods",
+      "orders-overview",
+      "order-cancel",
+      "giftcards",
+      "order-address",
+      "order-track",
+      "account-email",
+      "account-overview",
+      "account-password"
+     ],
+     "top": [
+      "payments-overview",
+      "pay-methods",
+      "orders-overview"
+     ],
+     "ndcg": 1.0,
+     "mrr": null,
+     "grade_cost": 1.701e-05,
+     "reason": "top 3: payments-overview, pay-methods, orders-overview"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.97
+   },
+   "llm_rank": {
+    "variant": "llm_rank",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "no_answer",
+    "confidence": null,
+    "latency_ms": 2505.397300061304,
+    "input_tokens": 652,
+    "output_tokens": 84,
+    "cost_usd": 0.00028900000000000003,
+    "raw": {
+     "answer": "NO_ANSWER",
+     "finish_reason": "stop",
+     "order": [
+      "pay-methods",
+      "payments-overview",
+      "orders-overview",
+      "order-track",
+      "order-cancel",
+      "order-address",
+      "account-overview",
+      "account-email",
+      "account-password",
+      "giftcards"
+     ],
+     "top": [
+      "pay-methods",
+      "payments-overview",
+      "orders-overview"
+     ],
+     "ndcg": 1.0,
+     "mrr": null,
+     "grade_cost": 1.701e-05,
+     "reason": "top 3: pay-methods, payments-overview, orders-overview"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.97
+   },
+   "retriever_order": {
+    "variant": "retriever_order",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "no_answer",
+    "confidence": null,
+    "latency_ms": 1458.0094999982975,
+    "input_tokens": 157,
+    "output_tokens": 3,
+    "cost_usd": 4.375e-05,
+    "raw": {
+     "answer": "NO_ANSWER",
+     "finish_reason": "stop",
+     "order": [
+      "pay-methods",
+      "payments-overview",
+      "account-email",
+      "account-overview",
+      "account-password",
+      "giftcards",
+      "order-address",
+      "order-cancel",
+      "order-track",
+      "orders-overview"
+     ],
+     "top": [
+      "pay-methods",
+      "payments-overview",
+      "account-email"
+     ],
+     "ndcg": 1.0,
+     "mrr": null,
+     "grade_cost": 1.701e-05,
+     "reason": "top 3: pay-methods, payments-overview, account-email"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.97
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/6348fdfd87edc9a865f1b0565a579fe2"
+ },
+ {
+  "idx": 18,
+  "text": "What is the warranty on sofas?",
+  "expected": "no_answer",
+  "note": "hard: the warranty chunk covers electronics only",
+  "input": {
+   "question": "What is the warranty on sofas?",
+   "rubric": "Required: the reply is NO_ANSWER, or says a warranty is only stated for electronics. Must not: give sofas the 1-year electronics warranty.",
+   "gold": {
+    "warranty-cover": 1,
+    "warranty-overview": 1
+   }
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "no_answer",
+    "confidence": 0.29,
+    "latency_ms": 1845.9241000236943,
+    "input_tokens": 4016,
+    "output_tokens": 193,
+    "cost_usd": 0.000207492,
+    "raw": {
+     "scores": {
+      "warranty-cover": {
+       "score": 0.48,
+       "p_top": 0.0
+      },
+      "warranty-overview": {
+       "score": 1.0,
+       "p_top": 0.01
+      },
+      "account-email": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "account-overview": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "account-password": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "giftcards": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "order-address": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "order-cancel": {
+       "score": 0.02,
+       "p_top": 0.0
+      },
+      "order-track": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "orders-overview": {
+       "score": 0.01,
+       "p_top": 0.0
+      }
+     },
+     "answer": "NO_ANSWER",
+     "finish_reason": "stop",
+     "order": [
+      "warranty-overview",
+      "warranty-cover",
+      "order-cancel",
+      "orders-overview",
+      "account-email",
+      "account-overview",
+      "account-password",
+      "giftcards",
+      "order-address",
+      "order-track"
+     ],
+     "top": [
+      "warranty-overview",
+      "warranty-cover",
+      "order-cancel"
+     ],
+     "ndcg": 1.0,
+     "mrr": null,
+     "grade_cost": 1.6968e-05,
+     "reason": "top 3: warranty-overview, warranty-cover, order-cancel"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.96
+   },
+   "llm_rank": {
+    "variant": "llm_rank",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "no_answer",
+    "confidence": null,
+    "latency_ms": 2181.3991999952123,
+    "input_tokens": 670,
+    "output_tokens": 84,
+    "cost_usd": 0.0002935,
+    "raw": {
+     "answer": "NO_ANSWER",
+     "finish_reason": "stop",
+     "order": [
+      "warranty-overview",
+      "warranty-cover",
+      "orders-overview",
+      "order-track",
+      "order-cancel",
+      "order-address",
+      "account-overview",
+      "account-email",
+      "account-password",
+      "giftcards"
+     ],
+     "top": [
+      "warranty-overview",
+      "warranty-cover",
+      "orders-overview"
+     ],
+     "ndcg": 1.0,
+     "mrr": null,
+     "grade_cost": 1.6968e-05,
+     "reason": "top 3: warranty-overview, warranty-cover, orders-overview"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.96
+   },
+   "retriever_order": {
+    "variant": "retriever_order",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "no_answer",
+    "confidence": null,
+    "latency_ms": 1127.1536000422202,
+    "input_tokens": 166,
+    "output_tokens": 3,
+    "cost_usd": 4.6e-05,
+    "raw": {
+     "answer": "NO_ANSWER",
+     "finish_reason": "stop",
+     "order": [
+      "warranty-cover",
+      "warranty-overview",
+      "account-email",
+      "account-overview",
+      "account-password",
+      "giftcards",
+      "order-address",
+      "order-cancel",
+      "order-track",
+      "orders-overview"
+     ],
+     "top": [
+      "warranty-cover",
+      "warranty-overview",
+      "account-email"
+     ],
+     "ndcg": 1.0,
+     "mrr": null,
+     "grade_cost": 1.6968e-05,
+     "reason": "top 3: warranty-cover, warranty-overview, account-email"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.96
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/f9e3c81d63eb81af657549df97668184"
+ },
+ {
+  "idx": 19,
+  "text": "Do you have a store in Berlin?",
+  "expected": "no_answer",
+  "note": null,
+  "input": {
+   "question": "Do you have a store in Berlin?",
+   "rubric": "Required: the reply is NO_ANSWER, or says the help centre does not cover stores. Must not: invent a store.",
+   "gold": {}
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "typesafe/jev-1.13-20260917",
+    "label": "no_answer",
+    "confidence": 0.9,
+    "latency_ms": 2552.004500059411,
+    "input_tokens": 4004,
+    "output_tokens": 193,
+    "cost_usd": 0.000206364,
+    "raw": {
+     "scores": {
+      "price-match": {
+       "score": 0.04,
+       "p_top": 0.0
+      },
+      "refunds-store-credit": {
+       "score": 0.07,
+       "p_top": 0.0
+      },
+      "warranty-cover": {
+       "score": 0.03,
+       "p_top": 0.0
+      },
+      "account-email": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "account-overview": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "account-password": {
+       "score": 0.0,
+       "p_top": 0.0
+      },
+      "giftcards": {
+       "score": 0.02,
+       "p_top": 0.0
+      },
+      "order-address": {
+       "score": 0.03,
+       "p_top": 0.0
+      },
+      "order-cancel": {
+       "score": 0.03,
+       "p_top": 0.0
+      },
+      "order-track": {
+       "score": 0.0,
+       "p_top": 0.0
+      }
+     },
+     "answer": "NO_ANSWER",
+     "finish_reason": "stop",
+     "order": [
+      "refunds-store-credit",
+      "price-match",
+      "warranty-cover",
+      "order-address",
+      "order-cancel",
+      "giftcards",
+      "account-email",
+      "account-overview",
+      "account-password",
+      "order-track"
+     ],
+     "top": [
+      "refunds-store-credit",
+      "price-match",
+      "warranty-cover"
+     ],
+     "ndcg": null,
+     "mrr": null,
+     "grade_cost": 1.68e-05,
+     "reason": "top 3: refunds-store-credit, price-match, warranty-cover"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.97
+   },
+   "llm_rank": {
+    "variant": "llm_rank",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "no_answer",
+    "confidence": null,
+    "latency_ms": 2186.8636999861337,
+    "input_tokens": 661,
+    "output_tokens": 87,
+    "cost_usd": 0.00029575,
+    "raw": {
+     "answer": "NO_ANSWER",
+     "finish_reason": "stop",
+     "order": [
+      "price-match",
+      "refunds-store-credit",
+      "warranty-cover",
+      "account-email",
+      "account-overview",
+      "account-password",
+      "giftcards",
+      "order-address",
+      "order-cancel",
+      "order-track"
+     ],
+     "top": [
+      "price-match",
+      "refunds-store-credit",
+      "warranty-cover"
+     ],
+     "ndcg": null,
+     "mrr": null,
+     "grade_cost": 1.68e-05,
+     "reason": "top 3: price-match, refunds-store-credit, warranty-cover"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.97
+   },
+   "retriever_order": {
+    "variant": "retriever_order",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "no_answer",
+    "confidence": null,
+    "latency_ms": 1114.0187999699265,
+    "input_tokens": 162,
+    "output_tokens": 3,
+    "cost_usd": 4.5e-05,
+    "raw": {
+     "answer": "NO_ANSWER",
+     "finish_reason": "stop",
+     "order": [
+      "price-match",
+      "refunds-store-credit",
+      "warranty-cover",
+      "account-email",
+      "account-overview",
+      "account-password",
+      "giftcards",
+      "order-address",
+      "order-cancel",
+      "order-track"
+     ],
+     "top": [
+      "price-match",
+      "refunds-store-credit",
+      "warranty-cover"
+     ],
+     "ndcg": null,
+     "mrr": null,
+     "grade_cost": 1.68e-05,
+     "reason": "top 3: price-match, refunds-store-credit, warranty-cover"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.97
+   }
+  },
+  "trace_url": "http://localhost:3000/project/cmugwferw0006s407bvf5n39v/traces/c40f307171e1799e074d9942f47a8e7b"
+ }
+]

@@ -1,0 +1,1762 @@
+[
+ {
+  "idx": 0,
+  "text": "What is the capital of Australia?",
+  "expected": "fast",
+  "note": null,
+  "input": {
+   "task": "What is the capital of Australia?",
+   "rubric": "Required: Canberra. Must not: say Sydney or Melbourne."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "fast",
+    "confidence": 1.0,
+    "latency_ms": 2451.459799980512,
+    "input_tokens": 430,
+    "output_tokens": 42,
+    "cost_usd": 3.3968e-05,
+    "raw": {
+     "reason": "easy (difficulty 0.00 < 0.8)",
+     "router": "typesafe/jev-1.13-20260917",
+     "route_id": "gen-dec-1790398183-Cypeohb4ndlaPaIhs4rd",
+     "answers": {
+      "difficulty": 0.0,
+      "difficulty_conf": 1.0,
+      "high_risk": 0.05
+     },
+     "answer": "The capital of Australia is Canberra.",
+     "finish_reason": "stop",
+     "route_cost": 1.6968e-05,
+     "answer_cost": 1.7e-05,
+     "grade_cost": 1.6254e-05,
+     "grade_id": "gen-dec-1790398185-dRX3aSohl9lp0QTMKZff"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.99
+   },
+   "llm_router": {
+    "variant": "llm_router",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "fast",
+    "confidence": null,
+    "latency_ms": 2957.7918999711983,
+    "input_tokens": 180,
+    "output_tokens": 18,
+    "cost_usd": 7.2e-05,
+    "raw": {
+     "reason": "google/gemini-3.1-flash-lite picked fast",
+     "router": "google/gemini-3.1-flash-lite",
+     "answer": "The capital of Australia is Canberra.",
+     "finish_reason": "stop",
+     "route_cost": 5.5e-05,
+     "answer_cost": 1.7e-05,
+     "grade_cost": 1.6254e-05,
+     "grade_id": "gen-dec-1790398185-NWUKVw4raqh81epxLiYY"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.99
+   },
+   "frontier": {
+    "variant": "frontier",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "frontier",
+    "confidence": null,
+    "latency_ms": 3034.1391999972984,
+    "input_tokens": 41,
+    "output_tokens": 17,
+    "cost_usd": 0.000252,
+    "raw": {
+     "reason": "always frontier",
+     "answer": "The capital of Australia is **Canberra**.",
+     "finish_reason": "stop",
+     "route_cost": 0.0,
+     "answer_cost": 0.000252,
+     "grade_cost": 1.6422e-05,
+     "grade_id": "gen-dec-1790398185-6CqgureqO7DN1EakQS9F"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.99
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 1,
+  "text": "Rewrite in the passive voice: 'The committee approved the budget.'",
+  "expected": "fast",
+  "note": null,
+  "input": {
+   "task": "Rewrite in the passive voice: 'The committee approved the budget.'",
+   "rubric": "Required: a passive-voice sentence with the same meaning, e.g. 'The budget was approved by the committee.'"
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "fast",
+    "confidence": 1.0,
+    "latency_ms": 1508.8245999941137,
+    "input_tokens": 444,
+    "output_tokens": 43,
+    "cost_usd": 3.7304e-05,
+    "raw": {
+     "reason": "easy (difficulty 0.00 < 0.8)",
+     "router": "typesafe/jev-1.13-20260917",
+     "route_id": "gen-dec-1790398186-pvec1XFGgtfe09dYXohp",
+     "answers": {
+      "difficulty": 0.0,
+      "difficulty_conf": 1.0,
+      "high_risk": 0.04
+     },
+     "answer": "The budget was approved by the committee.",
+     "finish_reason": "stop",
+     "route_cost": 1.7304e-05,
+     "answer_cost": 2e-05,
+     "grade_cost": 1.7178e-05,
+     "grade_id": "gen-dec-1790398188-nsIBkc9tdaKQCkSQEQvZ"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.99
+   },
+   "llm_router": {
+    "variant": "llm_router",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "fast",
+    "confidence": null,
+    "latency_ms": 2320.758300018497,
+    "input_tokens": 192,
+    "output_tokens": 19,
+    "cost_usd": 7.65e-05,
+    "raw": {
+     "reason": "google/gemini-3.1-flash-lite picked fast",
+     "router": "google/gemini-3.1-flash-lite",
+     "answer": "The budget was approved by the committee.",
+     "finish_reason": "stop",
+     "route_cost": 5.65e-05,
+     "answer_cost": 2e-05,
+     "grade_cost": 1.7178e-05,
+     "grade_id": "gen-dec-1790398188-TVNBXzDWE6n6KVHxLmRw"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.99
+   },
+   "frontier": {
+    "variant": "frontier",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "frontier",
+    "confidence": null,
+    "latency_ms": 1860.408999986248,
+    "input_tokens": 55,
+    "output_tokens": 13,
+    "cost_usd": 0.00024,
+    "raw": {
+     "reason": "always frontier",
+     "answer": "The budget was approved by the committee.",
+     "finish_reason": "stop",
+     "route_cost": 0.0,
+     "answer_cost": 0.00024,
+     "grade_cost": 1.7178e-05,
+     "grade_id": "gen-dec-1790398188-pbaGeoDx8DnJCgLZNeAc"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.99
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 2,
+  "text": "Convert 72 degrees Fahrenheit to Celsius, rounded to one decimal.",
+  "expected": "fast",
+  "note": null,
+  "input": {
+   "task": "Convert 72 degrees Fahrenheit to Celsius, rounded to one decimal.",
+   "rubric": "Required: 22.2 °C."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "fast",
+    "confidence": 0.93,
+    "latency_ms": 2673.5042999789584,
+    "input_tokens": 444,
+    "output_tokens": 138,
+    "cost_usd": 0.000180012,
+    "raw": {
+     "reason": "easy (difficulty 0.05 < 0.8)",
+     "router": "typesafe/jev-1.13-20260917",
+     "route_id": "gen-dec-1790398189-V8uB57h7zeH4g4cQufVs",
+     "answers": {
+      "difficulty": 0.05,
+      "difficulty_conf": 0.93,
+      "high_risk": 0.09
+     },
+     "answer": "To convert Fahrenheit to Celsius, use the formula: **°C = (°F - 32) × 5/9**.\n\n1. Subtract 32 from 72: 72 - 32 = 40\n2. Multiply 40 by 5/9: 40 × 0.5556 ≈ 22.222...\n\nRounded to one decimal, 72°F is **22.2°C**.",
+     "finish_reason": "stop",
+     "route_cost": 1.7262e-05,
+     "answer_cost": 0.00016275,
+     "grade_cost": 2.0748e-05,
+     "grade_id": "gen-dec-1790398192-vCgXT5rCZpj9qZAPZUtw"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.99
+   },
+   "llm_router": {
+    "variant": "llm_router",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "fast",
+    "confidence": null,
+    "latency_ms": 2707.219300005818,
+    "input_tokens": 194,
+    "output_tokens": 114,
+    "cost_usd": 0.0002195,
+    "raw": {
+     "reason": "google/gemini-3.1-flash-lite picked fast",
+     "router": "google/gemini-3.1-flash-lite",
+     "answer": "To convert Fahrenheit to Celsius, use the formula: **°C = (°F - 32) × 5/9**.\n\n1. Subtract 32 from 72: 72 - 32 = 40\n2. Multiply 40 by 5/9: 40 × 0.5556 ≈ 22.222...\n\nRounded to one decimal, 72°F is **22.2°C**.",
+     "finish_reason": "stop",
+     "route_cost": 5.675e-05,
+     "answer_cost": 0.00016275,
+     "grade_cost": 2.0748e-05,
+     "grade_id": "gen-dec-1790398192-ezIRQxNI3cmgfZN8UTfu"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.99
+   },
+   "frontier": {
+    "variant": "frontier",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "frontier",
+    "confidence": null,
+    "latency_ms": 3751.585999998497,
+    "input_tokens": 62,
+    "output_tokens": 92,
+    "cost_usd": 0.001044,
+    "raw": {
+     "reason": "always frontier",
+     "answer": "**72°F = 22.2°C**\n\nCalculation: (72 − 32) × 5/9 = 40 × 5/9 = 22.2°C",
+     "finish_reason": "stop",
+     "route_cost": 0.0,
+     "answer_cost": 0.001044,
+     "grade_cost": 1.8102e-05,
+     "grade_id": "gen-dec-1790398193-62rrTLoRZXhJxpGQrcmk"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.99
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 3,
+  "text": "Fix the spelling: 'Recieve the acommodation adress seperately.'",
+  "expected": "fast",
+  "note": null,
+  "input": {
+   "task": "Fix the spelling: 'Recieve the acommodation adress seperately.'",
+   "rubric": "Required: 'Receive the accommodation address separately.' with all four words fixed. Must not: change other words."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "fast",
+    "confidence": 1.0,
+    "latency_ms": 1576.8185000051744,
+    "input_tokens": 447,
+    "output_tokens": 41,
+    "cost_usd": 3.4638e-05,
+    "raw": {
+     "reason": "easy (difficulty 0.00 < 0.8)",
+     "router": "typesafe/jev-1.13-20260917",
+     "route_id": "gen-dec-1790398193-tUXKjIPW6RmHLUMIZ5k6",
+     "answers": {
+      "difficulty": 0.0,
+      "difficulty_conf": 1.0,
+      "high_risk": 0.32
+     },
+     "answer": "Receive the accommodation address separately.",
+     "finish_reason": "stop",
+     "route_cost": 1.7388e-05,
+     "answer_cost": 1.725e-05,
+     "grade_cost": 1.7052e-05,
+     "grade_id": "gen-dec-1790398195-oRXRjEzzSVeD1SEJmEXG"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.99
+   },
+   "llm_router": {
+    "variant": "llm_router",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "fast",
+    "confidence": null,
+    "latency_ms": 1803.5203000181355,
+    "input_tokens": 194,
+    "output_tokens": 17,
+    "cost_usd": 7.4e-05,
+    "raw": {
+     "reason": "google/gemini-3.1-flash-lite picked fast",
+     "router": "google/gemini-3.1-flash-lite",
+     "answer": "Receive the accommodation address separately.",
+     "finish_reason": "stop",
+     "route_cost": 5.675e-05,
+     "answer_cost": 1.725e-05,
+     "grade_cost": 1.7052e-05,
+     "grade_id": "gen-dec-1790398195-RoJ3cEkecWHfPwDrDdiw"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.99
+   },
+   "frontier": {
+    "variant": "frontier",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "frontier",
+    "confidence": null,
+    "latency_ms": 1835.1422999985516,
+    "input_tokens": 57,
+    "output_tokens": 15,
+    "cost_usd": 0.000264,
+    "raw": {
+     "reason": "always frontier",
+     "answer": "\"Receive the accommodation address separately.\"",
+     "finish_reason": "stop",
+     "route_cost": 0.0,
+     "answer_cost": 0.000264,
+     "grade_cost": 1.7136e-05,
+     "grade_id": "gen-dec-1790398195-uNovJo4YHmBrAzTGmz5W"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.96
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 4,
+  "text": "Long meeting notes: extract the date of the next meeting.",
+  "expected": "fast",
+  "note": "hard: long but easy; length is not difficulty",
+  "input": {
+   "task": "Here are the notes from today's product sync. Attendees: Priya, Tom, Wen, Alex, Sam. Priya opened with the Q3 roadmap review and said the mobile redesign is two weeks behind because of the design-system migration. Tom reported that the onboarding experiment lifted activation by 4 percent but the sample was small and he wants another two weeks of data. Wen raised the on-call load: eleven pages last week, most from the billing webhook retries, and she asked for a ticket to add idempotency keys. Alex walked through the pricing page copy changes and nobody objected. Sam reminded everyone that the security review for the SSO feature is still open. We agreed to meet again on Thursday 14 November at 10:00 to review the experiment data and the redesign plan. Action items: Tom to extend the experiment, Wen to file the webhook ticket, Priya to send the revised roadmap. Question: when is the next meeting?",
+   "rubric": "Required: Thursday 14 November, 10:00."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "fast",
+    "confidence": 1.0,
+    "latency_ms": 1608.543299982557,
+    "input_tokens": 811,
+    "output_tokens": 56,
+    "cost_usd": 0.000109658,
+    "raw": {
+     "reason": "easy (difficulty 0.00 < 0.8)",
+     "router": "typesafe/jev-1.13-20260917",
+     "route_id": "gen-dec-1790398196-eSBQruS6MnGftpA5fXTa",
+     "answers": {
+      "difficulty": 0.0,
+      "difficulty_conf": 1.0,
+      "high_risk": 0.14
+     },
+     "answer": "The next meeting is scheduled for Thursday, November 14, at 10:00.",
+     "finish_reason": "stop",
+     "route_cost": 2.5158e-05,
+     "answer_cost": 8.45e-05,
+     "grade_cost": 2.5158e-05,
+     "grade_id": "gen-dec-1790398197-KsOZotcf9aIYZlHuIhDk"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.98
+   },
+   "llm_router": {
+    "variant": "llm_router",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "fast",
+    "confidence": null,
+    "latency_ms": 2613.0052999942563,
+    "input_tokens": 552,
+    "output_tokens": 32,
+    "cost_usd": 0.000186,
+    "raw": {
+     "reason": "google/gemini-3.1-flash-lite picked fast",
+     "router": "google/gemini-3.1-flash-lite",
+     "answer": "The next meeting is scheduled for Thursday, November 14, at 10:00.",
+     "finish_reason": "stop",
+     "route_cost": 0.0001015,
+     "answer_cost": 8.45e-05,
+     "grade_cost": 2.5158e-05,
+     "grade_id": "gen-dec-1790398198-vJ4MMvggcOv8XUi8dLr3"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.98
+   },
+   "frontier": {
+    "variant": "frontier",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "frontier",
+    "confidence": null,
+    "latency_ms": 3701.4100000087637,
+    "input_tokens": 337,
+    "output_tokens": 26,
+    "cost_usd": 0.000934,
+    "raw": {
+     "reason": "always frontier",
+     "answer": "The next meeting is on **Thursday, 14 November at 10:00**.",
+     "finish_reason": "stop",
+     "route_cost": 0.0,
+     "answer_cost": 0.000934,
+     "grade_cost": 2.5158e-05,
+     "grade_id": "gen-dec-1790398199-3czbqcvmtLIzZkcl3gQG"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.99
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 5,
+  "text": "Translate 'Where is the train station?' into Spanish.",
+  "expected": "fast",
+  "note": null,
+  "input": {
+   "task": "Translate 'Where is the train station?' into Spanish.",
+   "rubric": "Required: '¿Dónde está la estación de tren?' (or 'de trenes')."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "fast",
+    "confidence": 1.0,
+    "latency_ms": 1931.1335000093095,
+    "input_tokens": 438,
+    "output_tokens": 113,
+    "cost_usd": 0.000141636,
+    "raw": {
+     "reason": "easy (difficulty 0.00 < 0.8)",
+     "router": "typesafe/jev-1.13-20260917",
+     "route_id": "gen-dec-1790398200-2UK3QNWJrEAaOXLAr3ZP",
+     "answers": {
+      "difficulty": 0.0,
+      "difficulty_conf": 1.0,
+      "high_risk": 0.11
+     },
+     "answer": "The most common way to say \"Where is the train station?\" in Spanish is:\n\n**\"¿Dónde está la estación de tren?\"**\n\nIf you are in a specific city and want to be more formal or precise, you can also say:\n\n**\"¿Dónde está la estación de ferrocarril?\"** (though \"estación de tren\" is much more common).",
+     "finish_reason": "stop",
+     "route_cost": 1.7136e-05,
+     "answer_cost": 0.0001245,
+     "grade_cost": 1.9992e-05,
+     "grade_id": "gen-dec-1790398202-gPAd8NQwDpJQqtIHhIVA"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.97
+   },
+   "llm_router": {
+    "variant": "llm_router",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "fast",
+    "confidence": null,
+    "latency_ms": 2659.5939000253566,
+    "input_tokens": 188,
+    "output_tokens": 89,
+    "cost_usd": 0.0001805,
+    "raw": {
+     "reason": "google/gemini-3.1-flash-lite picked fast",
+     "router": "google/gemini-3.1-flash-lite",
+     "answer": "The most common way to say \"Where is the train station?\" in Spanish is:\n\n**\"¿Dónde está la estación de tren?\"**\n\nIf you are in a specific city and want to be more formal or precise, you can also say:\n\n**\"¿Dónde está la estación de ferrocarril?\"** (though \"estación de tren\" is much more common).",
+     "finish_reason": "stop",
+     "route_cost": 5.6e-05,
+     "answer_cost": 0.0001245,
+     "grade_cost": 1.9992e-05,
+     "grade_id": "gen-dec-1790398203-MrwV6B9DThufNt4UBXQg"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.97
+   },
+   "frontier": {
+    "variant": "frontier",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "frontier",
+    "confidence": null,
+    "latency_ms": 2151.710100006312,
+    "input_tokens": 50,
+    "output_tokens": 16,
+    "cost_usd": 0.00026,
+    "raw": {
+     "reason": "always frontier",
+     "answer": "¿Dónde está la estación de tren?",
+     "finish_reason": "stop",
+     "route_cost": 0.0,
+     "answer_cost": 0.00026,
+     "grade_cost": 1.6884e-05,
+     "grade_id": "gen-dec-1790398202-nRg9oonUChPvEmjJ1mCv"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.99
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 6,
+  "text": "Write a SQL query: the 5 customers with the highest total order value.",
+  "expected": "fast",
+  "note": "relabelled fast after the real test: the fast tier wrote a passing query (graded 0.97)",
+  "input": {
+   "task": "Tables: customers(id, name), orders(id, customer_id, amount). Write a SQL query for the 5 customers with the highest total order value, with their totals.",
+   "rubric": "Required: joins orders to customers, sums amount per customer, orders by the total descending, limits to 5, returns name and total."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "frontier",
+    "confidence": 0.33,
+    "latency_ms": 7286.109899985604,
+    "input_tokens": 514,
+    "output_tokens": 176,
+    "cost_usd": 0.0015921440000000002,
+    "raw": {
+     "reason": "unsure how hard this is (confidence 0.33 < 0.45)",
+     "router": "typesafe/jev-1.13-20260917",
+     "route_id": "gen-dec-1790398203-C4z5Yh41HzfXwgBjXKmQ",
+     "answers": {
+      "difficulty": 0.55,
+      "difficulty_conf": 0.33,
+      "high_risk": 0.17
+     },
+     "answer": "```sql\nSELECT c.id, c.name, SUM(o.amount) AS total_amount\nFROM customers c\nJOIN orders o ON o.customer_id = c.id\nGROUP BY c.id, c.name\nORDER BY total_amount DESC\nLIMIT 5;\n```\n\nThis joins `customers` to `orders`, sums each customer's order amounts, sorts descending by that total, and returns the top 5.",
+     "finish_reason": "stop",
+     "route_cost": 1.8144e-05,
+     "answer_cost": 0.001574,
+     "grade_cost": 2.1252e-05,
+     "grade_id": "gen-dec-1790398212-R05mAQjpK38RreT4KsSS"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.86
+   },
+   "llm_router": {
+    "variant": "llm_router",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "fast",
+    "confidence": null,
+    "latency_ms": 4816.810899996199,
+    "input_tokens": 242,
+    "output_tokens": 71,
+    "cost_usd": 0.000167,
+    "raw": {
+     "reason": "google/gemini-3.1-flash-lite picked fast",
+     "router": "google/gemini-3.1-flash-lite",
+     "answer": "```sql\nSELECT c.name, SUM(o.amount) AS total_value\nFROM customers c\nJOIN orders o ON c.id = o.customer_id\nGROUP BY c.id, c.name\nORDER BY total_value DESC\nLIMIT 5;\n```",
+     "finish_reason": "stop",
+     "route_cost": 6.275e-05,
+     "answer_cost": 0.00010425,
+     "grade_cost": 1.9866e-05,
+     "grade_id": "gen-dec-1790398208-0gRLqAj8hgVyszHUnUtx"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.97
+   },
+   "frontier": {
+    "variant": "frontier",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "frontier",
+    "confidence": null,
+    "latency_ms": 4135.427300003357,
+    "input_tokens": 82,
+    "output_tokens": 143,
+    "cost_usd": 0.001594,
+    "raw": {
+     "reason": "always frontier",
+     "answer": "```sql\nSELECT c.id,\n       c.name,\n       SUM(o.amount) AS total_order_value\nFROM customers c\nJOIN orders o ON o.customer_id = c.id\nGROUP BY c.id, c.name\nORDER BY total_order_value DESC\nLIMIT 5;\n```\n\nThis groups orders by customer, sums their order amounts, sorts by that total descending, and returns the top 5 customers.",
+     "finish_reason": "stop",
+     "route_cost": 0.0,
+     "answer_cost": 0.001594,
+     "grade_cost": 2.1252e-05,
+     "grade_id": "gen-dec-1790398207-2ZxRSvxpzY3CW4bCqNxX"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.92
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 7,
+  "text": "Explain the difference between a process and a thread.",
+  "expected": "balanced",
+  "note": null,
+  "input": {
+   "task": "Explain the difference between a process and a thread to a junior developer.",
+   "rubric": "Required: processes have separate memory while threads share their process's memory; threads are lighter to create and switch. Must not: say threads have separate memory."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "frontier",
+    "confidence": 0.27,
+    "latency_ms": 6423.8954999891575,
+    "input_tokens": 463,
+    "output_tokens": 387,
+    "cost_usd": 0.003639304,
+    "raw": {
+     "reason": "unsure how hard this is (confidence 0.27 < 0.45)",
+     "router": "typesafe/jev-1.13-20260917",
+     "route_id": "gen-dec-1790398213-PO28wEt1cVzfF6urmjZr",
+     "answers": {
+      "difficulty": 0.49,
+      "difficulty_conf": 0.27,
+      "high_risk": 0.23
+     },
+     "answer": "## Process vs. Thread\n\n**Process** = an independent running program with its own memory space.\n- Has its own allocated memory, resources, and address space\n- Isolated from other processes (one crashing usually doesn't affect others)\n- Heavier to create and switch between\n- Example: Opening Chrome and Spotify creates two separate processes\n\n**Thread** = a lightweight unit of execution *within* a process.\n- Threads in the same process share memory and resources\n- Multiple threads can run concurrently within one process\n- Cheaper/faster to create and switch between\n- Example: Chrome might use separate threads for rendering the UI, loading a page, and playing a video—all within the same process\n\n**Simple analogy:**\nThink of a process as a **house**, and threads as **people living in it**. The people (threads) share the same kitchen, living room, and resources (memory), but each can do different tasks simultaneously. Different houses (processes) don't share resources—they're separate.\n\n**Key takeaway:** Threads are more efficient for parallel tasks that need shared data, while processes offer better isolation and stability.",
+     "finish_reason": "stop",
+     "route_cost": 1.7304e-05,
+     "answer_cost": 0.003622,
+     "grade_cost": 2.6922e-05,
+     "grade_id": "gen-dec-1790398221-stmlBrco5MEgcSIRJaeQ"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.98
+   },
+   "llm_router": {
+    "variant": "llm_router",
+    "model": "google/gemini-3.5-flash",
+    "label": "balanced",
+    "confidence": null,
+    "latency_ms": 9309.529599995585,
+    "input_tokens": 194,
+    "output_tokens": 202,
+    "cost_usd": 0.00182525,
+    "raw": {
+     "reason": "google/gemini-3.1-flash-lite picked balanced",
+     "router": "google/gemini-3.1-flash-lite",
+     "answer": "Think of a **process** as an entire running program (like your browser or Spotify). It is completely isolated, meaning it has its own private memory space (RAM) allocated by the operating system. If one process crashes, it doesn't affect others.\n\nA **thread** is a single path of execution *inside* that process. A process can have multiple threads (like one thread rendering a webpage while another downloads a file). \n\n**Key Differences:**\n* **Memory:** A process has its own memory. Threads share the memory of their parent process, making communication between threads incredibly fast but requiring careful synchronization to avoid data conflicts.\n* **Overhead:** Creating and switching between processes is slow and resource-heavy. Creating and switching threads is lightweight and fast.\n* **Safety:** If a process crashes, it dies alone. If a thread crashes (e.g., a NullPointerException), it can crash the entire process.",
+     "finish_reason": "stop",
+     "route_cost": 5.675e-05,
+     "answer_cost": 0.0017685,
+     "grade_cost": 2.5158e-05,
+     "grade_id": "gen-dec-1790398223-ei1l435ECDyXeNJMisnJ"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.98
+   },
+   "frontier": {
+    "variant": "frontier",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "frontier",
+    "confidence": null,
+    "latency_ms": 6540.423700003885,
+    "input_tokens": 51,
+    "output_tokens": 334,
+    "cost_usd": 0.003442,
+    "raw": {
+     "reason": "always frontier",
+     "answer": "# Process vs Thread\n\n**Process**\n- An independent running instance of a program with its own memory space\n- Has its own resources (memory, file handles, etc.)\n- Processes don't share memory with each other by default\n- Communication between processes (IPC) is slower and more complex\n- Example: opening two separate Chrome windows creates separate processes\n\n**Thread**\n- A thread runs *inside* a process\n- Threads within the same process share the same memory space\n- Lighter weight to create and switch between than processes\n- Communication between threads is easy (shared memory), but this also means you need to be careful about race conditions\n- Example: a web browser might use one thread for rendering the UI and another for downloading a file—both within the same process\n\n**Quick analogy:**\nThink of a process as a *house*, and threads as *people living in it*. Each house has its own address and resources (like a kitchen), but people (threads) inside the same house can freely share those resources. Two different houses (processes) don't share resources directly—they'd need to \"call\" each other (IPC) to communicate.",
+     "finish_reason": "stop",
+     "route_cost": 0.0,
+     "answer_cost": 0.003442,
+     "grade_cost": 2.7132e-05,
+     "grade_id": "gen-dec-1790398220-2V2WpA4KeFsdL3Mzc74N"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.98
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 8,
+  "text": "Write a Python function that validates an IPv4 address without regex.",
+  "expected": "balanced",
+  "note": null,
+  "input": {
+   "task": "Write a Python function is_ipv4(s) that returns True for a valid dotted-decimal IPv4 address, without using regex.",
+   "rubric": "Required: a Python function without regex that accepts exactly 4 dot-separated all-digit parts, each 0-255, and returns False (not an exception) for bad input."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "frontier",
+    "confidence": 0.41,
+    "latency_ms": 7545.401900017168,
+    "input_tokens": 496,
+    "output_tokens": 420,
+    "cost_usd": 0.004013766,
+    "raw": {
+     "reason": "unsure how hard this is (confidence 0.41 < 0.45)",
+     "router": "typesafe/jev-1.13-20260917",
+     "route_id": "gen-dec-1790398227-GFAwri7n8VrO5juGFDHj",
+     "answers": {
+      "difficulty": 0.61,
+      "difficulty_conf": 0.41,
+      "high_risk": 0.43
+     },
+     "answer": "```python\ndef is_ipv4(s):\n    parts = s.split('.')\n    if len(parts) != 4:\n        return False\n    for part in parts:\n        if not part.isdigit():\n            return False\n        if len(part) > 1 and part[0] == '0':\n            return False\n        if int(part) > 255:\n            return False\n    return True\n```\n\n**Explanation:**\n- Splits the string on `.` and checks there are exactly 4 parts.\n- Each part must consist only of digits (`isdigit()` also rejects empty strings, signs, etc.).\n- Rejects leading zeros like `\"01\"` (but allows `\"0\"` itself).\n- Ensures the numeric value is ≤ 255.\n\n**Example usage:**\n```python\nprint(is_ipv4(\"192.168.1.1\"))   # True\nprint(is_ipv4(\"256.1.1.1\"))     # False\nprint(is_ipv4(\"1.1.1.01\"))      # False\nprint(is_ipv4(\"1.1.1\"))         # False\nprint(is_ipv4(\"a.b.c.d\"))       # False\n```",
+     "finish_reason": "stop",
+     "route_cost": 1.7766e-05,
+     "answer_cost": 0.003996,
+     "grade_cost": 2.8728e-05,
+     "grade_id": "gen-dec-1790398232-BCVUb3l9uIxGg60jeP1N"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.9
+   },
+   "llm_router": {
+    "variant": "llm_router",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "fast",
+    "confidence": null,
+    "latency_ms": 5005.901700002141,
+    "input_tokens": 222,
+    "output_tokens": 133,
+    "cost_usd": 0.000255,
+    "raw": {
+     "reason": "google/gemini-3.1-flash-lite picked fast",
+     "router": "google/gemini-3.1-flash-lite",
+     "answer": "```python\ndef is_ipv4(s):\n    parts = s.split('.')\n    if len(parts) != 4:\n        return False\n    for part in parts:\n        if not part.isdigit():\n            return False\n        # Check for leading zeros (e.g., \"01\") and range 0-255\n        if (len(part) > 1 and part[0] == '0') or not (0 <= int(part) <= 255):\n            return False\n    return True\n```",
+     "finish_reason": "stop",
+     "route_cost": 6.025e-05,
+     "answer_cost": 0.00019475,
+     "grade_cost": 2.2512e-05,
+     "grade_id": "gen-dec-1790398229-Sb4XLaBZZtPJkpqkDktw"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.81
+   },
+   "frontier": {
+    "variant": "frontier",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "frontier",
+    "confidence": null,
+    "latency_ms": 4250.927799992496,
+    "input_tokens": 73,
+    "output_tokens": 329,
+    "cost_usd": 0.003436,
+    "raw": {
+     "reason": "always frontier",
+     "answer": "```python\ndef is_ipv4(s):\n    parts = s.split('.')\n    if len(parts) != 4:\n        return False\n    for part in parts:\n        if not part.isdigit():\n            return False\n        if len(part) > 1 and part[0] == '0':\n            return False\n        if int(part) > 255:\n            return False\n    return True\n```\n\nThis checks:\n- Exactly 4 parts separated by dots.\n- Each part contains only digits (`isdigit()` also rejects empty strings and negative signs).\n- No leading zeros (e.g., \"01\" is invalid), except \"0\" itself.\n- Each part's integer value is between 0 and 255.\n\nExample usage:\n```python\nprint(is_ipv4(\"192.168.1.1\"))   # True\nprint(is_ipv4(\"255.255.255.255\"))  # True\nprint(is_ipv4(\"256.1.1.1\"))     # False\nprint(is_ipv4(\"192.168.01.1\"))  # False\nprint(is_ipv4(\"192.168.1\"))     # False\n```",
+     "finish_reason": "stop",
+     "route_cost": 0.0,
+     "answer_cost": 0.003436,
+     "grade_cost": 2.9148e-05,
+     "grade_id": "gen-dec-1790398229-unUTen8hahx0ANilxWKf"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.89
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 9,
+  "text": "Summarize the trade-offs of REST vs GraphQL for a mobile app.",
+  "expected": "balanced",
+  "note": null,
+  "input": {
+   "task": "Summarize the trade-offs of REST vs GraphQL for a mobile app's API.",
+   "rubric": "Required: GraphQL avoids over/under-fetching and extra round trips; REST is simpler and easier to cache over HTTP; at least one GraphQL downside (caching or query cost)."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "google/gemini-3.5-flash",
+    "label": "balanced",
+    "confidence": 0.75,
+    "latency_ms": 3833.5926000436302,
+    "input_tokens": 453,
+    "output_tokens": 292,
+    "cost_usd": 0.002385972,
+    "raw": {
+     "reason": "moderate (difficulty 0.88 >= 0.8)",
+     "router": "typesafe/jev-1.13-20260917",
+     "route_id": "gen-dec-1790398232-3NpVtaQXEmvuPGniM7U1",
+     "answers": {
+      "difficulty": 0.88,
+      "difficulty_conf": 0.75,
+      "high_risk": 0.32
+     },
+     "answer": "When choosing between REST and GraphQL for a mobile app API, the trade-offs center on performance, development speed, and complexity:\n\n**GraphQL Advantages (Mobile-Friendly):**\n*   **No Over-fetching:** Mobile clients request only the exact fields needed, significantly reducing payload size and saving user data.\n*   **Fewer Roundtrips:** Multiple nested resources can be fetched in a single query, improving performance on slow cellular networks.\n*   **Strong Typing:** Auto-generated client code (via schema) speeds up iOS/Android development.\n\n**REST Advantages (Simpler & Robust):**\n*   **Standardized Caching:** Leverages native HTTP caching (via CDNs and reverse proxies), which is complex to implement with GraphQL's POST requests.\n*   **Lower Server Overhead:** Simpler query parsing reduces server CPU usage and prevents malicious, deeply nested queries from crashing the database.\n*   **Easier Uploads:** Native support for multipart file uploads (e.g., profile pictures), whereas GraphQL requires workarounds.\n\n**Verdict:** Use **GraphQL** for data-heavy apps with complex, relational UI screens. Use **REST** for simpler apps, media-heavy uploads, or when robust CDN caching is critical.",
+     "finish_reason": "stop",
+     "route_cost": 1.7472e-05,
+     "answer_cost": 0.0023685,
+     "grade_cost": 2.9358e-05,
+     "grade_id": "gen-dec-1790398236-NhxLT9J76O99Gw7GcWjA"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.9
+   },
+   "llm_router": {
+    "variant": "llm_router",
+    "model": "google/gemini-3.5-flash",
+    "label": "balanced",
+    "confidence": null,
+    "latency_ms": 4746.492799982661,
+    "input_tokens": 202,
+    "output_tokens": 268,
+    "cost_usd": 0.00242625,
+    "raw": {
+     "reason": "google/gemini-3.1-flash-lite picked balanced",
+     "router": "google/gemini-3.1-flash-lite",
+     "answer": "When choosing between REST and GraphQL for a mobile app API, the trade-offs center on performance, development speed, and complexity:\n\n**GraphQL Advantages (Mobile-Friendly):**\n*   **No Over-fetching:** Mobile clients request only the exact fields needed, significantly reducing payload size and saving user data.\n*   **Fewer Roundtrips:** Multiple nested resources can be fetched in a single query, improving performance on slow cellular networks.\n*   **Strong Typing:** Auto-generated client code (via schema) speeds up iOS/Android development.\n\n**REST Advantages (Simpler & Robust):**\n*   **Standardized Caching:** Leverages native HTTP caching (via CDNs and reverse proxies), which is complex to implement with GraphQL's POST requests.\n*   **Lower Server Overhead:** Simpler query parsing reduces server CPU usage and prevents malicious, deeply nested queries from crashing the database.\n*   **Easier Uploads:** Native support for multipart file uploads (e.g., profile pictures), whereas GraphQL requires workarounds.\n\n**Verdict:** Use **GraphQL** for data-heavy apps with complex, relational UI screens. Use **REST** for simpler apps, media-heavy uploads, or when robust CDN caching is critical.",
+     "finish_reason": "stop",
+     "route_cost": 5.775e-05,
+     "answer_cost": 0.0023685,
+     "grade_cost": 2.9358e-05,
+     "grade_id": "gen-dec-1790398237-vVz2zIxkyJ6zJ1nkhNrt"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.89
+   },
+   "frontier": {
+    "variant": "frontier",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "frontier",
+    "confidence": null,
+    "latency_ms": 6035.516700008884,
+    "input_tokens": 60,
+    "output_tokens": 413,
+    "cost_usd": 0.00425,
+    "raw": {
+     "reason": "always frontier",
+     "answer": "# REST vs GraphQL for Mobile APIs\n\n**REST Pros:**\n- Simpler to implement, cache (HTTP caching works natively)\n- Mature tooling, easier debugging\n- Better for simple, resource-based apps\n\n**REST Cons:**\n- Over-fetching/under-fetching data (wastes mobile bandwidth/battery)\n- Multiple round-trips for related data (bad on slow networks)\n- Versioning often needed as needs evolve\n\n**GraphQL Pros:**\n- Clients request exactly the data needed—critical for limited bandwidth/battery\n- Single request can fetch nested/related data (fewer round-trips)\n- Schema evolves without versioning; strong typing aids client dev\n\n**GraphQL Cons:**\n- Harder to cache (no native HTTP caching; needs client-side solutions like Apollo)\n- More complex server setup (resolvers, schema management)\n- Risk of expensive queries if not rate-limited/depth-limited\n- Steeper learning curve\n\n**Recommendation:** GraphQL often wins for mobile due to bandwidth efficiency and flexible queries, especially with complex/nested data. REST suffices for simple CRUD apps or when caching/simplicity matters most.",
+     "finish_reason": "stop",
+     "route_cost": 0.0,
+     "answer_cost": 0.00425,
+     "grade_cost": 2.8434e-05,
+     "grade_id": "gen-dec-1790398238-e0WOxKiaEAbnM3vegc6J"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.97
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 10,
+  "text": "A train leaves at 09:40 and arrives at 13:15. How long is the trip?",
+  "expected": "fast",
+  "note": "relabelled fast after the real test: the fast tier answered it correctly (graded 0.99)",
+  "input": {
+   "task": "A train leaves at 09:40 and arrives at 13:15 the same day. How long is the trip in hours and minutes?",
+   "rubric": "Required: 3 hours 35 minutes."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "fast",
+    "confidence": 0.63,
+    "latency_ms": 1948.6511000141036,
+    "input_tokens": 482,
+    "output_tokens": 175,
+    "cost_usd": 0.00024106,
+    "raw": {
+     "reason": "easy (difficulty 0.25 < 0.8)",
+     "router": "typesafe/jev-1.13-20260917",
+     "route_id": "gen-dec-1790398239-9QS580Dwi2Jqim8R4TkK",
+     "answers": {
+      "difficulty": 0.25,
+      "difficulty_conf": 0.63,
+      "high_risk": 0.09
+     },
+     "answer": "To calculate the duration of the trip:\n\n1.  **From 09:40 to 12:40:** This is exactly 3 hours.\n2.  **From 12:40 to 13:15:** \n    *   From 12:40 to 13:00 is 20 minutes.\n    *   From 13:00 to 13:15 is 15 minutes.\n    *   Total remaining time: 20 + 15 = 35 minutes.\n\nThe total trip duration is **3 hours and 35 minutes**.",
+     "finish_reason": "stop",
+     "route_cost": 1.806e-05,
+     "answer_cost": 0.000223,
+     "grade_cost": 2.2722e-05,
+     "grade_id": "gen-dec-1790398241-DxeERYAqZj4AJTg0NLhp"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.99
+   },
+   "llm_router": {
+    "variant": "llm_router",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "fast",
+    "confidence": null,
+    "latency_ms": 2697.2240999748465,
+    "input_tokens": 232,
+    "output_tokens": 151,
+    "cost_usd": 0.00028450000000000003,
+    "raw": {
+     "reason": "google/gemini-3.1-flash-lite picked fast",
+     "router": "google/gemini-3.1-flash-lite",
+     "answer": "To calculate the duration of the trip:\n\n1.  **From 09:40 to 12:40:** This is exactly 3 hours.\n2.  **From 12:40 to 13:15:** \n    *   From 12:40 to 13:00 is 20 minutes.\n    *   From 13:00 to 13:15 is 15 minutes.\n    *   Total remaining time: 20 + 15 = 35 minutes.\n\nThe total trip duration is **3 hours and 35 minutes**.",
+     "finish_reason": "stop",
+     "route_cost": 6.15e-05,
+     "answer_cost": 0.000223,
+     "grade_cost": 2.2722e-05,
+     "grade_id": "gen-dec-1790398241-s5CLdCYEdAv53IiPIn0w"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.99
+   },
+   "frontier": {
+    "variant": "frontier",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "frontier",
+    "confidence": null,
+    "latency_ms": 3997.4555000080727,
+    "input_tokens": 70,
+    "output_tokens": 179,
+    "cost_usd": 0.00193,
+    "raw": {
+     "reason": "always frontier",
+     "answer": "The trip takes **3 hours and 35 minutes**.\n\n**Calculation:**\n- From 09:40 to 13:40 = 4 hours\n- From 13:40 back to 13:15 = 25 minutes less\n- 4 hours − 25 minutes = **3 hours 35 minutes**",
+     "finish_reason": "stop",
+     "route_cost": 0.0,
+     "answer_cost": 0.00193,
+     "grade_cost": 2.037e-05,
+     "grade_id": "gen-dec-1790398243-o3cwI3kBjqVIMePjo1qW"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.98
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 11,
+  "text": "Write a regex for a UK postcode and explain it.",
+  "expected": "balanced",
+  "note": null,
+  "input": {
+   "task": "Write a regex that matches UK postcodes like 'SW1A 1AA' and 'M1 1AE', and explain each part.",
+   "rubric": "Required: a regex matching both 'SW1A 1AA' and 'M1 1AE', and an explanation of its outward and inward parts that matches the pattern."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "fast",
+    "confidence": 0.51,
+    "latency_ms": 4037.1982000069693,
+    "input_tokens": 476,
+    "output_tokens": 263,
+    "cost_usd": 0.000372184,
+    "raw": {
+     "reason": "easy (difficulty 0.71 < 0.8)",
+     "router": "typesafe/jev-1.13-20260917",
+     "route_id": "gen-dec-1790398243-FOGdWWFhJ90pgvXFksCE",
+     "answers": {
+      "difficulty": 0.71,
+      "difficulty_conf": 0.51,
+      "high_risk": 0.2
+     },
+     "answer": "The regex for a standard UK postcode is:\n\n`^[A-Z]{1,2}[0-9][A-Z0-9]? ?[0-9][A-Z]{2}$`\n\n### Explanation:\n*   `^`: Start of the string.\n*   `[A-Z]{1,2}`: Matches the area code (1 or 2 letters).\n*   `[0-9]`: Matches the first digit of the district.\n*   `[A-Z0-9]?`: Matches an optional second digit or letter (for specific formats like W1A).\n*   ` ?`: Matches an optional space between the outward and inward codes.\n*   `[0-9]`: Matches the first digit of the sector.\n*   `[A-Z]{2}`: Matches the two-letter unit code.\n*   `$`: End of the string.\n\n*Note: This covers the most common formats. For full validation (including rare edge cases like 'BFPO'), a more complex pattern is required.*",
+     "finish_reason": "stop",
+     "route_cost": 1.7934e-05,
+     "answer_cost": 0.00035425,
+     "grade_cost": 2.6628e-05,
+     "grade_id": "gen-dec-1790398247-AvTbOAR9xpGFKRnXdoRp"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.84
+   },
+   "llm_router": {
+    "variant": "llm_router",
+    "model": "google/gemini-3.5-flash",
+    "label": "balanced",
+    "confidence": null,
+    "latency_ms": 3394.223699986469,
+    "input_tokens": 226,
+    "output_tokens": 282,
+    "cost_usd": 0.00257325,
+    "raw": {
+     "reason": "google/gemini-3.1-flash-lite picked balanced",
+     "router": "google/gemini-3.1-flash-lite",
+     "answer": "Here is the regular expression to match UK postcodes:\n\n```regex\n^[A-Z]{1,2}[0-9][A-Z0-9]? ?[0-9][A-Z]{2}$\n```\n\n### Explanation:\n\n*   **`^`** and **`$`**: Anchors that assert the start and end of the string, ensuring the entire input is a postcode.\n*   **`[A-Z]{1,2}`**: Matches the area code (1 or 2 uppercase letters, e.g., \"S\" or \"SW\").\n*   **`[0-9]`**: Matches the district number (a single digit, e.g., \"1\").\n*   **`[A-Z0-9]?`**: Matches an optional alphanumeric character for sub-districts (e.g., \"A\" in \"SW1A\").\n*   **` ?`**: Matches an optional space between the outward and inward codes.\n*   **`[0-9]`**: Matches the sector number of the inward code (a single digit, e.g., \"1\").\n*   **`[A-Z]{2}`**: Matches the unit code (exactly 2 uppercase letters, e.g., \"AA\").",
+     "finish_reason": "stop",
+     "route_cost": 6.075e-05,
+     "answer_cost": 0.0025125,
+     "grade_cost": 2.9232e-05,
+     "grade_id": "gen-dec-1790398247-csozyK23M1PXA3YFD8dR"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.78
+   },
+   "frontier": {
+    "variant": "frontier",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "frontier",
+    "confidence": null,
+    "latency_ms": 6730.876100016758,
+    "input_tokens": 73,
+    "output_tokens": 525,
+    "cost_usd": 0.005396,
+    "raw": {
+     "reason": "always frontier",
+     "answer": "## Regex\n\n```\n^[A-Z]{1,2}[0-9][A-Z0-9]?\\s?[0-9][A-Z]{2}$\n```\n\n## Explanation\n\n| Part | Meaning |\n|---|---|\n| `^` | Start of string |\n| `[A-Z]{1,2}` | Outward code area letters — 1 or 2 letters (e.g. `M`, `SW`) |\n| `[0-9]` | First digit of district number (e.g. `1`) |\n| `[A-Z0-9]?` | Optional second character of district — can be a letter or digit (e.g. the `A` in `SW1A`), or absent (e.g. `M1`) |\n| `\\s?` | Optional single space between outward and inward codes |\n| `[0-9]` | First digit of inward code (sector), e.g. `1` |\n| `[A-Z]{2}` | Two letters of the inward code (unit), e.g. `AA`, `AE` |\n| `$` | End of string |\n\n**Examples matched:** `SW1A 1AA`, `M1 1AE`, `EC1A1BB` (space optional)\n\n**Note:** This checks *format*, not that the postcode actually exists — for real validation, use the official Royal Mail regex or an API, since valid letter combinations are restricted (e.g. certain letters never appear in certain positions).",
+     "finish_reason": "stop",
+     "route_cost": 0.0,
+     "answer_cost": 0.005396,
+     "grade_cost": 3.1164e-05,
+     "grade_id": "gen-dec-1790398250-HPwZbfV3wNvzyBcDmoU8"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.89
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 12,
+  "text": "Why does 0.1 + 0.2 != 0.3 in Python, and how should money be handled?",
+  "expected": "balanced",
+  "note": null,
+  "input": {
+   "task": "Why does 0.1 + 0.2 == 0.3 print False in Python, and how should an app store money amounts?",
+   "rubric": "Required: binary floating point cannot represent 0.1 exactly; store money as decimal.Decimal or integer cents. Must not: recommend float for money."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "frontier",
+    "confidence": 0.74,
+    "latency_ms": 5936.690699978499,
+    "input_tokens": 495,
+    "output_tokens": 443,
+    "cost_usd": 0.004233934,
+    "raw": {
+     "reason": "high stakes (P=0.89 >= 0.7)",
+     "router": "typesafe/jev-1.13-20260917",
+     "route_id": "gen-dec-1790398250-FnlvlBomdA60mNoH23rJ",
+     "answers": {
+      "difficulty": 0.84,
+      "difficulty_conf": 0.74,
+      "high_risk": 0.89
+     },
+     "answer": "## Why 0.1 + 0.2 != 0.3\n\nPython (like most languages) uses **IEEE 754 double-precision floating point** to represent decimal numbers in binary. Numbers like 0.1 and 0.2 cannot be represented exactly in binary—similar to how 1/3 can't be written exactly in decimal.\n\n- `0.1` is actually stored as `0.1000000000000000055511151231257827021181583404541015625`\n- `0.2` is stored as `0.200000000000000011102230246251565404236316680908203125`\n- Adding them gives `0.3000000000000000444089...`, which doesn't equal the stored value of `0.3` (`0.299999999999999988897...`)\n\n## How to store money correctly\n\n1. **Use `decimal.Decimal`** for calculations:\n   ```python\n   from decimal import Decimal\n   Decimal('0.1') + Decimal('0.2') == Decimal('0.3')  # True\n   ```\n2. **Store amounts as integers** (cents) — e.g., $10.50 → `1050`.\n3. **Use dedicated money libraries** (e.g., `py-moneyed`).\n\nAvoid floats for currency—they introduce rounding errors that compound over transactions.",
+     "finish_reason": "stop",
+     "route_cost": 1.7934e-05,
+     "answer_cost": 0.004216,
+     "grade_cost": 3.465e-05,
+     "grade_id": "gen-dec-1790398256-raneNYRNK1XZk2xtw7O6"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.98
+   },
+   "llm_router": {
+    "variant": "llm_router",
+    "model": "google/gemini-3.5-flash",
+    "label": "balanced",
+    "confidence": null,
+    "latency_ms": 3536.1471000360325,
+    "input_tokens": 226,
+    "output_tokens": 299,
+    "cost_usd": 0.00272625,
+    "raw": {
+     "reason": "google/gemini-3.1-flash-lite picked balanced",
+     "router": "google/gemini-3.1-flash-lite",
+     "answer": "In Python, `0.1 + 0.2 == 0.3` evaluates to `False` because computers represent numbers using binary floating-point math (specifically the IEEE 754 standard). Numbers like 0.1, 0.2, and 0.3 cannot be represented precisely in binary, leading to tiny rounding errors. \n\nIn Python:\n```python\n>>> 0.1 + 0.2\n0.30000000000000004\n```\n\n### How to store money amounts:\n\nTo avoid these rounding errors in financial applications, you should **never** use floats. Instead, use one of two methods:\n\n1. **Use the `decimal` module (Recommended for Python):**\n   The `Decimal` type preserves fixed-point decimal precision exactly as humans write it.\n   ```python\n   from decimal import Decimal\n   Decimal('0.1') + Decimal('0.2') == Decimal('0.3')  # True\n   ```\n   *Note: Always initialize `Decimal` with strings, not floats.*\n\n2. **Store as integers (Cents):**\n   Store values in the smallest currency unit (e.g., $10.50 is stored as `1050` cents). Convert back to decimals only for display.",
+     "finish_reason": "stop",
+     "route_cost": 6.075e-05,
+     "answer_cost": 0.0026655,
+     "grade_cost": 2.9526e-05,
+     "grade_id": "gen-dec-1790398254-vH0Wh5AKHMLSfCND2pVI"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.97
+   },
+   "frontier": {
+    "variant": "frontier",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "frontier",
+    "confidence": null,
+    "latency_ms": 5688.302700000349,
+    "input_tokens": 68,
+    "output_tokens": 450,
+    "cost_usd": 0.004636,
+    "raw": {
+     "reason": "always frontier",
+     "answer": "## Why it prints False\n\nComputers store floating-point numbers in binary, but 0.1 and 0.2 can't be represented exactly in binary (just like 1/3 can't be represented exactly in decimal). Python uses IEEE 754 double-precision floats, so:\n\n- `0.1` is actually stored as `0.1000000000000000055511151231257827...`\n- `0.2` is actually stored as `0.2000000000000000111022302462516...`\n- Adding them gives `0.30000000000000004`, which is not bit-for-bit equal to the stored value of `0.3`\n\nThis is a fundamental limitation of binary floating-point, not a Python bug—it happens in JavaScript, Java, C, etc. too.\n\n## How to store money properly\n\n1. **Use integer cents/smallest unit** — store `$19.99` as `1999` (integer), avoiding decimals entirely.\n2. **Use `Decimal`** (Python's `decimal` module) — exact base-10 arithmetic:\n   ```python\n   from decimal import Decimal\n   Decimal(\"0.1\") + Decimal(\"0.2\") == Decimal(\"0.3\")  # True\n   ```\n3. **Never use `float` for currency**—it accumulates rounding errors over many operations.\n\n**Rule of thumb:** integers for storage/calculation, `Decimal` when human-readable decimal math is needed.",
+     "finish_reason": "stop",
+     "route_cost": 0.0,
+     "answer_cost": 0.004636,
+     "grade_cost": 3.3768e-05,
+     "grade_id": "gen-dec-1790398256-GXPCmqEAL8auylDQSqmc"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.97
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 13,
+  "text": "Design a zero-downtime JWT signing key rotation.",
+  "expected": "frontier",
+  "note": "hard: short but hard (the reference's own example)",
+  "input": {
+   "task": "Design a zero-downtime JWT signing key rotation for 40 services that verify tokens.",
+   "rubric": "Required: publish the new key (e.g. via JWKS) before signing with it; verifiers accept old and new keys, selected by kid; retire the old key only after the longest token lifetime. Must not: switch keys in one step."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "frontier",
+    "confidence": 0.61,
+    "latency_ms": 10280.427800025791,
+    "input_tokens": 478,
+    "output_tokens": 716,
+    "cost_usd": 0.0069495139999999995,
+    "raw": {
+     "reason": "high stakes (P=0.93 >= 0.7)",
+     "router": "typesafe/jev-1.13-20260917",
+     "route_id": "gen-dec-1790398257-gY6wXGSKVw0rBXFbFxkh",
+     "answers": {
+      "difficulty": 1.74,
+      "difficulty_conf": 0.61,
+      "high_risk": 0.93
+     },
+     "answer": "## Zero-Downtime JWT Key Rotation Design\n\n**Core principle:** Overlap verification of old+new keys before retiring old key; never let signing outpace verification support.\n\n**1. Key Infrastructure**\n- Use a **JWKS endpoint** (`/.well-known/jwks.json`) with `kid` (key ID) in JWT header\n- Store keys in KMS/Vault, publish public keys via JWKS\n- All 40 services fetch JWKS periodically (cache 5-15 min, respect `Cache-Control`)\n\n**2. Rotation Phases**\n1. **Publish (T0):** Add new key (kid=v2) to JWKS alongside old (kid=v1). Don't sign with it yet.\n2. **Propagate:** Wait for max cache TTL × safety factor (e.g., 2x) so all 40 services have refreshed JWKS and can verify v2.\n3. **Cutover:** Switch signing service to use v2. Tokens now carry `kid=v2`.\n4. **Grace period:** Keep v1 in JWKS for max token TTL (e.g., access token lifetime + clock skew) so in-flight tokens still verify.\n5. **Retire:** Remove v1 from JWKS after grace period.\n\n**3. Service-side handling**\n- Verifiers select key by `kid`, fallback to refresh JWKS on unknown `kid` (rate-limited)\n- Fail-open to old key only during grace window; alert on unknown `kid` after retirement\n\n**4. Automation & Safety**\n- Rotation orchestrated via CI/CD job or operator (e.g., cert-manager style controller)\n- Enforce minimum overlap = `max(JWKS_cache_TTL, token_TTL) + buffer`\n- Monitor: verification failure rate, JWKS fetch errors, kid distribution in traffic\n- Automatic rollback if failure spike detected during cutover\n\n**Timeline example:** token TTL=15min, cache TTL=10min → overlap ≥ 25-30min before retiring old key.",
+     "finish_reason": "stop",
+     "route_cost": 1.7514e-05,
+     "answer_cost": 0.006932,
+     "grade_cost": 3.612e-05,
+     "grade_id": "gen-dec-1790398267-JmD0WIvWFm968cnuPmuk"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.95
+   },
+   "llm_router": {
+    "variant": "llm_router",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "frontier",
+    "confidence": null,
+    "latency_ms": 9330.097899975954,
+    "input_tokens": 228,
+    "output_tokens": 579,
+    "cost_usd": 0.00590275,
+    "raw": {
+     "reason": "google/gemini-3.1-flash-lite picked frontier",
+     "router": "google/gemini-3.1-flash-lite",
+     "answer": "## Zero-Downtime JWT Key Rotation Design\n\n**Core approach: JWKS with overlapping key validity**\n\n1. **Key ID (kid) in header** — Every JWT includes a `kid` claim identifying which key signed it.\n\n2. **JWKS endpoint** — Central `/.well-known/jwks.json` publishes all *currently valid* public keys (old + new), keyed by `kid`. Services fetch/cache this with short TTL (5 min) + background refresh.\n\n3. **Rotation phases:**\n   - **Phase 1 (Publish):** Generate new keypair, add new public key to JWKS *alongside* old one. Don't sign with it yet. Wait for all 40 services to refresh cache (≥1 cache TTL + buffer).\n   - **Phase 2 (Switch signing):** Auth service starts signing new tokens with new private key (`kid: v2`). Old tokens (`kid: v1`) still verify fine since old public key remains in JWKS.\n   - **Phase 3 (Grace period):** Keep old key in JWKS for max token TTL (e.g., access token lifetime + buffer, say 1–24h) so in-flight tokens don't fail.\n   - **Phase 4 (Retire):** Remove old key from JWKS once all old tokens expired.\n\n4. **Verifier logic:** Services look up `kid` → fetch matching key from cached JWKS (fallback to force-refresh on unknown `kid`, rate-limited to prevent DoS).\n\n5. **Safeguards:** Automate via pipeline; monitor verification failure metrics per `kid`; keep private keys in KMS/HSM; alert if old `kid` usage doesn't drop to zero before retirement.",
+     "finish_reason": "stop",
+     "route_cost": 5.075e-05,
+     "answer_cost": 0.005852,
+     "grade_cost": 3.3474e-05,
+     "grade_id": "gen-dec-1790398266-RPjPmMEUBuCzQlC6p8qz"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.96
+   },
+   "frontier": {
+    "variant": "frontier",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "frontier",
+    "confidence": null,
+    "latency_ms": 7131.280700006755,
+    "input_tokens": 61,
+    "output_tokens": 520,
+    "cost_usd": 0.005322,
+    "raw": {
+     "reason": "always frontier",
+     "answer": "## Zero-Downtime JWT Key Rotation\n\n**Core approach: JWKS with overlapping validity windows**\n\n1. **Key storage**: Publish public keys via a JWKS endpoint (`/.well-known/jwks.json`), each key tagged with a `kid` (key ID).\n\n2. **Rotation sequence**:\n   - **Add new key**: Publish new public key in JWKS *alongside* the old one (don't remove old key yet). All 40 services fetch JWKS periodically (e.g., every 5–15 min) or on cache-miss for unknown `kid`.\n   - **Wait for propagation**: Ensure all services have refreshed their JWKS cache (≥ max cache TTL, add buffer — e.g., 30 min).\n   - **Switch signing**: Token issuer starts signing new tokens with the new key (new `kid` in header).\n   - **Grace period**: Keep old public key in JWKS until all previously-issued tokens signed with it expire (≥ token TTL, e.g., 1 hour).\n   - **Retire old key**: Remove old key from JWKS after grace period.\n\n3. **Verifier logic**: Services look up signing key by `kid` from token header; if `kid` unknown, force JWKS refresh (handles fast rotation edge cases) before rejecting.\n\n4. **Safeguards**: Version JWKS with ETag/cache-control headers; monitor verification failure rates; automate via short-lived scripts (e.g., cron + HSM/KMS) to avoid manual error; keep at least 2 keys live at all times.",
+     "finish_reason": "stop",
+     "route_cost": 0.0,
+     "answer_cost": 0.005322,
+     "grade_cost": 3.2424e-05,
+     "grade_id": "gen-dec-1790398264-cBuLq3AiiBi8IoWbWlbR"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.94
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 14,
+  "text": "Is it fine to store EU customers' full card numbers in our own database?",
+  "expected": "frontier",
+  "note": "hard: easy-looking yes/no, but legal and security stakes",
+  "input": {
+   "task": "Is it fine to store our EU customers' full card numbers in our own Postgres database so repeat checkout is faster? Yes or no, and why.",
+   "rubric": "Required: no, not without full PCI DSS compliance, and it names PCI DSS. Must not: say yes without that caveat."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "frontier",
+    "confidence": 0.59,
+    "latency_ms": 7457.353700010572,
+    "input_tokens": 505,
+    "output_tokens": 358,
+    "cost_usd": 0.0034019759999999997,
+    "raw": {
+     "reason": "high stakes (P=0.96 >= 0.7)",
+     "router": "typesafe/jev-1.13-20260917",
+     "route_id": "gen-dec-1790398268-luQZncPLsRUna3loX1Dh",
+     "answers": {
+      "difficulty": 0.92,
+      "difficulty_conf": 0.59,
+      "high_risk": 0.96
+     },
+     "answer": "**No.**\n\nStoring full card numbers (PANs) in your own database is prohibited under PCI DSS unless you undergo full PCI compliance certification (rigorous encryption, key management, network segmentation, audits, etc.)—which is costly and complex for most businesses. For EU customers, you'd also need to justify this under GDPR as processing sensitive financial data, minimizing storage, and ensuring strong security measures (Art. 5, 32 GDPR).\n\n**Better approach:**\n- Use your payment processor's **tokenization** (Stripe, Adyen, Braintree, etc.). They store the card and give you a token/customer ID to charge later.\n- This achieves the same \"faster repeat checkout\" goal without you touching raw card data.\n- Drastically reduces PCI scope (often to SAQ A) and GDPR liability.\n\nStoring raw PANs yourself adds massive compliance burden and breach risk for no real benefit, since tokenization already solves the speed problem.",
+     "finish_reason": "stop",
+     "route_cost": 1.7976e-05,
+     "answer_cost": 0.003384,
+     "grade_cost": 2.6418e-05,
+     "grade_id": "gen-dec-1790398276-zkGKDUDRBJ7SsNg0LQNK"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.97
+   },
+   "llm_router": {
+    "variant": "llm_router",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "frontier",
+    "confidence": null,
+    "latency_ms": 7459.136499994202,
+    "input_tokens": 254,
+    "output_tokens": 319,
+    "cost_usd": 0.00329475,
+    "raw": {
+     "reason": "google/gemini-3.1-flash-lite picked frontier",
+     "router": "google/gemini-3.1-flash-lite",
+     "answer": "**No.**\n\nStoring full card numbers (PANs) in your own database is prohibited under PCI DSS unless you undergo full PCI compliance certification (which is costly and complex - requiring encryption, strict access controls, audits, network segmentation, etc.). Even then, it's rarely advisable for most businesses.\n\nFor EU customers specifically, you'd also need to justify this under GDPR's data minimization principle — storing full card numbers when a tokenized alternative exists would likely fail that test, and a breach would carry significant liability (fines, notification obligations, reputational damage).\n\n**Better approach:** Use your payment processor's tokenization/vault service (Stripe, Adyen, Braintree, etc.). They store the actual card data in their PCI-compliant infrastructure and give you a token or customer ID you can store safely in Postgres. This achieves the same \"faster repeat checkout\" goal without taking on PCI/GDPR liability.",
+     "finish_reason": "stop",
+     "route_cost": 6.075e-05,
+     "answer_cost": 0.003234,
+     "grade_cost": 2.604e-05,
+     "grade_id": "gen-dec-1790398276-Y0iOr9WWk86o7byswn3l"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.97
+   },
+   "frontier": {
+    "variant": "frontier",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "frontier",
+    "confidence": null,
+    "latency_ms": 6276.792899996508,
+    "input_tokens": 77,
+    "output_tokens": 406,
+    "cost_usd": 0.004214,
+    "raw": {
+     "reason": "always frontier",
+     "answer": "**No.**\n\nStoring full card (PAN) numbers yourself is prohibited by PCI DSS unless you undergo full Level 1 compliance certification—which is costly, complex, and generally impractical for most businesses. Key reasons to avoid this:\n\n1. **PCI DSS scope**: Storing PANs puts your entire database and infrastructure \"in scope\" for strict security requirements (encryption, key management, network segmentation, audits, etc.).\n2. **Breach liability**: A breach exposing raw card numbers leads to severe fines, card network penalties, and reputational damage.\n3. **GDPR overlap**: For EU customers, card data is sensitive personal data; a breach also triggers GDPR breach notification and liability exposure.\n4. **Unnecessary risk**: There's no need—card networks and payment processors (Stripe, Adyen, Braintree, etc.) offer **tokenization**: they store the real PAN in their PCI-compliant vault and give you a token/reference to reuse for repeat checkout.\n\n**Better approach**: Use your payment processor's tokenization/vaulting feature. You store only the token in Postgres, not the actual card number—same fast repeat-checkout experience, without the compliance burden.",
+     "finish_reason": "stop",
+     "route_cost": 0.0,
+     "answer_cost": 0.004214,
+     "grade_cost": 2.8812e-05,
+     "grade_id": "gen-dec-1790398276-Hq13F5zoSFLFtYsIt7h2"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.96
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 15,
+  "text": "Can I take ibuprofen with my warfarin prescription?",
+  "expected": "frontier",
+  "note": "hard: one-line question, health stakes",
+  "input": {
+   "task": "I take warfarin. Can I take ibuprofen for a headache?",
+   "rubric": "Required: advises against it or to check first, because NSAIDs raise bleeding risk with warfarin; says to ask a doctor or pharmacist. Must not: say it is fine."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "frontier",
+    "confidence": 0.54,
+    "latency_ms": 6515.953499969328,
+    "input_tokens": 467,
+    "output_tokens": 397,
+    "cost_usd": 0.0037433880000000003,
+    "raw": {
+     "reason": "high stakes (P=0.96 >= 0.7)",
+     "router": "typesafe/jev-1.13-20260917",
+     "route_id": "gen-dec-1790398277-VQe3xpXUvKh5Jt6qruGf",
+     "answers": {
+      "difficulty": 0.82,
+      "difficulty_conf": 0.54,
+      "high_risk": 0.96
+     },
+     "answer": "**No, avoid ibuprofen if you're on warfarin.** Combining them significantly increases bleeding risk, especially GI bleeding, because:\n\n- NSAIDs like ibuprofen irritate the stomach lining and impair platelet function\n- This adds to warfarin's blood-thinning effect\n- The combination can cause serious, even life-threatening bleeds\n\n**Safer options for headache relief:**\n- **Acetaminophen (Tylenol)** is generally the preferred choice, but use the lowest effective dose and avoid regular high-dose use, since it can still affect INR levels with heavy/prolonged use\n- Stay hydrated, rest in a dark quiet room, or try a cold compress\n\n**If headaches are frequent or severe:**\n- Talk to your doctor or pharmacist before using any new medication\n- They can check your INR and suggest alternatives if needed\n\n**Bottom line:** Skip ibuprofen (and other NSAIDs like naproxen/aspirin) while on warfarin. Check with your healthcare provider before starting any new medication, including over-the-counter ones.",
+     "finish_reason": "stop",
+     "route_cost": 1.7388e-05,
+     "answer_cost": 0.003726,
+     "grade_cost": 2.7048e-05,
+     "grade_id": "gen-dec-1790398283-Q8H4D6bDKVpMvGW1qu0x"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.97
+   },
+   "llm_router": {
+    "variant": "llm_router",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "frontier",
+    "confidence": null,
+    "latency_ms": 7612.022300017998,
+    "input_tokens": 212,
+    "output_tokens": 385,
+    "cost_usd": 0.00390225,
+    "raw": {
+     "reason": "google/gemini-3.1-flash-lite picked frontier",
+     "router": "google/gemini-3.1-flash-lite",
+     "answer": "**No, avoid ibuprofen if you're on warfarin.** Combining them significantly increases your risk of bleeding, including dangerous internal or GI bleeding, for two reasons:\n\n1. **NSAIDs (like ibuprofen) irritate the stomach lining** and increase GI bleeding risk on their own.\n2. **NSAIDs can affect platelet function**, adding to warfarin's blood-thinning effect—compounding bleeding risk rather than just adding to it.\n\n**Safer alternative:** Acetaminophen (Tylenol) is generally the preferred choice for pain/headache relief in people on warfarin, as it doesn't have these blood-thinning or stomach-irritating effects. However, don't exceed recommended doses, and check with your doctor/pharmacist about your specific situation, especially if you take it regularly, since even acetaminophen can interact with warfarin at high doses over time.\n\n**If headaches are frequent or severe**, or if you're unsure about pain management options, talk to your prescribing doctor or pharmacist—they can review your specific INR levels, other medications, and health history to give personalized guidance.",
+     "finish_reason": "stop",
+     "route_cost": 5.625e-05,
+     "answer_cost": 0.003846,
+     "grade_cost": 2.7636e-05,
+     "grade_id": "gen-dec-1790398284-2ZKAvhrkIwwd3ROHtyr1"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.97
+   },
+   "frontier": {
+    "variant": "frontier",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "frontier",
+    "confidence": null,
+    "latency_ms": 7442.744300002232,
+    "input_tokens": 53,
+    "output_tokens": 430,
+    "cost_usd": 0.004406,
+    "raw": {
+     "reason": "always frontier",
+     "answer": "**No, avoid ibuprofen if you're on warfarin.**\n\nCombining them significantly increases your risk of serious bleeding, including GI bleeds, because:\n\n- NSAIDs like ibuprofen irritate the stomach lining and impair platelet function\n- Warfarin already increases bleeding risk by thinning your blood\n- The combination compounds these effects\n\n**Safer options for headache:**\n\n- **Acetaminophen (Tylenol)** is generally the preferred choice for pain relief in people on warfarin, though you should still stick to recommended doses and avoid excessive daily use, as high doses can affect INR levels\n- Stay within the label's maximum daily dose\n- If headaches are frequent, mention this to your doctor—they may want to check your INR periodically if you're using acetaminophen regularly\n\n**Avoid other NSAIDs too:** aspirin (unless specifically prescribed by your doctor for another reason), naproxen (Aleve), and similar medications carry the same bleeding risk.\n\nIf your headache is severe, unusual, or persistent, contact your healthcare provider—especially since headache can occasionally signal a bleeding-related issue in someone on anticoagulants.\n\n**Always check with your pharmacist or doctor** before starting any new medication while on warfarin, as it has many interactions.",
+     "finish_reason": "stop",
+     "route_cost": 0.0,
+     "answer_cost": 0.004406,
+     "grade_cost": 2.8938e-05,
+     "grade_id": "gen-dec-1790398284-u8csIBNBcgZYc7VDHBZI"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.95
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 16,
+  "text": "Our Postgres primary is at 95% disk. What do we do right now?",
+  "expected": "frontier",
+  "note": "hard: incident; a wrong step loses data",
+  "input": {
+   "task": "Our production Postgres primary is at 95% disk and rising. What do we do in the next 30 minutes?",
+   "rubric": "Required: at least two safe first steps (check replication slots/WAL retention, logs, temp files, big tables, or add disk). Must not: tell you to delete WAL files by hand."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "frontier",
+    "confidence": 0.39,
+    "latency_ms": 7734.19630000717,
+    "input_tokens": 489,
+    "output_tokens": 534,
+    "cost_usd": 0.005137808000000001,
+    "raw": {
+     "reason": "unsure how hard this is (confidence 0.39 < 0.45)",
+     "router": "typesafe/jev-1.13-20260917",
+     "route_id": "gen-dec-1790398285-o0DrTyDYrgtb8ORmgaI6",
+     "answers": {
+      "difficulty": 1.6,
+      "difficulty_conf": 0.39,
+      "high_risk": 0.93
+     },
+     "answer": "**Immediate triage (first 5-10 min):**\n1. Identify what's consuming space: `SELECT * FROM pg_database ORDER BY pg_database_size(datname) DESC;` and check largest tables/indexes via `pg_total_relation_size`.\n2. Check for bloat from long-running transactions or abandoned replication slots: `SELECT * FROM pg_stat_replication;` and `SELECT * FROM pg_replication_slots;` — orphaned slots prevent WAL cleanup and are a common silent killer.\n3. Check WAL directory size (`pg_wal`) — if huge, likely a stuck slot/replica or archiving failure.\n\n**Quick wins to buy time:**\n4. Drop unused replication slots/orphaned logical slots if found.\n5. Run `VACUUM` (not full) on bloated tables if autovacuum is behind — check `pg_stat_user_tables` for dead tuples.\n6. Truncate/rotate logs if Postgres logs are on the same volume.\n7. If cloud-hosted, expand disk/volume immediately (often can be done live, e.g., EBS/GP3 online resize) — this is the safest fastest fix.\n\n**In parallel:**\n8. Alert team, pause non-critical batch jobs/large imports.\n9. Confirm backups aren't at risk; don't restart primary unless necessary.\n\nPriority: **expand storage first**, diagnose root cause after pressure is relieved.",
+     "finish_reason": "stop",
+     "route_cost": 1.7808e-05,
+     "answer_cost": 0.00512,
+     "grade_cost": 3.0702e-05,
+     "grade_id": "gen-dec-1790398293-R2dzjX1LD08I6pZrH7QC"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.89
+   },
+   "llm_router": {
+    "variant": "llm_router",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "frontier",
+    "confidence": null,
+    "latency_ms": 9503.368099976797,
+    "input_tokens": 238,
+    "output_tokens": 518,
+    "cost_usd": 0.00525975,
+    "raw": {
+     "reason": "google/gemini-3.1-flash-lite picked frontier",
+     "router": "google/gemini-3.1-flash-lite",
+     "answer": "**Immediate (next 5-10 min):**\n1. Check what's consuming space: `du -sh` on data directory, especially `pg_wal/`, `base/`, `pg_log/`.\n2. Check for replication slots holding WAL: `SELECT * FROM pg_replication_slots;` — inactive/lagging slots cause WAL bloat. Drop dead slots if safe.\n3. Check `pg_stat_activity` for long-running transactions blocking VACUUM/WAL cleanup.\n\n**Quick wins (10-20 min):**\n4. Delete old logs (rotate/truncate `pg_log`, application logs) if disk-based, not on data volume.\n5. If autovacuum is behind, check for bloat on large tables; consider manual `VACUUM` on worst offenders (not FULL — needs space).\n6. Check for orphaned/old files: old base backups, unused temp files in `base/pgsql_tmp`.\n\n**If still critical (20-30 min):**\n7. Expand disk/volume if cloud-based (EBS resize, etc.) — often fastest real fix.\n8. Fail over to a standby with more headroom if available.\n9. Throttle/pause non-critical write traffic.\n\n**Do NOT:** run VACUUM FULL (needs extra space), don't kill WAL sender blindly without checking replication impact.\n\n**After stabilizing:** set up alerting at 80%, review retention/archiving policies.",
+     "finish_reason": "stop",
+     "route_cost": 5.975e-05,
+     "answer_cost": 0.0052,
+     "grade_cost": 3.129e-05,
+     "grade_id": "gen-dec-1790398313-SgMZXKYa7bvqZOMV2QKp"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.88
+   },
+   "frontier": {
+    "variant": "frontier",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "frontier",
+    "confidence": null,
+    "latency_ms": 7478.381299995817,
+    "input_tokens": 65,
+    "output_tokens": 478,
+    "cost_usd": 0.00491,
+    "raw": {
+     "reason": "always frontier",
+     "answer": "**Immediate (next 5 min):**\n1. Check what's growing: `SELECT pg_size_pretty(pg_database_size(current_database()));` and check largest tables/indexes via `pg_stat_user_tables` / `pg_total_relation_size`.\n2. Check for bloat/dead tuples and long-running transactions holding back autovacuum: `SELECT * FROM pg_stat_activity WHERE state != 'idle' ORDER BY xact_start;`\n3. Check WAL directory size — often the real culprit (stuck replication slot or archiving failure): `SELECT * FROM pg_replication_slots;` and `du -sh pg_wal/`.\n\n**Quick wins (next 15 min):**\n- Drop a stuck/inactive replication slot if WAL is bloating.\n- Kill long idle-in-transaction sessions blocking vacuum.\n- Truncate/archive unneeded logs or temp tables.\n- Run `VACUUM (VERBOSE)` on largest bloated tables if safe.\n\n**If still critical (remaining time):**\n- Add emergency disk space (resize volume/EBS) — usually fastest guaranteed fix.\n- Alert team, pause non-critical writers/batch jobs to slow growth.\n\n**After stabilizing:** Set up disk alerts earlier, review autovacuum settings, and check for missing retention policies on logs/WAL.",
+     "finish_reason": "stop",
+     "route_cost": 0.0,
+     "answer_cost": 0.00491,
+     "grade_cost": 2.9652e-05,
+     "grade_id": "gen-dec-1790398292-55PZP12w4qvvdOpxg41H"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.89
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 17,
+  "text": "Find the race condition in this bank transfer code.",
+  "expected": "frontier",
+  "note": null,
+  "input": {
+   "task": "Find the bug: def transfer(a, b, amt):\n    if a.balance >= amt:\n        a.balance -= amt\n        b.balance += amt\nThis runs in many threads at once.",
+   "rubric": "Required: identifies the check-then-act race (two threads both pass the balance check and overdraw) and a fix (a lock, or an atomic transaction/conditional update)."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "frontier",
+    "confidence": 0.4,
+    "latency_ms": 6208.761099987896,
+    "input_tokens": 527,
+    "output_tokens": 457,
+    "cost_usd": 0.004420312,
+    "raw": {
+     "reason": "unsure how hard this is (confidence 0.40 < 0.45)",
+     "router": "typesafe/jev-1.13-20260917",
+     "route_id": "gen-dec-1790398572-Otr48weeb0FHu5sbPfbu",
+     "answers": {
+      "difficulty": 0.61,
+      "difficulty_conf": 0.4,
+      "high_risk": 0.86
+     },
+     "answer": "## Bug: Race Condition (Not Thread-Safe)\n\nThe check-then-act sequence (`if a.balance >= amt` followed by the modification) is not atomic. Between the check and the update, another thread can run concurrently and modify `a.balance`, leading to:\n\n1. **Overdrafts**: Two threads both check `a.balance >= amt` when balance is just enough for one transfer, both pass the check, then both deduct — causing balance to go negative.\n\n2. **Lost updates**: `a.balance -= amt` and `b.balance += amt` are not atomic operations. If two threads update the same account simultaneously, one update can overwrite the other (read-modify-write race).\n\n**Fix**: Use locks to make the operation atomic, e.g.:\n\n```python\nimport threading\n\nlock_a = a.lock  # per-account locks\nlock_b = b.lock\n\ndef transfer(a, b, amt):\n    first, second = sorted([a, b], key=id)  # avoid deadlock\n    with first.lock:\n        with second.lock:\n            if a.balance >= amt:\n                a.balance -= amt\n                b.balance += amt\n```\n\nLocking order by a consistent key (e.g., `id()`) prevents deadlocks when two threads transfer between the same pair of accounts in opposite directions.",
+     "finish_reason": "stop",
+     "route_cost": 1.8312e-05,
+     "answer_cost": 0.004402,
+     "grade_cost": 3.0156e-05,
+     "grade_id": "gen-dec-1790398578-r4Qo6xMjwuDkx84qMyOD"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.93
+   },
+   "llm_router": {
+    "variant": "llm_router",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "frontier",
+    "confidence": null,
+    "latency_ms": 6706.444000010379,
+    "input_tokens": 283,
+    "output_tokens": 364,
+    "cost_usd": 0.0037765,
+    "raw": {
+     "reason": "google/gemini-3.1-flash-lite picked frontier",
+     "router": "google/gemini-3.1-flash-lite",
+     "answer": "**Bug: Race condition (no synchronization)**\n\nThe check `a.balance >= amt` and the subsequent modifications are not atomic. Multiple threads can interleave between the check and the update, causing:\n\n1. **Overdraft**: Two threads both check `a.balance >= amt` simultaneously (both pass), then both deduct — resulting in a going negative even though each check individually passed.\n2. **Lost updates**: `a.balance -= amt` and `b.balance += amt` are not atomic operations themselves. If two threads modify the same account concurrently, one update can overwrite the other (read-modify-write race), losing a transfer entirely.\n\n**Fix:** Use locks to make the check-and-transfer atomic, typically locking both accounts (in a consistent global order to avoid deadlock):\n\n```python\ndef transfer(a, b, amt):\n    first, second = (a, b) if id(a) < id(b) else (b, a)\n    with first.lock:\n        with second.lock:\n            if a.balance >= amt:\n                a.balance -= amt\n                b.balance += amt\n```",
+     "finish_reason": "stop",
+     "route_cost": 6.45e-05,
+     "answer_cost": 0.003712,
+     "grade_cost": 2.8098e-05,
+     "grade_id": "gen-dec-1790398579-T85OgIq5HyUlG5uPxF5L"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.89
+   },
+   "frontier": {
+    "variant": "frontier",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "frontier",
+    "confidence": null,
+    "latency_ms": 5994.727400015108,
+    "input_tokens": 91,
+    "output_tokens": 372,
+    "cost_usd": 0.003902,
+    "raw": {
+     "reason": "always frontier",
+     "answer": "**Bug: Race condition (no locking/synchronization).**\n\nThe check `a.balance >= amt` and the subsequent modifications are not atomic. Between the check and the update, another thread can run and change `a.balance`, leading to:\n\n- **Lost updates**: Two threads both read the same balance, both pass the check, both deduct — resulting in the balance going negative even though each check individually looked safe.\n- **Inconsistent reads**: `b.balance += amt` is also not atomic — concurrent writes to `b.balance` from multiple transfers can overwrite each other (classic read-modify-write race).\n\n**Fix:** Use locks to make the check-and-update atomic, typically locking both accounts (in a consistent order to avoid deadlock):\n\n```python\ndef transfer(a, b, amt):\n    first, second = sorted([a, b], key=id)\n    with first.lock:\n        with second.lock:\n            if a.balance >= amt:\n                a.balance -= amt\n                b.balance += amt\n```\n\nLocking in a consistent order (e.g., by object id) prevents deadlocks from two threads locking `a`/`b` in opposite order.",
+     "finish_reason": "stop",
+     "route_cost": 0.0,
+     "answer_cost": 0.003902,
+     "grade_cost": 2.8896e-05,
+     "grade_id": "gen-dec-1790398578-HH3oDtby3syldAk3NXNe"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.92
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 18,
+  "text": "Prove that the square root of 2 is irrational.",
+  "expected": "frontier",
+  "note": null,
+  "input": {
+   "task": "Prove that the square root of 2 is irrational.",
+   "rubric": "Required: a proof by contradiction: sqrt(2)=p/q in lowest terms gives p even, then q even, contradicting lowest terms."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "google/gemini-3.1-flash-lite",
+    "label": "fast",
+    "confidence": 0.45,
+    "latency_ms": 2253.826299973298,
+    "input_tokens": 439,
+    "output_tokens": 283,
+    "cost_usd": 0.000396678,
+    "raw": {
+     "reason": "easy (difficulty 0.64 < 0.8)",
+     "router": "typesafe/jev-1.13-20260917",
+     "route_id": "gen-dec-1790398368-UYN6zSxS2MGxm0aX56Xw",
+     "answers": {
+      "difficulty": 0.64,
+      "difficulty_conf": 0.45,
+      "high_risk": 0.04
+     },
+     "answer": "To prove $\\sqrt{2}$ is irrational, assume for contradiction that $\\sqrt{2} = \\frac{p}{q}$, where $p$ and $q$ are coprime integers ($q \\neq 0$).\n\n1. Squaring both sides gives $2 = \\frac{p^2}{q^2}$, or $p^2 = 2q^2$.\n2. This implies $p^2$ is even, so $p$ must be even (let $p = 2k$).\n3. Substituting $p = 2k$ into the equation: $(2k)^2 = 2q^2 \\implies 4k^2 = 2q^2 \\implies 2k^2 = q^2$.\n4. This implies $q^2$ is even, so $q$ must also be even.\n\nIf both $p$ and $q$ are even, they share a common factor of 2. This contradicts the initial assumption that $p$ and $q$ are coprime. Therefore, the assumption that $\\sqrt{2}$ can be expressed as a fraction is false. Thus, $\\sqrt{2}$ is irrational.",
+     "finish_reason": "stop",
+     "route_cost": 1.7178e-05,
+     "answer_cost": 0.0003795,
+     "grade_cost": 2.793e-05,
+     "grade_id": "gen-dec-1790398370-qogzUBqLDMixD10QOH6K"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.98
+   },
+   "llm_router": {
+    "variant": "llm_router",
+    "model": "google/gemini-3.5-flash",
+    "label": "balanced",
+    "confidence": null,
+    "latency_ms": 4230.754499993054,
+    "input_tokens": 188,
+    "output_tokens": 309,
+    "cost_usd": 0.002783,
+    "raw": {
+     "reason": "google/gemini-3.1-flash-lite picked balanced",
+     "router": "google/gemini-3.1-flash-lite",
+     "answer": "To prove that $\\sqrt{2}$ is irrational, we use proof by contradiction. \n\nAssume $\\sqrt{2}$ is rational. Then it can be written as a fraction in simplest form:\n$$\\sqrt{2} = \\frac{a}{b}$$\nwhere $a$ and $b$ are coprime integers (sharing no common factors) and $b \\neq 0$.\n\nSquaring both sides gives:\n$$2 = \\frac{a^2}{b^2} \\implies a^2 = 2b^2$$\n\nSince $a^2$ is a multiple of 2, $a^2$ is even. Consequently, $a$ must also be even (the square of an odd number is always odd). Thus, we can write $a = 2k$ for some integer $k$.\n\nSubstituting $a = 2k$ into the equation:\n$$(2k)^2 = 2b^2 \\implies 4k^2 = 2b^2 \\implies 2k^2 = b^2$$\n\nThis implies $b^2$ is even, so $b$ must also be even. \n\nIf both $a$ and $b$ are even, they share a common factor of 2. This contradicts our assumption that $\\frac{a}{b}$ is in simplest form. \n\nTherefore, $\\sqrt{2}$ must be irrational.",
+     "finish_reason": "stop",
+     "route_cost": 5.6e-05,
+     "answer_cost": 0.002727,
+     "grade_cost": 2.9736e-05,
+     "grade_id": "gen-dec-1790398372-JxcOeIq4pGd8xn4vYRF7"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.98
+   },
+   "frontier": {
+    "variant": "frontier",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "frontier",
+    "confidence": null,
+    "latency_ms": 4668.679099995643,
+    "input_tokens": 47,
+    "output_tokens": 388,
+    "cost_usd": 0.003974,
+    "raw": {
+     "reason": "always frontier",
+     "answer": "# Proof that √2 is Irrational\n\n**Proof by contradiction.**\n\nSuppose √2 is rational. Then we can write:\n$$\\sqrt{2} = \\frac{a}{b}$$\n\nwhere $a, b$ are integers with no common factors (the fraction is in lowest terms), and $b \\neq 0$.\n\nSquaring both sides:\n$$2 = \\frac{a^2}{b^2} \\implies a^2 = 2b^2$$\n\nThis means $a^2$ is even. Since the square of an odd number is odd, $a$ must be **even**. So write $a = 2k$ for some integer $k$.\n\nSubstituting:\n$$(2k)^2 = 2b^2 \\implies 4k^2 = 2b^2 \\implies b^2 = 2k^2$$\n\nThis means $b^2$ is even, so $b$ must also be **even**.\n\n**Contradiction:** We assumed $a$ and $b$ have no common factors, but we've shown both are even, meaning they share a factor of 2.\n\nThis contradiction shows our original assumption was false. Therefore, √2 cannot be expressed as a ratio of integers — **√2 is irrational**. $\\blacksquare$",
+     "finish_reason": "stop",
+     "route_cost": 0.0,
+     "answer_cost": 0.003974,
+     "grade_cost": 2.9148e-05,
+     "grade_id": "gen-dec-1790398373-thFOY2rRk7wNaSyMj9rV"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.98
+   }
+  },
+  "trace_url": null
+ },
+ {
+  "idx": 19,
+  "text": "Plan a migration from a monolith's shared database to per-service databases.",
+  "expected": "frontier",
+  "note": null,
+  "input": {
+   "task": "We have a monolith with one shared Postgres database. Plan how to move the orders domain to its own service and database without downtime.",
+   "rubric": "Required: an incremental plan (e.g. strangler or expand-contract) that keeps data in sync during the move (dual writes or CDC), backfills and verifies, then cuts over, with a rollback path. Must not: require downtime."
+  },
+  "error": null,
+  "runs": {
+   "jev": {
+    "variant": "jev",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "frontier",
+    "confidence": 0.78,
+    "latency_ms": 11208.1060000055,
+    "input_tokens": 494,
+    "output_tokens": 471,
+    "cost_usd": 0.00451585,
+    "raw": {
+     "reason": "high stakes (P=0.91 >= 0.7)",
+     "router": "typesafe/jev-1.13-20260917",
+     "route_id": "gen-dec-1790398374-b2RZm1OAj8fBZOJDvHVa",
+     "answers": {
+      "difficulty": 1.85,
+      "difficulty_conf": 0.78,
+      "high_risk": 0.91
+     },
+     "answer": "## Migration Plan: Orders Domain Extraction\n\n**1. Prep**\n- Define clear domain boundary (tables, queries, transactions touching orders)\n- Build Orders service with its own schema, but initially point it at same DB (shared) or use a synced replica\n\n**2. Dual-write phase**\n- Introduce Orders service API; monolith calls it instead of direct table access, OR use CDC (Debezium) to stream order table changes into new Orders DB\n- Keep monolith's DB as source of truth temporarily; new service consumes replicated data (read-only)\n\n**3. Sync & validate**\n- Run both systems in parallel; compare data consistency (checksums, row counts, reconciliation jobs)\n- Redirect reads to new service gradually (feature flags/percentage rollout)\n\n**4. Cutover writes**\n- Switch writes to Orders service using outbox pattern or dual-write with idempotency, then stop monolith writes\n- Monolith calls Orders service via API/events for any order data needs\n\n**5. Decommission**\n- Remove CDC pipeline, drop order tables from monolith DB\n- Monitor error rates, latency; keep rollback path (feature flag revert) until stable\n\n**Key tools**: CDC/Debezium, outbox pattern, feature flags, contract tests, shadow traffic.",
+     "finish_reason": "stop",
+     "route_cost": 1.785e-05,
+     "answer_cost": 0.004498,
+     "grade_cost": 2.9946e-05,
+     "grade_id": "gen-dec-1790398385-jOX3czUXmotAw7RdfAoh"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.49
+   },
+   "llm_router": {
+    "variant": "llm_router",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "frontier",
+    "confidence": null,
+    "latency_ms": 8725.114799977746,
+    "input_tokens": 242,
+    "output_tokens": 472,
+    "cost_usd": 0.0048077499999999995,
+    "raw": {
+     "reason": "google/gemini-3.1-flash-lite picked frontier",
+     "router": "google/gemini-3.1-flash-lite",
+     "answer": "**Migration plan (strangler pattern + dual-write/CDC):**\n\n1. **Prep**: Define orders service API/schema. Stand up new Postgres instance for orders.\n2. **Dual-write phase**: Add orders service, but keep monolith as source of truth. Use CDC (Debezium) to stream orders table changes from monolith DB → new orders DB in near real-time.\n3. **Shadow validation**: Run orders service in read-only shadow mode; compare responses/data against monolith for consistency (reconcile diffs, backfill).\n4. **Cutover reads**: Switch read traffic to orders service once parity confirmed, monolith still writes.\n5. **Cutover writes**: Introduce API layer/feature flag so orders service becomes write owner; monolith calls orders service via API instead of direct DB access. Use outbox pattern for any cross-domain events.\n6. **Decommission**: Once monolith no longer touches orders tables directly, stop CDC, remove old tables, drop foreign keys/joins across domains—replace with async events or API calls.\n7. **Rollback safety**: Keep dual-write reversible until stable; monitor lag, errors, and data integrity throughout.\n\nKey: no big-bang cutover—incremental traffic shift with continuous reconciliation.",
+     "finish_reason": "stop",
+     "route_cost": 5.975e-05,
+     "answer_cost": 0.004748,
+     "grade_cost": 3.0156e-05,
+     "grade_id": "gen-dec-1790398382-WrjEdDKpzjMtN0lRwrqe"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.79
+   },
+   "frontier": {
+    "variant": "frontier",
+    "model": "anthropic/claude-sonnet-5",
+    "label": "frontier",
+    "confidence": null,
+    "latency_ms": 6664.249100023881,
+    "input_tokens": 69,
+    "output_tokens": 441,
+    "cost_usd": 0.004548,
+    "raw": {
+     "reason": "always frontier",
+     "answer": "**Migration plan (strangler pattern + dual-write/CDC):**\n\n1. **Define boundary** – identify orders tables, APIs, and consumers in the monolith.\n2. **Build new Orders service** with its own schema (new Postgres instance), exposing equivalent APIs/events.\n3. **Dual-write phase** – monolith continues to own writes; add CDC (e.g., Debezium) or event publishing to replicate order changes into the new DB in near real-time.\n4. **Backfill** historical data via one-time migration script, then verify parity (row counts, checksums) between old and new stores.\n5. **Shadow reads** – route read traffic to new service in shadow mode, compare responses to monolith for correctness.\n6. **Cutover writes** – switch write path to new Orders service behind a feature flag; monolith calls new service’s API instead of DB directly. Keep sync/CDC running in reverse briefly for rollback safety.\n7. **Redirect all consumers** (APIs, jobs) to new service endpoints.\n8. **Decommission** old tables once stable, remove dual-write code, monitor for errors.\n\nUse feature flags, monitoring, and rollback plan at each step to ensure zero downtime.",
+     "finish_reason": "stop",
+     "route_cost": 0.0,
+     "answer_cost": 0.004548,
+     "grade_cost": 2.94e-05,
+     "grade_id": "gen-dec-1790398380-DcDg9r7I4fGSJn1J48fC"
+    },
+    "probability": null,
+    "score": null,
+    "quality": 0.82
+   }
+  },
+  "trace_url": null
+ }
+]
