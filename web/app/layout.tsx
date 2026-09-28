@@ -4,7 +4,7 @@ import Link from "next/link";
 import { LiveCounter } from "@/components/LiveCounter";
 import { Glyph } from "@/components/ui";
 import { UiToggle } from "@/components/UiToggle";
-import { AUTHOR } from "@/lib/site";
+import { AUTHOR, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 // Die Grotesk C (commercial) → Inter Tight; LisaTerminal → VT323 (DESIGN.md §4)
@@ -12,9 +12,25 @@ const interTight = Inter_Tight({ subsets: ["latin"], weight: ["400", "500", "600
 const jetbrains = JetBrains_Mono({ subsets: ["latin"], weight: ["300", "400"], variable: "--font-jetbrains" });
 const vt323 = VT323({ subsets: ["latin"], weight: "400", variable: "--font-vt323" });
 
+const DESCRIPTION = "Unofficial tests by Prateek Hitli: 24 decision experiments, Jev (via OpenRouter) against LLM and no-model baselines, measured on real runs. Not affiliated with TypeSafe AI.";
+
 export const metadata: Metadata = {
-  title: "Jev Lab",
-  description: "Unofficial tests by Prateek Hitli: 24 decision experiments, Jev (via OpenRouter) against LLM and no-model baselines, measured on real runs. Not affiliated with TypeSafe AI.",
+  metadataBase: new URL(SITE_URL),
+  title: { default: "Jev Lab: 24 AI decision tests, Jev vs LLMs vs code", template: "%s · Jev Lab" },
+  description: DESCRIPTION,
+  authors: [{ name: AUTHOR.name, url: AUTHOR.url }],
+  alternates: { canonical: "/" },
+  openGraph: { siteName: "Jev Lab", type: "website", locale: "en_US" },
+  twitter: { card: "summary_large_image" },
+};
+
+const JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Jev Lab",
+  url: SITE_URL,
+  description: DESCRIPTION,
+  author: { "@type": "Person", name: AUTHOR.name, url: AUTHOR.url },
 };
 
 function Nav() {
@@ -77,6 +93,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" className={`${interTight.variable} ${jetbrains.variable} ${vt323.variable}`}>
       <body className="min-h-screen overflow-x-clip">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }} />
         <Nav />
         <main className="mx-auto max-w-[1440px] px-4 sm:px-6">{children}</main>
         <Footer />

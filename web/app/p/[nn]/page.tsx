@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Markdown } from "@/components/Markdown";
@@ -6,6 +7,21 @@ import { MobilePager } from "@/components/MobilePager";
 import { ProjectTabs } from "@/components/project/ProjectTabs";
 import { MetaRow, Panel, Pill } from "@/components/ui";
 import { getProject, getProjects } from "@/lib/api";
+
+export async function generateMetadata({ params }: PageProps<"/p/[nn]">): Promise<Metadata> {
+  const { nn } = await params;
+  const project = await getProject(nn).catch(() => null);
+  if (!project) return {};
+  // first paragraph of the markdown, stripped to plain text, cut near 155 chars for the SERP snippet
+  const plain = project.description.split(/\n\s*\n/).find((b) => !b.trim().startsWith("#")) ?? "";
+  const text = plain.replace(/[`*_>#\[\]]|\(https?:[^)]*\)/g, "").replace(/\s+/g, " ").trim();
+  const description = text.length > 155 ? `${text.slice(0, 152).replace(/\s\S*$/, "")}…` : text;
+  return {
+    title: project.title,
+    description: description || `${project.name}: Jev vs an LLM vs plain code on ${project.rows} labeled rows.`,
+    alternates: { canonical: `/p/${nn}` },
+  };
+}
 
 export default async function ProjectPage({ params }: PageProps<"/p/[nn]">) {
   const { nn } = await params;

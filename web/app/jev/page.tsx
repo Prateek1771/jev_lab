@@ -4,7 +4,8 @@ import { CodeBlock, Label, MetaRow } from "@/components/ui";
 import { AUTHOR } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "What is Jev · Jev Lab",
+  title: "What is Jev",
+  alternates: { canonical: "/jev" },
   description: "Jev is TypeSafe AI's first System One model: typed decisions with calibrated probabilities instead of text. What it is, how it's called, where it's weak, and where to find it.",
 };
 
