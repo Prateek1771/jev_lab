@@ -4,7 +4,7 @@ from the code would miss them. Instead this runs each project's first example fo
 of every request to OpenRouter. Only the body: headers carry the API key and are never read.
 
 Writes projects/NN_*/prompts.json; the web UI's Download tab and the Excel workbook read it.
-Usage: uv run python scripts/capture_prompts.py [NN ...]      (default: all projects; ~$0.03 for all 24)"""
+Usage: uv run python scripts/capture_prompts.py [NN ...]      (default: all projects; ~$0.03 for all 25)"""
 
 import json
 import re
@@ -20,7 +20,7 @@ KEYLIKE = re.compile(r"sk-[A-Za-z0-9_-]{16,}|Bearer\s+\S{16,}")
 
 def record(request: httpx.Request) -> dict | None:
     """One request → one normalised call, or None if it isn't a model call. Reads request.content only."""
-    if "openrouter.ai" not in request.url.host or not request.content:
+    if request.url.host not in ("openrouter.ai", "api.openai.com") or not request.content:
         return None
     body = json.loads(request.content)
     if "questions" in body:   # Jev: the Decisions API

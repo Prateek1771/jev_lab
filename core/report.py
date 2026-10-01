@@ -28,7 +28,8 @@ TITLES = {"jev": "Jev-enhanced", "baseline": "Baseline: plain prompt", "structur
           "everything": "Send the whole output", "llm_summary": "LLM summarizes first",
           "store_everything": "Store every message", "store_all": "Store every extracted edge",
           "llm_self_check": "LLM checks its own extraction",
-          "plain_agent": "Plain agent: fast LLM + tools", "frontier_agent": "Frontier agent + tools"}
+          "plain_agent": "Plain agent: fast LLM + tools", "frontier_agent": "Frontier agent + tools",
+          "cheap_llm": "Cheap OpenAI model (gpt-4.1-nano)", "heuristic": "Top tag score (no model)"}
 PASS = 0.5   # a graded answer passes when the grader's P(correct) is at least this
 # Per-row numbers a project stores in Run.raw; the batch view averages each one where it is defined (08+).
 RAW_METRICS = {"precision": "Retrieval precision", "recall": "Retrieval recall", "ndcg": "nDCG@3", "mrr": "MRR",

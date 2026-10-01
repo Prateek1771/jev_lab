@@ -57,6 +57,7 @@ export type ProjectSummary = {
   traced: boolean;
   sweep: SweepSpec | null;
   safety: SafetySpec | null;
+  players: string[] | null;   // a live game (25: chess): the Play tab's player list
   latest: RunMeta | null;
 };
 

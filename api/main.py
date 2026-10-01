@@ -111,6 +111,7 @@ def _summary(m, nn: str) -> dict:
     return {"id": nn, "title": m.TITLE, "name": m.TITLE.split("·", 1)[-1].strip(), "primitive": m.PRIMITIVE,
             "labels": m.LABELS, "examples": list(m.EXAMPLES), "rows": len(m.DATASET), "traced": traced(m),
             "sweep": getattr(m, "SWEEP", None), "safety": getattr(m, "SAFETY", None),
+            "players": getattr(m, "PLAYERS", None),   # set = the project has a live Play tab (25: chess)
             "latest": _run_meta(latest) if latest else None}
 
 
@@ -183,6 +184,33 @@ def dataset(nn: str):
                                "got": {v: report.outcome(r) for v, r in result.runs.items()} if result else None})
         yield _sse("done", {"file": path.name})
     # no-transform: Next's proxy gzips responses, and gzip buffers the whole stream until it ends
+    return StreamingResponse(stream(), media_type="text/event-stream",
+                             headers={"Cache-Control": "no-cache, no-transform", "X-Accel-Buffering": "no"})
+
+
+class PlayIn(BaseModel):
+    white: str
+    black: str
+
+
+@app.post("/api/projects/{nn}/play", dependencies=[Depends(_limit("dataset"))])
+def play(nn: str, body: PlayIn):
+    """One full game, streamed a ply at a time. Capped like a dataset run: a game is up to 300 paid calls."""
+    m = _project(nn)
+    players = getattr(m, "PLAYERS", None)
+    if not players:
+        raise HTTPException(404, f"project {nn} has no game")
+    if body.white not in players or body.black not in players:
+        raise HTTPException(422, f"players must be from {players}")
+
+    def stream():
+        yield _sse("start", {"white": body.white, "black": body.black})
+        try:
+            for ply in m.play(body.white, body.black):
+                yield _sse("move", ply)
+        except Exception as e:   # bad key, no credits, model down: the moves so far stay on the board
+            yield _sse("error", {"message": f"{type(e).__name__}: {str(e).splitlines()[0][:300]}"})
+        yield _sse("end", {})
     return StreamingResponse(stream(), media_type="text/event-stream",
                              headers={"Cache-Control": "no-cache, no-transform", "X-Accel-Buffering": "no"})
 

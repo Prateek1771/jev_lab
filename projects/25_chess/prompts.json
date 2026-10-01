@@ -1,0 +1,101 @@
+{
+ "example": "Back-rank mate",
+ "captured": "2026-10-01",
+ "calls": [
+  {
+   "kind": "jev",
+   "model": "typesafe/jev-1.13",
+   "questions": {
+    "move": {
+     "type": "choice",
+     "instructions": "You are playing white and must WIN, fast. Pick the move that ends the game soonest, using the tags. 1) CHECKMATE always. 2) Never BLUNDER, BLUNDER RISK or LOSING TRADE. 3) Win material: SAFE captures, WINNING TRADEs. 4) Save a piece in your_pieces_in_danger. 5) Forcing moves: check, THREATENS. 6) Ahead: EVEN TRADEs and PASSED PAWN pushes; behind: no trades, attack. 7) Never a quiet shuffle, UNDOES or REPEATS: follow the state's tempo line. The list is sorted best-first; prefer the top unless a lower move is clearly more forcing.",
+     "criteria": {
+      "d1d8": "Rook d1→d8 (Rd8#), CHECKMATE (wins the game)",
+      "d1d7": "Rook d1→d7 (Rd7), BOXES IN their king (2 squares left)",
+      "d1d6": "Rook d1→d6 (Rd6), BOXES IN their king (2 squares left)",
+      "d1d5": "Rook d1→d5 (Rd5), BOXES IN their king (2 squares left)",
+      "d1d4": "Rook d1→d4 (Rd4), BOXES IN their king (2 squares left)",
+      "h2h4": "Pawn h2→h4 (h4), BOXES IN their king (2 squares left)",
+      "g2g4": "Pawn g2→g4 (g4), BOXES IN their king (2 squares left)",
+      "f2f4": "Pawn f2→f4 (f4), BOXES IN their king (2 squares left)",
+      "d1d3": "Rook d1→d3 (Rd3), BOXES IN their king (2 squares left)",
+      "h2h3": "Pawn h2→h3 (h3), BOXES IN their king (2 squares left)",
+      "g2g3": "Pawn g2→g3 (g3), BOXES IN their king (2 squares left)",
+      "f2f3": "Pawn f2→f3 (f3), BOXES IN their king (2 squares left)",
+      "d1d2": "Rook d1→d2 (Rd2), BOXES IN their king (2 squares left)",
+      "g1h1": "King g1→h1 (Kh1), BOXES IN their king (2 squares left)",
+      "g1f1": "King g1→f1 (Kf1), BOXES IN their king (2 squares left)",
+      "d1f1": "Rook d1→f1 (Rf1), BOXES IN their king (2 squares left)",
+      "d1e1": "Rook d1→e1 (Re1), BOXES IN their king (2 squares left)",
+      "d1c1": "Rook d1→c1 (Rc1), BOXES IN their king (2 squares left)",
+      "d1b1": "Rook d1→b1 (Rb1), BOXES IN their king (2 squares left)",
+      "d1a1": "Rook d1→a1 (Ra1), BOXES IN their king (2 squares left)"
+     }
+    },
+    "eval": {
+     "type": "score",
+     "instructions": "Who stands better in this position?",
+     "criteria": [
+      "Black is winning",
+      "Black is better",
+      "Equal",
+      "White is better",
+      "White is winning"
+     ]
+    },
+    "threat": {
+     "type": "noul",
+     "instructions": "Is any white piece currently attacked and insufficiently defended?",
+     "criteria": {
+      "true": "A white piece is hanging or the king is in danger",
+      "false": "All white pieces are safe"
+     }
+    }
+   },
+   "state": {
+    "side_to_move": "white",
+    "fen": "6k1/5ppp/8/8/8/8/5PPP/3R2K1 w - - 0 1",
+    "board": ". . . . . . k .\n. . . . . p p p\n. . . . . . . .\n. . . . . . . .\n. . . . . . . .\n. . . . . . . .\n. . . . . P P P\n. . . R . . K .",
+    "pieces": {
+     "white": [
+      "King g1",
+      "Pawn f2",
+      "Pawn g2",
+      "Pawn h2",
+      "Rook d1"
+     ],
+     "black": [
+      "King g8",
+      "Pawn f7",
+      "Pawn g7",
+      "Pawn h7"
+     ]
+    },
+    "in_check": false,
+    "material": {
+     "white": 8,
+     "black": 3,
+     "balance": "white +5"
+    },
+    "your_pieces_in_danger": [],
+    "enemy_pieces_you_can_win": [],
+    "move_number": 1,
+    "plies_since_capture_or_pawn_move": 0,
+    "tempo": "You are ahead by 5: trade pieces and push passed pawns to convert.",
+    "game_pgn": ""
+   }
+  },
+  {
+   "kind": "llm",
+   "model": "gpt-4.1-nano",
+   "system": [
+    "You are a ruthless chess engine playing a game against another AI. Your only goal is to WIN, as fast as possible.\nDraws and long games count as failures. Decide quickly: the engine has already done the calculation for you.\n\n## What you get each turn\n- Side to move, move number, FEN, an ASCII board (uppercase = White, rank 8 at the top) and every piece's square.\n- Material, your pieces in danger, enemy pieces you can win, and a TEMPO line telling you what the game needs now.\n- LEGAL moves in UCI, sorted best-first by the engine, each with tags:\n  - CHECKMATE: wins the game\n  - SAFE capture of X: wins X for free\n  - WINNING TRADE / EVEN TRADE / LOSING TRADE: a capture where your piece can be taken back\n  - THREATENS X: after this move, X can be won next turn\n  - PASSED PAWN push: no enemy pawn can stop it, the closer to rank 8 the better\n  - check, castles, promotes to X\n  - BLUNDER RISK: leaves your piece hanging | BLUNDER: allows CHECKMATE IN 1\n  - UNDOES / REPEATS / DRAW: wastes time\nPiece values: Pawn 1, Knight 3, Bishop 3, Rook 5, Queen 9.\n\n## Pick the FIRST rule that applies\n1. CHECKMATE: play it.\n2. Never play BLUNDER, BLUNDER RISK or LOSING TRADE.\n3. Win material: SAFE capture (highest value first), then WINNING TRADE.\n4. A piece of yours is in danger: save it (move it, defend it, or trade it).\n5. Force the opponent: check or THREATENS, preferring ones near their king.\n6. Ahead in material: EVEN TRADE every piece you can and push PASSED PAWNs to promote. Behind: no trades, attack the king.\n7. Otherwise push a pawn toward their king, or bring a piece closer to it. Castle early, then attack.\nNever shuffle a piece back and forth, never UNDOES / REPEATS / DRAW. If the TEMPO line says the game has stalled,\nplay a capture, a check or a pawn push this move.\nThe list is sorted: when unsure, play the first move that breaks none of the rules.\n\n## Answer\nOnly one JSON object, no markdown, no thinking out loud:\n{\"move\": \"<uci copied exactly from LEGAL>\", \"reason\": \"<max 8 words>\"}\n\n## Examples\nLEGAL: b5c6: Bishop b5→c6 (Bxc6), SAFE capture of Knight | d1h5: Queen d1→h5 (Qh5), BLUNDER RISK: leaves Queen h5 hanging | e1g1: King e1→g1 (O-O), castles\n{\"move\": \"b5c6\", \"reason\": \"Free knight\"}\n\nTEMPO: You are ahead by 5: trade pieces and push passed pawns to convert.\nLEGAL: d1d8: Rook d1→d8 (Rxd8+), EVEN TRADE (Rook for Rook), you are ahead: simplify, check | g1f1: King g1→f1 (Kf1) | b5b6: Pawn b5→b6 (b6), PASSED PAWN push (rank 6 of 8)\n{\"move\": \"d1d8\", \"reason\": \"Ahead: trade rooks, then promote\"}\n\nTEMPO: Material is equal. No capture or pawn move for 18 plies: break it now with a capture, check or pawn push.\nLEGAL: f3e5: Knight f3→e5 (Ne5), THREATENS Queen d7 | c3d1: Knight c3→d1 (Nd1), UNDOES your previous move | g2g4: Pawn g2→g4 (g4)\n{\"move\": \"f3e5\", \"reason\": \"Hits the queen, forces a reply\"}"
+   ],
+   "user": [
+    "Side to move: white\nFEN: 6k1/5ppp/8/8/8/8/5PPP/3R2K1 w - - 0 1\nIn check: False\nBoard:\n. . . . . . k .\n. . . . . p p p\n. . . . . . . .\n. . . . . . . .\n. . . . . . . .\n. . . . . . . .\n. . . . . P P P\n. . . R . . K .\nPIECES white: King g1, Pawn f2, Pawn g2, Pawn h2, Rook d1\nPIECES black: King g8, Pawn f7, Pawn g7, Pawn h7\nMaterial: white 8, black 3 (white +5)\nYour pieces in danger: none\nEnemy pieces you can win: none\nMove number: 1\nTEMPO: You are ahead by 5: trade pieces and push passed pawns to convert.\nGame so far (PGN): (start)\n\nLEGAL moves:\nd1d8: Rook d1→d8 (Rd8#), CHECKMATE (wins the game)\nd1d7: Rook d1→d7 (Rd7), BOXES IN their king (2 squares left)\nd1d6: Rook d1→d6 (Rd6), BOXES IN their king (2 squares left)\nd1d5: Rook d1→d5 (Rd5), BOXES IN their king (2 squares left)\nd1d4: Rook d1→d4 (Rd4), BOXES IN their king (2 squares left)\nh2h4: Pawn h2→h4 (h4), BOXES IN their king (2 squares left)\ng2g4: Pawn g2→g4 (g4), BOXES IN their king (2 squares left)\nf2f4: Pawn f2→f4 (f4), BOXES IN their king (2 squares left)\nd1d3: Rook d1→d3 (Rd3), BOXES IN their king (2 squares left)\nh2h3: Pawn h2→h3 (h3), BOXES IN their king (2 squares left)\ng2g3: Pawn g2→g3 (g3), BOXES IN their king (2 squares left)\nf2f3: Pawn f2→f3 (f3), BOXES IN their king (2 squares left)\nd1d2: Rook d1→d2 (Rd2), BOXES IN their king (2 squares left)\ng1h1: King g1→h1 (Kh1), BOXES IN their king (2 squares left)\ng1f1: King g1→f1 (Kf1), BOXES IN their king (2 squares left)\nd1f1: Rook d1→f1 (Rf1), BOXES IN their king (2 squares left)\nd1e1: Rook d1→e1 (Re1), BOXES IN their king (2 squares left)\nd1c1: Rook d1→c1 (Rc1), BOXES IN their king (2 squares left)\nd1b1: Rook d1→b1 (Rb1), BOXES IN their king (2 squares left)\nd1a1: Rook d1→a1 (Ra1), BOXES IN their king (2 squares left)"
+   ],
+   "tools": [],
+   "response_format": null
+  }
+ ]
+}

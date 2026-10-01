@@ -31,7 +31,7 @@ def fake_result(label="billing"):
 
 def test_every_project_is_listed_with_its_page(client):
     items = client.get("/api/projects").json()
-    assert [p["id"] for p in items] == list(discover()) and len(items) == 24
+    assert [p["id"] for p in items] == list(discover()) and len(items) == 25
     for p in items:
         d = client.get(f"/api/projects/{p['id']}").json()
         assert d["description"] and len(d["diagrams"]) == 2 and d["examples"]

@@ -1,7 +1,7 @@
 
 # Jev Lab
 
-Twenty-four decisions an AI product makes every day (classify, gate, route, filter, verify), each decided three ways:
+Twenty-five decisions an AI product makes every day (classify, gate, route, filter, verify), each decided three ways:
 by **Jev** (`typesafe/jev-1.13`), by an **LLM** prompt, and by **plain code**. Same labelled rows, real API calls, every
 mistake counted. Two UIs show the results: a Next.js app and the original Streamlit page.
 
@@ -15,11 +15,11 @@ mistake counted. Two UIs show the results: a Next.js app and the original Stream
 
 Every number in these is from a saved real run (`runs/`).
 
-**Accuracy vs cost, all 24 experiments.** Each point is one variant from a project's latest run. Click a point to open that run.
+**Accuracy vs cost, all 25 experiments.** Each point is one variant from a project's latest run. Click a point to open that run.
 
 ![Accuracy vs cost chart](docs/screenshots/overview.png)
 
-**The 24 experiments.** Jev, the best LLM baseline and the no-model baseline, each with its score and cost per decision.
+**The 25 experiments.** Jev, the best LLM baseline and the no-model baseline, each with its score and cost per decision.
 
 ![Experiment list](docs/screenshots/projects.png)
 
@@ -45,7 +45,7 @@ Every number in these is from a saved real run (`runs/`).
 ```
 jev_lab/
 ├── app.py            Streamlit UI (one page, every project)
-├── projects/         the 24 experiments, one self-contained folder each
+├── projects/         the 25 experiments, one self-contained folder each
 │   ├── 01_classification/
 │   │   ├── experiment.py     the contract the UIs call (see below)
 │   │   ├── jev_client.py     this project's Jev calls (plus llm.py, rules.py, tools.py … as it needs)
@@ -53,7 +53,7 @@ jev_lab/
 │   │   ├── about.md          description + "With Jev" / "Without Jev" diagrams
 │   │   ├── prompts.json      every system prompt it sends, captured from a real run
 │   │   └── tests/            offline tests (network faked)
-│   └── … 24_agent_harness/
+│   └── … 24_agent_harness/ · 25_chess/ (also a live game: the web UI's Play tab)
 ├── core/             run.py (Run/Result) · report.py (every metric) · projects.py (discover) · ui.py (Streamlit rendering)
 ├── shared/           plumbing used by ≥3 projects: Jev decide(), the no-retry chat model, grader, parsers
 ├── config/           settings.py (models, URLs, prices) · telemetry.py (Langfuse) · .env (keys, gitignored)
@@ -95,7 +95,7 @@ The API goes to **Render** and the web UI to **Vercel**. Secrets are typed into 
    - `WEB_ORIGINS` and `WEB_UI_URL`: the Vercel URL, e.g. `https://jev-labs.vercel.app`. You don't have it yet, so put a
      placeholder and fix it in step 4.
 
-   When it's live, `https://<api>.onrender.com/api/projects` lists 24 projects. The free plan sleeps when idle, so the
+   When it's live, `https://<api>.onrender.com/api/projects` lists 25 projects. The free plan sleeps when idle, so the
    first visit after a while takes about 30 s.
 3. **Vercel (web):** Add New → Project → the same repo. Set **Root Directory** to `web`; the framework is detected as
    Next.js. Environment variables, both set to the Render URL:
@@ -126,6 +126,6 @@ At these values the worst case stays well under $2 a day. The counters live in m
 
 ## Adding a project
 
-1. Create `projects/25_name/` with `experiment.py` (the contract above), `dataset.json`, `about.md` and `tests/`.
+1. Create `projects/26_name/` with `experiment.py` (the contract above), `dataset.json`, `about.md` and `tests/`.
 2. `uv run pytest -q`: `tests/test_datasets.py` checks the dataset and the diagrams against the graph.
-3. `uv run python scripts/capture_prompts.py 25` records its prompts for the Download tab (real calls, cents).
+3. `uv run python scripts/capture_prompts.py 26` records its prompts for the Download tab (real calls, cents).

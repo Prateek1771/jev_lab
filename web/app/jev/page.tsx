@@ -189,7 +189,7 @@ export default function WhatIsJev() {
           <div className="space-y-4 text-[17px] leading-[1.4] text-ink-86">
             <p>TypeSafe&apos;s pitch is automation, not conversation: workflows with <b className="text-ink">smart if-statements</b>, map-reduce over big data, real-time apps, and score / judge / verify / guardrail steps.</p>
             <p>Ask <b className="text-ink">atomic questions</b>, one judgment each. Combine them in code, not in a prompt. Counting, facts and hard rules stay in code too.</p>
-            <p>Then use the confidence: <b className="text-ink">act when it&apos;s high, escalate when it isn&apos;t</b>. That&apos;s the pattern every one of the 24 experiments here tests.</p>
+            <p>Then use the confidence: <b className="text-ink">act when it&apos;s high, escalate when it isn&apos;t</b>. That&apos;s the pattern every one of the 25 experiments here tests.</p>
           </div>
         </div>
         <div className="min-w-0">
@@ -216,7 +216,7 @@ export default function WhatIsJev() {
           ))}
         </div>
         <p className="mt-6 text-[17px] text-ink-86">
-          How it holds up on real work: <Link href="/#projects" className="u text-ink">the 24 experiments, measured →</Link>
+          How it holds up on real work: <Link href="/#projects" className="u text-ink">the 25 experiments, measured →</Link>
         </p>
       </section>
 

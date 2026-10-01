@@ -9,7 +9,7 @@ import { ReportView } from "./ReportView";
 type Row = { idx: number; text: string; expected: string; error: string | null; got: Record<string, string> | null };
 
 /** POST + a streamed body, parsed as server-sent events (EventSource can only GET). */
-async function* events(res: Response) {
+export async function* events(res: Response) {
   const reader = res.body!.getReader();
   const decoder = new TextDecoder();
   let buf = "";

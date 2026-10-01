@@ -12,6 +12,8 @@ services:
         value: 3.12.7
       - key: OPENROUTER_API_KEY   # typed into the Render dashboard, never committed
         sync: false
+      - key: OPENAI_API_KEY       # project 25's chess opponent; Render dashboard
+        sync: false
       - key: WEB_ORIGINS          # the Vercel URL, e.g. https://jev-labs.vercel.app (CORS for the paid POSTs)
         sync: false
       - key: WEB_ORIGIN_REGEX     # Vercel per-deploy URLs, e.g. https://jev(lab)?-[a-z0-9-]+-<team>\.vercel\.app
@@ -47,6 +49,8 @@ services:
       - key: PYTHON_VERSION
         value: 3.12.7
       - key: OPENROUTER_API_KEY   # same key as the API, typed into the Render dashboard
+        sync: false
+      - key: OPENAI_API_KEY       # project 25's chess opponent; Render dashboard
         sync: false
       - key: WEB_UI_URL           # the Vercel URL; the sidebar's "Open in the new UI" link
         sync: false

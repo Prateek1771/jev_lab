@@ -12,7 +12,7 @@ export const ms = (x: number | null | undefined) => (x == null ? "n/a" : x >= 10
 export const num = (x: number | null | undefined, digits = 2) => (x == null ? "" : x.toFixed(digits));
 
 /** The pill colour of a label: what the decision *does*, not what it is called. */
-const RED = new Set(["block", "invalid", "injection", "pii", "flag", "reject", "contradicted", "investigate", "disqualify", "skip-secret", "leak", "(invalid)", "ERROR"]);
+const RED = new Set(["block", "invalid", "injection", "pii", "flag", "reject", "contradicted", "investigate", "disqualify", "skip-secret", "leak", "(invalid)", "ERROR", "miss"]);
 const BLUE = new Set(["confirm", "review", "asked_user", "nurture", "insufficient", "route_queue", "refund_confirm", "ask_user", "(human)", "human", "balanced"]);
 const GREEN = new Set(["allow", "valid", "release", "store", "execute", "safe", "clean", "answer", "answered", "supported", "sales_now", "refund_auto", "urgent", "fast"]);
 const ORANGE = new Set(["frontier", "high", "skip", "no_answer", "not_urgent", "medium"]);

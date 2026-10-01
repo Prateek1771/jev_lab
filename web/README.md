@@ -32,7 +32,7 @@ First time only: run `npm install` in `web/` (npm's cache is on D:, see `.npmrc`
   - Identical calls are merged, with a "×N per run" count.
   - One button at the bottom downloads everything as a zip: an **Excel workbook** (sheets: Dataset, Examples, System prompts), `prompts.json`, the dataset as CSV and JSON, and the project's code and `about.md`.
   - A text link gets just the workbook.
-- **How the prompts are captured:** many are built inside the code at call time, so `uv run python scripts/capture_prompts.py [NN]` runs each project's first example for real and records the JSON body of every request to OpenRouter, never the headers. It writes `projects/NN_*/prompts.json` (about $0.03 for all 24).
+- **How the prompts are captured:** many are built inside the code at call time, so `uv run python scripts/capture_prompts.py [NN]` runs each project's first example for real and records the JSON body of every request to OpenRouter, never the headers. It writes `projects/NN_*/prompts.json` (about $0.03 for all 25).
   - A test fails if any project lacks the file or if one contains a key-like string.
 - **Endpoints:** `GET /api/projects/NN/prompts`, and `GET /api/projects/NN/download/{bundle.zip|workbook.xlsx|dataset.csv|data.json}`.
 
@@ -40,7 +40,7 @@ First time only: run `npm install` in `web/` (npm's cache is on D:, see `.npmrc`
 
 | Path | What |
 |---|---|
-| `app/page.tsx` | Overview: 24-experiment accuracy-vs-cost scatter, headline numbers, the experiment table |
+| `app/page.tsx` | Overview: 25-experiment accuracy-vs-cost scatter, headline numbers, the experiment table |
 | `app/p/[nn]/page.tsx` | One experiment: description, With/Without Jev diagrams, the Run / Dataset / History tabs |
 | `components/project/*` | `RunTab` (live example), `DatasetTab` (streamed full run), `HistoryTab` (saved runs, diff), `ReportView`, `VariantCard` |
 | `components/charts.tsx` | recharts: log-scale cost scatter, value bars, threshold sweep |

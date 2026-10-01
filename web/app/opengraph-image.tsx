@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Jev Lab: 24 AI decision tests, Jev vs LLMs vs plain code";
+export const alt = "Jev Lab: 25 AI decision tests, Jev vs LLMs vs plain code";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -12,7 +12,7 @@ export default function Image() {
         <div style={{ display: "flex", fontSize: 28, letterSpacing: 4 }}>UNOFFICIAL TESTS · JEV VIA OPENROUTER</div>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ fontSize: 180, fontWeight: 600, lineHeight: 0.9, letterSpacing: -4 }}>Jev Lab</div>
-          <div style={{ fontSize: 44, marginTop: 28, maxWidth: 980 }}>24 decisions an AI product makes, each decided by Jev, an LLM, and plain code.</div>
+          <div style={{ fontSize: 44, marginTop: 28, maxWidth: 980 }}>25 decisions an AI product makes, each decided by Jev, an LLM, and plain code.</div>
         </div>
         <div style={{ display: "flex", height: 16, background: "#d45bb6" }} />
       </div>

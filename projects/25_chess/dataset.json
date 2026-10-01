@@ -1,0 +1,14 @@
+[
+  {"text": "White to move. Black's king is boxed in by its own pawns.", "label": "mate_in_1", "input": {"fen": "6k1/5ppp/8/8/8/8/5PPP/3R2K1 w - - 0 1", "best": ["d1d8"], "theme": "mate_in_1"}},
+  {"text": "White to move. Queen and bishop both aim at f7.", "label": "mate_in_1", "input": {"fen": "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1", "best": ["f3f7"], "theme": "mate_in_1"}},
+  {"text": "Black to move. White's king has no escape square.", "label": "mate_in_1", "input": {"fen": "3r2k1/5ppp/8/8/8/8/5PPP/6K1 b - - 0 1", "best": ["d8d1"], "theme": "mate_in_1"}},
+  {"text": "White to move. Black's queen sits undefended on the rook's file.", "label": "win_material", "input": {"fen": "4k3/8/8/3q4/8/8/8/3RK3 w - - 0 1", "best": ["d1d5"], "theme": "win_material"}},
+  {"text": "White to move. A loose knight on c6.", "label": "win_material", "input": {"fen": "4k3/8/2n5/8/8/8/8/2R1K3 w - - 0 1", "best": ["c1c6"], "theme": "win_material"}},
+  {"text": "Black to move. White's knight on c3 has no defender.", "label": "win_material", "input": {"fen": "2r1k3/8/8/8/8/2N5/8/4K3 b - - 0 1", "best": ["c8c3"], "theme": "win_material"}},
+  {"text": "White to move. A pawn attacks White's queen.", "label": "save_piece", "input": {"fen": "4k3/8/8/4p3/3Q4/8/8/4K3 w - - 0 1", "best": ["d4e5", "d4a4", "d4d6", "d4d5", "d4a7", "d4c5", "d4b6", "d4h4", "d4b4", "d4g4", "d4c4", "d4d3", "d4e4", "d4f2", "d4d2", "d4d1", "d4e3", "d4c3", "d4b2", "d4g1", "d4a1"], "theme": "save_piece"}},
+  {"text": "White to move. A pawn attacks White's knight.", "label": "save_piece", "input": {"fen": "4k3/8/8/2p5/3N4/8/8/4K3 w - - 0 1", "best": ["d4e6", "d4c6", "d4b3", "d4f5", "d4b5", "d4f3", "d4e2", "d4c2"], "theme": "save_piece"}},
+  {"text": "Black to move. A pawn attacks Black's bishop.", "label": "save_piece", "input": {"fen": "4k3/8/8/3b4/4P3/8/8/4K3 b - - 0 1", "best": ["d5e4", "d5c4", "d5b3", "d5a2", "d5e6", "d5c6", "d5g8", "d5a8", "d5f7", "d5b7"], "theme": "save_piece"}},
+  {"text": "White to move. Black threatens Rd1 mate on the back rank.", "label": "avoid_blunder", "input": {"fen": "3r2k1/5ppp/8/8/8/8/R4PPP/6K1 w - - 0 1", "best": ["h2h4", "g2g4", "f2f4", "h2h3", "g2g3", "f2f3", "g1f1", "a2a1"], "theme": "avoid_blunder"}},
+  {"text": "White to move. The d5 pawn looks free but is defended.", "label": "avoid_blunder", "input": {"fen": "4k3/8/4p3/3p4/8/8/8/3QK3 w - - 0 1", "best": ["d1h5", "d1a4", "d1g4", "d1f3", "d1e2", "d1d4", "d1d3", "d1b3", "e1f2", "e1e2", "e1d2", "d1d2", "d1c2", "e1f1", "d1c1", "d1b1", "d1a1"], "theme": "avoid_blunder"}},
+  {"text": "Black to move. The d4 pawn looks free but is defended.", "label": "avoid_blunder", "input": {"fen": "3qk3/8/8/8/3P4/4P3/8/4K3 b - - 0 1", "best": ["d8a5", "d8h4", "d8g5", "d8e7", "d8f6", "d8d5", "d8d6", "d8b6", "e8f7", "e8e7", "e8d7", "d8d7", "d8c7", "e8f8", "d8c8", "d8b8", "d8a8"], "theme": "avoid_blunder"}}
+]

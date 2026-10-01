@@ -34,7 +34,7 @@ export default async function ProjectPage({ params }: PageProps<"/p/[nn]">) {
   return (
     <div className="fade-in">
       {/* the index strip: every experiment one click away, dashed cells like the nav */}
-      {/* ponytail: 6 per page on phones, all 24 from sm up */}
+      {/* ponytail: 6 per page on phones, all 25 from sm up */}
       <MobilePager inline size={6} start={i} noun="experiments" className="-mx-4 flex rule-b sm:-mx-6">
         {all.map((p) => (
           <Link key={p.id} href={`/p/${p.id}`} title={p.name}

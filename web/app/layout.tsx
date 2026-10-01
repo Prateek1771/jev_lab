@@ -12,11 +12,11 @@ const interTight = Inter_Tight({ subsets: ["latin"], weight: ["400", "500", "600
 const jetbrains = JetBrains_Mono({ subsets: ["latin"], weight: ["300", "400"], variable: "--font-jetbrains" });
 const vt323 = VT323({ subsets: ["latin"], weight: "400", variable: "--font-vt323" });
 
-const DESCRIPTION = "Unofficial tests by Prateek Hitli: 24 decision experiments, Jev (via OpenRouter) against LLM and no-model baselines, measured on real runs. Not affiliated with TypeSafe AI.";
+const DESCRIPTION = "Unofficial tests by Prateek Hitli: 25 decision experiments, Jev (via OpenRouter) against LLM and no-model baselines, measured on real runs. Not affiliated with TypeSafe AI.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: { default: "Jev Lab: 24 AI decision tests, Jev vs LLMs vs code", template: "%s · Jev Lab" },
+  title: { default: "Jev Lab: 25 AI decision tests, Jev vs LLMs vs code", template: "%s · Jev Lab" },
   description: DESCRIPTION,
   authors: [{ name: AUTHOR.name, url: AUTHOR.url }],
   alternates: { canonical: "/" },

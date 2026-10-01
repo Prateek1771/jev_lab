@@ -18,6 +18,10 @@ def _env(name: str, default: str = "") -> str:
 OPENROUTER_API_KEY = _env("OPENROUTER_API_KEY")
 HTTP_TIMEOUT_S = 60
 
+# --- OpenAI direct: project 25's cheap opponent (gpt-4.1-nano and friends) ---
+OPENAI_API_KEY = _env("OPENAI_API_KEY")
+CHESS_OPPONENT_MODEL = _env("CHESS_OPPONENT_MODEL", "gpt-4.1-nano")
+
 # --- Jev (TypeSafe System One, served by OpenRouter's Decisions API) ---
 JEV_URL = "https://openrouter.ai/api/alpha/decisions"
 JEV_MODEL = _env("JEV_MODEL", "typesafe/jev-1.13")

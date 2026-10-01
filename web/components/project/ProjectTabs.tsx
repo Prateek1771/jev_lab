@@ -5,14 +5,16 @@ import type { ProjectDetail } from "@/lib/types";
 import { DatasetTab } from "./DatasetTab";
 import { DownloadTab } from "./DownloadTab";
 import { HistoryTab } from "./HistoryTab";
+import { PlayTab } from "./PlayTab";
 import { RunTab } from "./RunTab";
 
-const TABS = ["Run", "Dataset", "History", "Download"] as const;
+const ALL = ["Play", "Run", "Dataset", "History", "Download"] as const;
 
 export function ProjectTabs({ project }: { project: ProjectDetail }) {
-  const [tab, setTab] = useState<(typeof TABS)[number]>("Run");
+  const TABS = project.players ? ALL : ALL.slice(1);   // Play only where the project has a live game (25: chess)
+  const [tab, setTab] = useState<(typeof ALL)[number]>(TABS[0]);
   const [saved, setSaved] = useState(0);
-  const count = { Run: `${Object.keys(project.examples).length} examples`, Dataset: `${project.rows} labeled`, History: "saved runs", Download: "prompts + data" };
+  const count = { Play: "live game", Run: `${Object.keys(project.examples).length} examples`, Dataset: `${project.rows} labeled`, History: "saved runs", Download: "prompts + data" };
   return (
     <section>
       <div role="tablist" className="flex border-[1.2px] border-ink">
@@ -25,6 +27,7 @@ export function ProjectTabs({ project }: { project: ProjectDetail }) {
         <div className="hidden flex-1 rule-l sm:block" />
       </div>
       <div className="pt-6">
+        {project.players && <div hidden={tab !== "Play"}><PlayTab project={project} /></div>}
         <div hidden={tab !== "Run"}><RunTab project={project} /></div>
         <div hidden={tab !== "Dataset"}><DatasetTab project={project} onSaved={() => setSaved((n) => n + 1)} /></div>
         {tab === "History" && <HistoryTab nn={project.id} refresh={saved} />}

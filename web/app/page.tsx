@@ -51,7 +51,7 @@ export default async function Overview() {
         </div>
         <h1 className="h-hero">Jev Lab</h1>
         <p className="mx-auto mt-8 max-w-[780px] text-[19px] leading-[1.35] text-ink-86">
-          Twenty-four decisions an AI product makes every day: classify, gate, route, filter, verify.
+          Twenty-five decisions an AI product makes every day: classify, gate, route, filter, verify.
           Each one decided three ways: by <b className="text-ink">Jev</b>, by an <b className="text-ink">LLM</b>, and by <b className="text-ink">plain code</b>.
           Same rows, real API calls, every mistake counted.
         </p>
@@ -88,7 +88,7 @@ export default async function Overview() {
 
       <section id="projects" className="mt-20 scroll-mt-16">
         <div className="mb-6 flex items-end justify-between gap-6">
-          <h2 className="h-section">The 24 Experiments</h2>
+          <h2 className="h-section">The 25 Experiments</h2>
           <Label className="hidden text-right md:block">score · cost per decision</Label>
         </div>
         <div className="border-t-[1.2px] border-ink">
